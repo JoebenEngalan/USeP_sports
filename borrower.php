@@ -73,7 +73,7 @@
           <!-- Grid row  -->
           <!-- Grid row  Buttons -->          
           <div class="btn-group">
-            <button type="submit" class="btn btn-primary btn-lg">Sign in</button>
+            <button type="submit" class="btn btn-primary btn-lg">Register</button>
             <button type="clear" class="btn btn-primary btn-lg">Clear</button>
           </div>
         
@@ -86,7 +86,7 @@
         <div class="card mb-4">
               <div class="card-header">
                 <i class="fas fa-table"></i>
-                Data Table Borrowers</div>
+                Borrowers Table</div>
               <div class="card-body">
                 <div class="table-responsive">
                   <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
