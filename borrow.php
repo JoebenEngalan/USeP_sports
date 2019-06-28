@@ -59,7 +59,7 @@
             <!-- LastName input -->
             <div class="form-group col-md-6">
               <label for="Datenow"> Date</label>
-              <input type="text" id="Datenow" class="form-control" >
+              <input type="text" id="Datenow" class="form-control" disabled>
             </div>
           </div>
 
