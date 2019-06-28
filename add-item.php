@@ -30,17 +30,22 @@
           <!--Grid row-->
           <!-- Itemcode input -->
           <div class="form-row">
-          <div class="form-group col-md-3">
-              <label for="itemcode">Item Code</label>
-              <input type="text" class="form-control" id="itemcode" placeholder="Item Code">
-          </div>
+            <div class="form-group col-md-3">
+                <label for="itemcode">Item Code</label>
+                <input type="text" class="form-control" id="itemcode" placeholder="Item Code">
+            </div>
             <!-- Item Name input -->
             <div class="form-group col-md-6">
               <label for="itemname">Item Name</label>
               <input type="text" class="form-control" id="itemname" placeholder="Item Name">
             </div>
+             <!-- Item Name input -->
+            <div class="form-group col-md">
+              <label for="itemname">Quantity</label>
+              <input type="text" class="form-control" id="itemname" placeholder="0">
+            </div>
             <!--  Category input -->
-            <div class="form-group col">
+            <div class="form-group col-md-2">
             <label for="inputCategory">Category</label>
               <select type="text" class="form-control" id="inputCategory">
               <option disabled selected>Category</option>
@@ -75,32 +80,29 @@
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                   <tr>
-                    <th>Name</th>
-                    <th>Position</th>
-                    <th>Office</th>
-                    <th>Age</th>
-                    <th>Start date</th>
-                    <th>Salary</th>
+                    <th>Item Code</th>
+                    <th>Item Name</th>
+                    <th>Quantity</th>
+                    <th>Category</th>
+                    <th>Description</th>
                   </tr>
                 </thead>
                 <tfoot>
                   <tr>
-                    <th>Name</th>
-                    <th>Position</th>
-                    <th>Office</th>
-                    <th>Age</th>
-                    <th>Start date</th>
-                    <th>Salary</th>
+                    <th>Item Code</th>
+                    <th>Item Name</th>
+                    <th>Quantity</th>
+                    <th>Category</th>
+                    <th>Description</th>
                   </tr>
                 </tfoot>
                 <tbody>
                   <tr>
-                    <td>Donna Snider</td>
-                    <td>Customer Support</td>
-                    <td>New York</td>
-                    <td>27</td>
-                    <td>2011/01/25</td>
-                    <td>$112,000</td>
+                    <td>S-20394</td>
+                    <td>Basketball</td>
+                    <td>2</td>
+                    <td>Gym</td>
+                    <td>New Spalding</td>
                   </tr>
                 </tbody>
               </table>
