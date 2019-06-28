@@ -21,7 +21,7 @@
           <h6 class="dropdown-header">Transactions Page:</h6>
           <a class="dropdown-item" href="borrower.php">Borrowers Page</a>
           <a class="dropdown-item" href="borrow.php">Borrow Page</a>
-          <a class="dropdown-item" href="4041.php">Return Page</a>
+          <a class="dropdown-item" href="404.php">Return Page</a>
           <a class="dropdown-item" href="add-item.php">Add Items</a>
         </div>
       </li>
