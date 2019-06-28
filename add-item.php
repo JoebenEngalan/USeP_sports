@@ -24,24 +24,25 @@
         </ol>
 
         <!-- Page Content -->
-        <!-- Borrowing form grid -->
+        <!-- additem form grid -->
         <div class="mb-4">
         <form>
           <!--Grid row-->
+          <!-- Itemcode input -->
           <div class="form-row">
-          <div class="form-group col-md-6">
+          <div class="form-group col-md-3">
               <label for="itemcode">Item Code</label>
               <input type="text" class="form-control" id="itemcode" placeholder="item Code">
           </div>
-            <!-- LastName input -->
+            <!-- Item Name input -->
             <div class="form-group col-md-6">
               <label for="itemname">Item Name</label>
               <input type="text" class="form-control" id="itemname" placeholder="First Name">
             </div>
-            <!-- FirstName input -->
+            <!--  Category input -->
             <div class="form-group col">
-            <label for="inputDept_Coll">Category</label>
-              <select type="text" class="form-control" id="inputDept_Coll">
+            <label for="inputCategory">Category</label>
+              <select type="text" class="form-control" id="inputCategory">
               <option disabled selected>Category</option>
               <option> test </option>
               <option> test </option>
@@ -49,10 +50,10 @@
             </div>
           </div>
           <!--Grid row-->
-          <!-- ContactNum input -->
+          <!-- Inputcomment input -->
           <div class="form-group col-md-14">
-            <label for="comment">Comment</label>
-            <textarea class="form-control" rows="5" id="comment" resize="none"></textarea>
+            <label for="Inputcomment">Comment</label>
+            <textarea class="form-control" rows="5" id="Inputcomment" resize="none"></textarea>
           </div>
 
           <!-- Grid row  Buttons -->          
