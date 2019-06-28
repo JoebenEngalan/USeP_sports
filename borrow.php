@@ -26,6 +26,7 @@
         <!-- Page Content -->
         <!-- Borrowing form grid -->              
         <div class="mb-4">
+          <h3 class="display-10">Borrow Pagee</h3>
         <form>
           <!--id NUMBER-->
           <div class="input-group mb-3">
@@ -65,7 +66,7 @@
 
           <!--Grid row Item Borrowed/Quantity-->
           <div class="form-row mb-2">
-          <h3 class="text-black-60">Item Borrowed</h3>
+          <h3 class="display-10">Item Borrowed</h3>
           </div>
 
           <div class="form-row mb-3"> 
