@@ -57,7 +57,7 @@
 
           <!-- Grid row  Buttons -->          
           <div class="btn-group">
-            <button type="submit" class="btn btn-primary btn-lg">Sign in</button>
+            <button type="submit" class="btn btn-primary btn-lg">Add item</button>
             <button type="clear" class="btn btn-primary btn-lg">Clear</button>
           </div>
         
