@@ -20,7 +20,7 @@
           <li class="breadcrumb-item">
             <a href="index.php">Dashboard</a>
           </li>
-          <li class="breadcrumb-item active"></li>
+          <li class="breadcrumb-item active">Add Item</li>
         </ol>
 
         <!-- Page Content -->
