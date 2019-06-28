@@ -26,7 +26,7 @@
         <!-- Page Content -->
         <!-- Borrowing form grid -->              
         <div class="mb-4">
-          <h3 class="display-10">Borrow Pagee</h3>
+          <h3 class="display-10">Borrow Page</h3>
         <form>
           <!--id NUMBER-->
           <div class="input-group mb-3">
@@ -42,12 +42,12 @@
             <!-- LastName input -->
             <div class="form-group col-md-6">
               <label for="inputLname">Last Name</label>
-              <input type="text" class="form-control" id="inputLname" placeholder="Last Name">
+              <input type="text" class="form-control" id="inputLname" placeholder="Last Name" disabled>
             </div>
             <!-- FirstName input -->
             <div class="form-group col-md-6">
               <label for="inputFname">First Name</label>
-              <input type="text" class="form-control" id="inputFname" placeholder="First Name">
+              <input type="text" class="form-control" id="inputFname" placeholder="First Name" disabled>
             </div>
           </div>
           
@@ -55,7 +55,7 @@
             <!-- ContactNum input -->
             <div class="form-group col-md-6">
               <label for="inputContactnum">Contact Number</label>
-              <input type="text" class="form-control" id="inputFname" placeholder="+63XXXXXXXXXX">
+              <input type="text" class="form-control" id="inputFname" placeholder="+63XXXXXXXXXX" disabled>
             </div>
             <!-- LastName input -->
             <div class="form-group col-md-6">
