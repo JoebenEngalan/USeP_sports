@@ -32,7 +32,7 @@
             <!-- LastName input -->
             <div class="form-group col-md-6">
               <label for="itemcode">Item Code</label>
-              <input type="text" class="form-control" id="itemcode" placeholder="">
+              <input type="text" class="form-control" id="itemcode" placeholder="item Code">
             </div>
             <!-- FirstName input -->
             <div class="form-group col-md-6">
