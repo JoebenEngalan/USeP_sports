@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
 <?php include('templates/head.php');?>
 
 <body id="page-top">
