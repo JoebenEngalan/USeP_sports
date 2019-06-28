@@ -32,12 +32,12 @@
           <div class="form-row">
           <div class="form-group col-md-3">
               <label for="itemcode">Item Code</label>
-              <input type="text" class="form-control" id="itemcode" placeholder="item Code">
+              <input type="text" class="form-control" id="itemcode" placeholder="Item Code">
           </div>
             <!-- Item Name input -->
             <div class="form-group col-md-6">
               <label for="itemname">Item Name</label>
-              <input type="text" class="form-control" id="itemname" placeholder="First Name">
+              <input type="text" class="form-control" id="itemname" placeholder="Item Name">
             </div>
             <!--  Category input -->
             <div class="form-group col">
@@ -50,10 +50,10 @@
             </div>
           </div>
           <!--Grid row-->
-          <!-- Inputcomment input -->
+          <!-- InputDescription input -->
           <div class="form-group col-md-14">
-            <label for="Inputcomment">Comment</label>
-            <textarea class="form-control" rows="5" id="Inputcomment" resize="none"></textarea>
+            <label for="InputDescription">Description</label>
+            <textarea class="form-control" rows="5" id="InputDescription" resize="none" placeholder="Description Here"></textarea>
           </div>
 
           <!-- Grid row  Buttons -->          
@@ -63,6 +63,50 @@
           </div>
         
         </form>
+        </div>
+
+        <!-- DataTables Example -->
+        <div class="card mb-3">
+          <div class="card-header">
+            <i class="fas fa-table"></i>
+            Items Table</div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Position</th>
+                    <th>Office</th>
+                    <th>Age</th>
+                    <th>Start date</th>
+                    <th>Salary</th>
+                  </tr>
+                </thead>
+                <tfoot>
+                  <tr>
+                    <th>Name</th>
+                    <th>Position</th>
+                    <th>Office</th>
+                    <th>Age</th>
+                    <th>Start date</th>
+                    <th>Salary</th>
+                  </tr>
+                </tfoot>
+                <tbody>
+                  <tr>
+                    <td>Donna Snider</td>
+                    <td>Customer Support</td>
+                    <td>New York</td>
+                    <td>27</td>
+                    <td>2011/01/25</td>
+                    <td>$112,000</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
         </div>
 
     </div><!-- /.container-fluid -->
