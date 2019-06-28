@@ -29,38 +29,26 @@
         <form>
           <!--Grid row-->
           <div class="form-row">
-            <!-- LastName input -->
-            <div class="form-group col-md-6">
+          <div class="form-group col-md-6">
               <label for="itemcode">Item Code</label>
               <input type="text" class="form-control" id="itemcode" placeholder="item Code">
-            </div>
-            <!-- FirstName input -->
+          </div>
+            <!-- LastName input -->
             <div class="form-group col-md-6">
               <label for="itemname">Item Name</label>
               <input type="text" class="form-control" id="itemname" placeholder="First Name">
             </div>
-          </div>
-          <!--Grid row-->
-          <div class="form-row">
-            <!-- Dept/College input -->
-            <div class="form-group col-md-6">
-              <label for="inputDept_Coll">Category</label>
+            <!-- FirstName input -->
+            <div class="form-group col">
+            <label for="inputDept_Coll">Category</label>
               <select type="text" class="form-control" id="inputDept_Coll">
               <option disabled selected>Category</option>
               <option> test </option>
               <option> test </option>
               </select>
             </div>
-            <!-- Position input -->
-            <div class="form-group col-md-6">
-              <label for="inputPosit">Position</label>
-              <select type="text" class="form-control" id="inputPosit">
-              <option disabled selected>Position</option>
-              <option>test Position</option>
-              <select>
-            </div>
           </div>
-          <!-- Grid row  -->
+          <!--Grid row-->
           <!-- ContactNum input -->
           <div class="form-group col-md-14">
             <label for="comment">Comment</label>
