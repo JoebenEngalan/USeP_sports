@@ -31,13 +31,13 @@
           <div class="form-group mb-4">
               <h3 class="display-10">Borrow Page</h3>
           </div>
-              <!--id NUMBER-->
-            <div class="input-group mb-3">
+            <!--id NUMBER-->
+          <div class="input-group mb-3">
             <input type="text" class="form-control" id="inputIDnum" placeholder="ID number of Student or Faculty" aria-label="Recipient's username" aria-describedby="button-addon2">
             <div class="input-group-append">
-            <button class="btn btn-primary" type="button" id="button-search">
-            <i class="fas fa-search"></i>
-            </button>
+              <button class="btn btn-primary" type="button" id="button-search">
+              <i class="fas fa-search"></i>
+              </button>
             </div>
           </div>          
           <!--Grid row fullname-->

@@ -26,6 +26,10 @@
         <!-- Page Content -->
         <!-- additem form grid -->
         <div class="mb-4">
+        
+        <div class="form-group mb-4">
+              <h3 class="display-10">Add Item Page</h3>
+        </div>
         <form>
           <!--Grid row-->
           <!-- Itemcode input -->
