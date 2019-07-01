@@ -65,7 +65,7 @@
           </div>
 
           <!--Grid row Item Borrowed/Quantity-->
-          <div class="form-row mb-3">
+          <div class="form-row mb-4">
           <h3 class="display-10">Item Borrowed</h3>
           </div>
 
