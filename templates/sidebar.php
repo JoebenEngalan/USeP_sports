@@ -12,11 +12,7 @@
           <i class="fas fa-fw fa-folder"></i>
           <span>Pages</span>
         </a>
-        <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-          <h6 class="dropdown-header">Login Screens:</h6>
-          <a class="dropdown-item" href="login.php">Login</a>
-          <a class="dropdown-item" href="register.php">Register</a>
-          <a class="dropdown-item" href="forgot-password.php">Forgot Password</a>
+        <div class="dropdown-menu" aria-labelledby="pagesDropdown"> 
           <div class="dropdown-divider"></div>
           <h6 class="dropdown-header">Transactions Page:</h6>
           <a class="dropdown-item" href="borrower.php">Borrowers Page</a>
@@ -24,6 +20,21 @@
           <a class="dropdown-item" href="return.php">Return Page</a>
           <a class="dropdown-item" href="add-item.php">Add Items</a>
         </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="tables.php">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Tables</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="tables.php">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Tables</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="tables.php">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Tables</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="tables.php">
