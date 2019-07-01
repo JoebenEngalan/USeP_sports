@@ -19,7 +19,7 @@
           <a class="dropdown-item" href="forgot-password.php">Forgot Password</a>
           <div class="dropdown-divider"></div>
           <h6 class="dropdown-header">Transactions Page:</h6>
-          <a class="dropdown-item" href="borrower.php">Borrowers Page</a>
+          <a class="dropdown-item" href="add-borrower.php">Add Borrowers Page</a>
           <a class="dropdown-item" href="borrow.php">Borrow Page</a>
           <a class="dropdown-item" href="return.php">Return Page</a>
           <a class="dropdown-item" href="add-item.php">Add Items</a>

@@ -21,7 +21,7 @@
           <li class="breadcrumb-item">
             <a href="index.php">Dashboard</a>
           </li>
-          <li class="breadcrumb-item active">Borrowers Page</li>
+          <li class="breadcrumb-item active">Add Borrowers Page</li>
         </ol>
 
         <!-- Page Content -->
@@ -29,7 +29,7 @@
         <div class="mb-4">
         <form>
         <div class="form-group mb-4">
-          <h3 class="display-10">Borrowers Page</h3>
+          <h3 class="display-10">Add Borrowers Page</h3>
         </div>
           <!-- IDNumber input -->
           <div class="form-group col-md-14">
