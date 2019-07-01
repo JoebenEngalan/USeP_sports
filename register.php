@@ -1,23 +1,37 @@
+<?php 
+session_start();
+include('includes/config.php');
+error_reporting(0);
+?>
+
+<?php
+//error_reporting(0);
+if(isset($_POST['signup']))
+{
+$fname=$_POST['firstname'];
+$lname=$_POST['lastname'];
+$email=$_POST['emailid']; 
+$password=md5($_POST['password']); 
+$sql= "INSERT INTO staff_table (FirstName,LastName,Email,Password) VALUES(:fname,:lname,:email,:password)";
+$query = $dbh->prepare($sql);
+$query->bindParam(':fname',$fname,PDO::PARAM_STR);
+$query->bindParam(':lname',$lname,PDO::PARAM_STR);
+$query->bindParam(':email',$email,PDO::PARAM_STR);
+$query->bindParam(':password',$password,PDO::PARAM_STR);
+$query->execute();
+$lastInsertId = $dbh->lastInsertId();
+
+if($lastInsertId)
+  {echo "<script>alert('Registration successfull. Now you can login');</script>";}
+  else 
+  {echo "<script>alert('Something went wrong. Please try again');</script>";}
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-
-  <title>SB Admin - Register</title>
-
-  <!-- Custom fonts for this template-->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-
-  <!-- Custom styles for this template-->
-  <link href="css/sb-admin.css" rel="stylesheet">
-
-</head>
+<?php include('templates/head.php');?>
 
 <body class="bg-dark">
 
@@ -74,12 +88,9 @@
     </div>
   </div>
 
-  <!-- Bootstrap core JavaScript-->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!--scripts-->
+  <?php include('templates/scripts.php')?>
 
-  <!-- Core plugin JavaScript-->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
 </body>
 
