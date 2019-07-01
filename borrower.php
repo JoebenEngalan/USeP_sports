@@ -21,13 +21,16 @@
           <li class="breadcrumb-item">
             <a href="index.php">Dashboard</a>
           </li>
-          <li class="breadcrumb-item active">Borrowers</li>
+          <li class="breadcrumb-item active">Borrowers Page</li>
         </ol>
 
         <!-- Page Content -->
         <!-- Borrowing form grid -->
         <div class="mb-4">
         <form>
+        <div class="form-group mb-4">
+          <h3 class="display-10">Borrowers Page</h3>
+        </div>
           <!-- IDNumber input -->
           <div class="form-group col-md-14">
             <label for="inputIDnum">ID Number</label>

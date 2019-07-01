@@ -26,7 +26,7 @@
         <!-- Page Content -->
         <!-- Borrowing form grid -->              
         
-      <form action="">
+      <form>
       
           <div class="form-group mb-4">
               <h3 class="display-10">Borrow Page</h3>
