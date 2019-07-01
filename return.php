@@ -20,10 +20,80 @@
           <li class="breadcrumb-item">
             <a href="index.php">Dashboard</a>
           </li>
-          <li class="breadcrumb-item active">Return</li>
+          <li class="breadcrumb-item active">Return Page</li>
         </ol>
 
         <!-- Page Content -->
+  
+      <form>
+          <div class="form-group mb-4">
+              <h3 class="display-10">Return Page</h3>
+          </div>
+              <!--id NUMBER-->
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" id="inputIDnum" placeholder="ID number of Student or Faculty" aria-label="Recipient's username" aria-describedby="button-addon2">
+            <div class="input-group-append">
+              <button class="btn btn-primary" type="button" id="button-search">
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+          </div>          
+          <!--Grid row fullname-->
+          <div class="form-row">
+            <!-- LastName input -->
+            <div class="form-group col-md-6">
+              <label for="inputLname">Last Name</label>
+              <input type="text" class="form-control" id="inputLname" placeholder="Last Name" disabled>
+            </div>
+            <!-- FirstName input -->
+            <div class="form-group col-md-6">
+              <label for="inputFname">First Name</label>
+              <input type="text" class="form-control" id="inputFname" placeholder="First Name" disabled>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <!-- ContactNum input -->
+            <div class="form-group col-md-6">
+              <label for="inputContactnum">Contact Number</label>
+              <input type="text" class="form-control" id="inputFname" placeholder="+63XXXXXXXXXX" disabled>
+            </div>
+            <!-- Date input -->
+            <div class="form-group col-md-6">
+              <label for="Datenow"> Date</label>
+              <input type="text" id="Datenow" class="form-control" disabled>
+            </div>          
+        </div>
+
+        <div class="form-group mb-4">
+          <h3 class="display-10">Item Borrowed</h3>
+        </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-4">
+            <select type="text" class="form-control" id="inputDept_Coll">
+                <option disabled selected>Items</option>
+                <option> test Items</option>
+            </select>
+        
+            </div>
+
+            <div class="form-group col-md-2">
+              <input type="text" class="form-control" id="inputQuantity" placeholder="Quantity">
+            </div>
+            
+            <div class="form-group col-md-6">
+              <input type="text" class="form-control" id="inputRemarks" placeholder="Remarks">
+            </div>          
+          </div>
+          
+          <div class="form-group mb-4">
+            <div class="btn-group">
+              <button type="submit" class="btn btn-primary btn-lg">Borrow</button>
+              <button type="clear" class="btn btn-primary btn-lg">Clear</button>
+            </div>
+          </div>
+      </form>
 
 
     </div><!-- /.container-fluid -->
