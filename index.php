@@ -6,7 +6,9 @@ error_reporting(0);
 
 <?php
 if(isset($_POST['login']))
+
 {
+
 $email=$_POST['email'];
 $password=md5($_POST['password']);
 $sql ="SELECT Email,Password FROM staff_table WHERE Email=:email and Password=:password";
@@ -16,16 +18,17 @@ $query-> bindParam(':email', $email, PDO::PARAM_STR);
 $query-> bindParam(':password', $password, PDO::PARAM_STR);
 $query-> execute();
 $results=$query->fetchAll(PDO::FETCH_OBJ);
-if($query->rowCount() > 0)
-{
-$_SESSION['login']=$_POST['email'];
-$currentpage=$_SERVER['REQUEST_URI'];
-echo "<script type='text/javascript'> document.location = 'mainpage.php'; </script>";
-} else{
-  
-  echo "<script>alert('Invalid Details');</script>";
 
-}
+if($query->rowCount() > 0)
+    {
+    $_SESSION['login']=$_POST['email'];
+    $currentpage=$_SERVER['REQUEST_URI'];
+    echo "<script type='text/javascript'> document.location = 'mainpage.php'; </script>";
+    }else{
+      
+      echo "<script>alert('Invalid Details');</script>";
+
+    }
 
 }
 
