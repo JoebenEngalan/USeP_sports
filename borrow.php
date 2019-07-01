@@ -65,36 +65,20 @@
           </div>
 
           <!--Grid row Item Borrowed/Quantity-->
-          <div class="form-row mb-2">
+          <div class="form-row mb-3">
           <h3 class="display-10">Item Borrowed</h3>
           </div>
 
           <div class="form-row mb-3"> 
             <div class="input-group-prepend ">
-              <span class="input-group-text col-md-6" >Item Borrowed/Quantity</span>
-              <select type="text" class="form-control col-md-12" id="inputDept_Coll">
+              <select type="text" class="form-control col-md-10" id="inputDept_Coll">
                 <option disabled selected>Items</option>
                 <option> test Items</option>
               </select>
-              <select type="text" class="form-control col-md-5" id="inputQuantity">
-                <option disabled selected>Quantity</option>
-                <option>1</option>
-              </select>  
+              <input type="text" class="form-control col-md-4" id="inputQuantity" placeholder="Quantity">              
+              <input type="text" class="form-control col-md-12" id="inputRemarks" placeholder="Remarks">
             </div>
-          </div>
 
-          <div class="form-row mb-3"> 
-            <div class="input-group-prepend">
-              <span class="input-group-text col-md-6" >Item Borrowed/Quantity</span>
-              <select type="text" class="form-control col-md-12" id="inputDept_Coll">
-                <option disabled selected>Items</option>
-                <option> test Items</option>
-              </select>
-              <select type="text" class="form-control col-md-5" id="inputQuantity">
-                <option disabled selected>Quantity</option>
-                <option>1</option>
-              </select>  
-            </div>
           </div>
 
           <!-- Grid row  Buttons -->          
