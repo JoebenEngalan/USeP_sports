@@ -169,7 +169,7 @@ foreach($results as $result)
 											<td><?php echo htmlentities($result->id_number);?></td>
 											<td><?php echo htmlentities($result->FirstName);?></td>
 											<td><?php echo htmlentities($result->LastName);?></td>
-	                                        <td><?php echo htmlentities($result->ContactNumber);?></td>
+	                    <td><?php echo htmlentities($result->ContactNumber);?></td>
 											<td><?php echo htmlentities($result->Department);?></td>
 											<td><?php echo htmlentities($result->Position);?></td>
 											<td><?php echo htmlentities($result->EmailID);?></td>
