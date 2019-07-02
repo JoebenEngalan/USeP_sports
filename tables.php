@@ -1,3 +1,26 @@
+<?php
+session_start();
+error_reporting(0);
+include('includes/config.php');
+if(strlen($_SESSION['alogin'])==0)
+	{	
+header('location:index.php');
+}
+else{
+if(isset($_GET['del']))
+{
+$id=$_GET['del'];
+$sql = "delete from borrow_table  WHERE id=:id";
+$query = $dbh->prepare($sql);
+$query -> bindParam(':id',$id, PDO::PARAM_STR);
+$query -> execute();
+$msg="Page data updated  successfully";
+
+}
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,37 +54,57 @@
               <div class="card-body">
                 <div class="table-responsive">
                   <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                    <thead>
-                      <tr>
-                        <th>ID Numeber</th>
-                        <th>Last Name</th>
-                        <th>First Name</th>
-                        <th>Contact Number</th>
-                        <th>Department/College</th>
-                        <th>Position</th>
-                      </tr>
-                    </thead>
-                    <tfoot>
-                      <tr>
-                        <th>ID Numeber</th>
-                        <th>Last Name</th>
-                        <th>First Name</th>
-                        <th>Contact Number</th>
-                        <th>Department/College</th>
-                        <th>Position</th>
-                      </tr>
-                    </tfoot>
-                    <tbody>
-                    <!--Example table-->
-                      <tr>
-                        <td>2016-XXXX</td>
-                        <td>Doe</td>
-                        <td>John</td>
-                        <td>+63XXXXXXXXXXX</td>
-                        <td>College of Arts and Scinces</td>
-                        <td>Student</td>
-                      </tr>
-                    </tbody>
+                  <thead>
+										<tr>
+										<th>#</th>
+												<th>ID Number</th>
+											<th>Last Name</th>
+											<th>First Name</th>
+										<th>Contact Number</th>
+										<th>Department</th>
+										<th>Position</th>
+										<th>Email</th>
+						
+										
+										</tr>
+									</thead>
+									<tfoot>
+										<tr>
+										<th>#</th>
+                                        <th>ID Number</th>
+											<th>Last Name</th>
+											<th>First Name</th>
+										<th>Contact Number</th>
+										<th>Department</th>
+										<th>Position</th>
+										<th>Email</th>
+										</tr>
+										</tr>
+									</tfoot>
+									<tbody>
+
+									<?php $sql = "SELECT * from  borrower_table ";
+$query = $dbh -> prepare($sql);
+$query->execute();
+$results=$query->fetchAll(PDO::FETCH_OBJ);
+$cnt=1;
+if($query->rowCount() > 0)
+{
+foreach($results as $result)
+{				?>	
+										<tr>
+											<td><?php echo htmlentities($cnt);?></td>
+											<td><?php echo htmlentities($result->id_number);?></td>
+											<td><?php echo htmlentities($result->FirstName);?></td>
+											<td><?php echo htmlentities($result->LastName);?></td>
+	                                        <td><?php echo htmlentities($result->ContactNumber);?></td>
+											<td><?php echo htmlentities($result->Department);?></td>
+											<td><?php echo htmlentities($result->Position);?></td>
+											<td><?php echo htmlentities($result->EmailID);?></td>
+										</tr>
+										<?php $cnt=$cnt+1; }} ?>
+										
+									</tbody>
                   </table>
                 </div>
               </div>
@@ -100,3 +143,4 @@
 </body>
 
 </html>
+<?php } ?>

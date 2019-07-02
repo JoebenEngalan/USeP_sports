@@ -72,21 +72,14 @@ $msg="Page data updated  successfully";
 
 <body>
 	<?php include('includes/header.php');?>
-
-	<div class="ts-main-content">
-		<?php include('includes/leftbar.php');?>
-		<div class="content-wrapper">
-			<div class="container-fluid">
-
-				<div class="row">
-					<div class="col-md-12">
-
-						<h2 class="page-title">Registered Users</h2>
-
-						<!-- Zero Configuration Table -->
-						<div class="panel panel-default">
-							<div class="panel-heading">Reg Users</div>
-							<div class="panel-body">
+    <!-- DataTables Example -->
+    <div class="card mb-3">
+          <div class="card-header">
+            <i class="fas fa-table"></i>
+            Data Table Example</div>
+          <div class="card-body">
+            <div class="table-responsive">
+            
 							<?php if($error){?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php } 
 				else if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
 								<table id="zctb" class="display table table-striped table-bordered table-hover" cellspacing="0" width="100%">
