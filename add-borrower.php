@@ -145,8 +145,6 @@ echo "<script>alert('Something went wrong. Please try again');</script>";
             <button type="clear" class="btn btn-primary btn-lg">Clear</button>
           </div>
 
-
-
         </form>
         </div>
 

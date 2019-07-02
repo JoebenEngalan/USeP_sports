@@ -58,15 +58,6 @@ if($query->rowCount() > 0)
               <label for="inputPassword">Password</label>
             </div>
           </div>
-          <div class="form-group">
-            <div class="checkbox">
-              <label>
-                <input type="checkbox" value="remember-me">
-                Remember Password
-              </label>
-            </div>
-          </div>
-
           <input type="submit" name="login" class="btn btn-primary btn-block" value="Sign In" style="cursor:pointer">
         </form>
         <div class="text-center">
