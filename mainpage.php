@@ -2,26 +2,12 @@
 session_start();
 error_reporting(0);
 include('includes/config.php');
-if(strlen($_SESSION['alogin'])==0)
-	{	
+if(strlen($_SESSION['login'])==0)
+  { 
 header('location:index.php');
 }
 else{
-if(isset($_GET['del']))
-{
-$id=$_GET['del'];
-$sql = "delete from borrow_table  WHERE id=:id";
-$query = $dbh->prepare($sql);
-$query -> bindParam(':id',$id, PDO::PARAM_STR);
-$query -> execute();
-$msg="Page data updated  successfully";
-
-}
-
- ?>
-
-
-
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -169,7 +155,7 @@ foreach($results as $result)
 											<td><?php echo htmlentities($result->id_number);?></td>
 											<td><?php echo htmlentities($result->FirstName);?></td>
 											<td><?php echo htmlentities($result->LastName);?></td>
-	                                        <td><?php echo htmlentities($result->ContactNumber);?></td>
+	                    <td><?php echo htmlentities($result->ContactNumber);?></td>
 											<td><?php echo htmlentities($result->Department);?></td>
 											<td><?php echo htmlentities($result->Position);?></td>
 											<td><?php echo htmlentities($result->EmailID);?></td>
