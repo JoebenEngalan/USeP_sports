@@ -1,17 +1,12 @@
-<?php 
+<?php
 session_start();
-include('includes/config.php');
 error_reporting(0);
-
+include('includes/config.php');
 if(strlen($_SESSION['login'])==0)
   { 
 header('location:login.php');
-}
-else{
-?>
+}else{
 
-<?php
-//error_reporting(0);
 if(isset($_POST['submit']))
 {
 $idnum=$_POST['idnumber'];
@@ -22,7 +17,10 @@ $depart=$_POST['department'];
 $pos=$_POST['position'];
 $email=$_POST['emailid'];
 $status=1;
-$sql= "INSERT INTO borrower_table (id_number,FirstName,LastName,ContactNumber,Department,Position,EmailID,Status) VALUES(:idnum,:fname,:lname,:contact,:depart,:pos,:email,:status)";
+
+$sql= "INSERT INTO borrower_table (id_number,FirstName,LastName,ContactNumber,Department,Position,EmailID,Status) 
+        VALUES(:idnum,:fname,:lname,:contact,:depart,:pos,:email,:status)";
+
 $query = $dbh->prepare($sql);
 $query->bindParam(':idnum',$idnum,PDO::PARAM_STR);
 $query->bindParam(':fname',$fname,PDO::PARAM_STR);
@@ -141,54 +139,7 @@ echo "<script>alert('Something went wrong. Please try again');</script>";
         </form>
         </div>
 
-        <!--Borrowing form grid-->    
-        
-        <!--DataTables Borrowers-->
-        <div class="card mb-4">
-              <div class="card-header">
-                <i class="fas fa-table"></i>
-                Borrowers Table</div>
-              <div class="card-body">
-                <div class="table-responsive">
-                  <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                    <thead>
-                      <tr>
-                        <th>ID Numeber</th>
-                        <th>Last Name</th>
-                        <th>First Name</th>
-                        <th>Contact Number</th>
-                        <th>Department/College</th>
-                        <th>Position</th>
-                      </tr>
-                    </thead>
-                    <tfoot>
-                      <tr>
-                        <th>ID Numeber</th>
-                        <th>Last Name</th>
-                        <th>First Name</th>
-                        <th>Contact Number</th>
-                        <th>Department/College</th>
-                        <th>Position</th>
-                      </tr>
-                    </tfoot>
-                    <tbody>
-                    <!--Example table-->
-                      <tr>
-                        <td>2016-XXXX</td>
-                        <td>Doe</td>
-                        <td>John</td>
-                        <td>+63XXXXXXXXXXX</td>
-                        <td>College of Arts and Scinces</td>
-                        <td>Student</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-              <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-            </div>
-      </div><!-- /.container-fluid -->
-    </div><!-- /.content-wrapper -->
+        <!--Borrowing form grid-->
     
     <!--Footer-->    
     <?php include('templates/footer.php');?>

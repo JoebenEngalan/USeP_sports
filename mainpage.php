@@ -4,24 +4,11 @@ error_reporting(0);
 include('includes/config.php');
 if(strlen($_SESSION['login'])==0)
 	{	
+  { 
 header('location:index.php');
 }
 else{
-if(isset($_GET['del']))
-{
-$id=$_GET['del'];
-$sql = "delete from borrow_table  WHERE id=:id";
-$query = $dbh->prepare($sql);
-$query -> bindParam(':id',$id, PDO::PARAM_STR);
-$query -> execute();
-$msg="Page data updated  successfully";
-
-}
-
- ?>
-
-
-
+?>
 <!DOCTYPE html>
 <html lang="en">
 
