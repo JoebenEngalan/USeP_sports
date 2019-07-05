@@ -41,7 +41,7 @@ else
 echo "<script>alert('Something went wrong. Please try again');</script>";
 }
 }
-}?>
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -153,3 +153,4 @@ echo "<script>alert('Something went wrong. Please try again');</script>";
 </body>
 
 </html>
+<?php } ?>

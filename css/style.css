@@ -1,3 +1,9 @@
 textarea{
     resize: none;
 }
+
+footer.page-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
