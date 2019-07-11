@@ -7,6 +7,8 @@ if(!isset($_SESSION["id"]))
   }
   
 ?>
+<?php include('templates/additem.php');?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -43,22 +45,25 @@ if(!isset($_SESSION["id"]))
         <form method="post" name="submit" >
           <!--Grid row-->
           <!-- Itemcode input -->
+          <div class="form-row">
           <div class="form-group col-md-6">
               <label for="itemname">Item Code</label>
-              <input type="text" name= "itemcode" class="form-control" id="itemname" placeholder="Item ">
+              <input type="text" name= "itemcode" class="form-control" id="itemcode" placeholder="Item Code">
             </div>
             <!-- Item Name input -->
             <div class="form-group col-md-6">
               <label for="itemname">Item Name</label>
               <input type="text" name= "itemname" class="form-control" id="itemname" placeholder="Item Name">
             </div>
+          </div>
              <!-- Item Name input -->
-            <div class="form-group col-md">
+          <div class="form-row">
+            <div class="form-group col-md-6 ">
               <label for="itemname">Quantity</label>
-              <input type="text" name="quantity" class="form-control" id="itemname" placeholder="0">
+              <input type="text" name="quantity" class="form-control" id="quantity" placeholder="0">
             </div>
             <!--  Category input -->
-            <div class="form-group col-md-2">
+            <div class="form-group col-md-6">
             <label for="inputCategory">Category</label>
               <select type="text" name= "category" class="form-control" id="inputCategory">
               <option disabled selected>Category</option>
@@ -67,22 +72,21 @@ if(!isset($_SESSION["id"]))
               </select>
             </div>
           </div>
+        <div class="form">
           <!--Grid row-->
           <!-- InputDescription input -->
           <div class="form-group col-md-14">
             <label for="InputDescription">Description</label>
             <textarea class="form-control" name="description" rows="5" id="InputDescription" resize="none" placeholder="Description Here"></textarea>
           </div>
-
+        </div>
           <!-- Grid row  Buttons -->          
           <div class="btn-group">
-            <?php include('templates/additem.php');?>
             <button type="submit"  name="submit"  value="Submit"  class="btn btn-primary btn-lg">Add item</button>
             <button type="clear" class="btn btn-primary btn-lg">Clear</button>
           </div>
-        
         </form>
-        </div>
+      </div>
 
     </div><!-- /.container-fluid -->
   </div><!-- /.content-wrapper -->
