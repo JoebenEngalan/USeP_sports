@@ -1,42 +1,12 @@
 <?php 
 session_start();
-include('includes/config.php');
 error_reporting(0);
 ?>
-<?php
-//error_reporting(0);
-if(isset($_POST['signup']))
-{
-$fname=$_POST['firstname'];
-$lname=$_POST['lastname'];
-$email=$_POST['emailid']; 
-$password=md5($_POST['password']); 
-$sql= "INSERT INTO staff_table (FirstName,LastName,Email,Password) VALUES(:fname,:lname,:email,:password)";
-$query = $dbh->prepare($sql);
-$query->bindParam(':fname',$fname,PDO::PARAM_STR);
-$query->bindParam(':lname',$lname,PDO::PARAM_STR);
-$query->bindParam(':email',$email,PDO::PARAM_STR);
-$query->bindParam(':password',$password,PDO::PARAM_STR);
-$query->execute();
-$lastInsertId = $dbh->lastInsertId();
-if($lastInsertId)
-{
-echo "<script>alert('Registration successfull. Now you can login');</script>";
-}
-else 
-{
-echo "<script>alert('Something went wrong. Please try again');</script>";
-}
-}
-
-?>
-
 
 <!DOCTYPE html>
 <html lang="en">
 
 <?php include('templates/head.php');?>
-
 
 <body class="bg-dark">
 
@@ -83,6 +53,7 @@ echo "<script>alert('Something went wrong. Please try again');</script>";
               </div>
             </div>
           </div>
+          <?php include('registeruser.php')?>
           <input type="submit" name="signup" class="btn btn-primary btn-block" value="sign up" style="cursor:pointer">
         </form>
 
@@ -94,12 +65,8 @@ echo "<script>alert('Something went wrong. Please try again');</script>";
     </div>
   </div>
 
-  <!-- Bootstrap core JavaScript-->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Core plugin JavaScript-->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <!--scripts-->
+  <?php include('templates/scripts.php')?>
 
 </body>
 
