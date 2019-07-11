@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.2
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 03, 2019 at 09:44 AM
--- Server version: 10.1.34-MariaDB
--- PHP Version: 7.2.7
+-- Generation Time: Jul 11, 2019 at 07:31 AM
+-- Server version: 10.1.40-MariaDB
+-- PHP Version: 7.3.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,22 +25,20 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin`
+-- Table structure for table `Borrowed_Item`
 --
 
-CREATE TABLE `admin` (
-  `admin_ID` int(11) NOT NULL,
-  `Name` varchar(50) NOT NULL,
-  `Password` varchar(50) NOT NULL,
-  `Datelogs` datetime NOT NULL
+CREATE TABLE `Borrowed_Item` (
+  `Item_borrowed` varchar(150) NOT NULL,
+  `ID` int(11) NOT NULL,
+  `Borrower_Fname` varchar(250) DEFAULT NULL,
+  `Borrower_Lname` varchar(500) NOT NULL,
+  `Borrower_Idnum` varchar(500) DEFAULT NULL,
+  `date_Borrowed` datetime DEFAULT NULL,
+  `date_Returned` datetime DEFAULT NULL,
+  `Remarks` text NOT NULL,
+  `status` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `admin`
---
-
-INSERT INTO `admin` (`admin_ID`, `Name`, `Password`, `Datelogs`) VALUES
-(1, 'Admin_sports', 'sports1234', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -57,7 +55,7 @@ CREATE TABLE `borrower_table` (
   `Department` varchar(50) DEFAULT NULL,
   `Position` varchar(50) DEFAULT NULL,
   `EmailID` varchar(50) NOT NULL,
-  `borrow` datetime NOT NULL,
+  `borrow_time` datetime NOT NULL,
   `Status` int(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -65,7 +63,7 @@ CREATE TABLE `borrower_table` (
 -- Dumping data for table `borrower_table`
 --
 
-INSERT INTO `borrower_table` (`id`, `id_number`, `FirstName`, `LastName`, `ContactNumber`, `Department`, `Position`, `EmailID`, `borrow`, `Status`) VALUES
+INSERT INTO `borrower_table` (`id`, `id_number`, `FirstName`, `LastName`, `ContactNumber`, `Department`, `Position`, `EmailID`, `borrow_time`, `Status`) VALUES
 (1, '2014', 'shai', 'celer', '2147483647', NULL, NULL, 'shai@gmail.com', '0000-00-00 00:00:00', 1),
 (2, '2014-15358', 'shaira', 'celerian', '2147483647', NULL, NULL, 'shaiar@gmail.com', '0000-00-00 00:00:00', 1),
 (3, '2014-6565685', 'simplyn', 'madula', '2147483647', NULL, NULL, 'madula@gmail.com', '0000-00-00 00:00:00', 1),
@@ -81,17 +79,9 @@ INSERT INTO `borrower_table` (`id`, `id_number`, `FirstName`, `LastName`, `Conta
 (13, '2014-15358', 'low', 'hey', '09610582442', 'School Applied Economics', 'Faculty and Staff', 'low@gmail.com', '0000-00-00 00:00:00', 1),
 (14, '2014-15358', 'madula', 'hey', '09105824422', 'Institute of Computing', 'Student', 'madula@gmail.com', '0000-00-00 00:00:00', 1),
 (15, '2015-15668', 'lala', 'lolo', '09105824423', 'School Applied Economics', 'Faculty and Staff', 'lolo@gmail.com', '0000-00-00 00:00:00', 1),
-(16, '25896-698565656', 'simplyn', 'madula', '09105824223', 'College of Technology', 'Faculty and Staff', 'madulasimplyn@gmail.com', '0000-00-00 00:00:00', 1);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `borrowpage`
---
-
-CREATE TABLE `borrowpage` (
-  `Item_borrowed` varchar(150) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+(16, '25896-698565656', 'simplyn', 'madula', '09105824223', 'College of Technology', 'Faculty and Staff', 'madulasimplyn@gmail.com', '0000-00-00 00:00:00', 1),
+(17, '2014-15365598', 'shaira', 'celerian', '09105824423', 'Institute of Computing', 'Faculty and Staff', 'dsdsdd@gmail.com', '0000-00-00 00:00:00', 1),
+(18, '2014-15358', 'cccc', 'dddd', '09105824423', 'College of Engineering', 'Student', 'cc@gmail.com', '0000-00-00 00:00:00', 1);
 
 -- --------------------------------------------------------
 
@@ -101,9 +91,32 @@ CREATE TABLE `borrowpage` (
 
 CREATE TABLE `equipment` (
   `id` int(11) NOT NULL,
-  `Type` varchar(100) NOT NULL,
-  `Description` text NOT NULL
+  `ItemCode` varchar(50) DEFAULT NULL,
+  `ItemName` varchar(500) DEFAULT NULL,
+  `Description` text,
+  `date_added` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `date_updated` timestamp NULL DEFAULT NULL,
+  `Category` varchar(50) DEFAULT NULL,
+  `quantity` int(100) DEFAULT NULL,
+  `status` int(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `equipment`
+--
+
+INSERT INTO `equipment` (`id`, `ItemCode`, `ItemName`, `Description`, `date_added`, `date_updated`, `Category`, `quantity`, `status`) VALUES
+(3, NULL, 'fff', 'ffffffffffffffffffff', '2019-07-09 02:59:32', '2019-07-09 02:59:32', 'Sports Equipment', 9, 1),
+(4, '5858', 'dddddd', 'deeeeeeeeeeeeeeeeeeeeeeee', '2019-07-09 03:22:06', '2019-07-09 03:22:06', 'Sports Equipment', 58, 1),
+(5, '5858', 'dddddd', 'deeeeeeeeeeeeeeeeeeeeeeee', '2019-07-09 03:23:13', '2019-07-09 03:23:13', 'Sports Equipment', 58, 1),
+(6, '582', 'dddd', 'dfedfdfggf', '2019-07-10 05:51:28', '2019-07-10 05:51:28', 'Gym Equipment', 58, 1),
+(7, '582', 'dddd', 'dfedfdfggf', '2019-07-10 06:00:58', NULL, 'Gym Equipment', 58, 1),
+(8, '65665', 'sha', 'dsfdfdffdfdf', '2019-07-10 06:09:56', NULL, 'Sports Equipment', 58, 1),
+(9, '528', 'xxxxxx', 'dcdvdvv', '2019-07-10 06:15:15', NULL, 'Gym Equipment', 58, 1),
+(10, '528', 'xxxxxx', 'dcdvdvv', '2019-07-10 06:21:46', NULL, 'Gym Equipment', 58, 1),
+(11, '58', 'zcxc', 'cxcxcxcxcxcxcxc', '2019-07-10 06:28:01', NULL, 'Gym Equipment', 100, 1),
+(12, '58', 'ring', 'dsdsdsdsdsdsdsd', '2019-07-10 06:32:20', NULL, 'Gym Equipment', 258, 1),
+(13, '582', 'hey', 'wdsdsdssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss', '2019-07-11 00:44:08', NULL, 'Gym Equipment', 25, 1);
 
 -- --------------------------------------------------------
 
@@ -117,34 +130,36 @@ CREATE TABLE `staff_table` (
   `LastName` varchar(100) DEFAULT NULL,
   `Email` varchar(100) DEFAULT NULL,
   `Password` varchar(100) DEFAULT NULL,
-  `ContactNumber` int(50) NOT NULL
+  `ContactNumber` int(50) NOT NULL,
+  `date_added` datetime NOT NULL,
+  `date_updated` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `staff_table`
 --
 
-INSERT INTO `staff_table` (`id`, `FirstName`, `LastName`, `Email`, `Password`, `ContactNumber`) VALUES
-(1, 'shaira', 'celerian', 'shai@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 0),
-(2, 'simplyn', 'madula', 'madula@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 0),
-(3, NULL, NULL, NULL, 'd41d8cd98f00b204e9800998ecf8427e', 0),
-(4, NULL, NULL, NULL, 'd41d8cd98f00b204e9800998ecf8427e', 0),
-(5, NULL, NULL, NULL, 'd41d8cd98f00b204e9800998ecf8427e', 0),
-(6, NULL, NULL, NULL, 'd41d8cd98f00b204e9800998ecf8427e', 0),
-(7, NULL, NULL, NULL, 'd41d8cd98f00b204e9800998ecf8427e', 0),
-(8, NULL, NULL, NULL, 'd41d8cd98f00b204e9800998ecf8427e', 0),
-(9, NULL, NULL, NULL, 'd41d8cd98f00b204e9800998ecf8427e', 0),
-(10, 'lala', 'lolo', 'lolo@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 0);
+INSERT INTO `staff_table` (`id`, `FirstName`, `LastName`, `Email`, `Password`, `ContactNumber`, `date_added`, `date_updated`) VALUES
+(1, 'shaira', 'celerian', 'shai@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 0, '2019-07-04 08:59:45', '2019-07-04 09:00:31'),
+(2, 'simplyn', 'madula', 'madula@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 0, '2019-07-04 08:59:45', '2019-07-04 09:00:31'),
+(3, NULL, NULL, NULL, 'd41d8cd98f00b204e9800998ecf8427e', 0, '2019-07-04 08:59:45', '2019-07-04 09:00:31'),
+(4, NULL, NULL, NULL, 'd41d8cd98f00b204e9800998ecf8427e', 0, '2019-07-04 08:59:45', '2019-07-04 09:00:31'),
+(5, NULL, NULL, NULL, 'd41d8cd98f00b204e9800998ecf8427e', 0, '2019-07-04 08:59:45', '2019-07-04 09:00:31'),
+(6, NULL, NULL, NULL, 'd41d8cd98f00b204e9800998ecf8427e', 0, '2019-07-04 08:59:45', '2019-07-04 09:00:31'),
+(7, NULL, NULL, NULL, 'd41d8cd98f00b204e9800998ecf8427e', 0, '2019-07-04 08:59:45', '2019-07-04 09:00:31'),
+(8, NULL, NULL, NULL, 'd41d8cd98f00b204e9800998ecf8427e', 0, '2019-07-04 08:59:45', '2019-07-04 09:00:31'),
+(9, NULL, NULL, NULL, 'd41d8cd98f00b204e9800998ecf8427e', 0, '2019-07-04 08:59:45', '2019-07-04 09:00:31'),
+(10, 'lala', 'lolo', 'lolo@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 0, '2019-07-04 08:59:45', '2019-07-04 09:00:31');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `admin`
+-- Indexes for table `Borrowed_Item`
 --
-ALTER TABLE `admin`
-  ADD PRIMARY KEY (`admin_ID`);
+ALTER TABLE `Borrowed_Item`
+  ADD PRIMARY KEY (`ID`);
 
 --
 -- Indexes for table `borrower_table`
@@ -169,22 +184,22 @@ ALTER TABLE `staff_table`
 --
 
 --
--- AUTO_INCREMENT for table `admin`
+-- AUTO_INCREMENT for table `Borrowed_Item`
 --
-ALTER TABLE `admin`
-  MODIFY `admin_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+ALTER TABLE `Borrowed_Item`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `borrower_table`
 --
 ALTER TABLE `borrower_table`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `equipment`
 --
 ALTER TABLE `equipment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `staff_table`

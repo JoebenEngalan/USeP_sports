@@ -1,53 +1,17 @@
 <?php 
 session_start();
-include('includes/config.php');
-error_reporting(0);
-?>
-
-<?php
-if(isset($_POST['login']))
-{
-$username=$_POST['email'];
-$password=md5($_POST['password']);
-$sql ="SELECT Email, Password FROM staff_table WHERE Email=:username and Password=:password";
-$query= $dbh -> prepare($sql);
-$query-> bindParam(':username', $username, PDO::PARAM_STR);
-$query-> bindParam(':password', $password, PDO::PARAM_STR);
-$query-> execute();
-$results=$query->fetchAll(PDO::FETCH_OBJ);
-if($query->rowCount() > 0)
-{
-$_SESSION['login']=$_POST['email'];
-echo "<script type='text/javascript'> document.location = 'mainpage.php'; </script>";
-} else{
-  echo "<script>alert('Invalid Details');</script>";
-
-}
-
-}
-
+if(isset($_SESSION['id']))
+  {
+  header('location:index.php');
+  session_destroy();
+  }
+  include ('templates/login.php');
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-
-  <title>SB Admin - Login</title>
-
-  <!-- Custom fonts for this template-->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-
-  <!-- Custom styles for this template-->
-  <link href="css/sb-admin.css" rel="stylesheet">
-
-</head>
+<?php include('templates/head.php');?>
 
 <body class="bg-dark">
 

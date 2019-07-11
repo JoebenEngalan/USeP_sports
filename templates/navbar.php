@@ -24,8 +24,7 @@
           <i class="fas fa-user-circle fa-fw"></i>
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-          <a class="dropdown-item" href="#">Settings</a>
-          <a class="dropdown-item" href="#">Activity Log</a>
+          <a class="dropdown-item" name="session"><?php echo htmlentities($_SESSION['id']);?></a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal" href="logout.php">Logout</a>
         </div>
@@ -47,7 +46,7 @@
       <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
       <div class="modal-footer">
         <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-        <a class="btn btn-primary" href="index.php">Logout</a>
+        <a class="btn btn-primary" href="logout.php">Logout</a>
       </div>
     </div>
   </div>

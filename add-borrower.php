@@ -1,47 +1,10 @@
 <?php
 session_start();
-error_reporting(0);
-include('includes/config.php');
-if(strlen($_SESSION['login'])==0)
-  { 
-header('location:login.php');
-}else{
+if(!isset($_SESSION["id"])) 
+{header('location:index.php');
+  include('location:logout.php');}
+?> 
 
-if(isset($_POST['submit']))
-{
-$idnum=$_POST['idnumber'];
-$fname=$_POST['firstname'];
-$lname=$_POST['lastname'];
-$contact=$_POST['contactnum'];
-$depart=$_POST['department'];
-$pos=$_POST['position'];
-$email=$_POST['emailid'];
-$status=1;
-
-$sql= "INSERT INTO borrower_table (id_number,FirstName,LastName,ContactNumber,Department,Position,EmailID,Status) 
-        VALUES(:idnum,:fname,:lname,:contact,:depart,:pos,:email,:status)";
-
-$query = $dbh->prepare($sql);
-$query->bindParam(':idnum',$idnum,PDO::PARAM_STR);
-$query->bindParam(':fname',$fname,PDO::PARAM_STR);
-$query->bindParam(':lname',$lname,PDO::PARAM_STR);
-$query->bindParam(':contact',$contact,PDO::PARAM_STR);
-$query->bindParam(':depart',$depart,PDO::PARAM_STR);
-$query->bindParam(':pos',$pos,PDO::PARAM_STR);
-$query->bindParam(':email',$email,PDO::PARAM_STR);
-$query->bindParam(':status',$status,PDO::PARAM_STR);
-$query->execute();
-$lastInsertId = $dbh->lastInsertId();
-if($lastInsertId)
-{
-echo "<script>alert('Registration successfull. Now you can login');</script>";
-}
-else 
-{
-echo "<script>alert('Something went wrong. Please try again');</script>";
-}
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -78,32 +41,32 @@ echo "<script>alert('Something went wrong. Please try again');</script>";
           <!-- IDNumber input -->
           <div class="form-group col-md-14">
             <label for="inputIDnum">ID Number</label>
-            <input type="text" class="form-control" name="idnumber" id="inputIDnum" placeholder="2XXX-XXXXX">
+            <input type="text" class="form-control" name="idnumber" id="inputIDnum" placeholder="2XXX-XXXXX" required>
           </div>
           <!--Grid row-->
           <div class="form-row">
             <!-- LastName input -->
             <div class="form-group col-md-6">
               <label for="inputLname">Last Name</label>
-              <input type="text" class="form-control" name="lastname" id="inputLname" placeholder="Last Name">
+              <input type="text" class="form-control" name="lastname" id="inputLname" placeholder="Last Name"required>
             </div>
             <!-- FirstName input -->
             <div class="form-group col-md-6">
               <label for="inputFname">First Name</label>
-              <input type="text" class="form-control" id="inputFname" name="firstname" placeholder="First Name">
+              <input type="text" class="form-control" id="inputFname" name="firstname" placeholder="First Name" required>
             </div>
           </div>
           <!-- ContactNum input -->
           <div class="form-group col-md-14">
             <label for="inputContactnum">Contact Number</label>
-            <input type="text" class="form-control" id="inputContactnum" name="contactnum" placeholder="(09XXXXXXXXX)" maxlength= "11" >
+            <input type="text" class="form-control" id="inputContactnum" name="contactnum" placeholder="(09XXXXXXXXX)" maxlength= "11" required >
           </div>
           <!--Grid row-->
           <div class="form-row">
             <!-- Dept/College input -->
             <div class="form-group col-md-6">
               <label for="inputDept_Coll">Department/College</label>
-              <select type="text" name="department" class="form-control" id="inputDept_Coll">
+              <select type="text" name="department" class="form-control" id="inputDept_Coll" required>
               <option disabled selected>Department/College</option>
               <option> College of Education</option>
               <option> College of Engineering</option>
@@ -117,19 +80,16 @@ echo "<script>alert('Something went wrong. Please try again');</script>";
             <!-- Position input -->
             <div class="form-group col-md-6">
               <label for="inputPosit" >Position</label>
-              <select type="text" name="position" class="form-control" id="inputPosit">
+              <select type="text" name="position" class="form-control" id="inputPosit" required>
               <option>Student</option>
               <option>Faculty and Staff</option>
               <select>
             </div>
           </div>
-
-
           <div class="form-group col-md-14">
             <label for="inputContactnum">Email</label>
-            <input type="text" class="form-control" name= "emailid" id="inputContactnum" placeholder="juandelacruz@gmail.com">
-          </div>  
-
+            <input type="text" class="form-control" name= "emailid" id="inputContactnum" placeholder="Email@gmail.com" required>
+          </div> 
 
           <div class="btn-group">
           <input type="submit" name="submit" class="btn btn-primary btn-block" value="Submit" style="cursor:pointer">
@@ -138,9 +98,10 @@ echo "<script>alert('Something went wrong. Please try again');</script>";
 
         </form>
         </div>
-
-        <!--Borrowing form grid-->
     
+      </div><!-- /.container-fluid -->
+    
+    </div><!-- /.content-wrapper -->
     <!--Footer-->    
     <?php include('templates/footer.php');?>
   </div><!-- /#wrapper -->
@@ -153,4 +114,40 @@ echo "<script>alert('Something went wrong. Please try again');</script>";
 </body>
 
 </html>
-<?php } ?>
+
+<?php
+if(isset($_POST['submit']))
+{
+$idnum=$_POST['idnumber'];
+$fname=$_POST['firstname'];
+$lname=$_POST['lastname'];
+$contact=$_POST['contactnum'];
+$depart=$_POST['department'];
+$pos=$_POST['position'];
+$email=$_POST['emailid'];
+$status=1;
+
+$sql= "INSERT INTO borrower_table (id_number,FirstName,LastName,ContactNumber,Department,Position,EmailID,Status) 
+        VALUES(:idnum,:fname,:lname,:contact,:depart,:pos,:email,:status)";
+
+$query = $dbh->prepare($sql);
+$query->bindParam(':idnum',$idnum,PDO::PARAM_STR);
+$query->bindParam(':fname',$fname,PDO::PARAM_STR);
+$query->bindParam(':lname',$lname,PDO::PARAM_STR);
+$query->bindParam(':contact',$contact,PDO::PARAM_STR);
+$query->bindParam(':depart',$depart,PDO::PARAM_STR);
+$query->bindParam(':pos',$pos,PDO::PARAM_STR);
+$query->bindParam(':email',$email,PDO::PARAM_STR);
+$query->bindParam(':status',$status,PDO::PARAM_STR);
+$query->execute();
+$lastInsertId = $dbh->lastInsertId();
+if($lastInsertId)
+{
+echo "<script type= 'text/javascript'>alert('New Record Inserted Successfully');</script>";
+}
+else 
+{
+echo "<script type= 'text/javascript'>alert('Data not successfully Inserted.');</script>";
+}
+}
+?>

@@ -1,12 +1,10 @@
 <?php
-session_start();
-error_reporting(0);
 include('includes/config.php');
-if(strlen($_SESSION['login'])==0)
-{	
-header('location:index.php');
-}
-else{
+session_start();
+if(!isset($_SESSION["id"])) 
+{header('location:index.php');
+  include('location:logout.php');}
+
 ?>
 
 <!DOCTYPE html>
@@ -45,23 +43,21 @@ else{
                   <thead>
 										<tr>
 										<th>#</th>
-												<th>ID Number</th>
-											<th>Last Name</th>
-											<th>First Name</th>
+										<th>ID Number</th>
+										<th>Last Name</th>
+										<th>First Name</th>
 										<th>Contact Number</th>
 										<th>Department</th>
 										<th>Position</th>
-										<th>Email</th>
-						
-										
+										<th>Email</th>										
 										</tr>
 									</thead>
 									<tfoot>
 										<tr>
 										<th>#</th>
-                                        <th>ID Number</th>
-											<th>Last Name</th>
-											<th>First Name</th>
+                    <th>ID Number</th>
+										<th>Last Name</th>
+										<th>First Name</th>
 										<th>Contact Number</th>
 										<th>Department</th>
 										<th>Position</th>
@@ -70,22 +66,21 @@ else{
 										</tr>
 									</tfoot>
 									<tbody>
-
 									<?php $sql = "SELECT * from  borrower_table ";
-$query = $dbh -> prepare($sql);
-$query->execute();
-$results=$query->fetchAll(PDO::FETCH_OBJ);
-$cnt=1;
-if($query->rowCount() > 0)
-{
-foreach($results as $result)
-{				?>	
+                      $query = $dbh -> prepare($sql);
+                        $query->execute();
+                        $results=$query->fetchAll(PDO::FETCH_OBJ);
+                        $cnt=1;
+                    if($query->rowCount() > 0)
+                      {foreach($results as $result)
+                        {				
+                    ?>	
 										<tr>
 											<td><?php echo htmlentities($cnt);?></td>
 											<td><?php echo htmlentities($result->id_number);?></td>
 											<td><?php echo htmlentities($result->FirstName);?></td>
 											<td><?php echo htmlentities($result->LastName);?></td>
-	                                        <td><?php echo htmlentities($result->ContactNumber);?></td>
+	                    <td><?php echo htmlentities($result->ContactNumber);?></td>
 											<td><?php echo htmlentities($result->Department);?></td>
 											<td><?php echo htmlentities($result->Position);?></td>
 											<td><?php echo htmlentities($result->EmailID);?></td>
@@ -102,6 +97,66 @@ foreach($results as $result)
         <p class="small text-center text-muted my-5">
           <em>test</em>
         </p>
+        <!--DataTables Borrowers-->
+        <div class="card mb-4">
+              <div class="card-header">
+                <i class="fas fa-table"></i>
+                Data Table Borrowers</div>
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                  <tr>
+                    <th>Item Code</th>
+                    <th>Item Name</th>
+                    <th>Quantity</th>
+                    <th>Category</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tfoot>
+                  <tr>
+                    <th>Item Code</th>
+                    <th>Item Name</th>
+                    <th>Quantity</th>
+                    <th>Category</th>
+                    <th>Description</th>
+                  </tr>
+                </tfoot>
+                <tbody>
+
+                <?php $sql = "SELECT * from  equipment ";
+                      $query = $dbh -> prepare($sql);
+                        $query->execute();
+                        $results=$query->fetchAll(PDO::FETCH_OBJ);
+                        $cnt=1;
+                    if($query->rowCount() > 0)
+                      {
+                        foreach($results as $result)
+                      {				
+                        ?>
+                  <tr>
+                  <td><?php echo htmlentities($cnt);?></td>
+                  <td><?php echo htmlentities($result->ItemName);?></td>
+                  <td><?php echo htmlentities($result->quantity);?></td>
+                  <td><?php echo htmlentities($result->Category);?></td>
+                  <td><?php echo htmlentities($result->Description);?></td>
+										</tr>
+										<?php $cnt=$cnt+1; }} ?>
+										
+									</tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+            </div>
+
+
+
+
+
+
+
 
     </div><!-- /.container-fluid -->
   </div><!-- /.content-wrapper -->
@@ -131,4 +186,4 @@ foreach($results as $result)
 </body>
 
 </html>
-<?php } ?>
+
