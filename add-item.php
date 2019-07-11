@@ -76,7 +76,7 @@ if(!isset($_SESSION["id"]))
 
           <!-- Grid row  Buttons -->          
           <div class="btn-group">
-            <?php include('additem.php');?>
+            <?php include('templates/additem.php');?>
             <button type="submit"  name="submit"  value="Submit"  class="btn btn-primary btn-lg">Add item</button>
             <button type="clear" class="btn btn-primary btn-lg">Clear</button>
           </div>
