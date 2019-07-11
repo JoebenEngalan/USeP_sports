@@ -74,12 +74,12 @@ if(!isset($_SESSION["id"]))
           <!--Grid row-->
           <!-- InputDescription input -->
           <div class="form-group col-md-14">
-            <?php include('templates/additem.php');?>
             <label for="InputDescription">Description</label>
             <textarea class="form-control" name="description" rows="5" id="InputDescription" resize="none" placeholder="Description Here" c></textarea>
           </div>
           <!-- Grid row  Buttons -->          
           <div class="btn-group">
+            <?php include('templates/additem.php');?>
             <button type="submit"  name="submit"  value="Submit"  class="btn btn-primary btn-lg">Add item</button>
             <button type="clear" class="btn btn-primary btn-lg">Clear</button>
           </div>
