@@ -83,6 +83,7 @@ if(!isset($_SESSION["id"]))
             <div class="form-group col-md-6">
               <label for="inputPosit" >Position</label>
               <select type="text" name="position" class="form-control" id="inputPosit" required>
+              <option disabled selected>Position</option>
               <option>Student</option>
               <option>Faculty and Staff</option>
               <select>
