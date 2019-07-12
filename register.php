@@ -59,7 +59,7 @@ error_reporting(0);
 
         <div class="text-center">
           <a class="d-block small mt-3" href="index.php">Login Page</a>
-          <a class="d-block small" href="forgot-password.html">Forgot Password?</a>
+          <a class="d-block small" href="forgot-password.php">Forgot Password?</a>
         </div>
       </div>
     </div>
