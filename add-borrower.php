@@ -43,25 +43,25 @@ if(!isset($_SESSION["id"]))
           <!-- IDNumber input -->
           <div class="form-group col-md-14">
             <label for="inputIDnum">ID Number</label>
-            <input type="text" class="form-control" name="idnumber" id="inputIDnum" placeholder="2XXX-XXXXX" required>
+            <input type="text" class="form-control" name="idnumber" id="inputIDnum" placeholder="2XXX-XXXXX"  required>
           </div>
           <!--Grid row-->
           <div class="form-row">
             <!-- LastName input -->
             <div class="form-group col-md-6">
               <label for="inputLname">Last Name</label>
-              <input type="text" class="form-control" name="lastname" id="inputLname" placeholder="Last Name"required>
+              <input type="text" class="form-control" name="lastname" id="inputLname" placeholder="Last Name" pattern="/^[a-z ,.'-]+$/i" required>
             </div>
             <!-- FirstName input -->
             <div class="form-group col-md-6">
               <label for="inputFname">First Name</label>
-              <input type="text" class="form-control" id="inputFname" name="firstname" placeholder="First Name" required>
+              <input type="text" class="form-control" id="inputFname" name="firstname" placeholder="First Name" pattern="/^[a-z ,.'-]+$/i" required>
             </div>
           </div>
           <!-- ContactNum input -->
           <div class="form-group col-md-14">
             <label for="inputContactnum">Contact Number</label>
-            <input type="text" class="form-control" id="inputContactnum" name="contactnum" placeholder="(09XXXXXXXXX)" maxlength= "11" required >
+            <input type="text" class="form-control" id="inputContactnum" name="contactnum" placeholder="(09XXXXXXXXX)" pattern="^(09|\+639)\d{9}$" maxlength= "11" required>
           </div>
           <!--Grid row-->
           <div class="form-row">
