@@ -53,7 +53,7 @@ error_reporting(0);
               </div>
             </div>
           </div>
-          <?php include('tempalate/registeruser.php')?>
+          <?php include('templates/registeruser.php')?>
           <input type="submit" name="signup" class="btn btn-primary btn-block" value="sign up" style="cursor:pointer">
         </form>
 
