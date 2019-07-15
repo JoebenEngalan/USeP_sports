@@ -1,9 +1,19 @@
 <?php
+//dont touch this  
 session_start();
 if(!isset($_SESSION["id"])) 
 {header('location:index.php');
-  include('location:logout.php');}
-?> 
+  include('location:logout.php');
+  exit();
+  }
+?>
+<!--no form resubmision javascript dont touch-->
+<script>
+  if ( window.history.replaceState ) {
+    window.history.replaceState( null, null, window.location.href );
+  }
+</script>
+
 
 <?php
 //error_reporting(0);

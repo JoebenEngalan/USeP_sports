@@ -1,4 +1,5 @@
 <?php
+//dont touch this  
 session_start();
 if(!isset($_SESSION["id"])) 
 {header('location:index.php');
@@ -6,6 +7,12 @@ if(!isset($_SESSION["id"]))
   exit();
   }
 ?>
+<!--no form resubmision javascript dont touch-->
+<script>
+  if ( window.history.replaceState ) {
+    window.history.replaceState( null, null, window.location.href );
+  }
+</script>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -97,13 +104,6 @@ if(!isset($_SESSION["id"]))
   
   <!--scripts-->
   <?php include('templates/scripts.php')?>
-
-  <!--no form resubmision javascript-->
-  <script>
-  if ( window.history.replaceState ) {
-    window.history.replaceState( null, null, window.location.href );
-  }
-  </script>
 
 </body>
 
