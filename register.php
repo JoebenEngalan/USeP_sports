@@ -41,20 +41,22 @@ error_reporting(0);
             <div class="form-row">
               <div class="col-md-6">
                 <div class="form-label-group">
-                  <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required="required">
-                  <label for="inputPassword">Password</label>
+                  <input type="password" id="password" name="password" class="form-control" onchange='check_pass();' placeholder="Password"  required="required">
+                  <label for="password">Password</label>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-label-group">
-                  <input type="password" id="confirmPassword" name="confirmpassword" class="form-control" placeholder="Confirm password" required="required">
-                  <label for="confirmPassword">Confirm password</label>
+                  <input type="password" id="confirmpassword" name="confirmpassword" class="form-control" onchange='check_pass();' placeholder="Confirm password" required="required">
+                  <label for="confirmpassword" >Confirm password</label>
+                  <span id='message'></span>
                 </div>
               </div>
             </div>
           </div>
+          
+          <input type="submit" name="signup" id="signup" class="btn btn-primary btn-block" value="Sign Up" style="cursor:pointer" disabled>
           <?php include('templates/registeruser.php')?>
-          <input type="submit" name="signup" class="btn btn-primary btn-block" value="sign up" style="cursor:pointer">
         </form>
 
         <div class="text-center">
@@ -77,3 +79,14 @@ error_reporting(0);
 </body>
 
 </html>
+
+<script>
+  function check_pass() {
+    if (document.getElementById('password').value ==
+            document.getElementById('confirmpassword').value) {
+        document.getElementById('signup').disabled = false;
+    } else {
+        document.getElementById('signup').disabled = true;
+    }
+  }
+</script>
