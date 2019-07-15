@@ -67,6 +67,12 @@ error_reporting(0);
 
   <!--scripts-->
   <?php include('templates/scripts.php')?>
+  <!--no form resubmision-->
+  <script>
+  if ( window.history.replaceState ) {
+    window.history.replaceState( null, null, window.location.href );
+  }
+  </script>
 
 </body>
 

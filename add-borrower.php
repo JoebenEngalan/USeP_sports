@@ -50,12 +50,12 @@ if(!isset($_SESSION["id"]))
             <!-- LastName input -->
             <div class="form-group col-md-6">
               <label for="inputLname">Last Name</label>
-              <input type="text" class="form-control" name="lastname" id="inputLname" placeholder="Last Name" pattern="/^[a-z ,.'-]+$/i" required>
+              <input type="text" class="form-control" name="lastname" id="inputLname" placeholder="Last Name" required>
             </div>
             <!-- FirstName input -->
             <div class="form-group col-md-6">
               <label for="inputFname">First Name</label>
-              <input type="text" class="form-control" id="inputFname" name="firstname" placeholder="First Name" pattern="/^[a-z ,.'-]+$/i" required>
+              <input type="text" class="form-control" id="inputFname" name="firstname" placeholder="First Name" required>
             </div>
           </div>
           <!-- ContactNum input -->
@@ -114,6 +114,12 @@ if(!isset($_SESSION["id"]))
 
   <!--scripts-->
   <?php include('templates/scripts.php')?>
+
+  <script>
+  if ( window.history.replaceState ) {
+    window.history.replaceState( null, null, window.location.href );
+  }
+  </script>
 
 </body>
 

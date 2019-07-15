@@ -28,6 +28,7 @@ if(isset($_POST['submit']))
   if($lastInsertId)
     {
     echo "<script>alert('You successfully added an item!');</script>";
+    
     }
     else 
     {
