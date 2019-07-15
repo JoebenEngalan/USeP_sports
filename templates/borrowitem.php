@@ -1,37 +1,33 @@
 <?php
 include('includes/config.php');
+
+//error_reporting(0);
 if(isset($_POST['submit']))
 {
-$idnum=$_POST['idnumber'];
-$fname=$_POST['firstname'];
-$lname=$_POST['lastname'];
-$contact=$_POST['contactnum'];
-$depart=$_POST['department'];
-$pos=$_POST['position'];
-$email=$_POST['emailid'];
+$item=$_POST['item'];
+$borrower_Idnum=$_POST["borrower_IDnum"];
+$date_borrow=$_POST['date_borrow'];
+$remarks=$_POST['remarks'];
 $status=1;
 
-$sql = "INSERT INTO borrowed_item (id_number,FirstName,LastName,ContactNumber,Department,Position,EmailID,Status) 
-        VALUES(:idnum,:fname,:lname,:contact,:depart,:pos,:email,:status)";
-
+$sql= "INSERT INTO borrower_table (Item_borrowed,Borrower_Idnum,date_Borrowed,Remarks,status) 
+        VALUES(:item,:borrower_Idnum,:date_borrow,:remarks,:status)";
 $query = $dbh->prepare($sql);
-$query->bindParam(':idnum',$idnum,PDO::PARAM_STR);
-$query->bindParam(':fname',$fname,PDO::PARAM_STR);
-$query->bindParam(':lname',$lname,PDO::PARAM_STR);
-$query->bindParam(':contact',$contact,PDO::PARAM_STR);
-$query->bindParam(':depart',$depart,PDO::PARAM_STR);
-$query->bindParam(':pos',$pos,PDO::PARAM_STR);
-$query->bindParam(':email',$email,PDO::PARAM_STR);
+$query->bindParam(':item',$item,PDO::PARAM_STR);
+$query->bindParam(':borrower_Idnum',$borrower_Idnum,PDO::PARAM_STR);
+$query->bindParam(':date_borrow',$date_borrow,PDO::PARAM_STR);
+$query->bindParam(':remarks',$remarks,PDO::PARAM_STR);
 $query->bindParam(':status',$status,PDO::PARAM_STR);
 $query->execute();
 $lastInsertId = $dbh->lastInsertId();
 if($lastInsertId)
 {
-echo "<script type= 'text/javascript'>alert('New Record Inserted Successfully');</script>";
+echo "<script>alert('Success');</script>";
 }
 else 
 {
-echo "<script type= 'text/javascript'>alert('Data not successfully Inserted.');</script>";
+echo "<script>alert('Something went wrong. Please try again');</script>";
 }
 }
+
 ?>
