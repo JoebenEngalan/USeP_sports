@@ -1,8 +1,9 @@
 <?php
-//dont touch this  
+//dont touch this session  
 session_start();
 if(!isset($_SESSION["id"])) 
-{header('location:index.php');
+  {
+  header('location:index.php');
   include('location:logout.php');
   exit();
   }
@@ -80,6 +81,7 @@ if(!isset($_SESSION["id"]))
           </div>
           <!-- Grid row  Buttons -->          
           <div class="btn-group">
+            <!-- database command add item-->
             <?php include('templates/additem.php');?>
             <button type="submit"  name="submit"  value="Submit"  class="btn btn-primary btn-lg">Add item</button>
             <button type="clear" class="btn btn-primary btn-lg">Clear</button>

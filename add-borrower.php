@@ -1,8 +1,9 @@
 <?php
-//dont touch this  
+//dont touch this session  
 session_start();
 if(!isset($_SESSION["id"])) 
-{header('location:index.php');
+  {
+  header('location:index.php');
   include('location:logout.php');
   exit();
   }
@@ -90,12 +91,14 @@ if(!isset($_SESSION["id"]))
               <select>
             </div>
           </div>
+          <!--email input-->
           <div class="form-group col-md-14">
             <label for="inputContactnum">Email</label>
             <input type="text" class="form-control" name= "emailid" id="inputContactnum" placeholder="Email@gmail.com" required>
           </div> 
 
           <div class="btn-group">
+          <!--database command add borrower-->
           <?php include('templates/addborrower.php');?>
           <input type="submit" name="submit" class="btn btn-primary btn-block" value="Submit" style="cursor:pointer">
             <button type="clear" class="btn btn-primary btn-lg">Clear</button>

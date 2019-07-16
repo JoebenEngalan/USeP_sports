@@ -1,10 +1,12 @@
-<?php 
+<?php
+//dont touch this session
 session_start();
 if(isset($_SESSION['id']))
   {
   header('location:index.php');
   session_destroy();
   }
+  //database for log in user
   include ('templates/login.php');
 ?>
 
@@ -32,7 +34,7 @@ if(isset($_SESSION['id']))
               <label for="inputPassword">Password</label>
             </div>
           </div>
-          <input type="submit" name="login" class="btn btn-primary btn-block" val,ue="sign up" style="cursor:pointer">
+          <input type="submit" name="login" class="btn btn-primary btn-block" value="Sign In" style="cursor:pointer">
         </form>
         <div class="text-center">
           <a class="d-block small mt-3" href="register.php">Register an Account</a>
@@ -47,3 +49,10 @@ if(isset($_SESSION['id']))
 </body>
 
 </html>
+
+<!--no form resubmision javascript dont touch-->
+<script>
+  if ( window.history.replaceState ) {
+    window.history.replaceState( null, null, window.location.href );
+  }
+</script>
