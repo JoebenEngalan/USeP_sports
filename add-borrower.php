@@ -45,7 +45,7 @@ if(!isset($_SESSION["id"]))
           <!-- IDNumber input -->
           <div class="form-group col-md-14">
             <label for="inputIDnum">ID Number</label>
-            <input type="text" class="form-control" name="idnumber" id="inputIDnum" placeholder="2XXX-XXXXX"  required>
+            <input type="text" class="form-control" name="idnumber" id="inputIDnum" placeholder="2XXX-XXXXX" maxlength= "10" required>
           </div>
           <!--Grid row-->
           <div class="form-row">
