@@ -1,4 +1,5 @@
 <?php
+//databese login page for the system
 include('includes/config.php');
 if(isset($_POST['login']))
 {

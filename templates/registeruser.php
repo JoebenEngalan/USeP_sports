@@ -1,4 +1,5 @@
 <?php
+//database of the sign up of the system
 include('includes/config.php');
 if(isset($_POST['signup']))
 {
