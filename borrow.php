@@ -260,8 +260,6 @@ echo "<script>alert('Something went wrong. Please try again');</script>";
             </div>
           </div>
 
-        
-
           <div class="form-row">
             <div class="form-group col-md-10">
             <select type="text" class="form-control" name="item5" id="inputDept_Coll">
