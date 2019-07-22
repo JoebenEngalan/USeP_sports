@@ -26,11 +26,14 @@ $quantity5=$_POST['quantity5'];
 $Btime=$_POST['Btime'];
 $status=1;
 
-$sql= "INSERT INTO Borrowed_Item (Item1,Item2,Item3,Item4,Item5,Remarks,quantity1,quantity2,quantity3,quantity4,quantity5,Borrowed_time,status) 
-        VALUES(:item1,:item2,:item3,:item4,:item5,:remarks,:quantity1,:quantity2,:quantity3,:quantity4,:quantity5,:Btime,:status)";
+$sql= "INSERT INTO Borrowed_Item (Item1,Remarks,quantity1,Borrowed_time,status) 
+        VALUES(:item1,:remarks,:quantity1,:Btime,:status), 
+              (:item2,:remarks,:quantity2,:Btime,:status),
+              (:item3,:remarks,:quantity3,:Btime,:status),
+              (:item4,:remarks,:quantity4,:Btime,:status),
+              (:item5,:remarks,:quantity5,:Btime,:status)";
 
 $query = $dbh->prepare($sql);
-
 
 $query->bindParam(':item1',$item1,PDO::PARAM_STR);
 $query->bindParam(':item2',$item2,PDO::PARAM_STR);
@@ -49,7 +52,9 @@ $query->execute();
 $lastInsertId = $dbh->lastInsertId();
 if($lastInsertId)
 {
-echo "<script>alert('Success');</script>";
+echo "<script>alert('Success');
+
+</script>";
 }
 else 
 {
@@ -132,7 +137,7 @@ echo "<script>alert('Something went wrong. Please try again');</script>";
         </div>
 
         <div class="form-row">
-            <div class="form-group col-md-4">
+            <div class="form-group col-md-10">
             <select type="text" class="form-control" name="item1" id="inputDept_Coll">
          
          <!-- select items from the database    -->
@@ -162,10 +167,8 @@ echo "<script>alert('Something went wrong. Please try again');</script>";
             </div>
           </div>
 
-    
-
           <div class="form-row">
-            <div class="form-group col-md-4">
+            <div class="form-group col-md-10">
             <select type="text" class="form-control" name="item2" id="inputDept_Coll">
          
          <!-- select items from the database    -->
@@ -196,7 +199,7 @@ echo "<script>alert('Something went wrong. Please try again');</script>";
           </div>
 
           <div class="form-row">
-            <div class="form-group col-md-4">
+            <div class="form-group col-md-10">
             <select type="text" class="form-control" name="item3" id="inputDept_Coll">
          
          <!-- select items from the database    -->
@@ -227,7 +230,7 @@ echo "<script>alert('Something went wrong. Please try again');</script>";
           </div>
 
           <div class="form-row">
-            <div class="form-group col-md-4">
+            <div class="form-group col-md-10">
             <select type="text" class="form-control" name="item4" id="inputDept_Coll">
          
          <!-- select items from the database    -->
@@ -260,10 +263,10 @@ echo "<script>alert('Something went wrong. Please try again');</script>";
         
 
           <div class="form-row">
-            <div class="form-group col-md-4">
+            <div class="form-group col-md-10">
             <select type="text" class="form-control" name="item5" id="inputDept_Coll">
          
-         <!-- select items from the database    -->
+         <!-- select items from the database   -->
             <?php 
             $sql = "SELECT * from  equipment";
 
@@ -292,7 +295,7 @@ echo "<script>alert('Something went wrong. Please try again');</script>";
           </div>
               
         <div class="form-row">
-          <div class="form-group col-md-6">
+          <div class="form-group col-md-12">
               <input type="text" class="form-control" id="inputRemarks" name="remarks" placeholder="Remarks">
           </div>   
         </div>
@@ -330,7 +333,7 @@ function getDate(){
    var day = todaydate.getDate();
    var month = todaydate.getMonth() + 1;
    var year = todaydate.getFullYear();
-   var datestring = year + "/" + month + "/" + day;
+   var datestring = day + "/" + month + "/" + year;
    document.getElementById("Datenow").value = datestring;
   } 
 getDate(); 
