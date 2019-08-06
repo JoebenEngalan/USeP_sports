@@ -64,6 +64,38 @@ echo "<script>alert('Something went wrong. Please try again');</script>";
 
 ?>
 
+
+<?php
+  $id = "";
+  $fname = "";
+  $lname = "";
+  $contactnum = "";
+
+  if(isset($_POST['search']))
+  {
+    $id = $_POST['IDnum'];
+    
+    $sql = " SELECT id_number, FirstName,LastName,ContactNumber
+              FROM borrower_table WHERE id_number = :id";
+    
+    $query = $dbh -> prepare($sql);
+    $query->execute(array(":id"=>$id));
+    $results=$query->fetchAll(PDO::FETCH_OBJ);
+    
+    if ($query->rowCount() > 0)
+    {
+    foreach ($results as $row )
+      {
+        $row['id_number'] -> $id;
+        $row['FirstName'] -> $fname;
+        $row['LastName'] -> $lname;
+        $row['ContactNumber'] -> $contactnum;
+      }
+    }
+  }
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -98,9 +130,9 @@ echo "<script>alert('Something went wrong. Please try again');</script>";
           </div>
             <!--id NUMBER-->
           <div class="input-group mb-3">
-            <input type="text" class="form-control" name="item" id="inputIDnum" placeholder="ID number of Student or Faculty" aria-label="Recipient's username" aria-describedby="button-addon2">
+            <input type="text" class="form-control" name="IDnum" value="<?php echo htmlentities($id);?>" id="inputIDnum" placeholder="ID number of Student or Faculty" aria-label="Recipient's username" aria-describedby="button-addon2">
             <div class="input-group-append">
-              <button class="btn btn-primary" type="button" id="button-search">
+              <button class="btn btn-primary" type="button" name="search" id="button-search">
               <i class="fas fa-search"></i>
               </button>
             </div>
@@ -110,12 +142,12 @@ echo "<script>alert('Something went wrong. Please try again');</script>";
             <!-- LastName input -->
             <div class="form-group col-md-6">
               <label for="inputLname">Last Name</label>
-              <input type="text" class="form-control" name="borrower_IDnum" id="inputLname" placeholder="Last Name" disabled>
+              <input type="text" class="form-control" name="lname" value="<?php echo htmlentities ($lname);?>" id="inputLname"  placeholder="Last Name" >
             </div>
             <!-- FirstName input -->
             <div class="form-group col-md-6">
               <label for="inputFname">First Name</label>
-              <input type="text" class="form-control" id="inputFname" placeholder="First Name" disabled>
+              <input type="text" class="form-control" name="fname" value="<?php echo htmlentities ($fname);?>" id="inputFname"  placeholder="First Name" >
             </div>
         </div>
 
@@ -123,7 +155,7 @@ echo "<script>alert('Something went wrong. Please try again');</script>";
             <!-- ContactNum input -->
             <div class="form-group col-md-6">
               <label for="inputContactnum">Contact Number</label>
-              <input type="text" class="form-control"  id="inputFname" placeholder="+63XXXXXXXXXX" disabled>
+              <input type="text" class="form-control" name="contactnum" value="<?php echo $contactnum;?>" id="inputContactnum" placeholder="+63XXXXXXXXXX" >
             </div>
             <!-- Date input -->
             <div class="form-group col-md-6">
@@ -280,13 +312,16 @@ echo "<script>alert('Something went wrong. Please try again');</script>";
             ?>
             <option value="<?php echo htmlentities($result->ItemName);?>">
                   <?php echo htmlentities($result->ItemName);?> 
-                  
+                  <?php echo htmlentities($result->quantity);?>
                   </option>
                   <?php }} ?> 
             </select>
      
             </div>
-
+            <div class="form-group col-md-2">
+              <input type="text" value="<?php echo htmlentities($result->quantity);?>"
+              class="form-control" name="quantity5" id="inputQuantity" placeholder="Quantity">
+            </div>
             <div class="form-group col-md-2">
               <input type="text" class="form-control" name="quantity5" id="inputQuantity" placeholder="Quantity">
             </div>
