@@ -12,6 +12,10 @@ if(!isset($_SESSION["id"]))
 //error_reporting(0);
 if(isset($_POST['submit']))
 {
+$id_number = "id_number";
+$FirstName = "FirstName";
+$LastName = "LastName";
+$ContactNumber = "ContactNumber";
 $item1=$_POST['item1'];
 $item2=$_POST['item2'];
 $item3=$_POST['item3'];
@@ -26,15 +30,22 @@ $quantity5=$_POST['quantity5'];
 $Btime=$_POST['Btime'];
 $status=1;
 
-$sql= "INSERT INTO Borrowed_Item (Item1,Remarks,quantity1,Borrowed_time,status) 
-        VALUES(:item1,:remarks,:quantity1,:Btime,:status), 
+$sql= "INSERT INTO Borrowed_Item (id_number,FirstName,LastName,ContactNumber,Item1,Remarks,quantity1,Borrowed_time,status) 
+        VALUES(:id_number),
+              (:FirstName),
+              (:LastName),
+              (:ContactNumber),
+              (:item1,:remarks,:quantity1,:Btime,:status), 
               (:item2,:remarks,:quantity2,:Btime,:status),
               (:item3,:remarks,:quantity3,:Btime,:status),
               (:item4,:remarks,:quantity4,:Btime,:status),
               (:item5,:remarks,:quantity5,:Btime,:status)";
 
 $query = $dbh->prepare($sql);
-
+$query->bindParam(':id_number',$id_number,PDO::PARAM_STR);
+$query->bindParam(':FirstName',$FirstName,PDO::PARAM_STR);
+$query->bindParam(':LastName',$LastName,PDO::PARAM_STR);
+$query->bindParam(':ContactNumber',$ContactNumber,PDO::PARAM_STR);
 $query->bindParam(':item1',$item1,PDO::PARAM_STR);
 $query->bindParam(':item2',$item2,PDO::PARAM_STR);
 $query->bindParam(':item3',$item3,PDO::PARAM_STR);
@@ -52,9 +63,7 @@ $query->execute();
 $lastInsertId = $dbh->lastInsertId();
 if($lastInsertId)
 {
-echo "<script>alert('Success');
-
-</script>";
+echo "<script>alert('Success');</script>";
 }
 else 
 {
@@ -66,35 +75,63 @@ echo "<script>alert('Something went wrong. Please try again');</script>";
 
 
 <?php
-  $id = "";
-  $fname = "";
-  $lname = "";
-  $contactnum = "";
 
-  if(isset($_POST['search']))
-  {
-    $id = $_POST['IDnum'];
-    
-    $sql = " SELECT id_number, FirstName,LastName,ContactNumber
-              FROM borrower_table WHERE id_number = :id";
-    
-    $query = $dbh -> prepare($sql);
-    $query->execute(array(":id"=>$id));
-    $results=$query->fetchAll(PDO::FETCH_OBJ);
-    
-    if ($query->rowCount() > 0)
-    {
-    foreach ($results as $row )
-      {
-        $row['id_number'] -> $id;
-        $row['FirstName'] -> $fname;
-        $row['LastName'] -> $lname;
-        $row['ContactNumber'] -> $contactnum;
-      }
+// php search data in mysql database using PDO
+// set data in input text
+
+$id_number = "";
+$FirstName = "";
+$LastName = "";
+$ContactNumber = "";
+
+if(isset($_POST['Find']))
+{
+        // connect to mysql
+    try {
+    $pdoConnect = new PDO("mysql:host=localhost;dbname=borrowingsystem","root","");
+    } catch (PDOException $exc) {
+        echo $exc->getMessage();
+        exit();
     }
-  }
-?>
+    
+    // id to search
+    $id_number = $_POST['id_number'];
 
+    
+     // mysql search query
+    $pdoQuery = "SELECT * FROM borrower_table WHERE id_number = :id_number";
+    
+    $pdoResult = $pdoConnect->prepare($pdoQuery);
+    
+    //set your id to the query id
+    $pdoExec = $pdoResult->execute(array(":id_number"=>$id_number));
+    
+    if($pdoExec)
+    {
+            // if id exist 
+            // show data in inputs
+        if($pdoResult->rowCount()>0)
+        {
+            foreach($pdoResult as $row)
+            {
+                $id_number= $row['id_number'];
+                $FirstName = $row['FirstName'];
+                $LastName = $row['LastName'];
+                $ContactNumber = $row['ContactNumber'];
+            }
+        }
+            // if the id not exist
+            // show a message and clear inputs
+        else{
+            echo 'No Data With This ID';
+        }
+    }else{
+        echo 'ERROR Data Not Inserted';
+    }
+}
+
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -108,6 +145,8 @@ echo "<script>alert('Something went wrong. Please try again');</script>";
   <?php include('templates/navbar.php');?>   
   <!-- Sidebar -->
   <?php include('templates/sidebar.php');?>
+
+
 
     <div id="content-wrapper">
 
@@ -128,26 +167,28 @@ echo "<script>alert('Something went wrong. Please try again');</script>";
           <div class="form-group mb-4">
               <h3 class="display-10">Borrow Page</h3>
           </div>
-            <!--id NUMBER-->
+
+          <!--id NUMBER-->
           <div class="input-group mb-3">
-            <input type="text" class="form-control" name="IDnum" value="<?php echo htmlentities($id);?>" id="inputIDnum" placeholder="ID number of Student or Faculty" aria-label="Recipient's username" aria-describedby="button-addon2">
+            <input type="text" class="form-control" name="id_number" id="search" value="<?php echo $id_number;?>" placeholder="ID number of Student or Faculty" aria-label="Recipient's username" aria-describedby="button-addon2">
             <div class="input-group-append">
-              <button class="btn btn-primary" type="button" name="search" id="button-search">
-              <i class="fas fa-search"></i>
+              <button class="btn btn-primary" type="submit" name="Find" value="Find Data">
+                <i class="fas fa-search"></i>
               </button>
             </div>
-          </div>          
+          </div>     
+
           <!--Grid row fullname-->
           <div class="form-row">
             <!-- LastName input -->
             <div class="form-group col-md-6">
               <label for="inputLname">Last Name</label>
-              <input type="text" class="form-control" name="lname" value="<?php echo htmlentities ($lname);?>" id="inputLname"  placeholder="Last Name" >
+              <input type="text" class="form-control" name="LastName"  id="inputLname"  value="<?php echo $LastName;?>" placeholder="Last Name" >
             </div>
             <!-- FirstName input -->
             <div class="form-group col-md-6">
               <label for="inputFname">First Name</label>
-              <input type="text" class="form-control" name="fname" value="<?php echo htmlentities ($fname);?>" id="inputFname"  placeholder="First Name" >
+              <input type="text" class="form-control" name="FirstName"  id="inputFname" value="<?php echo $FirstName;?>" placeholder="First Name" >
             </div>
         </div>
 
@@ -155,7 +196,7 @@ echo "<script>alert('Something went wrong. Please try again');</script>";
             <!-- ContactNum input -->
             <div class="form-group col-md-6">
               <label for="inputContactnum">Contact Number</label>
-              <input type="text" class="form-control" name="contactnum" value="<?php echo $contactnum;?>" id="inputContactnum" placeholder="+63XXXXXXXXXX" >
+              <input type="text" class="form-control" name="ContactNumber" value="<?php echo $ContactNumber;?>" readonly  id="inputContactnum" placeholder="+63XXXXXXXXXX" >
             </div>
             <!-- Date input -->
             <div class="form-group col-md-6">
@@ -312,16 +353,13 @@ echo "<script>alert('Something went wrong. Please try again');</script>";
             ?>
             <option value="<?php echo htmlentities($result->ItemName);?>">
                   <?php echo htmlentities($result->ItemName);?> 
-                  <?php echo htmlentities($result->quantity);?>
+                  
                   </option>
                   <?php }} ?> 
             </select>
      
             </div>
-            <div class="form-group col-md-2">
-              <input type="text" value="<?php echo htmlentities($result->quantity);?>"
-              class="form-control" name="quantity5" id="inputQuantity" placeholder="Quantity">
-            </div>
+
             <div class="form-group col-md-2">
               <input type="text" class="form-control" name="quantity5" id="inputQuantity" placeholder="Quantity">
             </div>
