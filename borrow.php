@@ -30,13 +30,13 @@ $quantity5=$_POST['quantity5'];
 $Btime=$_POST['Btime'];
 $status=1;
 
-$sql= "INSERT INTO Borrowed_Item (id_number,FirstName,LastName,ContactNumber,Item1,Remarks,quantity1,Borrowed_time,status) 
+$sql= "INSERT INTO Borrowed_Item (id_number,FirstName,LastName,ContactNumber,Item,quantity,Remarks,Borrowed_time,status) 
        VALUES
-        (:id_number,:FirstName + :LastName,:ContactNumber,:item1,:remarks,:quantity1,:Btime,:status), 
-        (:id_number,:FirstName,:LastName,:ContactNumber,:item2,:remarks,:quantity2,:Btime,:status),
-        (:id_number,:FirstName,:LastName,:ContactNumber,:item3,:remarks,:quantity3,:Btime,:status),
-        (:id_number,:FirstName,:LastName,:ContactNumber,:item4,:remarks,:quantity4,:Btime,:status),
-        (:id_number,:FirstName,:LastName,:ContactNumber,:item5,:remarks,:quantity5,:Btime,:status)";
+        (:id_number,:FirstName,:LastName,:ContactNumber,:item1,:quantity1,:remarks,:Btime,:status), 
+        (:id_number,:FirstName,:LastName,:ContactNumber,:item2,:quantity2,:remarks,:Btime,:status),
+        (:id_number,:FirstName,:LastName,:ContactNumber,:item3,:quantity3,:remarks,:Btime,:status),
+        (:id_number,:FirstName,:LastName,:ContactNumber,:item4,:quantity4,:remarks,:Btime,:status),
+        (:id_number,:FirstName,:LastName,:ContactNumber,:item5,:quantity5,:remarks,:Btime,:status)";
 
 $query = $dbh->prepare($sql);
 $query->bindParam(':id_number',$id_number,PDO::PARAM_STR);
@@ -187,7 +187,7 @@ if(isset($_POST['Find']))
         </div>
 
         <div class="form-row">
-            <div class="form-group col-md-10">
+            <div class="form-group col-md-8">
             <select type="text" class="form-control" name="item1" id="inputDept_Coll">
          
          <!-- select items from the database    -->
@@ -213,16 +213,21 @@ if(isset($_POST['Find']))
             </div>
 
             <div class="form-group col-md-2">
+              <input type="text" class="form-control" name="quantity" id="inputQuantity" placeholder="Quantity">
+            </div>
+
+            <div class="form-group col-md-2">
               <input type="text" class="form-control" name="quantity1" id="inputQuantity" placeholder="Quantity">
             </div>
           </div>
 
           <div class="form-row">
-            <div class="form-group col-md-10">
+            <div class="form-group col-md-8">
             <select type="text" class="form-control" name="item2" id="inputDept_Coll">
          
          <!-- select items from the database    -->
             <?php 
+
             $sql = "SELECT * from  equipment";
 
             $query = $dbh -> prepare($sql);
@@ -233,6 +238,7 @@ if(isset($_POST['Find']))
             if($query->rowCount() > 0)
             {
             foreach($results as $result)
+              
             {               
             ?>
             <option value="<?php echo htmlentities($result->ItemName);?>">
@@ -244,12 +250,16 @@ if(isset($_POST['Find']))
             </div>
 
             <div class="form-group col-md-2">
+              <input type="text" class="form-control" name="quantity" id="inputQuantity" placeholder="Quantity">
+            </div>
+
+            <div class="form-group col-md-2">
               <input type="text" class="form-control" name="quantity2" id="inputQuantity" placeholder="Quantity">
             </div>
           </div>
 
           <div class="form-row">
-            <div class="form-group col-md-10">
+            <div class="form-group col-md-8">
             <select type="text" class="form-control" name="item3" id="inputDept_Coll">
          
          <!-- select items from the database    -->
@@ -273,14 +283,16 @@ if(isset($_POST['Find']))
             </select>
      
             </div>
-
+            <div class="form-group col-md-2">
+              <input type="text" class="form-control" name="quantity" id="inputQuantity" placeholder="Quantity">
+            </div>
             <div class="form-group col-md-2">
               <input type="text" class="form-control" name="quantity3" id="inputQuantity" placeholder="Quantity">
             </div>
           </div>
 
           <div class="form-row">
-            <div class="form-group col-md-10">
+            <div class="form-group col-md-8">
             <select type="text" class="form-control" name="item4" id="inputDept_Coll">
          
          <!-- select items from the database    -->
@@ -304,14 +316,16 @@ if(isset($_POST['Find']))
             </select>
      
             </div>
-
+            <div class="form-group col-md-2">
+              <input type="text" class="form-control" name="quantity" id="inputQuantity" placeholder="Quantity">
+            </div>
             <div class="form-group col-md-2">
               <input type="text" class="form-control" name="quantity4" id="inputQuantity" placeholder="Quantity">
             </div>
           </div>
 
           <div class="form-row">
-            <div class="form-group col-md-10">
+            <div class="form-group col-md-8">
             <select type="text" class="form-control" name="item5" id="inputDept_Coll">
          
          <!-- select items from the database   -->
@@ -330,11 +344,14 @@ if(isset($_POST['Find']))
             ?>
             <option value="<?php echo htmlentities($result->ItemName);?>">
                   <?php echo htmlentities($result->ItemName);?> 
-                  
                   </option>
                   <?php }} ?> 
             </select>
      
+            </div>
+            
+            <div class="form-group col-md-2">
+              <input type="text" class="form-control" name="quantity" id="inputQuantity" placeholder="Quantity">
             </div>
 
             <div class="form-group col-md-2">
@@ -374,7 +391,6 @@ if(isset($_POST['Find']))
 </body>
 
 <script>
-
 //date for today
 function getDate(){
    var todaydate = new Date();
@@ -387,12 +403,11 @@ function getDate(){
 getDate(); 
 
 </script>
-
-</html>
-
 <!--no form resubmision javascript dont touch-->
 <script>
   if ( window.history.replaceState ) {
     window.history.replaceState( null, null, window.location.href );
   }
 </script>
+
+</html>
