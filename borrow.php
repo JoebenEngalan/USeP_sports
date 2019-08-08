@@ -15,7 +15,7 @@ if(isset($_POST['submit']))
 $id_number=$_POST["id_number"];
 $FirstName=$_POST["FirstName"];
 $LastName=$_POST["LastName"];
-$ContactNumber = $_POST["ContactNumber"];
+$ContactNumber=$_POST["ContactNumber"];
 $item1=$_POST['item1'];
 $item2=$_POST['item2'];
 $item3=$_POST['item3'];
@@ -38,7 +38,7 @@ $sql= "INSERT INTO Borrowed_Item (id_number,FirstName,LastName,ContactNumber,Ite
         (:id_number,:FirstName,:LastName,:ContactNumber,:item4,:quantity4,:remarks,:Btime,:status),
         (:id_number,:FirstName,:LastName,:ContactNumber,:item5,:quantity5,:remarks,:Btime,:status)";
 
-$query = $dbh->prepare($sql);
+$query=$dbh->prepare($sql);
 $query->bindParam(':id_number',$id_number,PDO::PARAM_STR);
 $query->bindParam(':FirstName',$FirstName,PDO::PARAM_STR);
 $query->bindParam(':LastName',$LastName,PDO::PARAM_STR);
@@ -192,7 +192,8 @@ if(isset($_POST['Find']))
          
          <!-- select items from the database    -->
             <?php 
-            $sql = "SELECT * from  equipment";
+            
+            $sql = "SELECT * from  equipment ";
 
             $query = $dbh -> prepare($sql);
             $query->execute();
@@ -206,6 +207,7 @@ if(isset($_POST['Find']))
             ?>
             <option value="<?php echo htmlentities($result->ItemName);?>">
                   <?php echo htmlentities($result->ItemName);?>
+                  <?php $quantity=($result->quantity);?>
                   </option>
                   <?php }} ?> 
             </select>
@@ -213,7 +215,7 @@ if(isset($_POST['Find']))
             </div>
 
             <div class="form-group col-md-2">
-              <input type="text" class="form-control" name="quantity" id="inputQuantity" placeholder="Quantity">
+              <input type="text" class="form-control" value="<?php echo $quantity;?>" name="quantity" id="inputQuantity" placeholder="Quantity">
             </div>
 
             <div class="form-group col-md-2">
