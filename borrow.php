@@ -31,7 +31,7 @@ $Btime=$_POST['Btime'];
 $status=1;
 
 $sql= "INSERT INTO Borrowed_Item (id_number,FirstName,LastName,ContactNumber,Item1,Remarks,quantity1,Borrowed_time,status) 
-      VALUES
+       VALUES
         (:id_number,:FirstName + :LastName,:ContactNumber,:item1,:remarks,:quantity1,:Btime,:status), 
         (:id_number,:FirstName,:LastName,:ContactNumber,:item2,:remarks,:quantity2,:Btime,:status),
         (:id_number,:FirstName,:LastName,:ContactNumber,:item3,:remarks,:quantity3,:Btime,:status),
@@ -68,10 +68,7 @@ else
 
 
 <?php
-
-// php search data in mysql database using PDO
 // set data in input text
-
 $id_number = "";
 $FirstName = "";
 $LastName = "";
@@ -81,12 +78,9 @@ if(isset($_POST['Find']))
 {
     // id to search
     $id_number = $_POST['id_number'];
-
-     // mysql search query
-    $sql = "SELECT * FROM borrower_table WHERE id_number = :id_number";
-    
-    $pdoResult = $dbh->prepare($sql);
-    
+    // mysql search query
+    $sql = "SELECT * FROM borrower_table WHERE id_number = :id_number";  
+    $pdoResult = $dbh->prepare($sql);  
     //set your id to the query id
     $pdoExec = $pdoResult->execute(array(":id_number"=>$id_number));
     
@@ -113,7 +107,6 @@ if(isset($_POST['Find']))
         echo "<script>alert('ERROR Data Not Inserted');</script>";
     }
 }
-
 
 ?>
 
