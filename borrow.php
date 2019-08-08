@@ -12,10 +12,10 @@ if(!isset($_SESSION["id"]))
 //error_reporting(0);
 if(isset($_POST['submit']))
 {
-$id_number = "id_number";
-$FirstName = "FirstName";
-$LastName = "LastName";
-$ContactNumber = "ContactNumber";
+$id_number=$_POST["id_number"];
+$FirstName=$_POST["FirstName"];
+$LastName=$_POST["LastName"];
+$ContactNumber = $_POST["ContactNumber"];
 $item1=$_POST['item1'];
 $item2=$_POST['item2'];
 $item3=$_POST['item3'];
@@ -31,15 +31,12 @@ $Btime=$_POST['Btime'];
 $status=1;
 
 $sql= "INSERT INTO Borrowed_Item (id_number,FirstName,LastName,ContactNumber,Item1,Remarks,quantity1,Borrowed_time,status) 
-        VALUES(:id_number),
-              (:FirstName),
-              (:LastName),
-              (:ContactNumber),
-              (:item1,:remarks,:quantity1,:Btime,:status), 
-              (:item2,:remarks,:quantity2,:Btime,:status),
-              (:item3,:remarks,:quantity3,:Btime,:status),
-              (:item4,:remarks,:quantity4,:Btime,:status),
-              (:item5,:remarks,:quantity5,:Btime,:status)";
+      VALUES
+        (:id_number,:FirstName + :LastName,:ContactNumber,:item1,:remarks,:quantity1,:Btime,:status), 
+        (:id_number,:FirstName,:LastName,:ContactNumber,:item2,:remarks,:quantity2,:Btime,:status),
+        (:id_number,:FirstName,:LastName,:ContactNumber,:item3,:remarks,:quantity3,:Btime,:status),
+        (:id_number,:FirstName,:LastName,:ContactNumber,:item4,:remarks,:quantity4,:Btime,:status),
+        (:id_number,:FirstName,:LastName,:ContactNumber,:item5,:remarks,:quantity5,:Btime,:status)";
 
 $query = $dbh->prepare($sql);
 $query->bindParam(':id_number',$id_number,PDO::PARAM_STR);
