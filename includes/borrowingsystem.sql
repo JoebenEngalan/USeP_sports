@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 11, 2019 at 07:31 AM
--- Server version: 10.1.40-MariaDB
--- PHP Version: 7.3.5
+-- Generation Time: Aug 08, 2019 at 10:26 AM
+-- Server version: 10.1.37-MariaDB
+-- PHP Version: 7.3.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,20 +25,30 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Borrowed_Item`
+-- Table structure for table `borrowed_item`
 --
 
-CREATE TABLE `Borrowed_Item` (
-  `Item_borrowed` varchar(150) NOT NULL,
+CREATE TABLE `borrowed_item` (
   `ID` int(11) NOT NULL,
   `Borrower_Fname` varchar(250) DEFAULT NULL,
   `Borrower_Lname` varchar(500) NOT NULL,
-  `Borrower_Idnum` varchar(500) DEFAULT NULL,
-  `date_Borrowed` datetime DEFAULT NULL,
-  `date_Returned` datetime DEFAULT NULL,
+  `Item` varchar(150) NOT NULL,
+  `quantity` int(100) DEFAULT NULL,
   `Remarks` text NOT NULL,
+  `Borrowed_time` varchar(100) DEFAULT NULL,
   `status` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `borrowed_item`
+--
+
+INSERT INTO `borrowed_item` (`ID`, `Borrower_Fname`, `Borrower_Lname`, `Item`, `quantity`, `Remarks`, `Borrowed_time`, `status`) VALUES
+(1, NULL, '', 'fff', 0, '', '24/7/2019', 1),
+(2, NULL, '', 'fff', 0, '', '24/7/2019', 1),
+(3, NULL, '', 'fff', 0, '', '24/7/2019', 1),
+(4, NULL, '', 'fff', 0, '', '24/7/2019', 1),
+(5, NULL, '', 'fff', 0, '', '24/7/2019', 1);
 
 -- --------------------------------------------------------
 
@@ -106,17 +116,19 @@ CREATE TABLE `equipment` (
 --
 
 INSERT INTO `equipment` (`id`, `ItemCode`, `ItemName`, `Description`, `date_added`, `date_updated`, `Category`, `quantity`, `status`) VALUES
-(3, NULL, 'fff', 'ffffffffffffffffffff', '2019-07-09 02:59:32', '2019-07-09 02:59:32', 'Sports Equipment', 9, 1),
-(4, '5858', 'dddddd', 'deeeeeeeeeeeeeeeeeeeeeeee', '2019-07-09 03:22:06', '2019-07-09 03:22:06', 'Sports Equipment', 58, 1),
-(5, '5858', 'dddddd', 'deeeeeeeeeeeeeeeeeeeeeeee', '2019-07-09 03:23:13', '2019-07-09 03:23:13', 'Sports Equipment', 58, 1),
-(6, '582', 'dddd', 'dfedfdfggf', '2019-07-10 05:51:28', '2019-07-10 05:51:28', 'Gym Equipment', 58, 1),
-(7, '582', 'dddd', 'dfedfdfggf', '2019-07-10 06:00:58', NULL, 'Gym Equipment', 58, 1),
-(8, '65665', 'sha', 'dsfdfdffdfdf', '2019-07-10 06:09:56', NULL, 'Sports Equipment', 58, 1),
-(9, '528', 'xxxxxx', 'dcdvdvv', '2019-07-10 06:15:15', NULL, 'Gym Equipment', 58, 1),
-(10, '528', 'xxxxxx', 'dcdvdvv', '2019-07-10 06:21:46', NULL, 'Gym Equipment', 58, 1),
-(11, '58', 'zcxc', 'cxcxcxcxcxcxcxc', '2019-07-10 06:28:01', NULL, 'Gym Equipment', 100, 1),
-(12, '58', 'ring', 'dsdsdsdsdsdsdsd', '2019-07-10 06:32:20', NULL, 'Gym Equipment', 258, 1),
-(13, '582', 'hey', 'wdsdsdssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss', '2019-07-11 00:44:08', NULL, 'Gym Equipment', 25, 1);
+(3, NULL, 'fff', 'ffffffffffffffffffff', '2019-07-09 02:59:32', '2019-07-09 02:59:32', 'Sports Equipment', 2, 1),
+(4, '5858', 'dddddd', 'deeeeeeeeeeeeeeeeeeeeeeee', '2019-07-09 03:22:06', '2019-07-09 03:22:06', 'Sports Equipment', 1, 1),
+(5, '5858', 'dddddd', 'deeeeeeeeeeeeeeeeeeeeeeee', '2019-07-09 03:23:13', '2019-07-09 03:23:13', 'Sports Equipment', 3, 1),
+(6, '582', 'dddd', 'dfedfdfggf', '2019-07-10 05:51:28', '2019-07-10 05:51:28', 'Gym Equipment', 1, 1),
+(7, '582', 'dddd', 'dfedfdfggf', '2019-07-10 06:00:58', NULL, 'Gym Equipment', 1, 1),
+(8, '65665', 'sha', 'dsfdfdffdfdf', '2019-07-10 06:09:56', NULL, 'Sports Equipment', 1, 1),
+(9, '528', 'xxxxxx', 'dcdvdvv', '2019-07-10 06:15:15', NULL, 'Gym Equipment', 5, 1),
+(10, '528', 'xxxxxx', 'dcdvdvv', '2019-07-10 06:21:46', NULL, 'Gym Equipment', 1, 1),
+(11, '58', 'zcxc', 'cxcxcxcxcxcxcxc', '2019-07-10 06:28:01', NULL, 'Gym Equipment', 1, 1),
+(12, '58', 'ring', 'dsdsdsdsdsdsdsd', '2019-07-10 06:32:20', NULL, 'Gym Equipment', 3, 1),
+(13, '582', 'hey', 'wdsdsdsssssss', '2019-07-11 00:44:08', NULL, 'Gym Equipment', 1, 1),
+(14, '58', 'dddsdsds', 'huydudbbdsbd', '2019-07-11 06:01:55', NULL, 'Sports Equipment', 1, 1),
+(15, '45252', 'ffff', 'bguvgjgfujugjhg', '2019-07-11 06:09:10', NULL, 'Sports Equipment', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -156,9 +168,9 @@ INSERT INTO `staff_table` (`id`, `FirstName`, `LastName`, `Email`, `Password`, `
 --
 
 --
--- Indexes for table `Borrowed_Item`
+-- Indexes for table `borrowed_item`
 --
-ALTER TABLE `Borrowed_Item`
+ALTER TABLE `borrowed_item`
   ADD PRIMARY KEY (`ID`);
 
 --
@@ -184,10 +196,10 @@ ALTER TABLE `staff_table`
 --
 
 --
--- AUTO_INCREMENT for table `Borrowed_Item`
+-- AUTO_INCREMENT for table `borrowed_item`
 --
-ALTER TABLE `Borrowed_Item`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `borrowed_item`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `borrower_table`
@@ -199,7 +211,7 @@ ALTER TABLE `borrower_table`
 -- AUTO_INCREMENT for table `equipment`
 --
 ALTER TABLE `equipment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `staff_table`
