@@ -59,13 +59,9 @@ $query->bindParam(':status',$status,PDO::PARAM_STR);
 $query->execute();
 $lastInsertId = $dbh->lastInsertId();
 if($lastInsertId)
-{
-echo "<script>alert('Success');</script>";
-}
+{echo "<script>alert('Success');</script>";}
 else 
-{
-echo "<script>alert('Something went wrong. Please try again');</script>";
-}
+{echo "<script>alert('Something went wrong. Please try again');</script>";}
 }
 
 ?>
@@ -83,22 +79,13 @@ $ContactNumber = "";
 
 if(isset($_POST['Find']))
 {
-        // connect to mysql
-    try {
-    $pdoConnect = new PDO("mysql:host=localhost;dbname=borrowingsystem","root","");
-    } catch (PDOException $exc) {
-        echo $exc->getMessage();
-        exit();
-    }
-    
     // id to search
     $id_number = $_POST['id_number'];
 
-    
      // mysql search query
-    $pdoQuery = "SELECT * FROM borrower_table WHERE id_number = :id_number";
+    $sql = "SELECT * FROM borrower_table WHERE id_number = :id_number";
     
-    $pdoResult = $pdoConnect->prepare($pdoQuery);
+    $pdoResult = $dbh->prepare($sql);
     
     //set your id to the query id
     $pdoExec = $pdoResult->execute(array(":id_number"=>$id_number));
@@ -120,10 +107,10 @@ if(isset($_POST['Find']))
             // if the id not exist
             // show a message and clear inputs
         else{
-            echo 'No Data With This ID';
+        echo "<script>alert('No Data With This ID');</script>";
         }
     }else{
-        echo 'ERROR Data Not Inserted';
+        echo "<script>alert('ERROR Data Not Inserted');</script>";
     }
 }
 
