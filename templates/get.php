@@ -6,13 +6,13 @@ $quantity = "";
 if(isset($_POST['get']))
 {
 // id to search
-$itemname = $_POST['item1'];
+$itemname = $_POST['itemname1'];
 
 // mysql search query
-$sql = "SELECT * FROM equipment  WHERE ItemName = :item1";  
+$sql = "SELECT * FROM equipment  WHERE ItemName = :itemname1";  
 $pdoResult = $dbh->prepare($sql);  
 //set your id to the query id
-$pdoExec = $pdoResult->execute(array(":item1"=>$itemname));
+$pdoExec = $pdoResult->execute(array(":itemname1"=>$itemname));
                 
 if($pdoExec)
 {
