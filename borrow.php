@@ -14,23 +14,7 @@ if(!isset($_SESSION["id"]))
 <!DOCTYPE html>
 <html lang="en">
 
-<script type="text/javascript">
-    $(document).ready(function(){
-    $("#itemname1").keyup(function(){
-      var query = $(this).val();
-      if (query != "") {
-        $.ajax({
-                url: 'get.php',
-                method: 'POST',
-                data: {query:query},
-                success: function(data)
-                {
-                }
-        });
-      } else {
-      }
-    });
-</script>
+
 
 <?php include('templates/head.php');?>
 
@@ -107,14 +91,14 @@ if(!isset($_SESSION["id"]))
         <div class="form-row" name='1'>
             <div class="form-group col-md-6">
               <div class="input-group">
-                <select class="form-control" name="itemname1" id="itemname1" >
+                <select class="form-control" name="itemname1" id="itemname1" onchange="this.form.submit()" >
                 <?php include('templates/selectitem.php')?>
                 </select>
               </div>
             </div>
 
             <div class="form-group col-md-3">
-              <input type="text" class="form-control"  name="itemname" id="itemname" placeholder="Item name" >
+              <input type="text" class="form-control" name="itemname" id="itemname" placeholder="Item name" >
             </div>
                       
             <div class="form-group col-md">
@@ -158,7 +142,7 @@ if(!isset($_SESSION["id"]))
 
 </body>
 
-<script>
+<script type="text/javascript"> 
 //date for today
 function getDate(){
    var todaydate = new Date();
@@ -172,7 +156,8 @@ getDate();
 
 </script>
 <!--no form resubmision javascript dont touch-->
-<script>
+
+<script type="text/javascript">
   if ( window.history.replaceState ) {
     window.history.replaceState( null, null, window.location.href );
   }

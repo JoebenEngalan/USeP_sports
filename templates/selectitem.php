@@ -1,4 +1,4 @@
-<!-- select items from the database    -->
+<!--select items from the database -->
 <option>Equipement Name and Code</option>
 <?php 
 $sql = "SELECT * from  equipment ";
