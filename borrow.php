@@ -207,7 +207,7 @@ if(!isset($_SESSION["id"]))
 
             <div class="form-group col-md-6">
               <div class="input-group">
-                <select class="form-control" name="itemname5" id="input" >
+                <select class="form-control" name="itemname5" id="inputDept_Coll" >
                 <?php include('templates/selectitem.php')?>
                 </select>
                 <div class="input-group-append">
