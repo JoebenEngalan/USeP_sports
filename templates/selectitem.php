@@ -17,4 +17,6 @@ foreach($results as $result)
  </b>Item Name: <?php echo htmlentities($result->ItemName);?>
  </b>Item Code: <?php echo htmlentities($result->ItemCode);?>
 </option>
-<?php }} ?>
+<?php }
+} 
+?>

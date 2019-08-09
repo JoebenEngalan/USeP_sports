@@ -1,28 +1,18 @@
 <?php
-// set data in input text
-$itemname = "";
-$quantity = "";
 
-if(isset($_POST['get']))
-{
-// id to search
-$itemname = $_POST['itemname1'];
-
-// mysql search query
-$sql = "SELECT * FROM equipment  WHERE ItemName = :itemname1";  
-$pdoResult = $dbh->prepare($sql);  
-//set your id to the query id
-$pdoExec = $pdoResult->execute(array(":itemname1"=>$itemname));
-                
-if($pdoExec)
-{
-    if($pdoResult->rowCount()>0)
-     {
-    foreach($pdoResult as $row)
-    {   
+if (isset($_POST['query'])) {
+    $search_query = $_POST['query'];
+    
+    $query = "SELECT * FROM equipment WHERE ItemName LIKE '$search_query%' LIMIT 1";
+    $result = mysqli_query($dbh, $query);
+  if (mysqli_num_rows($result) > 0) {
+   while ($row = mysqli_fetch_array($result)) {
         $quantity = $row['quantity'];
-    }
-    }
-    }
-} 
+        $quantity = $row['quantity'];
+  }
+} else {
+    echo "<p style='color:red'>Country not found...</p>";
+}
+}
+
 ?>

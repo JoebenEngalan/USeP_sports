@@ -10,8 +10,27 @@ if(!isset($_SESSION["id"]))
   include('templates/findborrower.php')
 ?> 
 
+
 <!DOCTYPE html>
 <html lang="en">
+
+<script type="text/javascript">
+    $(document).ready(function(){
+    $("#itemname1").keyup(function(){
+      var query = $(this).val();
+      if (query != "") {
+        $.ajax({
+                url: 'get.php',
+                method: 'POST',
+                data: {query:query},
+                success: function(data)
+                {
+                }
+        });
+      } else {
+      }
+    });
+</script>
 
 <?php include('templates/head.php');?>
 
@@ -22,7 +41,6 @@ if(!isset($_SESSION["id"]))
   <?php include('templates/navbar.php');?>   
   <!-- Sidebar -->
   <?php include('templates/sidebar.php');?>
-
 
 
     <div id="content-wrapper">
@@ -53,7 +71,7 @@ if(!isset($_SESSION["id"]))
                 <i class="fas fa-search"></i>
               </button>
             </div>
-          </div>     
+          </div>
 
           <!--Grid row fullname-->
           <div class="form-row">
@@ -87,150 +105,27 @@ if(!isset($_SESSION["id"]))
         </div>
 
         <div class="form-row" name='1'>
-        <?php include('templates/get.php') ?> 
             <div class="form-group col-md-6">
               <div class="input-group">
-                <select class="form-control" name="itemname1" id="inputDept_Coll" >
-                
+                <select class="form-control" name="itemname1" id="itemname1" >
                 <?php include('templates/selectitem.php')?>
                 </select>
-                <div class="input-group-append">
-                  <button class="btn btn-primary" type="submit" name="get" value="Find Data">
-                      <i class="fas fa-search"></i>
-                  </button>
-                </div>
               </div>
             </div>
 
             <div class="form-group col-md-3">
-              <input type="text" class="form-control"  value="<?php echo $itemname;?>" name="itemname" placeholder="Item name" >
+              <input type="text" class="form-control"  name="itemname" id="itemname" placeholder="Item name" >
             </div>
                       
             <div class="form-group col-md">
-              <input type="text" class="form-control" value="<?php echo $quantity;?>" name="quantity" id="inputQuantity" placeholder="Quantity Left">
+              <input type="text" class="form-control" name="quantity" id="quantity" placeholder="Quantity Left">
             </div>
 
             <div class="form-group col-md">
               <input type="text" class="form-control" name="quantity1" id="inputQuantity" placeholder="Quantity">
             </div>
           </div>
-
-
-        <div class="form-row" name='2'>
         
-            <div class="form-group col-md-6">
-              <div class="input-group">
-                <select class="form-control" name="itemname2" id="inputDept_Coll" >
-                
-                <?php include('templates/selectitem.php')?>
-                </select>
-                <div class="input-group-append">
-                  <button class="btn btn-primary" type="submit" name="get2" value="Find Data">
-                      <i class="fas fa-search"></i>
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div class="form-group col-md-3">
-              <input type="text" class="form-control" value="<?php echo $itemname2;?>" name="itemname2" placeholder="Item name" >
-            </div>
-                      
-            <div class="form-group col-md">
-              <input type="text" class="form-control" value="<?php echo $quantity2;?>" name="quantity2" id="inputQuantity" placeholder="Quantity Left">
-            </div>
-
-            <div class="form-group col-md">
-              <input type="text" class="form-control" name="quantity2" id="inputQuantity" placeholder="Quantity">
-            </div>
-          </div>
-
-          <div class="form-row" name='3'>
-
-            <div class="form-group col-md-6">
-              <div class="input-group">
-                <select class="form-control" name="itemname3" id="inputDept_Coll" >
-                
-                <?php include('templates/selectitem.php')?>
-                </select>
-                <div class="input-group-append">
-                  <button class="btn btn-primary" type="submit" name="get3" value="Find Data">
-                      <i class="fas fa-search"></i>
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div class="form-group col-md-3">
-              <input type="text" class="form-control" value="<?php echo $itemname3;?>" name="itemname3" placeholder="Item name" >
-            </div>
-                      
-            <div class="form-group col-md">
-              <input type="text" class="form-control" value="<?php echo $quantity3;?>" name="quantity3" id="inputQuantity" placeholder="Quantity Left">
-            </div>
-
-            <div class="form-group col-md">
-              <input type="text" class="form-control" name="quantity3" id="inputQuantity" placeholder="Quantity">
-            </div>
-          </div>
-
-          <div class="form-row" name='4'>
- 
-            <div class="form-group col-md-6">
-              <div class="input-group">
-                <select class="form-control" name="itemname4" id="inputDept_Coll" >
-                
-                <?php include('templates/selectitem.php')?>
-                </select>
-                <div class="input-group-append">
-                  <button class="btn btn-primary" type="submit" name="get4" value="Find Data">
-                      <i class="fas fa-search"></i>
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div class="form-group col-md-3">
-              <input type="text" class="form-control" value="<?php echo $itemname4;?>" name="itemname4" placeholder="Item name" >
-            </div>
-                      
-            <div class="form-group col-md">
-              <input type="text" class="form-control" value="<?php echo $quantity4;?>" name="quantity4" id="inputQuantity" placeholder="Quantity Left">
-            </div>
-
-            <div class="form-group col-md">
-              <input type="text" class="form-control" name="quantity4" id="inputQuantity" placeholder="Quantity">
-            </div>
-          </div>
-          
-        <div class="form-row" name='5'>
-
-            <div class="form-group col-md-6">
-              <div class="input-group">
-                <select class="form-control" name="itemname5" id="inputDept_Coll" >
-                <?php include('templates/selectitem.php')?>
-                </select>
-                <div class="input-group-append">
-                  <button class="btn btn-primary" type="submit" name="get5" value="Find Data">
-                      <i class="fas fa-search"></i>
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div class="form-group col-md-3">
-              <input type="text" class="form-control" value="<?php echo $itemname5;?>" name="itemname5" placeholder="Item name" >
-            </div>
-                      
-            <div class="form-group col-md">
-              <input type="text" class="form-control" value="<?php echo $quantity5;?>" name="quantity5" id="inputQuantity" placeholder="Quantity Left">
-            </div>
-
-            <div class="form-group col-md">
-              <input type="text" class="form-control" name="quantity5" id="inputQuantity" placeholder="Quantity">
-            </div>
-          </div>
-
         <div class="form-row">
           <div class="form-group col-md-12">
               <input type="text" class="form-control" id="inputRemarks" name="remarks" placeholder="Remarks">
