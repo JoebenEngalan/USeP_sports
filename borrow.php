@@ -6,6 +6,8 @@ if(!isset($_SESSION["id"]))
 
 {header('location:index.php');
   include('location:logout.php');}
+
+  include('templates/findborrower.php')
 ?> 
 
 <?php
@@ -66,50 +68,6 @@ else
 
 ?>
 
-
-<?php
-// set data in input text
-$id_number = "";
-$FirstName = "";
-$LastName = "";
-$ContactNumber = "";
-
-if(isset($_POST['Find']))
-{
-    // id to search
-    $id_number = $_POST['id_number'];
-    // mysql search query
-    $sql = "SELECT * FROM borrower_table WHERE id_number = :id_number";  
-    $pdoResult = $dbh->prepare($sql);  
-    //set your id to the query id
-    $pdoExec = $pdoResult->execute(array(":id_number"=>$id_number));
-    
-    if($pdoExec)
-    {
-            // if id exist 
-            // show data in inputs
-        if($pdoResult->rowCount()>0)
-        {
-            foreach($pdoResult as $row)
-            {
-                $id_number= $row['id_number'];
-                $FirstName = $row['FirstName'];
-                $LastName = $row['LastName'];
-                $ContactNumber = $row['ContactNumber'];
-            }
-        }
-            // if the id not exist
-            // show a message and clear inputs
-        else{
-        echo "<script>alert('No Data With This ID');</script>";
-        }
-    }else{
-        echo "<script>alert('ERROR Data Not Inserted');</script>";
-    }
-}
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -147,8 +105,9 @@ if(isset($_POST['Find']))
 
           <!--id NUMBER-->
           <div class="input-group mb-3">
+          <?php ?> 
             <input type="text" class="form-control" name="id_number" id="search" value="<?php echo $id_number;?>" placeholder="ID number of Student or Faculty" aria-label="Recipient's username" aria-describedby="button-addon2">
-            <div class="input-group-append">
+            <div class="input-group-append">             
               <button class="btn btn-primary" type="submit" name="Find" value="Find Data">
                 <i class="fas fa-search"></i>
               </button>
@@ -187,10 +146,12 @@ if(isset($_POST['Find']))
         </div>
 
         <div class="form-row">
+        <?php include('templates/get.php') ?> 
             <div class="form-group col-md-8">
-            <select type="text" class="form-control" name="item1" id="inputDept_Coll">
+            <select class="form-control" name="item1" id="inputDept_Coll" >
          
          <!-- select items from the database    -->
+            <option>Equipement Name and Code</option>
             <?php 
             
             $sql = "SELECT * from  equipment ";
@@ -206,14 +167,23 @@ if(isset($_POST['Find']))
             {               
             ?>
             <option value="<?php echo htmlentities($result->ItemName);?>">
+                  Item Name: 
                   <?php echo htmlentities($result->ItemName);?>
-                  <?php $quantity=($result->quantity);?>
+                  Item Code: 
+                  <?php echo htmlentities($result->ItemCode);?>
                   </option>
-                  <?php }} ?> 
+                  <?php }} ?>
             </select>
-     
             </div>
 
+            <button class="btn btn-primary" type="submit" name="get" value="Find Data">
+                <i class="fas fa-search"></i>
+            </button>
+
+            <div class="form-group col-md-2">
+              <input type="text" class="form-control" value="<?php echo $itemname;?>" name="itemname" >
+            </div>
+                      
             <div class="form-group col-md-2">
               <input type="text" class="form-control" value="<?php echo $quantity;?>" name="quantity" id="inputQuantity" placeholder="Quantity">
             </div>
@@ -244,7 +214,7 @@ if(isset($_POST['Find']))
             {               
             ?>
             <option value="<?php echo htmlentities($result->ItemName);?>">
-                  <?php echo htmlentities($result->ItemName);?>
+                  <?php echo htmlentities($result->ItemName);?>                  
                   </option>
                   <?php }} ?> 
             </select>
