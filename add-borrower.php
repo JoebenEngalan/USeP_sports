@@ -121,11 +121,12 @@ if(!isset($_SESSION["id"]))
 
 </body>
 
-</html>
-
 <!--no form resubmision javascript dont touch-->
 <script>
   if ( window.history.replaceState ) {
     window.history.replaceState( null, null, window.location.href );
   }
 </script>
+
+</html>
+
