@@ -13,6 +13,13 @@ if(isset($_POST['submit']))
         $email=$_POST['emailid'];
         $status=1;
 
+        if( empty($idnum) || empty($fname) || empty($lname) || 
+            empty($contact) || empty($depart) || empty($pos) || empty($email) )
+        {
+          {echo "<script type= 'text/javascript'>alert('Empty Fields.');</script>";}  
+        }
+        else
+        {
         $sql= "INSERT INTO borrower_table (id_number,FirstName,LastName,ContactNumber,Department,Position,EmailID,Status) 
                 VALUES(:idnum,:fname,:lname,:contact,:depart,:pos,:email,:status)";
 
@@ -28,12 +35,9 @@ if(isset($_POST['submit']))
         $query->execute();
         $lastInsertId = $dbh->lastInsertId();
         if($lastInsertId)
-                {
-                echo "<script type= 'text/javascript'>alert('New Record Inserted Successfully');</script>";
-                }
+                {echo "<script type= 'text/javascript'>alert('New Record Inserted Successfully');</script>";}
         else 
-                {
-                echo "<script type= 'text/javascript'>alert('Data not successfully Inserted.');</script>";
-                }
+                {echo "<script type= 'text/javascript'>alert('Data not successfully Inserted.');</script>";}
+        }        
 }
 ?>

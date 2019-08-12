@@ -92,7 +92,9 @@ if(!isset($_SESSION["id"]))
             <div class="form-group col-md-6">
               <div class="input-group">
                 <select class="form-control" name="itemname1" id="itemname1" onchange="this.form.submit()" >
-                <?php include('templates/selectitem.php')?>
+                <?php include('templates/selectitem.php');
+                      include('templates/get.php');
+                ?>
                 </select>
               </div>
             </div>

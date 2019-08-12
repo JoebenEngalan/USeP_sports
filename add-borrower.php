@@ -99,8 +99,8 @@ if(!isset($_SESSION["id"]))
 
           <div class="btn-group">
           <!--database command add borrower-->
-          <?php include('templates/addborrower.php');?>
           <input type="submit" name="submit" class="btn btn-primary btn-block" value="Submit" style="cursor:pointer">
+          <?php include('templates/addborrower.php');?>
             <button type="clear" class="btn btn-primary btn-lg">Clear</button>
           </div>
 
