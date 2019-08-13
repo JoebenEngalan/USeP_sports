@@ -14,6 +14,20 @@ if(!isset($_SESSION["id"]))
 <!DOCTYPE html>
 <html lang="en">
 
+<script>
+  $('#itemname1').onclick( function() {
+      var itemget = $('#itemname1').val();
+
+      $.ajax({
+        url:'templates/getitem.php',
+        data: 'getitem='+itemget,
+        success:fucntion(data){
+          $('#itemname').html(data);
+        }
+      });
+
+    });
+</script>
 
 
 <?php include('templates/head.php');?>
@@ -91,20 +105,24 @@ if(!isset($_SESSION["id"]))
         <div class="form-row" name='1'>
             <div class="form-group col-md-6">
               <div class="input-group">
-                <select class="form-control" name="itemname1" id="itemname1" onchange="this.form.submit()" >
-                <?php include('templates/selectitem.php');
-                      include('templates/get.php');
-                ?>
+                <select class="form-control" name="itemname1" id="itemname1" onclick="this.form.submit()" >
+                <?php include('templates/selectitem.php');?>
+                <?php include('templates/getitem.php');?>
                 </select>
+                <div class="input-group-append">
+                  <button class="btn btn-primary"  id="getitem" name="getitem" >
+                      <i class="fas fa-search"></i>
+                  </button>
+                </div>
               </div>
             </div>
 
             <div class="form-group col-md-3">
-              <input type="text" class="form-control" name="itemname" id="itemname" placeholder="Item name" >
+              <input type="text" class="form-control" name="itemname" id="itemname" value="<?php echo $_SESSION['test1'];?>" placeholder="Item name" >
             </div>
                       
             <div class="form-group col-md">
-              <input type="text" class="form-control" name="quantity" id="quantity" placeholder="Quantity Left">
+              <input type="text" class="form-control" name="quantity" id="quantity" value="<?php echo $_SESSION['test2'];?>" placeholder="Quantity Left">
             </div>
 
             <div class="form-group col-md">
