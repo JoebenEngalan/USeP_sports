@@ -14,23 +14,9 @@ if(!isset($_SESSION["id"]))
 <!DOCTYPE html>
 <html lang="en">
 
-<script>
-  $('#itemname1').onclick( function() {
-      var itemget = $('#itemname1').val();
-
-      $.ajax({
-        url:'templates/getitem.php',
-        data: 'getitem='+itemget,
-        success:fucntion(data){
-          $('#itemname').html(data);
-        }
-      });
-
-    });
-</script>
-
-
 <?php include('templates/head.php');?>
+<!--scripts-->
+<?php include('templates/scripts.php')?>
 
 <body id="page-top">
 
@@ -76,12 +62,12 @@ if(!isset($_SESSION["id"]))
             <!-- LastName input -->
             <div class="form-group col-md-6">
               <label for="inputLname">Last Name</label>
-              <input type="text" class="form-control" name="LastName"  id="inputLname"  value="<?php echo $LastName;?>" placeholder="Last Name" >
+              <input type="text" class="form-control" readonly name="LastName"  id="inputLname"  value="<?php echo $LastName;?>" placeholder="Last Name" >
             </div>
             <!-- FirstName input -->
             <div class="form-group col-md-6">
               <label for="inputFname">First Name</label>
-              <input type="text" class="form-control" name="FirstName"  id="inputFname" value="<?php echo $FirstName;?>" placeholder="First Name" >
+              <input type="text" class="form-control" readonly name="FirstName"  id="inputFname" value="<?php echo $FirstName;?>" placeholder="First Name" >
             </div>
         </div>
 
@@ -89,20 +75,21 @@ if(!isset($_SESSION["id"]))
             <!-- ContactNum input -->
             <div class="form-group col-md-6">
               <label for="inputContactnum">Contact Number</label>
-              <input type="text" class="form-control" name="ContactNumber" value="<?php echo $ContactNumber;?>" readonly  id="inputContactnum" placeholder="+63XXXXXXXXXX" >
+              <input type="text" class="form-control" readonly name="ContactNumber" value="<?php echo $ContactNumber;?>"   id="inputContactnum" placeholder="+63XXXXXXXXXX" >
             </div>
             <!-- Date input -->
             <div class="form-group col-md-6">
               <label for="Datenow"> Date</label>
-              <input type="text" id="Datenow" name="Btime" class="form-control">
-            </div>          
+              <input type="text" id="Datenow" name="Btime" readonly class="form-control">
+            </div>
+             
         </div>
 
         <div class="form-group mb-4">
           <h3 class="display-10">Item Borrowed</h3>
         </div>
 
-        <div class="form-row" name='1'>
+        <div class="form-row" name='1'>     
             <div class="form-group col-md-6">
               <div class="input-group">
                 <select class="form-control" name="itemname1" id="itemname1"  >
@@ -157,9 +144,6 @@ if(!isset($_SESSION["id"]))
   <!--scrolltop-->
   <?php include('templates/scrolltop.php')?>
   
-  <!--scripts-->
-  <?php include('templates/scripts.php')?>
-
 </body>
 
 <script type="text/javascript"> 
