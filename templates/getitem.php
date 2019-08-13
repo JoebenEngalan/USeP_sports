@@ -26,8 +26,7 @@ if($pdoExec)
     {   
         $itemname = $row['ItemName'];
         $quantity = $row['quantity'];
-        $_SESSION['test2'] =  $quantity; 
-        $_SESSION['test1'] =  $itemname;
+       
     }
     }
     }

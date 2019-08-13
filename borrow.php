@@ -105,7 +105,7 @@ if(!isset($_SESSION["id"]))
         <div class="form-row" name='1'>
             <div class="form-group col-md-6">
               <div class="input-group">
-                <select class="form-control" name="itemname1" id="itemname1" onclick="this.form.submit()" >
+                <select class="form-control" name="itemname1" id="itemname1"  >
                 <?php include('templates/selectitem.php');?>
                 <?php include('templates/getitem.php');?>
                 </select>
@@ -118,11 +118,11 @@ if(!isset($_SESSION["id"]))
             </div>
 
             <div class="form-group col-md-3">
-              <input type="text" class="form-control" name="itemname" id="itemname" value="<?php echo $_SESSION['test1'];?>" placeholder="Item name" >
+              <input type="text" class="form-control" name="itemname" id="itemname" value="<?php echo $itemname;?>" placeholder="Item name" >
             </div>
                       
             <div class="form-group col-md">
-              <input type="text" class="form-control" name="quantity" id="quantity" value="<?php echo $_SESSION['test2'];?>" placeholder="Quantity Left">
+              <input type="text" class="form-control" name="quantity" id="quantity" value="<?php echo $quantity;?>" placeholder="Quantity Left">
             </div>
 
             <div class="form-group col-md">

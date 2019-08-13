@@ -24,16 +24,11 @@ if(isset($_POST['Find']))
         {
             foreach($pdoResult as $row)
             {
-                $_SESSION['testa']= $row['id_number'];
-                $_SESSION['testb'] = $row['FirstName'];
-                $_SESSION['testc'] = $row['LastName'];
-                $_SESSION['testd'] = $row['ContactNumber'];
+                $id_number = $row['id_number'];
+                $FirstName = $row['FirstName'];
+                $LastName = $row['LastName'];
+                $ContactNumber = $row['ContactNumber'];
 
-                $id_number = $_SESSION['testa'];
-                $FirstName = $_SESSION['testb'];
-                $LastName = $_SESSION['testc'];
-                $ContactNumber = $_SESSION['testd'];
-                
             }
         }
             // if the id not exist
