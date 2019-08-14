@@ -12,6 +12,7 @@ if(isset($_POST['Find']))
     $id_number = $_POST['id_number'];
     // mysql search query
     $sql = "SELECT * FROM borrower_table WHERE id_number = :id_number";  
+    
     $pdoResult = $dbh->prepare($sql);  
     //set your id to the query id
     $pdoExec = $pdoResult->execute(array(":id_number"=>$id_number));
@@ -24,15 +25,10 @@ if(isset($_POST['Find']))
         {
             foreach($pdoResult as $row)
             {
-                $_SESSION['testa']= $row['id_number'];
-                $_SESSION['testb'] = $row['FirstName'];
-                $_SESSION['testc'] = $row['LastName'];
-                $_SESSION['testd'] = $row['ContactNumber'];
-
-                $id_number = $_SESSION['testa'];
-                $FirstName = $_SESSION['testb'];
-                $LastName = $_SESSION['testc'];
-                $ContactNumber = $_SESSION['testd'];
+                $id_number= $row['id_number'];
+                $FirstName = $row['FirstName'];
+                $LastName = $row['LastName'];
+                $ContactNumber = $row['ContactNumber'];
                 
             }
         }
