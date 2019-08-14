@@ -8,6 +8,28 @@ error_reporting(0);
 
 <?php include('templates/head.php');?>
 
+<!--scripts-->
+<?php include('templates/scripts.php')?>
+
+<script>
+  //checks password and confirm password is right
+
+  function check_pass() {
+    if (document.getElementById('password').value ==
+            document.getElementById('confirmpassword').value) {
+        document.getElementById('signup').disabled = false;
+    } else {
+        document.getElementById('signup').disabled = true;
+    }
+  }
+
+  //no form resubmision javascript dont touch
+  if ( window.history.replaceState ) {
+    window.history.replaceState( null, null, window.location.href );
+  }
+
+</script>
+
 <body class="bg-dark">
 
   <div class="container">
@@ -67,29 +89,9 @@ error_reporting(0);
     </div>
   </div>
 
-  <!--scripts-->
-  <?php include('templates/scripts.php')?>
-
+  
+  
 </body>
 
 </html>
 
-<script>
-  //checks password and confirm password is right
-
-  function check_pass() {
-    if (document.getElementById('password').value ==
-            document.getElementById('confirmpassword').value) {
-        document.getElementById('signup').disabled = false;
-    } else {
-        document.getElementById('signup').disabled = true;
-    }
-  }
-
-  //no form resubmision javascript dont touch
-
-  if ( window.history.replaceState ) {
-    window.history.replaceState( null, null, window.location.href );
-  }
-
-</script>

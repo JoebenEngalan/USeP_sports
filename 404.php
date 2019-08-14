@@ -3,6 +3,8 @@
 
 <?php include('templates/head.php');?>
 
+<script src="js/jquery-3.4.1.min.js"></script>
+
 <body id="page-top">
 
   <!-- Navbar Search -->
@@ -22,6 +24,26 @@
           </li>
           <li class="breadcrumb-item active">404 Error</li>
         </ol>
+
+        <h1 style="color: green;">   
+             GeeksForGeeks   
+        </h1> Input Box: 
+    <input id="input" 
+           type="text" 
+           class="Disable" 
+           value="" /> 
+    <br> 
+    <br> 
+    <button id="setText"> 
+        setText 
+    </button> 
+    <script> 
+        $("#setText").click(function(event) { 
+            $('#input').val("GeeksForGeeks"); 
+        }); 
+    </script> 
+
+
 
         <!-- Page Content -->
         <h1 class="display-1">404</h1>

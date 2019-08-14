@@ -1,10 +1,5 @@
 <?php
 
-/*$test ="";
-if(isset($_POST['itemname1'])){
-    $test = $_POST['itemname1'];
-}*/
-
 // set data in input text
 $itemname = "";
 $quantity = "";
@@ -12,6 +7,7 @@ if(isset($_POST['getitem']))
 {
 // id to search
 $itemname = $_POST['itemname1'];
+
 // mysql search query  
 $sql = "SELECT * FROM equipment  WHERE ItemName = :itemname1";  
 $pdoResult = $dbh->prepare($sql);  
@@ -26,8 +22,7 @@ if($pdoExec)
     {   
         $itemname = $row['ItemName'];
         $quantity = $row['quantity'];
-        $_SESSION['test2'] =  $quantity; 
-        $_SESSION['test1'] =  $itemname;
+       
     }
     }
     }

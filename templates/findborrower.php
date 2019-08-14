@@ -25,11 +25,11 @@ if(isset($_POST['Find']))
         {
             foreach($pdoResult as $row)
             {
-                $id_number= $row['id_number'];
+                $id_number = $row['id_number'];
                 $FirstName = $row['FirstName'];
                 $LastName = $row['LastName'];
                 $ContactNumber = $row['ContactNumber'];
-                
+
             }
         }
             // if the id not exist
