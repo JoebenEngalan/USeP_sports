@@ -17,9 +17,7 @@ if(!isset($_SESSION["id"]))
 <?php include('templates/head.php');?>
 <!--scripts-->
 <?php include('templates/scripts.php');
-
-include('templates/findborrower.php');?>
-
+include_once('templates/findborrower.php');?>
 
 <body id="page-top">
 
@@ -128,7 +126,6 @@ include('templates/findborrower.php');?>
   </div><!-- /#wrapper -->
   <!--scrolltop-->
   <?php include('templates/scrolltop.php')?>
-  
 </body>
 
 <script type="text/javascript">
