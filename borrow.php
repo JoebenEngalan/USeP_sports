@@ -91,13 +91,28 @@ include_once('templates/findborrower.php');?>
         </div>
 
         <div class="form-row" name='1'>     
-            <div class="form-group col-md-10">
+            <div class="form-group col-md-6">
               <div class="input-group">
-                <select class="form-control" name="itemname1" id="itemname1">
-                <?php include('templates/selectitem.php');?>               
+                <select class="form-control" name="itemname1" id="itemname1"  >
+                <?php include('templates/selectitem.php');?>
+                <?php include('templates/getitem.php');?>
                 </select>
+                <div class="input-group-append">
+                  <button class="btn btn-primary"  id="getitem" name="getitem" >
+                      <i class="fas fa-search"></i>
+                  </button>
+                </div>
               </div>
             </div>
+
+            <div class="form-group col-md-3">
+              <input type="text" class="form-control" name="itemname" id="itemname" value="<?php echo $itemname;?>" placeholder="Item name" >
+            </div>
+                      
+            <div class="form-group col-md">
+              <input type="text" class="form-control" name="quantity" id="quantity" value="<?php echo $quantity;?>" placeholder="Quantity Left">
+            </div>
+
             <div class="form-group col-md">
               <input type="text" class="form-control" name="quantity1" id="inputQuantity" placeholder="Quantity">
             </div>
