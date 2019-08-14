@@ -1,5 +1,4 @@
 <?php
-
 // set data in input text
 $id_number = "";
 $FirstName = "";

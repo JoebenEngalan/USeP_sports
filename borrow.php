@@ -92,11 +92,11 @@ if(!isset($_SESSION["id"]))
         <div class="form-row" name='1'>     
             <div class="form-group col-md-6">
               <div class="input-group">
-                <select class="form-control" name="itemname1" id="itemname1"  >
-                <?php include('templates/selectitem.php');?>
-                <?php include('templates/getitem.php');?>
+                <select class="form-control" name="itemname1" id="itemname1">
+                <?php include('templates/selectitem.php');?>               
                 </select>
                 <div class="input-group-append">
+                <?php include('templates/getitem.php');?>
                   <button class="btn btn-primary"  id="getitem" name="getitem" >
                       <i class="fas fa-search"></i>
                   </button>
@@ -135,19 +135,17 @@ if(!isset($_SESSION["id"]))
 
     </div><!-- /.container-fluid -->
   </div><!-- /.content-wrapper -->
-
   <!--Footer-->    
   <?php include('templates/footer.php');?>
-
   </div><!-- /#wrapper -->
-
   <!--scrolltop-->
   <?php include('templates/scrolltop.php')?>
   
 </body>
 
-<script type="text/javascript"> 
-//date for today
+<script type="text/javascript">
+
+/** date for today **/
 function getDate(){
    var todaydate = new Date();
    var day = todaydate.getDate();
@@ -158,10 +156,8 @@ function getDate(){
   } 
 getDate(); 
 
-</script>
-<!--no form resubmision javascript dont touch-->
+/** no form resubmision javascript dont touch**/
 
-<script type="text/javascript">
   if ( window.history.replaceState ) {
     window.history.replaceState( null, null, window.location.href );
   }
