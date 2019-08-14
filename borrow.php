@@ -7,7 +7,7 @@ if(!isset($_SESSION["id"]))
 {header('location:index.php');
   include('location:logout.php');}
 
-  include('templates/findborrower.php')
+ 
 ?> 
 
 
@@ -16,17 +16,10 @@ if(!isset($_SESSION["id"]))
 
 <?php include('templates/head.php');?>
 <!--scripts-->
-<?php include('templates/scripts.php')?>
+<?php include('templates/scripts.php');
 
+include('templates/findborrower.php');?>
 
-<script>
-$(document).ready(function(){
-  var  = 
-  $("#getitem").click(function(){
-    $.ajax({url: "templates/getitem.php"});
-  });
-});
-</script>
 
 <body id="page-top">
 
@@ -100,28 +93,13 @@ $(document).ready(function(){
         </div>
 
         <div class="form-row" name='1'>     
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-10">
               <div class="input-group">
                 <select class="form-control" name="itemname1" id="itemname1">
                 <?php include('templates/selectitem.php');?>               
                 </select>
-                <div class="input-group-append">
-                
-                  <button class="btn btn-primary"  id="getitem" name="getitem" >
-                      <i class="fas fa-search"></i>
-                  </button>
-                </div>
               </div>
             </div>
-
-            <div class="form-group col-md-3">
-              <input type="text" class="form-control" name="itemname" id="itemname" value="<?php echo $itemname;?>" placeholder="Item name" >
-            </div>
-                      
-            <div class="form-group col-md">
-              <input type="text" class="form-control" name="quantity" id="quantity" value="<?php echo $quantity;?>" placeholder="Quantity Left">
-            </div>
-
             <div class="form-group col-md">
               <input type="text" class="form-control" name="quantity1" id="inputQuantity" placeholder="Quantity">
             </div>
