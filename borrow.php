@@ -7,7 +7,6 @@ if(!isset($_SESSION["id"]))
 {header('location:index.php');
   include('location:logout.php');}
 
- 
 ?> 
 
 
@@ -17,7 +16,10 @@ if(!isset($_SESSION["id"]))
 <?php include('templates/head.php');?>
 <!--scripts-->
 <?php include('templates/scripts.php');
-include_once('templates/findborrower.php');?>
+include_once('templates/findborrower.php');
+//include_once('templates/getitem.php')
+?>
+
 
 <body id="page-top">
 
@@ -26,7 +28,6 @@ include_once('templates/findborrower.php');?>
   <?php include('templates/navbar.php');?>   
   <!-- Sidebar -->
   <?php include('templates/sidebar.php');?>
-
 
     <div id="content-wrapper">
 
@@ -49,12 +50,62 @@ include_once('templates/findborrower.php');?>
           </div>
 
           <!--id NUMBER-->
+          <label for="itemname1">Search ID and Equipments</label>
           <div class="input-group mb-3"> 
-            <input type="text" class="form-control" name="id_number" id="search" value="<?php echo $id_number;?>" placeholder="ID number of Student or Faculty" aria-label="Recipient's username" aria-describedby="button-addon2">
+            <input type="text" class="form-control" name="idnumber" id="search" placeholder="ID number of Student or Faculty" aria-label="Recipient's username" aria-describedby="button-addon2">
             <div class="input-group-append">             
-              <button class="btn btn-primary" type="submit" name="Find" value="Find Data">
+              <button class="btn btn-primary" type="submit"  id="Find" name="Find" value="Find Data">
                 <i class="fas fa-search"></i>
               </button>
+            </div>
+          </div>
+          <!--Grid colmun equipments-->
+         
+          <!--Grid colmun equipments-->
+          <label for="itemname1">Equipments</label>
+          <div class="form-row md-6">
+            <div class="form-group col-md">
+                <div class="input-group">
+                  <select class="form-control" name="itemname1" id="itemname1" >
+                  <?php include('templates/selectitem.php');?>
+                  </select>
+                </div>
+            </div>
+          <!--Grid colmun equipments-->
+            <div class="form-group col-md">
+                <div class="input-group">
+                  <select class="form-control" name="itemname2" id="itemname2" >
+                  <?php include('templates/selectitem.php');?>
+                  </select>
+                </div>
+            </div>
+          </div>
+          <!--Grid colmun equipments-->
+          <div class="form-row md-6">
+            <div class="form-group col-md">
+                <div class="input-group">
+                  <select class="form-control" name="itemname3" id="itemname3" >
+                  <?php include('templates/selectitem.php');?>
+                  </select>
+                </div>
+            </div>
+          <!--Grid colmun equipments-->
+            <div class="form-group col-md">
+                <div class="input-group">
+                  <select class="form-control" name="itemname4" id="itemname4" >
+                  <?php include('templates/selectitem.php');?>
+                  </select>
+                </div>
+            </div>
+          </div>
+
+        
+        <div name="result" id="result" class="hidden">
+          <div class="form-row">
+            <!-- LastName input -->
+            <div class="form-group col-md">
+              <label for="inputLname">ID Number</label>
+              <input type="text" class="form-control" readonly name="id_number" id="inputLname"  value="<?php echo $id_number;?>"  placeholder="ID number of Student or Faculty" >
             </div>
           </div>
 
@@ -82,47 +133,82 @@ include_once('templates/findborrower.php');?>
             <div class="form-group col-md-6">
               <label for="Datenow"> Date</label>
               <input type="text" id="Datenow" name="Btime" readonly class="form-control">
-            </div>
-             
-        </div>
-
-        <div class="form-group mb-4">
-          <h3 class="display-10">Item Borrowed</h3>
+            </div>    
         </div>
 
         <div class="form-row" name='1'>     
-            <div class="form-group col-md-6">
-              <div class="input-group">
-                <select class="form-control" name="itemname1" id="itemname1"  >
-                <?php include('templates/selectitem.php');?>
-                <?php include('templates/getitem.php');?>
-                </select>
-                <div class="input-group-append">
-                  <button class="btn btn-primary"  id="getitem" name="getitem" >
-                      <i class="fas fa-search"></i>
-                  </button>
-                </div>
-              </div>
-            </div>
-
+            
             <div class="form-group col-md-3">
-              <input type="text" class="form-control" name="itemname" id="itemname" value="<?php echo $itemname;?>" placeholder="Item name" >
+            <label for="itemname">Item name</label>
+              <input type="text" class="form-control" name="itemname" id="itemname" value="<?php echo $itemname1;?>" placeholder="Item name" >
             </div>
                       
             <div class="form-group col-md">
-              <input type="text" class="form-control" name="quantity" id="quantity" value="<?php echo $quantity;?>" placeholder="Quantity Left">
+            <label for="itemname">Quantity Left</label>
+              <input type="text" class="form-control" name="quantity" id="quantity" value="<?php echo $quantity1;?>" placeholder="Quantity Left">
             </div>
 
             <div class="form-group col-md">
-              <input type="text" class="form-control" name="quantity1" id="inputQuantity" placeholder="Quantity">
+            <label for="itemname">Quantity</label>
+              <input type="text" class="form-control" name="quantity1" id="inputQuantity" placeholder="Enter Quantity">
             </div>
-          </div>
-        
+            
+        </div>
+
+        <div class="form-row" name='2'>     
+            
+            <div class="form-group col-md-3">
+              <input type="text" class="form-control" name="itemname" id="itemname" value="<?php echo $itemname1;?>" placeholder="Item name" >
+            </div>
+                      
+            <div class="form-group col-md">
+              <input type="text" class="form-control" name="quantity" id="quantity" value="<?php echo $quantity1;?>" placeholder="Quantity Left">
+            </div>
+
+            <div class="form-group col-md">
+              <input type="text" class="form-control" name="quantity1" id="inputQuantity" placeholder="Enter Quantity">
+            </div>
+            
+        </div>
+
+        <div class="form-row" name='3'>     
+            
+            <div class="form-group col-md-3">
+              <input type="text" class="form-control" name="itemname" id="itemname" value="<?php echo $itemname1;?>" placeholder="Item name" >
+            </div>
+                      
+            <div class="form-group col-md">
+              <input type="text" class="form-control" name="quantity" id="quantity" value="<?php echo $quantity1;?>" placeholder="Quantity Left">
+            </div>
+
+            <div class="form-group col-md">
+              <input type="text" class="form-control" name="quantity1" id="inputQuantity" placeholder="Enter Quantity">
+            </div>
+            
+        </div>
+
+        <div class="form-row" name='4'>     
+            
+            <div class="form-group col-md-3">
+              <input type="text" class="form-control" name="itemname" id="itemname" value="<?php echo $itemname1;?>" placeholder="Item name" >
+            </div>
+                      
+            <div class="form-group col-md">
+              <input type="text" class="form-control" name="quantity" id="quantity" value="<?php echo $quantity1;?>" placeholder="Quantity Left">
+            </div>
+
+            <div class="form-group col-md">
+              <input type="text" class="form-control" name="quantity1" id="inputQuantity" placeholder="Enter Quantity">
+            </div>
+        </div>
+            
         <div class="form-row">
           <div class="form-group col-md-12">
-              <input type="text" class="form-control" id="inputRemarks" name="remarks" placeholder="Remarks">
-          </div>   
+          <input type="text" class="form-control" id="inputRemarks" name="remarks" placeholder="Remarks">
         </div>
+
+        </div>
+
 
         <div class="form-group mb-4">
         <?php include('templates/borrowitems.php');?>
