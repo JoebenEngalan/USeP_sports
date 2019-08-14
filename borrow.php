@@ -44,7 +44,7 @@ include_once('templates/findborrower.php');
         <!-- Page Content -->
         <!-- Borrowing form grid -->              
         
-        <form method="post" name="submit">
+        <form method="POST" name="submit">
           <div class="form-group mb-4">
               <h3 class="display-10">Borrow Page</h3>
           </div>
@@ -105,7 +105,7 @@ include_once('templates/findborrower.php');
             <!-- LastName input -->
             <div class="form-group col-md">
               <label for="inputLname">ID Number</label>
-              <input type="text" class="form-control" readonly name="id_number" id="inputLname"  value="<?php echo $id_number;?>"  placeholder="ID number of Student or Faculty" >
+              <input type="text" class="form-control" readonly name="id_number" id="inputLname" value="<?php echo $id_number;?>" placeholder="ID number of Student or Faculty" >
             </div>
           </div>
 
@@ -114,12 +114,12 @@ include_once('templates/findborrower.php');
             <!-- LastName input -->
             <div class="form-group col-md-6">
               <label for="inputLname">Last Name</label>
-              <input type="text" class="form-control" readonly name="LastName"  id="inputLname"  value="<?php echo $LastName;?>" placeholder="Last Name" >
+              <input type="text" class="form-control" readonly name="LastName" id="inputLname"  value="<?php echo $LastName;?>" placeholder="Last Name" >
             </div>
             <!-- FirstName input -->
             <div class="form-group col-md-6">
               <label for="inputFname">First Name</label>
-              <input type="text" class="form-control" readonly name="FirstName"  id="inputFname" value="<?php echo $FirstName;?>" placeholder="First Name" >
+              <input type="text" class="form-control" readonly name="FirstName" id="inputFname" value="<?php echo $FirstName;?>" placeholder="First Name" >
             </div>
         </div>
 
@@ -127,7 +127,7 @@ include_once('templates/findborrower.php');
             <!-- ContactNum input -->
             <div class="form-group col-md-6">
               <label for="inputContactnum">Contact Number</label>
-              <input type="text" class="form-control" readonly name="ContactNumber" value="<?php echo $ContactNumber;?>"   id="inputContactnum" placeholder="+63XXXXXXXXXX" >
+              <input type="text" class="form-control" readonly name="ContactNumber" value="<?php echo $ContactNumber;?>" id="inputContactnum" placeholder="+63XXXXXXXXXX" >
             </div>
             <!-- Date input -->
             <div class="form-group col-md-6">
@@ -138,67 +138,67 @@ include_once('templates/findborrower.php');
 
         <div class="form-row" name='1'>     
             
-            <div class="form-group col-md-3">
+            <div class="form-group col-md-5">
             <label for="itemname">Item name</label>
-              <input type="text" class="form-control" name="itemname" id="itemname" value="<?php echo $itemname1;?>" placeholder="Item name" >
+              <input type="text" class="form-control" name="1itemname" id="itemname" value="<?php echo $itemname1;?>" placeholder="Item name" >
             </div>
                       
             <div class="form-group col-md">
             <label for="itemname">Quantity Left</label>
-              <input type="text" class="form-control" name="quantity" id="quantity" value="<?php echo $quantity1;?>" placeholder="Quantity Left">
+              <input type="text" class="form-control" name="1quantity" id="quantity" value="<?php echo $quantity1;?>" placeholder="Quantity Left">
             </div>
 
             <div class="form-group col-md">
             <label for="itemname">Quantity</label>
-              <input type="text" class="form-control" name="quantity1" id="inputQuantity" placeholder="Enter Quantity">
+              <input type="text" class="form-control" name="quantity" id="inputQuantity" placeholder="Enter Quantity">
             </div>
             
         </div>
 
         <div class="form-row" name='2'>     
             
-            <div class="form-group col-md-3">
-              <input type="text" class="form-control" name="itemname" id="itemname" value="<?php echo $itemname1;?>" placeholder="Item name" >
+            <div class="form-group col-md-5">
+              <input type="text" class="form-control" name="2itemname" id="itemname" value="<?php echo $itemname2;?>" placeholder="Item name" >
             </div>
                       
             <div class="form-group col-md">
-              <input type="text" class="form-control" name="quantity" id="quantity" value="<?php echo $quantity1;?>" placeholder="Quantity Left">
+              <input type="text" class="form-control" name="2quantity" id="quantity" value="<?php echo $quantity2;?>" placeholder="Quantity Left">
             </div>
 
             <div class="form-group col-md">
-              <input type="text" class="form-control" name="quantity1" id="inputQuantity" placeholder="Enter Quantity">
+              <input type="text" class="form-control" name="quantity" id="inputQuantity" placeholder="Enter Quantity">
             </div>
             
         </div>
 
         <div class="form-row" name='3'>     
             
-            <div class="form-group col-md-3">
-              <input type="text" class="form-control" name="itemname" id="itemname" value="<?php echo $itemname1;?>" placeholder="Item name" >
+            <div class="form-group col-md-5">
+              <input type="text" class="form-control" name="3itemname" id="itemname" value="<?php echo $itemname3;?>" placeholder="Item name" >
             </div>
                       
             <div class="form-group col-md">
-              <input type="text" class="form-control" name="quantity" id="quantity" value="<?php echo $quantity1;?>" placeholder="Quantity Left">
+              <input type="text" class="form-control" name="3quantity" id="quantity" value="<?php echo $quantity3;?>" placeholder="Quantity Left">
             </div>
 
             <div class="form-group col-md">
-              <input type="text" class="form-control" name="quantity1" id="inputQuantity" placeholder="Enter Quantity">
+              <input type="text" class="form-control" name="quantity" id="inputQuantity" placeholder="Enter Quantity">
             </div>
             
         </div>
 
         <div class="form-row" name='4'>     
             
-            <div class="form-group col-md-3">
-              <input type="text" class="form-control" name="itemname" id="itemname" value="<?php echo $itemname1;?>" placeholder="Item name" >
+            <div class="form-group col-md-5">
+              <input type="text" class="form-control" name="4itemname" id="itemname" value="<?php echo $itemname4;?>" placeholder="Item name" >
             </div>
                       
             <div class="form-group col-md">
-              <input type="text" class="form-control" name="quantity" id="quantity" value="<?php echo $quantity1;?>" placeholder="Quantity Left">
+              <input type="text" class="form-control" name="4quantity" id="quantity" value="<?php echo $quantity4;?>" placeholder="Quantity Left">
             </div>
 
             <div class="form-group col-md">
-              <input type="text" class="form-control" name="quantity1" id="inputQuantity" placeholder="Enter Quantity">
+              <input type="text" class="form-control" name="quantity" id="inputQuantity" placeholder="Enter Quantity">
             </div>
         </div>
             
