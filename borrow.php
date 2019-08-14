@@ -18,6 +18,16 @@ if(!isset($_SESSION["id"]))
 <!--scripts-->
 <?php include('templates/scripts.php')?>
 
+
+<script>
+$(document).ready(function(){
+  var  = 
+  $("#getitem").click(function(){
+    $.ajax({url: "templates/getitem.php"});
+  });
+});
+</script>
+
 <body id="page-top">
 
   <!-- Navbar Search -->
@@ -96,7 +106,7 @@ if(!isset($_SESSION["id"]))
                 <?php include('templates/selectitem.php');?>               
                 </select>
                 <div class="input-group-append">
-                <?php include('templates/getitem.php');?>
+                
                   <button class="btn btn-primary"  id="getitem" name="getitem" >
                       <i class="fas fa-search"></i>
                   </button>

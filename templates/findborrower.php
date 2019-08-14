@@ -28,7 +28,6 @@ if(isset($_POST['Find']))
                 $FirstName = $row['FirstName'];
                 $LastName = $row['LastName'];
                 $ContactNumber = $row['ContactNumber'];
-
             }
         }
             // if the id not exist

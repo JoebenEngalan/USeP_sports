@@ -18,8 +18,8 @@ $pdoExec = $pdoResult->execute(array(":itemname1"=>$itemname));
         {
             foreach($pdoResult as $row)
             {   
-                $itemname = $row['ItemName'];
-                $quantity = $row['quantity'];                
+               echo $itemname = $row['ItemName'];
+               echo $quantity = $row['quantity'];                
             }
         }
     }
