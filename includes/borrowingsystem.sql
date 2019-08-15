@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 08, 2019 at 10:26 AM
+-- Generation Time: Aug 15, 2019 at 05:02 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.7
 
@@ -30,12 +30,14 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `borrowed_item` (
   `ID` int(11) NOT NULL,
-  `Borrower_Fname` varchar(250) DEFAULT NULL,
-  `Borrower_Lname` varchar(500) NOT NULL,
+  `id_number` varchar(12) NOT NULL,
+  `FirstName` varchar(250) NOT NULL,
+  `LastName` varchar(500) NOT NULL,
+  `ContactNumber` varchar(13) NOT NULL,
   `Item` varchar(150) NOT NULL,
   `quantity` int(100) DEFAULT NULL,
   `Remarks` text NOT NULL,
-  `Borrowed_time` varchar(100) DEFAULT NULL,
+  `Borrowed_time` varchar(100) NOT NULL,
   `status` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -43,12 +45,9 @@ CREATE TABLE `borrowed_item` (
 -- Dumping data for table `borrowed_item`
 --
 
-INSERT INTO `borrowed_item` (`ID`, `Borrower_Fname`, `Borrower_Lname`, `Item`, `quantity`, `Remarks`, `Borrowed_time`, `status`) VALUES
-(1, NULL, '', 'fff', 0, '', '24/7/2019', 1),
-(2, NULL, '', 'fff', 0, '', '24/7/2019', 1),
-(3, NULL, '', 'fff', 0, '', '24/7/2019', 1),
-(4, NULL, '', 'fff', 0, '', '24/7/2019', 1),
-(5, NULL, '', 'fff', 0, '', '24/7/2019', 1);
+INSERT INTO `borrowed_item` (`ID`, `id_number`, `FirstName`, `LastName`, `ContactNumber`, `Item`, `quantity`, `Remarks`, `Borrowed_time`, `status`) VALUES
+(7, '2014', 'shai', 'celer', '2147483647', '', NULL, '', '8/14/2019', 1),
+(8, '2014', 'shai', 'celer', '2147483647', '', NULL, '', '8/15/2019', 1);
 
 -- --------------------------------------------------------
 
@@ -199,7 +198,7 @@ ALTER TABLE `staff_table`
 -- AUTO_INCREMENT for table `borrowed_item`
 --
 ALTER TABLE `borrowed_item`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `borrower_table`
