@@ -150,7 +150,7 @@ include_once('templates/findborrower.php');
 
             <div class="form-group col-md">
             <label for="itemname">Quantity</label>
-              <input type="text" class="form-control" name="quantity" id="inputQuantity" placeholder="Enter Quantity">
+              <input type="text" class="form-control" name="quantity1" id="quantity1" placeholder="Enter Quantity">
             </div>
             
         </div>
@@ -166,7 +166,7 @@ include_once('templates/findborrower.php');
             </div>
 
             <div class="form-group col-md">
-              <input type="text" class="form-control" name="quantity" id="inputQuantity" placeholder="Enter Quantity">
+              <input type="text" class="form-control" name="quantity2" id="quantity2" placeholder="Enter Quantity">
             </div>
             
         </div>
@@ -182,7 +182,7 @@ include_once('templates/findborrower.php');
             </div>
 
             <div class="form-group col-md">
-              <input type="text" class="form-control" name="quantity" id="inputQuantity" placeholder="Enter Quantity">
+              <input type="text" class="form-control" name="quantity3" id="quantity3" placeholder="Enter Quantity">
             </div>
             
         </div>
@@ -198,7 +198,7 @@ include_once('templates/findborrower.php');
             </div>
 
             <div class="form-group col-md">
-              <input type="text" class="form-control" name="quantity" id="inputQuantity" placeholder="Enter Quantity">
+              <input type="text" class="form-control" name="quantity4" id="quantity4" placeholder="Enter Quantity">
             </div>
         </div>
             
@@ -213,7 +213,7 @@ include_once('templates/findborrower.php');
         <div class="form-group mb-4">
         <?php include('templates/borrowitems.php');?>
           <div class="btn-group">
-            <button type="submit"  name="submit"  value="Submit"  class="btn btn-primary btn-lg">Add item</button>
+            <button type="submit"  name="submit" onclick="return  confirm('Y/N') " value="Submit"  class="btn btn-primary btn-lg">Add item</button>
             <button type="clear" class="btn btn-primary btn-lg">Clear</button>
           </div>
         
