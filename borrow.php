@@ -68,8 +68,10 @@ include_once('templates/findborrower.php');
           <label for="itemname1">Equipments</label>
           <div class="form-row md-6">
             <div class="form-group col-md">
-                <div class="input-group">
+                <div class="input-group">               
                   <select class="form-control" name="itemname1" id="itemname1" >
+                  <option disabled selected>Equipement Name and Code 1</option>
+                  <option>None</option>
                   <?php include('templates/selectitem.php');?>
                   </select>
                 </div>
@@ -78,6 +80,8 @@ include_once('templates/findborrower.php');
             <div class="form-group col-md">
                 <div class="input-group">
                   <select class="form-control" name="itemname2" id="itemname2" >
+                  <option disabled selected>Equipement Name and Code 2</option>
+                  <option>None</option>
                   <?php include('templates/selectitem.php');?>
                   </select>
                 </div>
@@ -88,6 +92,8 @@ include_once('templates/findborrower.php');
             <div class="form-group col-md">
                 <div class="input-group">
                   <select class="form-control" name="itemname3" id="itemname3" >
+                  <option disabled selected>Equipement Name and Code 3</option>
+                  <option>None</option>
                   <?php include('templates/selectitem.php');?>
                   </select>
                 </div>
@@ -96,6 +102,8 @@ include_once('templates/findborrower.php');
             <div class="form-group col-md">
                 <div class="input-group">
                   <select class="form-control" name="itemname4" id="itemname4" >
+                  <option disabled selected>Equipement Name and Code 4</option>
+                  <option >None</option>
                   <?php include('templates/selectitem.php');?>
                   </select>
                 </div>
@@ -138,16 +146,16 @@ include_once('templates/findborrower.php');
             </div>    
         </div>
 
-        <div class="form-row" name='1'>     
-            
+       
+        <div class="form-row" name='1'> 
             <div class="form-group col-md-5">
             <label for="itemname">Item name</label>
-              <input type="text" class="form-control" name="1itemname" id="itemname" value="<?php echo $itemname1;?>" placeholder="Item name" >
+              <input type="text" class="form-control" name="1itemname" id="itemname" value="<?php echo $itemname1;?>" placeholder="Item name 1" >
             </div>
                       
             <div class="form-group col-md">
             <label for="itemname">Quantity Left</label>
-              <input type="text" class="form-control" name="1quantity" id="quantity" value="<?php echo $quantity1;?>" placeholder="Quantity Left">
+              <input type="text" class="form-control" name="1quantity" id="quantity" value="<?php echo $quantity1;?>" placeholder="Quantity Left ">
             </div>
 
             <div class="form-group col-md">
@@ -160,7 +168,7 @@ include_once('templates/findborrower.php');
         <div class="form-row" name='2'>     
             
             <div class="form-group col-md-5">
-              <input type="text" class="form-control" name="2itemname" id="itemname" value="<?php echo $itemname2;?>" placeholder="Item name" >
+              <input type="text" class="form-control" name="2itemname" id="itemname" value="<?php echo $itemname2;?>" placeholder="Item name 2" >
             </div>
                       
             <div class="form-group col-md">
@@ -176,7 +184,7 @@ include_once('templates/findborrower.php');
         <div class="form-row" name='3'>     
             
             <div class="form-group col-md-5">
-              <input type="text" class="form-control" name="3itemname" id="itemname" value="<?php echo $itemname3;?>" placeholder="Item name" >
+              <input type="text" class="form-control" name="3itemname" id="itemname" value="<?php echo $itemname3;?>" placeholder="Item name 3">
             </div>
                       
             <div class="form-group col-md">
@@ -192,7 +200,7 @@ include_once('templates/findborrower.php');
         <div class="form-row" name='4'>     
             
             <div class="form-group col-md-5">
-              <input type="text" class="form-control" name="4itemname" id="itemname" value="<?php echo $itemname4;?>" placeholder="Item name" >
+              <input type="text" class="form-control" name="4itemname" id="itemname" value="<?php echo $itemname4;?>" placeholder="Item name 4">
             </div>
                       
             <div class="form-group col-md">
