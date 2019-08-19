@@ -54,8 +54,11 @@ include_once('templates/findborrower.php');
           <div class="input-group mb-3"> 
             <input type="text" class="form-control" name="idnumber" id="search" placeholder="ID number of Student or Faculty" aria-label="Recipient's username" aria-describedby="button-addon2">
             <div class="input-group-append">             
-              <button class="btn btn-primary" type="submit"  id="Find" name="Find" value="Find Data">
+              <button class="btn btn-primary" onclick="return confirm ('Y/N')"  href="javascript:toggleDiv('myContent');" type="submit"  id="Find" name="Find" value="Find Data">
                 <i class="fas fa-search"></i>
+              </button>
+              <button class="btn btn-primary" type="clear" >
+                <i class="fa fa-redo"></i>
               </button>
             </div>
           </div>
@@ -98,9 +101,8 @@ include_once('templates/findborrower.php');
                 </div>
             </div>
           </div>
-
-        
-        <div name="result" id="result" class="hidden">
+       
+        <div name="result" id="result">
           <div class="form-row">
             <!-- LastName input -->
             <div class="form-group col-md">
@@ -136,7 +138,7 @@ include_once('templates/findborrower.php');
             </div>    
         </div>
 
-        <div class="form-row" name='1'>     
+        <div class="form-row" name='1' id="myContent" hidden >     
             
             <div class="form-group col-md-5">
             <label for="itemname">Item name</label>

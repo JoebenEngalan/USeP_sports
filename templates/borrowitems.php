@@ -24,8 +24,7 @@ $sql= "INSERT INTO Borrowed_Item (id_number,FirstName,LastName,ContactNumber,Ite
         (:id_number,:FirstName,:LastName,:ContactNumber,:1itemname,:quantity1,:remarks,:Btime,:status),
         (:id_number,:FirstName,:LastName,:ContactNumber,:2itemname,:quantity2,:remarks,:Btime,:status),
         (:id_number,:FirstName,:LastName,:ContactNumber,:3itemname,:quantity3,:remarks,:Btime,:status),
-        (:id_number,:FirstName,:LastName,:ContactNumber,:4itemname,:quantity4,:remarks,:Btime,:status)
-        ";
+        (:id_number,:FirstName,:LastName,:ContactNumber,:4itemname,:quantity4,:remarks,:Btime,:status)";
 
 $query=$dbh->prepare($sql);
 $query->bindParam(':id_number',$id_number,PDO::PARAM_STR);

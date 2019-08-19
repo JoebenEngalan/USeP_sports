@@ -14,7 +14,6 @@ $quantity3 = "";
 $itemname4 = '';
 $quantity4 = "";
 
-
 if(isset($_POST['Find']))
 {
     // id to search
@@ -51,8 +50,7 @@ if(isset($_POST['Find']))
             }
         }
             // if the id not exist
-            // show a message and clear inputs
-        
+            // show a message and clear inputs       
     }
     
     // mysql search query  
@@ -123,6 +121,4 @@ if(isset($_POST['Find']))
             }
         }    
 }
-
-
 ?>
