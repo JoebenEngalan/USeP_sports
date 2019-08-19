@@ -138,7 +138,7 @@ include_once('templates/findborrower.php');
             </div>    
         </div>
 
-        <div class="form-row" name='1' id="myContent" hidden >     
+        <div class="form-row" name='1'>     
             
             <div class="form-group col-md-5">
             <label for="itemname">Item name</label>
