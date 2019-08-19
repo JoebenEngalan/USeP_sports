@@ -25,8 +25,7 @@ if(isset($_POST['Find']))
     // id to search
     $itemname3 = (isset($_POST['itemname3']) ? $_POST['itemname3'] : '');  
     // id to search
-    $itemname4 = (isset($_POST['itemname4']) ? $_POST['itemname4'] : '');
-
+    $itemname4 = (isset($_POST['itemname4']) ? $_POST['itemname4'] : '');    
     // mysql search query
     $sql = "SELECT * FROM borrower_table WHERE id_number = :idnumber" ;  
     
@@ -119,8 +118,7 @@ if(isset($_POST['Find']))
                 $quantity4 = $row['quantity']; 
                 }
             }
-        }    
+        } 
 
-    
 }
 ?>
