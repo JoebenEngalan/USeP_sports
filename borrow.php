@@ -9,7 +9,6 @@ if(!isset($_SESSION["id"]))
 
 ?> 
 
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -145,26 +144,37 @@ include_once('templates/findborrower.php');
               <input type="text" id="Datenow" name="Btime" readonly class="form-control">
             </div>    
         </div>
+   
+        <!-- label -->
+        <div class="form-row" name='label'>
+          <div class="form-group col-md-5">
+            <h5>Item name</h5>
+          </div>
+          <div class="form-group col-md">
+            <h5>Quantity Left</h5>
+          </div>
+          <div class="form-group col-md">
+            <h5>Quantity</h5>
+          </div>         
+        </div>
 
-       
+        <!-- item one-->
         <div class="form-row" name='1'> 
             <div class="form-group col-md-5">
-            <label for="itemname">Item name</label>
               <input type="text" class="form-control" name="1itemname" id="itemname" value="<?php echo $itemname1;?>" placeholder="Item name 1" >
             </div>
                       
             <div class="form-group col-md">
-            <label for="itemname">Quantity Left</label>
               <input type="text" class="form-control" name="1quantity" id="quantity" value="<?php echo $quantity1;?>" placeholder="Quantity Left ">
             </div>
 
             <div class="form-group col-md">
-            <label for="itemname">Quantity</label>
               <input type="text" class="form-control" name="quantity1" id="quantity1" placeholder="Enter Quantity">
             </div>
             
         </div>
 
+        <!--item two-->
         <div class="form-row" name='2'>     
             
             <div class="form-group col-md-5">
@@ -180,7 +190,7 @@ include_once('templates/findborrower.php');
             </div>
             
         </div>
-
+        <!--item three-->
         <div class="form-row" name='3'>     
             
             <div class="form-group col-md-5">
@@ -196,7 +206,8 @@ include_once('templates/findborrower.php');
             </div>
             
         </div>
-
+        
+        <!--item four-->
         <div class="form-row" name='4'>     
             
             <div class="form-group col-md-5">
@@ -253,7 +264,6 @@ function getDate(){
 getDate(); 
 
 /** no form resubmision javascript dont touch**/
-
   if ( window.history.replaceState ) {
     window.history.replaceState( null, null, window.location.href );
   }
