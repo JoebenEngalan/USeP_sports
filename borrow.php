@@ -53,7 +53,7 @@ include_once('templates/findborrower.php');
           <div class="input-group mb-3"> 
             <input type="text" class="form-control" name="idnumber" id="search" placeholder="ID number of Student or Faculty" aria-label="Recipient's username" aria-describedby="button-addon2">
             <div class="input-group-append">             
-              <button class="btn btn-primary" onclick="return confirm ('Y/N')"  href="javascript:toggleDiv('myContent');" type="submit"  id="Find" name="Find" value="Find Data">
+              <button class="btn btn-primary" onclick="return confirm ('Y/N')" type="submit"  id="Find" name="Find" value="Find Data">
                 <i class="fas fa-search"></i>
               </button>
               <button class="btn btn-primary" type="clear" >
@@ -62,9 +62,7 @@ include_once('templates/findborrower.php');
             </div>
           </div>
           <!--Grid colmun equipments-->
-          
-
-         
+                 
           <!--Grid colmun equipments-->
           <label for="itemname1">Equipments</label>
           <div class="form-row md-6">
@@ -186,7 +184,7 @@ include_once('templates/findborrower.php');
         </div>
 
         <!-- item one-->
-        <div class="form-row" name='1'> 
+        <div class="form-row" name='1' id='item1' style="display: none"> 
             <div class="form-group col-md-5">
               <input type="text" class="form-control" name="1itemname" id="1itemname" value="<?php echo $itemname1;?>" placeholder="Item name 1" >
             </div>
@@ -202,7 +200,7 @@ include_once('templates/findborrower.php');
         </div>
 
         <!--item two-->
-        <div class="form-row" name='2'>     
+        <div class="form-row" name='2' id='item2' style="display: none">     
             
             <div class="form-group col-md-5">
               <input type="text" class="form-control" name="2itemname" id="itemname" value="<?php echo $itemname2;?>" placeholder="Item name 2" >
@@ -218,7 +216,7 @@ include_once('templates/findborrower.php');
             
         </div>
         <!--item three-->
-        <div class="form-row" name='3'>     
+        <div class="form-row" name='3' id='item3' style="display: none">     
             
             <div class="form-group col-md-5">
               <input type="text" class="form-control" name="3itemname" id="itemname" value="<?php echo $itemname3;?>" placeholder="Item name 3">
@@ -235,7 +233,7 @@ include_once('templates/findborrower.php');
         </div>
         
         <!--item four-->
-        <div class="form-row" name='4'>     
+        <div class="form-row" name='4' id='item4' style="display: none">     
             
             <div class="form-group col-md-5">
               <input type="text" class="form-control" name="4itemname" id="itemname" value="<?php echo $itemname4;?>" placeholder="Item name 4">
@@ -278,14 +276,16 @@ include_once('templates/findborrower.php');
 </body>
 
 <script type="text/javascript">
-
+ 
 $(function () {
     $("#chkPass1").click(function () {
     if ($(this).is(":checked")) {
       $("#itemname1").removeAttr("disabled");
       $("#itemname1").focus();
+      $("#item1").fadeIn();
       } else {
       $("#itemname1").attr("disabled", "disabled");
+      $("#item1").fadeOut();
       }
     });
   });
@@ -295,8 +295,10 @@ $(function () {
     if ($(this).is(":checked")) {
       $("#itemname2").removeAttr("disabled");
       $("#itemname2").focus();
+      $("#item2").fadeIn();
       } else {
       $("#itemname2").attr("disabled", "disabled");
+      $("#item2").fadeOut();
       }
     });
   });
@@ -306,8 +308,10 @@ $(function () {
     if ($(this).is(":checked")) {
       $("#itemname3").removeAttr("disabled");
       $("#itemname3").focus();
+      $("#item3").fadeIn();
       } else {
       $("#itemname3").attr("disabled", "disabled");
+      $("#item3").fadeOut();
       }
     });
   });
@@ -317,12 +321,17 @@ $(function () {
     if ($(this).is(":checked")) {
       $("#itemname4").removeAttr("disabled");
       $("#itemname4").focus();
+      $("#item4").fadeIn();
     } else {
       $("#itemname4").attr("disabled", "disabled");
+      $("#item4").fadeOut();
       }
     });
   });
+  
+ 
 
+  
 </script>
 
 <script type="text/javascript">
