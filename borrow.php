@@ -62,13 +62,21 @@ include_once('templates/findborrower.php');
             </div>
           </div>
           <!--Grid colmun equipments-->
+          
+
          
           <!--Grid colmun equipments-->
           <label for="itemname1">Equipments</label>
           <div class="form-row md-6">
-            <div class="form-group col-md">
-                <div class="input-group">               
-                  <select class="form-control" name="itemname1" id="itemname1" >
+            <div class="form-group col-md">                                
+                <div class="input-group">                
+                  
+                  <div class="custom-control custom-checkbox custom-control-inline">
+                    <input type="checkbox" class="custom-control-input" id="chkPass1" onclick="EnableDisableTextBox(this)"/>
+                    <label class="custom-control-label" for="chkPass1">1</label>
+                  </div>                
+                  
+                  <select class="form-control" name="itemname1" id="itemname1" disabled="disabled">
                   <option disabled selected>Equipement Name and Code 1</option>
                   <option>None</option>
                   <?php include('templates/selectitem.php');?>
@@ -78,7 +86,13 @@ include_once('templates/findborrower.php');
           <!--Grid colmun equipments-->
             <div class="form-group col-md">
                 <div class="input-group">
-                  <select class="form-control" name="itemname2" id="itemname2" >
+                  
+                  <div class="custom-control custom-checkbox custom-control-inline">
+                    <input type="checkbox" class="custom-control-input" id="chkPass2" onclick="EnableDisableTextBox(this)">
+                    <label class="custom-control-label" for="chkPass2">2</label>
+                  </div> 
+                  
+                  <select class="form-control" name="itemname2" id="itemname2" disabled="disabled">
                   <option disabled selected>Equipement Name and Code 2</option>
                   <option>None</option>
                   <?php include('templates/selectitem.php');?>
@@ -89,8 +103,14 @@ include_once('templates/findborrower.php');
           <!--Grid colmun equipments-->
           <div class="form-row md-6">
             <div class="form-group col-md">
-                <div class="input-group">
-                  <select class="form-control" name="itemname3" id="itemname3" >
+                <div class="input-group">                
+                  
+                  <div class="custom-control custom-checkbox custom-control-inline">
+                    <input type="checkbox" class="custom-control-input" id="chkPass3" onclick="EnableDisableTextBox(this)">
+                    <label class="custom-control-label" for="chkPass3">3</label>
+                  </div>  
+                  
+                  <select class="form-control" name="itemname3" id="itemname3" disabled="disabled">
                   <option disabled selected>Equipement Name and Code 3</option>
                   <option>None</option>
                   <?php include('templates/selectitem.php');?>
@@ -100,11 +120,18 @@ include_once('templates/findborrower.php');
           <!--Grid colmun equipments-->
             <div class="form-group col-md">
                 <div class="input-group">
-                  <select class="form-control" name="itemname4" id="itemname4" >
+                  
+                  <div class="custom-control custom-checkbox custom-control-inline">
+                    <input type="checkbox" class="custom-control-input" id="chkPass4" onclick="EnableDisableTextBox(this)">
+                    <label class="custom-control-label" for="chkPass4">4</label>
+                  </div> 
+
+                  <select class="form-control" name="itemname4" id="itemname4" disabled="disabled" >
                   <option disabled selected>Equipement Name and Code 4</option>
                   <option >None</option>
                   <?php include('templates/selectitem.php');?>
                   </select>
+
                 </div>
             </div>
           </div>
@@ -161,7 +188,7 @@ include_once('templates/findborrower.php');
         <!-- item one-->
         <div class="form-row" name='1'> 
             <div class="form-group col-md-5">
-              <input type="text" class="form-control" name="1itemname" id="itemname" value="<?php echo $itemname1;?>" placeholder="Item name 1" >
+              <input type="text" class="form-control" name="1itemname" id="1itemname" value="<?php echo $itemname1;?>" placeholder="Item name 1" >
             </div>
                       
             <div class="form-group col-md">
@@ -249,6 +276,54 @@ include_once('templates/findborrower.php');
   <!--scrolltop-->
   <?php include('templates/scrolltop.php')?>
 </body>
+
+<script type="text/javascript">
+
+$(function () {
+    $("#chkPass1").click(function () {
+    if ($(this).is(":checked")) {
+      $("#itemname1").removeAttr("disabled");
+      $("#itemname1").focus();
+      } else {
+      $("#itemname1").attr("disabled", "disabled");
+      }
+    });
+  });
+
+  $(function () {
+    $("#chkPass2").click(function () {
+    if ($(this).is(":checked")) {
+      $("#itemname2").removeAttr("disabled");
+      $("#itemname2").focus();
+      } else {
+      $("#itemname2").attr("disabled", "disabled");
+      }
+    });
+  });
+
+  $(function () {
+    $("#chkPass3").click(function () {
+    if ($(this).is(":checked")) {
+      $("#itemname3").removeAttr("disabled");
+      $("#itemname3").focus();
+      } else {
+      $("#itemname3").attr("disabled", "disabled");
+      }
+    });
+  });
+
+  $(function () {
+    $("#chkPass4").click(function () {
+    if ($(this).is(":checked")) {
+      $("#itemname4").removeAttr("disabled");
+      $("#itemname4").focus();
+    } else {
+      $("#itemname4").attr("disabled", "disabled");
+      }
+    });
+  });
+
+</script>
 
 <script type="text/javascript">
 
