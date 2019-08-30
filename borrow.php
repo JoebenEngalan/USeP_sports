@@ -248,10 +248,10 @@ include_once('templates/findborrower.php');
             </div>
         </div>
             
-        <div class="form-row">
-          <div class="form-group col-md-12">
-          <input type="text" class="form-control" id="inputRemarks" name="remarks" placeholder="Remarks">
-        </div>
+          <div class="form-row">
+            <div class="form-group col-md-12">
+            <input type="text" class="form-control" id="inputRemarks" name="remarks" placeholder="Remarks">
+          </div>
 
         </div>
 
@@ -259,7 +259,7 @@ include_once('templates/findborrower.php');
         <div class="form-group mb-4">
         <?php include('templates/borrowitems.php');?>
           <div class="btn-group">
-            <button type="submit"  name="submit" onclick="return  confirm('Y/N') " value="Submit"  class="btn btn-primary btn-lg">Add item</button>
+            <button type="submit"  name="submit" onclick="return confirm('Y/N') " value="Submit"  class="btn btn-primary btn-lg">Borrow</button>
             <button type="clear" class="btn btn-primary btn-lg">Clear</button>
           </div>
         
@@ -329,8 +329,31 @@ $(function () {
     });
   });
   
- 
+  function App() {}
 
+  App.prototype.setState = function(state) {
+    localStorage.setItem('checked', state);
+  }
+
+  App.prototype.getState = function() {
+    return localStorage.getItem('checked');
+  }
+
+  function init() {
+    var app = new App();
+    var state = app.getState();
+    var checkbox = document.querySelector('#chkPass1');
+
+    if (state == 'true') {
+      checkbox.checked = true;
+    }
+
+    checkbox.addEventListener('click', function() {
+        app.setState(checkbox.checked);
+    });
+  }
+
+  init();
   
 </script>
 
