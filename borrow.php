@@ -51,7 +51,7 @@ include_once('templates/findborrower.php');
           <!--id NUMBER-->
           <label for="itemname1">Search ID and Equipments</label>
           <div class="input-group mb-3"> 
-            <input type="text" class="form-control" name="idnumber" id="search" placeholder="ID number of Student or Faculty" aria-label="Recipient's username" aria-describedby="button-addon2">
+            <input type="text" class="form-control" name="idnumber" id="search" placeholder="Enter ID number of Student or Faculty" aria-label="Recipient's username" aria-describedby="button-addon2">
             <div class="input-group-append">             
               <button class="btn btn-primary" onclick="return confirm ('Y/N')" type="submit"  id="Find" name="Find" value="Find Data">
                 <i class="fas fa-search"></i>
@@ -184,13 +184,13 @@ include_once('templates/findborrower.php');
         </div>
 
         <!-- item one-->
-        <div class="form-row" name='1' id='item1' style="display: none"> 
+        <div class="form-row" name='1' id='item1'> 
             <div class="form-group col-md-5">
-              <input type="text" class="form-control" name="1itemname" id="1itemname" value="<?php echo $itemname1;?>" placeholder="Item name 1" >
+              <input type="text" class="form-control" readonly name="1itemname" id="1itemname" value="<?php echo $itemname1;?>" placeholder="Item name 1" >
             </div>
                       
             <div class="form-group col-md">
-              <input type="text" class="form-control" name="1quantity" id="quantity" value="<?php echo $quantity1;?>" placeholder="Quantity Left ">
+              <input type="text" class="form-control" readonly name="1quantity" id="quantity" value="<?php echo $quantity1;?>" placeholder="Quantity Left ">
             </div>
 
             <div class="form-group col-md">
@@ -200,14 +200,14 @@ include_once('templates/findborrower.php');
         </div>
 
         <!--item two-->
-        <div class="form-row" name='2' id='item2' style="display: none">     
+        <div class="form-row" name='2' id='item2'>     
             
             <div class="form-group col-md-5">
-              <input type="text" class="form-control" name="2itemname" id="itemname" value="<?php echo $itemname2;?>" placeholder="Item name 2" >
+              <input type="text" class="form-control" readonly name="2itemname" id="itemname" value="<?php echo $itemname2;?>" placeholder="Item name 2" >
             </div>
                       
             <div class="form-group col-md">
-              <input type="text" class="form-control" name="2quantity" id="quantity" value="<?php echo $quantity2;?>" placeholder="Quantity Left">
+              <input type="text" class="form-control" readonly name="2quantity" id="quantity" value="<?php echo $quantity2;?>" placeholder="Quantity Left">
             </div>
 
             <div class="form-group col-md">
@@ -216,14 +216,14 @@ include_once('templates/findborrower.php');
             
         </div>
         <!--item three-->
-        <div class="form-row" name='3' id='item3' style="display: none">     
+        <div class="form-row" name='3' id='item3'>     
             
             <div class="form-group col-md-5">
-              <input type="text" class="form-control" name="3itemname" id="itemname" value="<?php echo $itemname3;?>" placeholder="Item name 3">
+              <input type="text" class="form-control" readonly name="3itemname" id="itemname" value="<?php echo $itemname3;?>" placeholder="Item name 3">
             </div>
                       
             <div class="form-group col-md">
-              <input type="text" class="form-control" name="3quantity" id="quantity" value="<?php echo $quantity3;?>" placeholder="Quantity Left">
+              <input type="text" class="form-control" readonly name="3quantity" id="quantity" value="<?php echo $quantity3;?>" placeholder="Quantity Left">
             </div>
 
             <div class="form-group col-md">
@@ -233,14 +233,14 @@ include_once('templates/findborrower.php');
         </div>
         
         <!--item four-->
-        <div class="form-row" name='4' id='item4' style="display: none">     
+        <div class="form-row" name='4' id='item4'>     
             
             <div class="form-group col-md-5">
-              <input type="text" class="form-control" name="4itemname" id="itemname" value="<?php echo $itemname4;?>" placeholder="Item name 4">
+              <input type="text" class="form-control" readonly name="4itemname" id="itemname" value="<?php echo $itemname4;?>" placeholder="Item name 4">
             </div>
                       
             <div class="form-group col-md">
-              <input type="text" class="form-control" name="4quantity" id="quantity" value="<?php echo $quantity4;?>" placeholder="Quantity Left">
+              <input type="text" class="form-control" readonly name="4quantity" id="quantity" value="<?php echo $quantity4;?>" placeholder="Quantity Left">
             </div>
 
             <div class="form-group col-md">
@@ -282,10 +282,8 @@ $(function () {
     if ($(this).is(":checked")) {
       $("#itemname1").removeAttr("disabled");
       $("#itemname1").focus();
-      $("#item1").fadeIn();
       } else {
       $("#itemname1").attr("disabled", "disabled");
-      $("#item1").fadeOut();
       }
     });
   });
@@ -295,10 +293,8 @@ $(function () {
     if ($(this).is(":checked")) {
       $("#itemname2").removeAttr("disabled");
       $("#itemname2").focus();
-      $("#item2").fadeIn();
       } else {
       $("#itemname2").attr("disabled", "disabled");
-      $("#item2").fadeOut();
       }
     });
   });
@@ -308,10 +304,8 @@ $(function () {
     if ($(this).is(":checked")) {
       $("#itemname3").removeAttr("disabled");
       $("#itemname3").focus();
-      $("#item3").fadeIn();
       } else {
       $("#itemname3").attr("disabled", "disabled");
-      $("#item3").fadeOut();
       }
     });
   });
@@ -321,40 +315,12 @@ $(function () {
     if ($(this).is(":checked")) {
       $("#itemname4").removeAttr("disabled");
       $("#itemname4").focus();
-      $("#item4").fadeIn();
     } else {
       $("#itemname4").attr("disabled", "disabled");
-      $("#item4").fadeOut();
       }
     });
   });
-  
-  function App() {}
-
-  App.prototype.setState = function(state) {
-    localStorage.setItem('checked', state);
-  }
-
-  App.prototype.getState = function() {
-    return localStorage.getItem('checked');
-  }
-
-  function init() {
-    var app = new App();
-    var state = app.getState();
-    var checkbox = document.querySelector('#chkPass1');
-
-    if (state == 'true') {
-      checkbox.checked = true;
-    }
-
-    checkbox.addEventListener('click', function() {
-        app.setState(checkbox.checked);
-    });
-  }
-
-  init();
-  
+    
 </script>
 
 <script type="text/javascript">
