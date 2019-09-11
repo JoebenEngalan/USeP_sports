@@ -25,7 +25,14 @@ if(isset($_POST['Find']))
     // id to search
     $itemname3 = (isset($_POST['itemname3']) ? $_POST['itemname3'] : '');  
     // id to search
-    $itemname4 = (isset($_POST['itemname4']) ? $_POST['itemname4'] : '');    
+    $itemname4 = (isset($_POST['itemname4']) ? $_POST['itemname4'] : '');
+    
+    if( empty($id_number))
+    {
+    {echo "<script type= 'text/javascript'>alert('Empty Id Number.');</script>";}  
+    }
+    else
+    {
     // mysql search query
     $sql = "SELECT * FROM borrower_table WHERE id_number = :idnumber" ;  
     
@@ -33,23 +40,24 @@ if(isset($_POST['Find']))
     //set your id to the query id
     $pdoExec = $pdoResult->execute(array(":idnumber"=>$id_number));
     
-    if($pdoExec)
-    {
-            // if id exist 
-            // show data in inputs
-        if($pdoResult->rowCount()>0)
+        if($pdoExec)
         {
-            foreach($pdoResult as $row)
+                // if id exist 
+                // show data in inputs
+            if($pdoResult->rowCount()>0)
             {
-                $id_number = $row['id_number'];
-                $FirstName = $row['FirstName'];
-                $LastName = $row['LastName'];
-                $ContactNumber = $row['ContactNumber'];
-                
+                foreach($pdoResult as $row)
+                {
+                    $id_number = $row['id_number'];
+                    $FirstName = $row['FirstName'];
+                    $LastName = $row['LastName'];
+                    $ContactNumber = $row['ContactNumber'];
+                    
+                }
             }
+                // if the id not exist
+                // show a message and clear inputs       
         }
-            // if the id not exist
-            // show a message and clear inputs       
     }
     
     // mysql search query  
