@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 11, 2019 at 12:39 PM
+-- Generation Time: Sep 11, 2019 at 01:24 PM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.1
 
@@ -102,7 +102,6 @@ INSERT INTO `borrower_table` (`id`, `id_number`, `FirstName`, `LastName`, `Conta
 
 CREATE TABLE `equipment` (
   `id` int(11) NOT NULL,
-  `ItemCode` varchar(50) DEFAULT NULL,
   `ItemName` varchar(500) DEFAULT NULL,
   `Description` text,
   `date_added` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -116,20 +115,20 @@ CREATE TABLE `equipment` (
 -- Dumping data for table `equipment`
 --
 
-INSERT INTO `equipment` (`id`, `ItemCode`, `ItemName`, `Description`, `date_added`, `date_updated`, `Category`, `quantity`, `status`) VALUES
-(3, NULL, 'fff', 'ffffffffffffffffffff', '2019-07-09 02:59:32', '2019-07-09 02:59:32', 'Sports Equipment', 2, 1),
-(4, '5858', 'dddddd', 'deeeeeeeeeeeeeeeeeeeeeeee', '2019-07-09 03:22:06', '2019-07-09 03:22:06', 'Sports Equipment', 1, 1),
-(5, '5858', 'dddddd', 'deeeeeeeeeeeeeeeeeeeeeeee', '2019-07-09 03:23:13', '2019-07-09 03:23:13', 'Sports Equipment', 3, 1),
-(6, '582', 'dddd', 'dfedfdfggf', '2019-07-10 05:51:28', '2019-07-10 05:51:28', 'Gym Equipment', 1, 1),
-(7, '582', 'dddd', 'dfedfdfggf', '2019-07-10 06:00:58', NULL, 'Gym Equipment', 1, 1),
-(8, '65665', 'sha', 'dsfdfdffdfdf', '2019-07-10 06:09:56', NULL, 'Sports Equipment', 1, 1),
-(9, '528', 'xxxxxx', 'dcdvdvv', '2019-07-10 06:15:15', NULL, 'Gym Equipment', 5, 1),
-(10, '528', 'xxxxxx', 'dcdvdvv', '2019-07-10 06:21:46', NULL, 'Gym Equipment', 1, 1),
-(11, '58', 'zcxc', 'cxcxcxcxcxcxcxc', '2019-07-10 06:28:01', NULL, 'Gym Equipment', 1, 1),
-(12, '58', 'ring', 'dsdsdsdsdsdsdsd', '2019-07-10 06:32:20', NULL, 'Gym Equipment', 3, 1),
-(13, '582', 'hey', 'wdsdsdsssssss', '2019-07-11 00:44:08', NULL, 'Gym Equipment', 1, 1),
-(14, '58', 'dddsdsds', 'huydudbbdsbd', '2019-07-11 06:01:55', NULL, 'Sports Equipment', 1, 1),
-(15, '45252', 'ffff', 'bguvgjgfujugjhg', '2019-07-11 06:09:10', NULL, 'Sports Equipment', 1, 1);
+INSERT INTO `equipment` (`id`, `ItemName`, `Description`, `date_added`, `date_updated`, `Category`, `quantity`, `status`) VALUES
+(3, 'fff', 'ffffffffffffffffffff', '2019-07-09 02:59:32', '2019-07-09 02:59:32', 'Sports Equipment', 2, 1),
+(4, 'dddddd', 'deeeeeeeeeeeeeeeeeeeeeeee', '2019-07-09 03:22:06', '2019-07-09 03:22:06', 'Sports Equipment', 1, 1),
+(5, 'dddddd', 'deeeeeeeeeeeeeeeeeeeeeeee', '2019-07-09 03:23:13', '2019-07-09 03:23:13', 'Sports Equipment', 3, 1),
+(6, 'dddd', 'dfedfdfggf', '2019-07-10 05:51:28', '2019-07-10 05:51:28', 'Gym Equipment', 1, 1),
+(7, 'dddd', 'dfedfdfggf', '2019-07-10 06:00:58', NULL, 'Gym Equipment', 1, 1),
+(8, 'sha', 'dsfdfdffdfdf', '2019-07-10 06:09:56', NULL, 'Sports Equipment', 1, 1),
+(9, 'xxxxxx', 'dcdvdvv', '2019-07-10 06:15:15', NULL, 'Gym Equipment', 5, 1),
+(10, 'xxxxxx', 'dcdvdvv', '2019-07-10 06:21:46', NULL, 'Gym Equipment', 1, 1),
+(11, 'zcxc', 'cxcxcxcxcxcxcxc', '2019-07-10 06:28:01', NULL, 'Gym Equipment', 1, 1),
+(12, 'ring', 'dsdsdsdsdsdsdsd', '2019-07-10 06:32:20', NULL, 'Gym Equipment', 3, 1),
+(13, 'hey', 'wdsdsdsssssss', '2019-07-11 00:44:08', NULL, 'Gym Equipment', 1, 1),
+(14, 'dddsdsds', 'huydudbbdsbd', '2019-07-11 06:01:55', NULL, 'Sports Equipment', 1, 1),
+(15, 'ffff', 'bguvgjgfujugjhg', '2019-07-11 06:09:10', NULL, 'Sports Equipment', 1, 1);
 
 -- --------------------------------------------------------
 
