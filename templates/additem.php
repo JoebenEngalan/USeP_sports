@@ -2,8 +2,7 @@
 include('includes/config.php');
 
 if(isset($_POST['submit']))
-  {
-    
+  {    
   $itemname=$_POST['itemname'];
   $description=$_POST['description'];
   $category=$_POST['category'];
