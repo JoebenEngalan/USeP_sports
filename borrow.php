@@ -75,7 +75,7 @@ include_once('templates/findborrower.php');
                   </div>                
                   
                   <select class="form-control" name="itemname1" id="itemname1" disabled="disabled">
-                  <option disabled selected>Equipement Name and Code 1</option>
+                  <option disabled selected>Equipement Name and Quantity 1</option>
                   <option>None</option>
                   <?php include('templates/selectitem.php');?>
                   </select>
@@ -91,7 +91,7 @@ include_once('templates/findborrower.php');
                   </div> 
                   
                   <select class="form-control" name="itemname2" id="itemname2" disabled="disabled">
-                  <option disabled selected>Equipement Name and Code 2</option>
+                  <option disabled selected>Equipement Name and Quantity 2</option>
                   <option>None</option>
                   <?php include('templates/selectitem.php');?>
                   </select>
@@ -109,7 +109,7 @@ include_once('templates/findborrower.php');
                   </div>  
                   
                   <select class="form-control" name="itemname3" id="itemname3" disabled="disabled">
-                  <option disabled selected>Equipement Name and Code 3</option>
+                  <option disabled selected>Equipement Name and Quantity 3</option>
                   <option>None</option>
                   <?php include('templates/selectitem.php');?>
                   </select>
@@ -125,7 +125,7 @@ include_once('templates/findborrower.php');
                   </div> 
 
                   <select class="form-control" name="itemname4" id="itemname4" disabled="disabled" >
-                  <option disabled selected>Equipement Name and Code 4</option>
+                  <option disabled selected>Equipement Name and Quantity 4</option>
                   <option >None</option>
                   <?php include('templates/selectitem.php');?>
                   </select>

@@ -44,14 +44,9 @@ if(!isset($_SESSION["id"]))
         
         <form method="post" name="submit" >
           <!--Grid row-->
-          <!-- Itemcode input -->
-          <div class="form-row">
-          <div class="form-group col-md-6">
-              <label for="itemname">Item Code</label>
-              <input type="text" name= "itemcode" class="form-control" id="itemcode" placeholder="Item Code" required>
-            </div>
+          <div class="form-row">            
             <!-- Item Name input -->
-            <div class="form-group col-md-6">
+            <div class="form-group col-md">
               <label for="itemname">Item Name</label>
               <input type="text" name= "itemname" class="form-control" id="itemname" placeholder="Item Name" required>
             </div>
@@ -83,7 +78,8 @@ if(!isset($_SESSION["id"]))
           <div class="btn-group">
             <!-- database command add item-->
             <?php include('templates/additem.php');?>
-            <button type="submit"  name="submit"  value="Submit"  class="btn btn-primary btn-lg">Add item</button>
+            <button type="submit"  name="submit"  value="Submit"  class="btn btn-primary btn-lg">Add </button>
+            <button type="update"  name="update"  value="update"  class="btn btn-primary btn-lg">Update </button>
             <button type="clear" class="btn btn-primary btn-lg">Clear</button>
           </div>
         </div>
