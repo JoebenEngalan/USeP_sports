@@ -53,7 +53,7 @@ include_once('templates/findborrower.php');
           <div class="input-group mb-3"> 
             <input type="text" class="form-control" name="idnumber" id="search" placeholder="Enter ID number of Student or Faculty" aria-label="Recipient's username" aria-describedby="button-addon2">
             <div class="input-group-append">             
-              <button class="btn btn-primary" onclick="return confirm ('Y/N')" type="submit"  id="Find" name="Find" value="Find Data">
+              <button class="btn btn-primary" onclick="return confirm ('Hello\nHow are you?\nY/N')" type="submit"  id="Find" name="Find" value="Find Data">
                 <i class="fas fa-search"></i>
               </button>
               <button class="btn btn-primary" type="clear" >
