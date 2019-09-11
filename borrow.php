@@ -276,7 +276,8 @@ include_once('templates/findborrower.php');
 </body>
 
 <script type="text/javascript">
- 
+
+/** checkbox enable and disable function dropbox **/
 $(function () {
     $("#chkPass1").click(function () {
     if ($(this).is(":checked")) {
