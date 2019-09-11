@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 15, 2019 at 05:02 AM
+-- Generation Time: Sep 11, 2019 at 12:39 PM
 -- Server version: 10.1.37-MariaDB
--- PHP Version: 7.3.7
+-- PHP Version: 7.3.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -31,11 +31,14 @@ SET time_zone = "+00:00";
 CREATE TABLE `borrowed_item` (
   `ID` int(11) NOT NULL,
   `id_number` varchar(12) NOT NULL,
-  `FirstName` varchar(250) NOT NULL,
-  `LastName` varchar(500) NOT NULL,
-  `ContactNumber` varchar(13) NOT NULL,
-  `Item` varchar(150) NOT NULL,
-  `quantity` int(100) DEFAULT NULL,
+  `Item1` varchar(150) NOT NULL,
+  `quantity1` int(100) DEFAULT NULL,
+  `Item2` varchar(150) NOT NULL,
+  `quantity2` int(100) DEFAULT NULL,
+  `Item3` varchar(150) NOT NULL,
+  `quantity3` int(100) DEFAULT NULL,
+  `Item4` varchar(150) NOT NULL,
+  `quantity4` int(100) DEFAULT NULL,
   `Remarks` text NOT NULL,
   `Borrowed_time` varchar(100) NOT NULL,
   `status` int(5) NOT NULL
@@ -45,9 +48,8 @@ CREATE TABLE `borrowed_item` (
 -- Dumping data for table `borrowed_item`
 --
 
-INSERT INTO `borrowed_item` (`ID`, `id_number`, `FirstName`, `LastName`, `ContactNumber`, `Item`, `quantity`, `Remarks`, `Borrowed_time`, `status`) VALUES
-(7, '2014', 'shai', 'celer', '2147483647', '', NULL, '', '8/14/2019', 1),
-(8, '2014', 'shai', 'celer', '2147483647', '', NULL, '', '8/15/2019', 1);
+INSERT INTO `borrowed_item` (`ID`, `id_number`, `Item1`, `quantity1`, `Item2`, `quantity2`, `Item3`, `quantity3`, `Item4`, `quantity4`, `Remarks`, `Borrowed_time`, `status`) VALUES
+(26, '2014', 'dddsdsds', 2, 'dddsdsds', 2, 'hey', 1, 'hey', 1, 'teses', '9/11/2019', 1);
 
 -- --------------------------------------------------------
 
@@ -198,7 +200,7 @@ ALTER TABLE `staff_table`
 -- AUTO_INCREMENT for table `borrowed_item`
 --
 ALTER TABLE `borrowed_item`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `borrower_table`
