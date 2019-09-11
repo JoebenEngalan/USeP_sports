@@ -180,6 +180,9 @@ include_once('templates/findborrower.php');
           </div>
           <div class="form-group col-md">
             <h5>Quantity</h5>
+          </div>
+          <div class="form-group col-md">
+            <h5>Remains</h5>
           </div>         
         </div>
 
@@ -190,14 +193,18 @@ include_once('templates/findborrower.php');
             </div>
                       
             <div class="form-group col-md">
-              <input type="text" class="form-control" readonly name="1quantity" id="quantity" value="<?php echo $quantity1;?>" placeholder="Quantity Left ">
+              <input type="text" class="form-control" readonly name="1quantity" id="1quantity" value="<?php echo $quantity1;?>" placeholder="Quantity Left ">
             </div>
 
             <div class="form-group col-md">
               <input type="text" class="form-control" name="quantity1" id="quantity1" placeholder="Enter Quantity">
             </div>
-            
-        </div>
+
+            <div class="form-group col-md">
+              <input type="text" name="subt1" id='subt1' class="form-control" >
+            </div>   
+        
+          </div>
 
         <!--item two-->
         <div class="form-row" name='2' id='item2'>     
@@ -207,12 +214,16 @@ include_once('templates/findborrower.php');
             </div>
                       
             <div class="form-group col-md">
-              <input type="text" class="form-control" readonly name="2quantity" id="quantity" value="<?php echo $quantity2;?>" placeholder="Quantity Left">
+              <input type="text" class="form-control" readonly name="2quantity" id="2quantity" value="<?php echo $quantity2;?>" placeholder="Quantity Left">
             </div>
 
             <div class="form-group col-md">
               <input type="text" class="form-control" name="quantity2" id="quantity2" placeholder="Enter Quantity">
             </div>
+
+            <div class="form-group col-md">
+              <input type="text" name="subt2" id='subt2' class="form-control" >
+            </div> 
             
         </div>
         <!--item three-->
@@ -223,12 +234,16 @@ include_once('templates/findborrower.php');
             </div>
                       
             <div class="form-group col-md">
-              <input type="text" class="form-control" readonly name="3quantity" id="quantity" value="<?php echo $quantity3;?>" placeholder="Quantity Left">
+              <input type="text" class="form-control" readonly name="3quantity" id="3quantity" value="<?php echo $quantity3;?>" placeholder="Quantity Left">
             </div>
 
             <div class="form-group col-md">
               <input type="text" class="form-control" name="quantity3" id="quantity3" placeholder="Enter Quantity">
             </div>
+
+            <div class="form-group col-md">
+              <input type="text" name="subt3" id='subt3' class="form-control" >
+            </div> 
             
         </div>
         
@@ -240,12 +255,17 @@ include_once('templates/findborrower.php');
             </div>
                       
             <div class="form-group col-md">
-              <input type="text" class="form-control" readonly name="4quantity" id="quantity" value="<?php echo $quantity4;?>" placeholder="Quantity Left">
+              <input type="text" class="form-control" readonly name="4quantity" id="4quantity" value="<?php echo $quantity4;?>" placeholder="Quantity Left">
             </div>
 
             <div class="form-group col-md">
               <input type="text" class="form-control" name="quantity4" id="quantity4" placeholder="Enter Quantity">
             </div>
+
+            <div class="form-group col-md">
+              <input type="text" name="subt4" id='subt4' class="form-control" > 
+            </div> 
+        
         </div>
             
           <div class="form-row">
@@ -321,7 +341,41 @@ $(function () {
       }
     });
   });
-    
+
+  /** auto subtract quantity **/
+
+  $(function() {
+  $("#1quantity, #quantity1").on("keydown keyup", subt);
+  function subt() 
+    {
+      $("#subt1").val(Number($("#1quantity").val()) - Number($("#quantity1").val()));
+    }
+  });
+
+  $(function() {
+  $("#2quantity, #quantity2").on("keydown keyup", subt);
+  function subt() 
+    {
+      $("#subt2").val(Number($("#2quantity").val()) - Number($("#quantity2").val()));
+    }
+  });
+
+  $(function() {
+  $("#3quantity, #quantity3").on("keydown keyup", subt);
+  function subt() 
+    {
+      $("#subt3").val(Number($("#3quantity").val()) - Number($("#quantity3").val()));
+    }
+  });
+
+  $(function() {
+  $("#4quantity, #quantity4").on("keydown keyup", subt);
+  function subt() 
+    {
+      $("#subt4").val(Number($("#4quantity").val()) - Number($("#quantity4").val()));
+    }
+  });
+
 </script>
 
 <script type="text/javascript">
