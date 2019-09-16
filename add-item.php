@@ -93,10 +93,10 @@ if(!isset($_SESSION["id"]))
         </div>
       </div>
       
-      <div id="table" class="card mb-4" display = "none" >
+      <div id="table" class="card mb-4" style="display: none">
         <div class="card-header">
               <i class="fas fa-table"></i>
-               Equipment</div>
+              Equipments</div>
               <div class="card-body">
                 <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
