@@ -53,7 +53,9 @@ include_once('templates/findborrower.php');
           <div class="input-group mb-3"> 
             <input type="text" class="form-control" name="idnumber" id="search" placeholder="Enter ID number of Student or Faculty" aria-label="Recipient's username" aria-describedby="button-addon2">
             <div class="input-group-append">             
-              <button class="btn btn-primary" onclick="return confirm ('Hello\nHow are you?\nY/N')" type="submit"  id="Find" name="Find" value="Find Data">
+              <button class="btn btn-primary" 
+              onclick="return confirm ('Did you input the Id Number and check the Equipment box?\nYes/No')" 
+              type="submit"  id="Find" name="Find" value="Find Data">
                 <i class="fas fa-search"></i>
               </button>
               <button class="btn btn-primary" type="clear" >
@@ -139,7 +141,7 @@ include_once('templates/findborrower.php');
             <!-- LastName input -->
             <div class="form-group col-md">
               <label for="inputLname">ID Number</label>
-              <input type="text" class="form-control" readonly name="id_number" id="inputLname" value="<?php echo $id_number;?>" placeholder="ID number of Student or Faculty" >
+              <input type="text" class="form-control" readonly name="id_number" id="id_number" value="<?php echo $id_number;?>" placeholder="ID number of Student or Faculty" >
             </div>
           </div>
 
@@ -148,12 +150,12 @@ include_once('templates/findborrower.php');
             <!-- LastName input -->
             <div class="form-group col-md-6">
               <label for="inputLname">Last Name</label>
-              <input type="text" class="form-control" readonly name="LastName" id="inputLname"  value="<?php echo $LastName;?>" placeholder="Last Name" >
+              <input type="text" class="form-control" readonly required="required" name="LastName" id="inputLname"  value="<?php echo $LastName;?>" placeholder="Last Name" >
             </div>
             <!-- FirstName input -->
             <div class="form-group col-md-6">
               <label for="inputFname">First Name</label>
-              <input type="text" class="form-control" readonly name="FirstName" id="inputFname" value="<?php echo $FirstName;?>" placeholder="First Name" >
+              <input type="text" class="form-control" readonly required="required" name="FirstName" id="inputFname" value="<?php echo $FirstName;?>" placeholder="First Name" >
             </div>
         </div>
 
@@ -161,7 +163,7 @@ include_once('templates/findborrower.php');
             <!-- ContactNum input -->
             <div class="form-group col-md-6">
               <label for="inputContactnum">Contact Number</label>
-              <input type="text" class="form-control" readonly name="ContactNumber" value="<?php echo $ContactNumber;?>" id="inputContactnum" placeholder="+63XXXXXXXXXX" >
+              <input type="text" class="form-control" readonly required="required" name="ContactNumber" value="<?php echo $ContactNumber;?>" id="inputContactnum" placeholder="+63XXXXXXXXXX" >
             </div>
             <!-- Date input -->
             <div class="form-group col-md-6">
@@ -351,7 +353,7 @@ $(function () {
       $("#subt1").val(Number($("#1quantity").val()) - Number($("#quantity1").val()));
     }
   });
-  
+
   $(function() {
   $("#2quantity, #quantity2").on("keydown keyup", subt);
   function subt() 

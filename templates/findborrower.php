@@ -28,11 +28,9 @@ if(isset($_POST['Find']))
     $itemname4 = (isset($_POST['itemname4']) ? $_POST['itemname4'] : '');
     
 
-    if( empty($id_number))
+if(empty($id_number))
     {
-    
         echo "<script type= 'text/javascript'>alert('Empty Id Number.');</script>";
-    
     }
     else
     {
@@ -44,22 +42,19 @@ if(isset($_POST['Find']))
         {
             if($pdoResult->rowCount()>0)
             {
-                echo "<script type= 'text/javascript'>alert('Id Number exist.');</script>";                 
+                echo "<script type= 'text/javascript'>alert('The Id Number you Entered is still borrowing.');</script>";                 
             }
             else
             {
             
             // mysql search query borrower
-            $sql = "SELECT * FROM borrower_table WHERE id_number = :idnumber" ;  
-                
+            $sql = "SELECT * FROM borrower_table WHERE id_number = :idnumber" ;     
             $pdoResult = $dbh->prepare($sql);  
             //set your id to the query id
             $pdoExec = $pdoResult->execute(array(":idnumber"=>$id_number));
 
                 if($pdoExec)
                 {
-                    // if id exist 
-                    // show data in inputs
                     if($pdoResult->rowCount()>0)
                     {
                         foreach($pdoResult as $row)
@@ -71,6 +66,7 @@ if(isset($_POST['Find']))
                         }
                     }
                 }  
+
             // mysql search query equipment 1
             $sql = "SELECT * FROM equipment  WHERE ItemName IN (:itemname1)";  
             $pdoResult = $dbh->prepare($sql);  

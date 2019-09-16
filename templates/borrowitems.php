@@ -27,14 +27,14 @@ if(isset($_POST['submit']))
     $itemname4 = $_POST['4itemname'];
     $quantitye4 = $_POST['subt4'];
     
-    // get values form input text and number
+    // get values form input text 
     $LastName=$_POST['LastName'];
     $FirstName=$_POST['FirstName'];
 
     if(empty($LastName)||empty($FirstName)||empty($item1)
-        ||empty($quantitye1)||empty($quantitye2)||empty($quantitye3)||empty($quantitye4))
+        ||$quantitye1 < 0 || $quantitye2 < 0 ||$quantitye3 < 0 ||$quantitye4 < 0 )
         {   
-            echo "<script type= 'text/javascript'>alert('Empty field.');</script>";
+        echo "<script type= 'text/javascript'>alert('ERROR\nYOU ENTERED A NEGATIVE NUMBER OR EMPTY FIELDS');</script>";
         }
         else
         {
