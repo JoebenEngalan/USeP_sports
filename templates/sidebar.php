@@ -28,9 +28,9 @@
       </li>
       <!--Add item Page-->
       <li class="nav-item">
-        <a class="nav-link" href="add-item.php">
+        <a class="nav-link" href="item-page.php">
           <i class="fas fa-fw fa-bicycle"></i>
-          <span>Add Items</span></a>
+          <span>Item Page</span></a>
       </li>
       <!--table Page-->
       <li class="nav-item">

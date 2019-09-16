@@ -31,7 +31,7 @@ if(!isset($_SESSION["id"]))
           <li class="breadcrumb-item">
             <a href="mainpage.php">Dashboard</a>
           </li>
-          <li class="breadcrumb-item active">Add Item</li>
+          <li class="breadcrumb-item active">Item Page</li>
         </ol>
 
         <!-- Page Content -->
@@ -39,7 +39,7 @@ if(!isset($_SESSION["id"]))
         <div class="mb-4">
         
         <div class="form-group mb-4">
-          <h3 class="display-10">Add Item Page</h3>
+          <h3 class="display-10">Item Page</h3>
         </div>
         
         <form method="post" name="submit" >
