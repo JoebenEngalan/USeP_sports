@@ -54,7 +54,7 @@ include_once('templates/findborrow_return.php');
             <input type="text" class="form-control" name="idnumber" id="search" maxlength= "10" placeholder="Enter ID number of Student or Faculty" aria-label="Recipient's username" aria-describedby="button-addon2">
             <div class="input-group-append">             
               <button class="btn btn-primary" 
-              onclick="return confirm ('Did you input the Id Number and check the Equipment box?\nYes/No')" 
+              onclick="return confirm ('Did you input the Id Number?\nYes/No')" 
               type="submit"  id="Find" name="Find" value="Find Data">
                 <i class="fas fa-search"></i>
               </button>
