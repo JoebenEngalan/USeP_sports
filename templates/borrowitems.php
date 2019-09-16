@@ -5,6 +5,7 @@ if(isset($_POST['submit']))
 {
     // get values form input text and number
     $id_number=$_POST["id_number"];
+    $ContactNumber=$_POST["ContactNumber"];
     $item1=$_POST['1itemname'];
     $quantity1=$_POST['quantity1'];
     $item2=$_POST['2itemname'];
@@ -40,9 +41,9 @@ if(isset($_POST['submit']))
         else
         {
         // mysql query to insert data Borrowed_Item
-        $sql="INSERT INTO Borrowed_Item (id_number,Item1,quantity1,Item2,quantity2,Item3,quantity3,Item4,quantity4,Remarks,Borrowed_time,states) 
+        $sql="INSERT INTO Borrowed_Item (id_number,ContactNumber,Item1,quantity1,Item2,quantity2,Item3,quantity3,Item4,quantity4,Remarks,Borrowed_time,states) 
         VALUES
-        (:id_number,:1itemname,:quantity1,:2itemname,:quantity2,:3itemname,:quantity3,:4itemname,:quantity4,:remarks,:Btime,:states)";
+        (:id_number,:ContactNumber,:1itemname,:quantity1,:2itemname,:quantity2,:3itemname,:quantity3,:4itemname,:quantity4,:remarks,:Btime,:states)";
 
         // mysql query to Update data equipment
         $sql1 = "UPDATE `equipment` SET `quantity`= :subt1 WHERE `ItemName` = :1itemname"; 
@@ -62,6 +63,7 @@ if(isset($_POST['submit']))
     
         $query=$dbh->prepare($sql);
         $query->bindParam(':id_number',$id_number,PDO::PARAM_STR);
+        $query->bindParam(':ContactNumber',$ContactNumber,PDO::PARAM_STR);
         $query->bindParam(':remarks',$remarks,PDO::PARAM_STR);
         $query->bindParam(':1itemname',$item1,PDO::PARAM_STR);
         $query->bindParam(':quantity1',$quantity1,PDO::PARAM_STR);

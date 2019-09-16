@@ -163,7 +163,7 @@ include_once('templates/findborrower.php');
             <!-- ContactNum input -->
             <div class="form-group col-md-6">
               <label for="inputContactnum">Contact Number</label>
-              <input type="text" class="form-control" readonly required="required" name="ContactNumber" value="<?php echo $ContactNumber;?>" id="inputContactnum" placeholder="+63XXXXXXXXXX" >
+              <input type="text" class="form-control" readonly required="required" name="ContactNumber" id="ContactNumber"value="<?php echo $ContactNumber;?>" id="inputContactnum" placeholder="+63XXXXXXXXXX" >
             </div>
             <!-- Date input -->
             <div class="form-group col-md-6">
