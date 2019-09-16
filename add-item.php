@@ -90,7 +90,7 @@ if(!isset($_SESSION["id"]))
       <div class="card mb-4">
         <div class="card-header">
               <i class="fas fa-table"></i>
-                Data Table Borrowers</div>
+               Equipment</div>
               <div class="card-body">
                 <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
