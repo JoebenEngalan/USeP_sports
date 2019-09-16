@@ -51,7 +51,7 @@ include_once('templates/findborrower.php');
           <!--id NUMBER-->
           <label for="itemname1">Search ID and Equipments</label>
           <div class="input-group mb-3"> 
-            <input type="text" class="form-control" name="idnumber" id="search" placeholder="Enter ID number of Student or Faculty" aria-label="Recipient's username" aria-describedby="button-addon2">
+            <input type="text" class="form-control" name="idnumber" id="search" maxlength= "10" placeholder="Enter ID number of Student or Faculty" aria-label="Recipient's username" aria-describedby="button-addon2">
             <div class="input-group-append">             
               <button class="btn btn-primary" 
               onclick="return confirm ('Did you input the Id Number and check the Equipment box?\nYes/No')" 

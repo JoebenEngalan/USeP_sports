@@ -50,95 +50,62 @@ if(empty($id_number))
             // mysql search query borrower
             $sql = "SELECT * FROM borrower_table WHERE id_number = :idnumber" ;     
             $pdoResult = $dbh->prepare($sql);  
-            //set your id to the query id
             $pdoExec = $pdoResult->execute(array(":idnumber"=>$id_number));
 
-                if($pdoExec)
-                {
-                    if($pdoResult->rowCount()>0)
-                    {
-                        foreach($pdoResult as $row)
-                        {
-                        $id_number = $row['id_number'];
-                        $FirstName = $row['FirstName'];
-                        $LastName = $row['LastName'];
-                        $ContactNumber = $row['ContactNumber'];   
-                        }
-                    }
-                }  
+            // mysql search query equipment
+            $sql1 = "SELECT * FROM equipment  WHERE ItemName IN (:itemname1)";
+            $sql2 = "SELECT * FROM equipment  WHERE ItemName IN (:itemname2)";  
+            $sql3 = "SELECT * FROM equipment  WHERE ItemName IN (:itemname3)";  
+            $sql4 = "SELECT * FROM equipment  WHERE ItemName IN (:itemname4)";  
 
-            // mysql search query equipment 1
-            $sql = "SELECT * FROM equipment  WHERE ItemName IN (:itemname1)";  
-            $pdoResult = $dbh->prepare($sql);  
-            //set your id to the query id
-            $pdoExec = $pdoResult->execute(array(":itemname1"=>$itemname1));              
-                if($pdoExec)
-                {
-                    if($pdoResult->rowCount()>0)
-                    {
-                    foreach($pdoResult as $row)
-                        {   
-                        $itemname1 = $row['ItemName'];
-                        $quantity1 = $row['quantity']; 
-                        }
-                    }
-                }
+            $pdoResult1 = $dbh->prepare($sql1);
+            $pdoResult2 = $dbh->prepare($sql2);
+            $pdoResult3 = $dbh->prepare($sql3);
+            $pdoResult4 = $dbh->prepare($sql4);
+            
+            $pdoExec1 = $pdoResult1->execute(array(":itemname1"=>$itemname1));    
+            $pdoExec2 = $pdoResult2->execute(array(":itemname2"=>$itemname2));    
+            $pdoExec3 = $pdoResult3->execute(array(":itemname3"=>$itemname3));
+            $pdoExec4 = $pdoResult4->execute(array(":itemname4"=>$itemname4));
 
-            // mysql search query equipment 2 
-            $sql = "SELECT * FROM equipment  WHERE ItemName IN (:itemname2)";  
-            $pdoResult = $dbh->prepare($sql);  
-            //set your id to the query id
-            $pdoExec = $pdoResult->execute(array(":itemname2"=>$itemname2));              
-                if($pdoExec)
-                {
-                    if($pdoResult->rowCount()>0)
-                    {
+                    
+            if($pdoExec||$pdoExec1||$pdoExec2||$pdoExec3||$pdoExec4)
+              {
+                if($pdoResult->rowCount()>0 
+                  || $pdoResult1->rowCount()>0 || $pdoResult2->rowCount()>0
+                  || $pdoResult3->rowCount()>0 || $pdoResult4->rowCount()>0)
+                  {
                     foreach($pdoResult as $row)
-                        {   
-                        $itemname2 = $row['ItemName'];
-                        $quantity2 = $row['quantity']; 
-                        }
-                    }
-                }
-
-            // mysql search query equipment 3
-            $sql = "SELECT * FROM equipment  WHERE ItemName IN (:itemname3)";  
-            $pdoResult = $dbh->prepare($sql);  
-            //set your id to the query id
-            $pdoExec = $pdoResult->execute(array(":itemname3"=>$itemname3));              
-                if($pdoExec)
-                {
-                    if($pdoResult->rowCount()>0)
-                    {
-                    foreach($pdoResult as $row)
-                        {   
-                        $itemname3 = $row['ItemName'];
-                        $quantity3 = $row['quantity']; 
-                        }
-                    }
-                }
-
-            // mysql search query equipment 4
-            $sql = "SELECT * FROM equipment  WHERE ItemName IN (:itemname4)";  
-            $pdoResult = $dbh->prepare($sql);  
-            //set your id to the query id
-            $pdoExec = $pdoResult->execute(array(":itemname4"=>$itemname4));              
-                if($pdoExec)
-                {
-                    if($pdoResult->rowCount()>0)
-                    {
-                    foreach($pdoResult as $row)
-                        {   
-                        $itemname4 = $row['ItemName'];
-                        $quantity4 = $row['quantity']; 
-                        }
-                    }
-                }
-            }
-        
-        }
-        
-    }
+                      {
+                      $id_number = $row['id_number'];
+                      $FirstName = $row['FirstName'];
+                      $LastName = $row['LastName'];
+                      $ContactNumber = $row['ContactNumber'];   
+                      }
+                    foreach($pdoResult1 as $row)
+                      {   
+                      $itemname1 = $row['ItemName'];
+                      $quantity1 = $row['quantity']; 
+                      }
+                    foreach($pdoResult2 as $row)
+                      {   
+                      $itemname2 = $row['ItemName'];
+                      $quantity2 = $row['quantity']; 
+                      }
+                    foreach($pdoResult3 as $row)
+                      {   
+                      $itemname3 = $row['ItemName'];
+                      $quantity3 = $row['quantity']; 
+                      }
+                    foreach($pdoResult4 as $row)
+                      {   
+                      $itemname4 = $row['ItemName'];
+                      $quantity4 = $row['quantity']; 
+                      }
+                  }
+              }                 
+          }
+      }    
+  }
 }
-
 ?>
