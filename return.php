@@ -94,27 +94,11 @@ if(!isset($_SESSION["id"]))
               <input type="text" class="form-control" id="inputQuantity" placeholder="Quantity">
             </div>
 
-            <div class="form-group col-md-2">
-              <input type="text" class="form-control" id="inputQuantity" placeholder="Quantity">
-            </div>
-            
-            <div class="form-group col-md-2">
-              <input type="text" class="form-control" id="inputQuantity" placeholder="Quantity">
-            </div>
-          
           </div>
 
           <div class="form-row">
             <div class="form-group col-md">
               <input type="text" class="form-control" id="inputQuantity" placeholder="Item">
-            </div>
-
-            <div class="form-group col-md-2">
-              <input type="text" class="form-control" id="inputQuantity" placeholder="Quantity">
-            </div>
-
-            <div class="form-group col-md-2">
-              <input type="text" class="form-control" id="inputQuantity" placeholder="Quantity">
             </div>
 
             <div class="form-group col-md-2">
@@ -131,14 +115,6 @@ if(!isset($_SESSION["id"]))
             <div class="form-group col-md-2">
               <input type="text" class="form-control" id="inputQuantity" placeholder="Quantity">
             </div>
-
-            <div class="form-group col-md-2">
-              <input type="text" class="form-control" id="inputQuantity" placeholder="Quantity">
-            </div>
-
-            <div class="form-group col-md-2">
-              <input type="text" class="form-control" id="inputQuantity" placeholder="Quantity">
-            </div>
           
           </div>
           
@@ -151,14 +127,6 @@ if(!isset($_SESSION["id"]))
               <input type="text" class="form-control" id="inputQuantity" placeholder="Quantity">
             </div>
 
-            <div class="form-group col-md-2">
-              <input type="text" class="form-control" id="inputQuantity" placeholder="Quantity">
-            </div>
-
-            <div class="form-group col-md-2">
-              <input type="text" class="form-control" id="inputQuantity" placeholder="Quantity">
-            </div>
-          
           </div>
 
           <div class="form-row">
