@@ -42,7 +42,12 @@ if(empty($id_number))
         {
             if($pdoResult->rowCount()>0)
             {
-                echo "<script type= 'text/javascript'>alert('The Id Number you Entered is still borrowing.');</script>";                 
+              $id_number = '';
+              $itemname1 = '';
+              $itemname2 = '';
+              $itemname3 = '';
+              $itemname4 = '';
+              echo "<script type= 'text/javascript'>alert('The Id Number you Entered is still borrowing.');</script>";                 
             }
             else
             {

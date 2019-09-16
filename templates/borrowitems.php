@@ -31,7 +31,8 @@ if(isset($_POST['submit']))
     $LastName=$_POST['LastName'];
     $FirstName=$_POST['FirstName'];
 
-    if(empty($LastName)||empty($FirstName)||empty($item1)||empty($quantity1)||empty($quantityE1)
+    if(empty($id_number)||empty($LastName)||empty($FirstName)
+        ||empty($item1)||empty($quantity1)||empty($quantityE1)
         ||$quantityE1 < 0 || $quantityE2 < 0 ||$quantityE3 < 0 ||$quantityE4 < 0 )
         {   
         echo "<script type= 'text/javascript'>alert('ERROR YOU ENTERED A NEGATIVE NUMBER OR EMPTY FIELDS');</script>";
