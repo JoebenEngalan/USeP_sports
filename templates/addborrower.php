@@ -2,7 +2,6 @@
 include('includes/config.php');
 
 if(isset($_POST['submit']))
-
 {
   $idnum=$_POST['idnumber'];
   $fname=$_POST['firstname'];

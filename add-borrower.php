@@ -99,7 +99,9 @@ if(!isset($_SESSION["id"]))
 
           <div class="btn-group">
           <!--database command add borrower-->
-          <input type="submit" name="submit" class="btn btn-primary btn-block" value="Submit" style="cursor:pointer">
+          <input type="submit" name="submit" class="btn btn-primary btn-block"
+          onclick="return confirm ('Did you Complete all Text box and \ncheck the if the Data you entered Correct?')"
+          value="Submit" style="cursor:pointer">
           <?php include('templates/addborrower.php');?>
             <button type="clear" class="btn btn-primary btn-lg">Clear</button>
           </div>
