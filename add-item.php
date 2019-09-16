@@ -81,11 +81,65 @@ if(!isset($_SESSION["id"]))
             <button type="submit"  name="submit"  value="Submit"  class="btn btn-primary btn-lg">Add </button>
             <button type="update"  name="update"  value="update"  class="btn btn-primary btn-lg">Update </button>
             <button type="clear" class="btn btn-primary btn-lg">Clear</button>
+            <button type="" class="btn btn-primary btn-lg">Show table</button>
           </div>
         </div>
         </form>
       </div>
 
+      <div class="card mb-4">
+        <div class="card-header">
+              <i class="fas fa-table"></i>
+                Data Table Borrowers</div>
+              <div class="card-body">
+                <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  
+                  <thead>
+                    <tr>
+                    <th>Number #</th>
+                    <th>Item Name</th>
+                    <th>Quantity</th>
+                    <th>Category</th>
+                    <th>Description</th>
+                    </tr>
+                  </thead>
+                  
+                  <tfoot>
+                    <tr>
+                    <th>Number #</th>
+                    <th>Item Name</th>
+                    <th>Quantity</th>
+                    <th>Category</th>
+                    <th>Description</th>
+                    </tr>
+                  </tfoot>
+                      
+                  <tbody>
+                    <?php $sql = "SELECT * from  equipment ";
+                    $query = $dbh -> prepare($sql);
+                    $query->execute();
+                    $results=$query->fetchAll(PDO::FETCH_OBJ);
+                    $cnt=1;
+                    if($query->rowCount() > 0)
+                      {
+                        foreach($results as $result)
+                      {				
+                    ?>
+                    <tr>
+                    <td><?php echo htmlentities($cnt);?></td>
+                    <td><?php echo htmlentities($result->ItemName);?></td>
+                    <td><?php echo htmlentities($result->quantity);?></td>
+                    <td><?php echo htmlentities($result->Category);?></td>
+                    <td><?php echo htmlentities($result->Description);?></td>
+                    </tr>
+                    <?php $cnt=$cnt+1; }} ?>		
+                  </tbody>
+
+              </table>
+          </div>
+        </div>
+      </div>
     </div><!-- /.container-fluid -->
   </div><!-- /.content-wrapper -->
   <!--Footer-->    

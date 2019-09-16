@@ -151,13 +151,6 @@ if(!isset($_SESSION["id"]))
               <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
             </div>
 
-
-
-
-
-
-
-
     </div><!-- /.container-fluid -->
   </div><!-- /.content-wrapper -->
   <!--Footer-->    
