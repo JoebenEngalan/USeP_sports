@@ -15,7 +15,7 @@ if(isset($_POST['submit']))
     $quantity4=$_POST['quantity4'];
     $remarks=$_POST['remarks'];                     
     $Btime=$_POST['Btime'];
-    $status=1;
+    $states=1;
 
     // get values form input text and number
     $itemname1 = $_POST['1itemname'];
@@ -40,9 +40,9 @@ if(isset($_POST['submit']))
         else
         {
         // mysql query to insert data Borrowed_Item
-        $sql="INSERT INTO Borrowed_Item (id_number,Item1,quantity1,Item2,quantity2,Item3,quantity3,Item4,quantity4,Remarks,Borrowed_time,status) 
+        $sql="INSERT INTO Borrowed_Item (id_number,Item1,quantity1,Item2,quantity2,Item3,quantity3,Item4,quantity4,Remarks,Borrowed_time,states) 
         VALUES
-        (:id_number,:1itemname,:quantity1,:2itemname,:quantity2,:3itemname,:quantity3,:4itemname,:quantity4,:remarks,:Btime,:status)";
+        (:id_number,:1itemname,:quantity1,:2itemname,:quantity2,:3itemname,:quantity3,:4itemname,:quantity4,:remarks,:Btime,:states)";
 
         // mysql query to Update data equipment
         $sql1 = "UPDATE `equipment` SET `quantity`= :subt1 WHERE `ItemName` = :1itemname"; 
@@ -72,7 +72,7 @@ if(isset($_POST['submit']))
         $query->bindParam(':4itemname',$item4,PDO::PARAM_STR);
         $query->bindParam(':quantity4',$quantity4,PDO::PARAM_STR);
         $query->bindParam(':Btime',$Btime,PDO::PARAM_STR);
-        $query->bindParam(':status',$status,PDO::PARAM_STR);
+        $query->bindParam(':states',$states,PDO::PARAM_STR);
         $query->execute();
         $lastInsertId = $dbh->lastInsertId();
         

@@ -11,7 +11,6 @@ if(isset($_POST['submit']))
   $depart=$_POST['department'];
   $pos=$_POST['position'];
   $email=$_POST['emailid'];
-  $status=1;
 
   if( empty($idnum) || empty($fname) || empty($lname) || empty($contact) || empty($depart) || empty($pos) || empty($email) )
   {
@@ -30,8 +29,8 @@ if(isset($_POST['submit']))
         }
         else
         {
-        $sql= "INSERT INTO borrower_table (id_number,FirstName,LastName,ContactNumber,Department,Position,EmailID,Status) 
-        VALUES(:idnum,:fname,:lname,:contact,:depart,:pos,:email,:status)";
+        $sql= "INSERT INTO borrower_table (id_number,FirstName,LastName,ContactNumber,Department,Position,EmailID) 
+        VALUES(:idnum,:fname,:lname,:contact,:depart,:pos,:email)";
 
         $query = $dbh->prepare($sql);
         $query->bindParam(':idnum',$idnum,PDO::PARAM_STR);
@@ -41,7 +40,6 @@ if(isset($_POST['submit']))
         $query->bindParam(':depart',$depart,PDO::PARAM_STR);
         $query->bindParam(':pos',$pos,PDO::PARAM_STR);
         $query->bindParam(':email',$email,PDO::PARAM_STR);
-        $query->bindParam(':status',$status,PDO::PARAM_STR);
         $query->execute();
         $lastInsertId = $dbh->lastInsertId();
         if($lastInsertId)
