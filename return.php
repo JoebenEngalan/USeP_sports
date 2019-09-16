@@ -118,11 +118,11 @@ include_once('templates/findborrow_return.php');
         <!-- item one-->
         <div class="form-row" name='1' id='item1'> 
             <div class="form-group col-md-7">
-              <input type="text" class="form-control" readonly name="itemname" id="1itemname" value="<?php echo $itemname1;?>" placeholder="Item name 1" >
+              <input type="text" class="form-control" readonly name="itemname" id="itemname" value="<?php echo $itemname1;?>" placeholder="Item name 1" >
             </div>
                       
             <div class="form-group col-md">
-              <input type="text" class="form-control" readonly name="quantity" id="1quantity" value="<?php echo $quantity1;?>" placeholder="Quantity Left ">
+              <input type="text" class="form-control" readonly name="quantity" id="quantity" value="<?php echo $quantity1;?>" placeholder="Quantity Left ">
             </div>
 
           </div>
@@ -135,7 +135,7 @@ include_once('templates/findborrow_return.php');
             </div>
                       
             <div class="form-group col-md">
-              <input type="text" class="form-control" readonly name="quantity" id="2quantity" value="<?php echo $quantity2;?>" placeholder="Quantity Left">
+              <input type="text" class="form-control" readonly name="quantity" id="quantity" value="<?php echo $quantity2;?>" placeholder="Quantity Left">
             </div>
             
         </div>
