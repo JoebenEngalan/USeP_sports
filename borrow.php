@@ -201,7 +201,7 @@ include_once('templates/findborrower.php');
             </div>
 
             <div class="form-group col-md">
-              <input type="text" readonly name="subt1" id='subt1' class="form-control" placeholder="Quantity">
+              <input type="text" readonly name="subt1" id='subt1' class="form-control"  placeholder="Quantity">
             </div>   
         
           </div>
@@ -222,7 +222,7 @@ include_once('templates/findborrower.php');
             </div>
 
             <div class="form-group col-md">
-              <input type="text" readonly name="subt2" id='subt2' class="form-control" placeholder="Quantity">
+              <input type="text" readonly name="subt2" id='subt2' class="form-control"  placeholder="Quantity">
             </div> 
             
         </div>
@@ -242,7 +242,7 @@ include_once('templates/findborrower.php');
             </div>
 
             <div class="form-group col-md">
-              <input type="text" readonly name="subt3" id='subt3' class="form-control" placeholder="Quantity">
+              <input type="text" readonly name="subt3" id='subt3' class="form-control"  placeholder="Quantity">
             </div> 
             
         </div>
@@ -263,7 +263,7 @@ include_once('templates/findborrower.php');
             </div>
 
             <div class="form-group col-md">
-              <input type="text" readonly name="subt4" id='subt4' class="form-control" placeholder="Quantity"> 
+              <input type="text" readonly name="subt4" id='subt4' class="form-control"  placeholder="Quantity"> 
             </div> 
         
         </div>
@@ -351,7 +351,7 @@ $(function () {
       $("#subt1").val(Number($("#1quantity").val()) - Number($("#quantity1").val()));
     }
   });
-
+  
   $(function() {
   $("#2quantity, #quantity2").on("keydown keyup", subt);
   function subt() 
@@ -375,10 +375,6 @@ $(function () {
       $("#subt4").val(Number($("#4quantity").val()) - Number($("#quantity4").val()));
     }
   });
-
-</script>
-
-<script type="text/javascript">
 
 /** date for today **/
 function getDate(){
