@@ -37,6 +37,7 @@ if(!isset($_SESSION["id"]))
     <div class="card mb-3">
           <div class="card-header">
             <i class="fas fa-table"></i>
+            Being Borrowed</div>
           <div class="card-body">
             <div class="table-responsive">
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -44,30 +45,22 @@ if(!isset($_SESSION["id"]))
 										<tr>
 										<th>#</th>
 										<th>ID Number</th>
-										<th>Last Name</th>
-										<th>First Name</th>
 										<th>Contact Number</th>
-										<th>Department</th>
-										<th>Position</th>
-										<th>Email</th>
+										<th>Time Borrowed</th>
 										</tr>
 									</thead>
 									<tfoot>
 										<tr>
 										<th>#</th>
                     <th>ID Number</th>
-										<th>Last Name</th>
-										<th>First Name</th>
 										<th>Contact Number</th>
-										<th>Department</th>
-										<th>Position</th>
-										<th>Email</th>
+										<th>Time Borrowed</th>
 										</tr>
 									</tfoot>
 									<tbody>
                   <?php
                   include('includes/config.php');
-                  $sql = "SELECT * from  borrower_table ";
+                  $sql = "SELECT * from  Borrowed_Item";
                   $query = $dbh -> prepare($sql);
                   $query->execute();
                   $results=$query->fetchAll(PDO::FETCH_OBJ);
@@ -80,19 +73,14 @@ if(!isset($_SESSION["id"]))
 										<tr>
 											<td><?php echo htmlentities($cnt);?></td>
 											<td><?php echo htmlentities($result->id_number);?></td>
-											<td><?php echo htmlentities($result->FirstName);?></td>
-											<td><?php echo htmlentities($result->LastName);?></td>
-	                    <td><?php echo htmlentities($result->ContactNumber);?></td>
-											<td><?php echo htmlentities($result->Department);?></td>
-											<td><?php echo htmlentities($result->Position);?></td>
-											<td><?php echo htmlentities($result->EmailID);?></td>
+                      <td><?php echo htmlentities($result->ContactNumber);?></td>
+	                    <td><?php echo htmlentities($result->Borrowed_time);?></td>
 										</tr>
 										<?php $cnt=$cnt+1; }} ?>
 									</tbody>
               </table>
             </div>
-          </div>
-          <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+          </div> 
         </div>              
     </div><!-- /.container-fluid -->
   </div><!-- /.content-wrapper -->
@@ -108,11 +96,11 @@ if(!isset($_SESSION["id"]))
   
 </body>
 
-</html>
-
 <!--no form resubmision javascript dont touch-->
 <script>
   if ( window.history.replaceState ) {
     window.history.replaceState( null, null, window.location.href );
   }
 </script>
+
+</html>
