@@ -36,9 +36,33 @@ $query->bindParam(':status',$status,PDO::PARAM_STR);
 $query->execute();
 $lastInsertId = $dbh->lastInsertId();
 if($lastInsertId)
-{echo "<script>alert('Success');</script>";}
+   {echo "<script>alert('Success');</script>";}
 else 
-{echo "<script>alert('Something went wrong. Please try again');</script>";}
+   {echo "<script>alert('Something went wrong. Please try again');</script>";}
+}
+
+if(isset($_POST['update']))
+{
+    // get values form input text and number
+    
+    $id = $_POST['id'];
+    $fname = $_POST['fname'];
+    
+    // mysql query to Update data
+    
+    $sql = "UPDATE `equipment` SET `fname`=:fname WHERE `id` = :id";
+    
+    $pdoResult = $dbh->prepare($sql);
+    
+    $pdoExec = $pdoResult->execute(array(":fname"=>$fname,":lname"=>$lname,":age"=>$age,":id"=>$id));
+    
+    if($pdoExec)
+    {
+        echo 'Data Updated';
+    }else{
+        echo 'ERROR Data Not Updated';
+    }
+
 }
 
 ?>
