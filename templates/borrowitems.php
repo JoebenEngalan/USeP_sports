@@ -61,7 +61,7 @@ if(isset($_POST['submit']))
     $itemname = $_POST['1itemname'];
     $quantity = $_POST['subt1'];
     
-    // mysql query to Update data
+    // mysql query to Update data equipment
     
     $sql = "UPDATE `equipment` SET `quantity`=:subt1 WHERE `ItemName` = :1itemname";
     
@@ -85,7 +85,7 @@ if(isset($_POST['submit']))
     $itemname = $_POST['2itemname'];
     $quantity = $_POST['subt2'];
     
-    // mysql query to Update data
+    // mysql query to Update data equipment
     
     $sql = "UPDATE `equipment` SET `quantity`=:subt2 WHERE `ItemName` = :2itemname";
     
@@ -109,7 +109,7 @@ if(isset($_POST['submit']))
     $itemname = $_POST['3itemname'];
     $quantity = $_POST['subt3'];
     
-    // mysql query to Update data
+    // mysql query to Update data equipment
     
     $sql = "UPDATE `equipment` SET `quantity`=:subt3 WHERE `ItemName` = :3itemname";
     
@@ -133,7 +133,7 @@ if(isset($_POST['submit']))
     $itemname = $_POST['4itemname'];
     $quantity = $_POST['subt4'];
     
-    // mysql query to Update data
+    // mysql query to Update data equipment
     
     $sql = "UPDATE `equipment` SET `quantity`=:subt4 WHERE `ItemName` = :4itemname";
     
