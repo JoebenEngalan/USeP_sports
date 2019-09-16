@@ -33,99 +33,117 @@ if(isset($_POST['Find']))
     }
     else
     {
-    // mysql search query
-    $sql = "SELECT * FROM borrower_table WHERE id_number = :idnumber" ;  
+    
+    $sql = "SELECT * FROM Borrowed_Item WHERE id_number = :idnumber" ;  
     
     $pdoResult = $dbh->prepare($sql);  
     //set your id to the query id
     $pdoExec = $pdoResult->execute(array(":idnumber"=>$id_number));
-    
-        if($pdoExec)
+
+    if($pdoExec)
         {
-                // if id exist 
-                // show data in inputs
             if($pdoResult->rowCount()>0)
             {
-                foreach($pdoResult as $row)
+                echo "<script type= 'text/javascript'>alert('Id Number exist.');</script>";
+                  
+            }else{
+            // mysql search query
+            $sql = "SELECT * FROM borrower_table WHERE id_number = :idnumber" ;  
+                
+            $pdoResult = $dbh->prepare($sql);  
+            //set your id to the query id
+            $pdoExec = $pdoResult->execute(array(":idnumber"=>$id_number));
+
+                if($pdoExec)
                 {
-                    $id_number = $row['id_number'];
-                    $FirstName = $row['FirstName'];
-                    $LastName = $row['LastName'];
-                    $ContactNumber = $row['ContactNumber'];
-                    
+                        // if id exist 
+                        // show data in inputs
+                    if($pdoResult->rowCount()>0)
+                    {
+                        foreach($pdoResult as $row)
+                        {
+                            $id_number = $row['id_number'];
+                            $FirstName = $row['FirstName'];
+                            $LastName = $row['LastName'];
+                            $ContactNumber = $row['ContactNumber'];
+                            
+                        }
+                    }
+                        // if the id not exist
+                        // show a message and clear inputs       
+                }  
+        // mysql search query  
+        $sql = "SELECT * FROM equipment  WHERE ItemName IN (:itemname1)";  
+        $pdoResult = $dbh->prepare($sql);  
+        //set your id to the query id
+        $pdoExec = $pdoResult->execute(array(":itemname1"=>$itemname1));              
+            if($pdoExec)
+            {
+                if($pdoResult->rowCount()>0)
+                {
+                foreach($pdoResult as $row)
+                    {   
+                    $itemname1 = $row['ItemName'];
+                    $quantity1 = $row['quantity']; 
+                    }
                 }
             }
-                // if the id not exist
-                // show a message and clear inputs       
+
+        // mysql search query  
+        $sql = "SELECT * FROM equipment  WHERE ItemName IN (:itemname2)";  
+        $pdoResult = $dbh->prepare($sql);  
+        //set your id to the query id
+        $pdoExec = $pdoResult->execute(array(":itemname2"=>$itemname2));              
+            if($pdoExec)
+            {
+                if($pdoResult->rowCount()>0)
+                {
+                foreach($pdoResult as $row)
+                    {   
+                    $itemname2 = $row['ItemName'];
+                    $quantity2 = $row['quantity']; 
+                    }
+                }
+            }
+
+        // mysql search query  
+        $sql = "SELECT * FROM equipment  WHERE ItemName IN (:itemname3)";  
+        $pdoResult = $dbh->prepare($sql);  
+        //set your id to the query id
+        $pdoExec = $pdoResult->execute(array(":itemname3"=>$itemname3));              
+            if($pdoExec)
+            {
+                if($pdoResult->rowCount()>0)
+                {
+                foreach($pdoResult as $row)
+                    {   
+                    $itemname3 = $row['ItemName'];
+                    $quantity3 = $row['quantity']; 
+                    }
+                }
+            }
+
+        // mysql search query  
+        $sql = "SELECT * FROM equipment  WHERE ItemName IN (:itemname4)";  
+        $pdoResult = $dbh->prepare($sql);  
+        //set your id to the query id
+        $pdoExec = $pdoResult->execute(array(":itemname4"=>$itemname4));              
+            if($pdoExec)
+            {
+                if($pdoResult->rowCount()>0)
+                {
+                foreach($pdoResult as $row)
+                    {   
+                    $itemname4 = $row['ItemName'];
+                    $quantity4 = $row['quantity']; 
+                    }
+                }
+            }
         }
+        
     }
-    
-    // mysql search query  
-    $sql = "SELECT * FROM equipment  WHERE ItemName IN (:itemname1)";  
-    $pdoResult = $dbh->prepare($sql);  
-    //set your id to the query id
-    $pdoExec = $pdoResult->execute(array(":itemname1"=>$itemname1));              
-        if($pdoExec)
-        {
-            if($pdoResult->rowCount()>0)
-            {
-            foreach($pdoResult as $row)
-                {   
-                $itemname1 = $row['ItemName'];
-                $quantity1 = $row['quantity']; 
-                }
-            }
-        }
-    
-    // mysql search query  
-    $sql = "SELECT * FROM equipment  WHERE ItemName IN (:itemname2)";  
-    $pdoResult = $dbh->prepare($sql);  
-    //set your id to the query id
-    $pdoExec = $pdoResult->execute(array(":itemname2"=>$itemname2));              
-        if($pdoExec)
-        {
-            if($pdoResult->rowCount()>0)
-            {
-            foreach($pdoResult as $row)
-                {   
-                $itemname2 = $row['ItemName'];
-                $quantity2 = $row['quantity']; 
-                }
-            }
-        }
-
-    // mysql search query  
-    $sql = "SELECT * FROM equipment  WHERE ItemName IN (:itemname3)";  
-    $pdoResult = $dbh->prepare($sql);  
-    //set your id to the query id
-    $pdoExec = $pdoResult->execute(array(":itemname3"=>$itemname3));              
-        if($pdoExec)
-        {
-            if($pdoResult->rowCount()>0)
-            {
-            foreach($pdoResult as $row)
-                {   
-                $itemname3 = $row['ItemName'];
-                $quantity3 = $row['quantity']; 
-                }
-            }
-        }
-
-    // mysql search query  
-    $sql = "SELECT * FROM equipment  WHERE ItemName IN (:itemname4)";  
-    $pdoResult = $dbh->prepare($sql);  
-    //set your id to the query id
-    $pdoExec = $pdoResult->execute(array(":itemname4"=>$itemname4));              
-        if($pdoExec)
-        {
-            if($pdoResult->rowCount()>0)
-            {
-            foreach($pdoResult as $row)
-                {   
-                $itemname4 = $row['ItemName'];
-                $quantity4 = $row['quantity']; 
-                }
-            }
-        } 
+        
+    }
 }
+
 ?>
