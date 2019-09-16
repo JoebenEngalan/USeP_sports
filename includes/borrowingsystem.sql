@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 16, 2019 at 01:01 PM
+-- Generation Time: Sep 16, 2019 at 04:42 PM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.1
 
@@ -31,6 +31,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `borrowed_item` (
   `ID` int(11) NOT NULL,
   `id_number` varchar(12) NOT NULL,
+  `ContactNumber` int(150) NOT NULL,
   `Item1` varchar(150) NOT NULL,
   `quantity1` int(100) DEFAULT NULL,
   `Item2` varchar(150) NOT NULL,
@@ -48,8 +49,9 @@ CREATE TABLE `borrowed_item` (
 -- Dumping data for table `borrowed_item`
 --
 
-INSERT INTO `borrowed_item` (`ID`, `id_number`, `Item1`, `quantity1`, `Item2`, `quantity2`, `Item3`, `quantity3`, `Item4`, `quantity4`, `Remarks`, `Borrowed_time`, `states`) VALUES
-(55, '2014', 'test', 1, '', 0, '', 0, '', 0, '', '9/16/2019', 2);
+INSERT INTO `borrowed_item` (`ID`, `id_number`, `ContactNumber`, `Item1`, `quantity1`, `Item2`, `quantity2`, `Item3`, `quantity3`, `Item4`, `quantity4`, `Remarks`, `Borrowed_time`, `states`) VALUES
+(56, '2014', 2147483647, 'test', 1, '', 0, '', 0, '', 0, '', '9/16/2019', 1),
+(57, '2014-12222', 2147483647, 'test2', 1, '', 0, '', 0, '', 0, '', '9/16/2019', 1);
 
 -- --------------------------------------------------------
 
@@ -115,11 +117,25 @@ CREATE TABLE `equipment` (
 --
 
 INSERT INTO `equipment` (`id`, `ItemName`, `Description`, `date_added`, `date_updated`, `Category`, `quantity`, `status`) VALUES
-(3, 'test', 'ffffffffffffffffffff', '2019-07-09 02:59:32', '2019-07-09 02:59:32', 'Sports Equipment', 8, 1),
-(4, 'test2', 'deeeeeeeeeeeeeeeeeeeeeeee', '2019-07-09 03:22:06', '2019-07-09 03:22:06', 'Sports Equipment', 8, 1),
+(3, 'test', 'ffffffffffffffffffff', '2019-07-09 02:59:32', '2019-07-09 02:59:32', 'Sports Equipment', 7, 1),
+(4, 'test2', 'deeeeeeeeeeeeeeeeeeeeeeee', '2019-07-09 03:22:06', '2019-07-09 03:22:06', 'Sports Equipment', 7, 1),
 (5, 'test3', 'deeeeeeeeeeeeeeeeeeeeeeee', '2019-07-09 03:23:13', '2019-07-09 03:23:13', 'Sports Equipment', 7, 1),
 (6, 'test4', 'dfedfdfggf', '2019-07-10 05:51:28', '2019-07-10 05:51:28', 'Gym Equipment', 10, 1),
 (20, 'GeeksForGeeks', 'Make', '2019-09-16 09:01:22', NULL, 'Sports Equipment', 1, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `returned_item`
+--
+
+CREATE TABLE `returned_item` (
+  `ID` int(11) NOT NULL,
+  `id_number` varchar(12) NOT NULL,
+  `ContactNumber` int(150) NOT NULL,
+  `Borrowed_time` varchar(100) NOT NULL,
+  `Return_time` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -177,6 +193,12 @@ ALTER TABLE `equipment`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `returned_item`
+--
+ALTER TABLE `returned_item`
+  ADD PRIMARY KEY (`ID`);
+
+--
 -- Indexes for table `staff_table`
 --
 ALTER TABLE `staff_table`
@@ -190,7 +212,7 @@ ALTER TABLE `staff_table`
 -- AUTO_INCREMENT for table `borrowed_item`
 --
 ALTER TABLE `borrowed_item`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
 
 --
 -- AUTO_INCREMENT for table `borrower_table`
@@ -203,6 +225,12 @@ ALTER TABLE `borrower_table`
 --
 ALTER TABLE `equipment`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
+--
+-- AUTO_INCREMENT for table `returned_item`
+--
+ALTER TABLE `returned_item`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `staff_table`
