@@ -53,7 +53,7 @@ if(empty($id_number))
             {
             
             // mysql search query borrower
-            $sql = "SELECT * FROM borrower_table WHERE id_number = :idnumber AND states =1 ";     
+            $sql = "SELECT * FROM borrower_table WHERE id_number = :idnumber";     
             $pdoResult = $dbh->prepare($sql);  
             $pdoExec = $pdoResult->execute(array(":idnumber"=>$id_number));
 
