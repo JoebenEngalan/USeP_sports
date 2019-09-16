@@ -9,9 +9,9 @@ $lname=$_POST['lastname'];
 $email=$_POST['emailid'];
 $password=md5($_POST['password']);
 
-if( empty($fname) || empty($lname) || empty($email) || empty($password) )
+if( empty($fname) || empty($lname) || empty($email) || empty($password))
     {
-    {echo "<script type= 'text/javascript'>alert('Empty Fields.');</script>";}  
+    echo "<script type= 'text/javascript'>alert('Empty Fields.');</script>";  
     }
     else
     {
