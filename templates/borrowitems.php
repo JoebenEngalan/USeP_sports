@@ -36,31 +36,105 @@ $query->bindParam(':status',$status,PDO::PARAM_STR);
 $query->execute();
 $lastInsertId = $dbh->lastInsertId();
 if($lastInsertId)
-   {echo "<script>alert('Success');</script>";}
-else 
-   {echo "<script>alert('Something went wrong. Please try again');</script>";}
+{
+echo "<script>alert('Success');</script>";
+}else {
+echo "<script>alert('Something went wrong. Please try again');</script>";
+}
 }
 
-if(isset($_POST['update']))
+if(isset($_POST['submit']))
 {
     // get values form input text and number
     
-    $id = $_POST['id'];
-    $fname = $_POST['fname'];
+    $itemname = $_POST['1itemname'];
+    $quantity = $_POST['subt1'];
     
     // mysql query to Update data
     
-    $sql = "UPDATE `equipment` SET `fname`=:fname WHERE `id` = :id";
+    $sql = "UPDATE `equipment` SET `quantity`=:subt1 WHERE `ItemName` = :1itemname";
     
     $pdoResult = $dbh->prepare($sql);
     
-    $pdoExec = $pdoResult->execute(array(":fname"=>$fname,":lname"=>$lname,":age"=>$age,":id"=>$id));
+    $pdoExec = $pdoResult->execute(array(":subt1"=>$quantity,":1itemname"=>$itemname));
     
     if($pdoExec)
     {
-        echo 'Data Updated';
+        echo "<script>alert('Success') reload();</script>";
     }else{
-        echo 'ERROR Data Not Updated';
+        echo "<script>alert('Something went wrong. Please try again') reload();</script>";
+    }
+
+}
+
+if(isset($_POST['submit']))
+{
+    // get values form input text and number
+    
+    $itemname = $_POST['2itemname'];
+    $quantity = $_POST['subt2'];
+    
+    // mysql query to Update data
+    
+    $sql = "UPDATE `equipment` SET `quantity`=:subt2 WHERE `ItemName` = :2itemname";
+    
+    $pdoResult = $dbh->prepare($sql);
+    
+    $pdoExec = $pdoResult->execute(array(":subt2"=>$quantity,":2itemname"=>$itemname));
+    
+    if($pdoExec)
+    {
+        echo "<script>alert('Success') reload();</script>";
+    }else{
+        echo "<script>alert('Something went wrong. Please try again') reload();</script>";
+    }
+
+}
+
+if(isset($_POST['submit']))
+{
+    // get values form input text and number
+    
+    $itemname = $_POST['3itemname'];
+    $quantity = $_POST['subt3'];
+    
+    // mysql query to Update data
+    
+    $sql = "UPDATE `equipment` SET `quantity`=:subt3 WHERE `ItemName` = :3itemname";
+    
+    $pdoResult = $dbh->prepare($sql);
+    
+    $pdoExec = $pdoResult->execute(array(":subt3"=>$quantity,":3itemname"=>$itemname));
+    
+    if($pdoExec)
+    {
+        echo "<script>alert('Success') reload();</script>";
+    }else{
+        echo "<script>alert('Something went wrong. Please try again') reload();</script>";
+    }
+
+}
+
+if(isset($_POST['submit']))
+{
+    // get values form input text and number
+    
+    $itemname = $_POST['4itemname'];
+    $quantity = $_POST['subt4'];
+    
+    // mysql query to Update data
+    
+    $sql = "UPDATE `equipment` SET `quantity`=:subt4 WHERE `ItemName` = :4itemname";
+    
+    $pdoResult = $dbh->prepare($sql);
+    
+    $pdoExec = $pdoResult->execute(array(":subt4"=>$quantity,":4itemname"=>$itemname));
+    
+    if($pdoExec)
+    {
+        echo "<script>alert('Success') reload();</script>";
+    }else{
+        echo "<script>alert('Something went wrong. Please try again') reload();</script>";
     }
 
 }
