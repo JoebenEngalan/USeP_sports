@@ -69,10 +69,16 @@ if(!isset($_SESSION["id"]))
               <input type="text" class="form-control" id="inputFname" placeholder="+63XXXXXXXXXX" disabled>
             </div>
             <!-- Date input -->
-            <div class="form-group col-md-6">
-              <label for="Datenow"> Date</label>
+            <div class="form-group col-md-3">
+              <label for="Datenow">Date Now</label>
               <input type="text" id="Datenow" class="form-control" disabled>
+            </div>
+            
+            <div class="form-group col-md-3">
+              <label for="Datenow">Date</label>
+              <input type="text" id="" class="form-control" disabled>
             </div>          
+        
         </div>
 
         <div class="form-group mb-4">
@@ -80,22 +86,50 @@ if(!isset($_SESSION["id"]))
         </div>
 
           <div class="form-row">
-            <div class="form-group col-md-4">
-            <select type="text" class="form-control" id="inputDept_Coll">
-                <option disabled selected>Items</option>
-                <option> test Items</option>
-            </select>
-        
+            <div class="form-group col-md">
+              <input type="text" class="form-control" id="inputQuantity" placeholder="Item">
             </div>
 
             <div class="form-group col-md-2">
               <input type="text" class="form-control" id="inputQuantity" placeholder="Quantity">
             </div>
-            
-            <div class="form-group col-md-6">
-              <input type="text" class="form-control" id="inputRemarks" placeholder="Remarks">
-            </div>          
           </div>
+
+          <div class="form-row">
+            <div class="form-group col-md">
+              <input type="text" class="form-control" id="inputQuantity" placeholder="Item">
+            </div>
+
+            <div class="form-group col-md-2">
+              <input type="text" class="form-control" id="inputQuantity" placeholder="Quantity">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-md">
+              <input type="text" class="form-control" id="inputQuantity" placeholder="Item">
+            </div>
+
+            <div class="form-group col-md-2">
+              <input type="text" class="form-control" id="inputQuantity" placeholder="Quantity">
+            </div>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group col-md">
+              <input type="text" class="form-control" id="inputQuantity" placeholder="Item">
+            </div>
+
+            <div class="form-group col-md-2">
+              <input type="text" class="form-control" id="inputQuantity" placeholder="Quantity">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-md">
+              <input type="text" class="form-control" id="inputRemarks" placeholder="Remarks">
+            </div> 
+          </div> 
           
           <div class="form-group mb-4">
             <div class="btn-group">
@@ -119,11 +153,24 @@ if(!isset($_SESSION["id"]))
 
 </body>
 
-<!--no form resubmision javascript dont touch-->
 <script>
+  
+  /** date for today **/
+  function getDate(){
+    var todaydate = new Date();
+    var day = todaydate.getDate();
+    var month = todaydate.getMonth() + 1;
+    var year = todaydate.getFullYear();
+    var datestring = month + "/" + day + "/" + year;
+    document.getElementById("Datenow").value = datestring;
+    } 
+  getDate(); 
+  
+  /** no form resubmision javascript dont touch**/
   if ( window.history.replaceState ) {
     window.history.replaceState( null, null, window.location.href );
   }
+
 </script>
 
 </html>
