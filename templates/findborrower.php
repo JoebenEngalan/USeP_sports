@@ -107,8 +107,17 @@ if(empty($id_number))
                       $itemname4 = $row['ItemName'];
                       $quantity4 = $row['quantity']; 
                       }
+                  }else{
+                    $id_number = '';
+                    $itemname1 = '';
+                    $itemname2 = '';
+                    $itemname3 = '';
+                    $itemname4 = '';
+                    echo "<script type= 'text/javascript'>alert('No Data With This ID.');</script>";                 
                   }
-              }                 
+              }else{
+                echo "<script type= 'text/javascript'>alert('ERROR Data Not Inserted.');</script>";
+            }                 
           }
       }    
   }
