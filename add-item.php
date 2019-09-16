@@ -81,13 +81,19 @@ if(!isset($_SESSION["id"]))
             <button type="submit"  name="submit"  value="Submit"  class="btn btn-primary btn-lg">Add </button>
             <button type="update"  name="update"  value="update"  class="btn btn-primary btn-lg">Update </button>
             <button type="clear" class="btn btn-primary btn-lg">Clear</button>
-            <button type="" class="btn btn-primary btn-lg">Show table</button>
           </div>
+          
         </div>
         </form>
       </div>
-
+      
       <div class="card mb-4">
+        <div class="btn-group">
+          <button type="show" id="show" class="btn btn-secondary btn-lg">Show table</button>
+        </div>
+      </div>
+      
+      <div id="table" class="card mb-4" display = "none" >
         <div class="card-header">
               <i class="fas fa-table"></i>
                Equipment</div>
@@ -153,11 +159,18 @@ if(!isset($_SESSION["id"]))
 
 </body>
 
-</html>
-
 <!--no form resubmision javascript dont touch-->
 <script>
+
+$(document).ready(function(){
+  $("#show").click(function(){
+    $("#table").toggle();
+  });
+});
+
   if ( window.history.replaceState ) {
     window.history.replaceState( null, null, window.location.href );
   }
 </script>
+
+</html>
