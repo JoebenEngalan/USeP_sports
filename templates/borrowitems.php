@@ -19,37 +19,39 @@ $status=1;
 $LastName=$_POST['LastName'];
 $FirstName=$_POST['FirstName'];
 
-if( empty($LastName)||empty($FirstName)||empty($item1))
- {
-    echo "<script type= 'text/javascript'>alert('Empty field.');</script>";
- }
-else
- {
-$sql= "INSERT INTO Borrowed_Item (id_number,Item1,quantity1,Item2,quantity2,Item3,quantity3,Item4,quantity4,Remarks,Borrowed_time,status) 
-VALUES(:id_number,:1itemname,:quantity1,:2itemname,:quantity2,:3itemname,:quantity3,:4itemname,:quantity4,:remarks,:Btime,:status)";
+if(empty($LastName)||empty($FirstName)||empty($item1))
+    {   
+        echo "<script type= 'text/javascript'>alert('Empty field.');</script>";
+    }
+    else
+    {
+    $sql="INSERT INTO Borrowed_Item (id_number,Item1,quantity1,Item2,quantity2,Item3,quantity3,Item4,quantity4,Remarks,Borrowed_time,status) 
+    VALUES
+    (:id_number,:1itemname,:quantity1,:2itemname,:quantity2,:3itemname,:quantity3,:4itemname,:quantity4,:remarks,:Btime,:status)";
  
- $query=$dbh->prepare($sql);
- $query->bindParam(':id_number',$id_number,PDO::PARAM_STR);
- $query->bindParam(':remarks',$remarks,PDO::PARAM_STR);
- $query->bindParam(':1itemname',$item1,PDO::PARAM_STR);
- $query->bindParam(':quantity1',$quantity1,PDO::PARAM_STR);
- $query->bindParam(':2itemname',$item2,PDO::PARAM_STR);
- $query->bindParam(':quantity2',$quantity2,PDO::PARAM_STR);
- $query->bindParam(':3itemname',$item3,PDO::PARAM_STR);
- $query->bindParam(':quantity3',$quantity3,PDO::PARAM_STR);
- $query->bindParam(':4itemname',$item4,PDO::PARAM_STR);
- $query->bindParam(':quantity4',$quantity4,PDO::PARAM_STR);
- $query->bindParam(':Btime',$Btime,PDO::PARAM_STR);
- $query->bindParam(':status',$status,PDO::PARAM_STR);
- $query->execute();
- $lastInsertId = $dbh->lastInsertId();
- if($lastInsertId)
- {
- echo "<script>alert('Success');</script>";
- }else {
- echo "<script>alert('Something went wrong. Please try again');</script>";
- }
- }
+    $query=$dbh->prepare($sql);
+    $query->bindParam(':id_number',$id_number,PDO::PARAM_STR);
+    $query->bindParam(':remarks',$remarks,PDO::PARAM_STR);
+    $query->bindParam(':1itemname',$item1,PDO::PARAM_STR);
+    $query->bindParam(':quantity1',$quantity1,PDO::PARAM_STR);
+    $query->bindParam(':2itemname',$item2,PDO::PARAM_STR);
+    $query->bindParam(':quantity2',$quantity2,PDO::PARAM_STR);
+    $query->bindParam(':3itemname',$item3,PDO::PARAM_STR);
+    $query->bindParam(':quantity3',$quantity3,PDO::PARAM_STR);
+    $query->bindParam(':4itemname',$item4,PDO::PARAM_STR);
+    $query->bindParam(':quantity4',$quantity4,PDO::PARAM_STR);
+    $query->bindParam(':Btime',$Btime,PDO::PARAM_STR);
+    $query->bindParam(':status',$status,PDO::PARAM_STR);
+    $query->execute();
+    $lastInsertId = $dbh->lastInsertId();
+    
+    if($lastInsertId)
+        {
+        echo "<script>alert('Success');</script>";
+        }else{
+        echo "<script>alert('Something went wrong. Please try again');</script>";
+        }
+    }
 }
 
 if(isset($_POST['submit']))
@@ -95,7 +97,7 @@ if(isset($_POST['submit']))
     {
         echo "<script>alert('Success') reload();</script>";
     }else{
-        echo "<script>alert('Something went wrong. Please try again') reload();</script>";
+        echo "<script>alert('Something went wrong. Please try again');</script>";
     }
 
 }
@@ -119,7 +121,7 @@ if(isset($_POST['submit']))
     {
         echo "<script>alert('Success') reload();</script>";
     }else{
-        echo "<script>alert('Something went wrong. Please try again') reload();</script>";
+        echo "<script>alert('Something went wrong. Please try again');</script>";
     }
 
 }
@@ -143,7 +145,7 @@ if(isset($_POST['submit']))
     {
         echo "<script>alert('Success') reload();</script>";
     }else{
-        echo "<script>alert('Something went wrong. Please try again') reload();</script>";
+        echo "<script>alert('Something went wrong. Please try again');</script>";
     }
 
 }
