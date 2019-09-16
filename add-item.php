@@ -74,10 +74,10 @@ if(!isset($_SESSION["id"]))
             <label for="InputDescription">Description</label>
             <textarea class="form-control" name="description" rows="5" id="InputDescription" resize="none" placeholder="Description Here" c></textarea>
           </div>
-          <!-- Grid row  Buttons -->          
+          <!-- Grid row  Buttons -->
+          <?php include('templates/additem.php');?>          
           <div class="btn-group">
             <!-- database command add item-->
-            <?php include('templates/additem.php');?>
             <button type="submit"  name="submit"  value="Submit"  class="btn btn-primary btn-lg">Add </button>
             <button type="update"  name="update"  value="update"  class="btn btn-primary btn-lg">Update </button>
             <button type="clear" class="btn btn-primary btn-lg">Clear</button>
