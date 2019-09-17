@@ -56,9 +56,11 @@ if(isset($_POST['Find']))
                 $FirstName = $row['FirstName'];
             }
         }else{
+          $id_number = "";
           echo "<script type= 'text/javascript'>alert('No Data With This ID.');</script>";                 
         }
     }else{
+      $id_number = "";
       echo "<script type= 'text/javascript'>alert('ERROR Data Not Inserted.');</script>";
     }
 }
