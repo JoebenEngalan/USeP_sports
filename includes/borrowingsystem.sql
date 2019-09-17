@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 16, 2019 at 04:42 PM
+-- Generation Time: Sep 17, 2019 at 02:28 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.1
 
@@ -32,6 +32,7 @@ CREATE TABLE `borrowed_item` (
   `ID` int(11) NOT NULL,
   `id_number` varchar(12) NOT NULL,
   `ContactNumber` int(150) NOT NULL,
+  `Borrowed_time` varchar(100) NOT NULL,
   `Item1` varchar(150) NOT NULL,
   `quantity1` int(100) DEFAULT NULL,
   `Item2` varchar(150) NOT NULL,
@@ -41,7 +42,6 @@ CREATE TABLE `borrowed_item` (
   `Item4` varchar(150) NOT NULL,
   `quantity4` int(100) DEFAULT NULL,
   `Remarks` text NOT NULL,
-  `Borrowed_time` varchar(100) NOT NULL,
   `states` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -49,9 +49,9 @@ CREATE TABLE `borrowed_item` (
 -- Dumping data for table `borrowed_item`
 --
 
-INSERT INTO `borrowed_item` (`ID`, `id_number`, `ContactNumber`, `Item1`, `quantity1`, `Item2`, `quantity2`, `Item3`, `quantity3`, `Item4`, `quantity4`, `Remarks`, `Borrowed_time`, `states`) VALUES
-(56, '2014', 2147483647, 'test', 1, '', 0, '', 0, '', 0, '', '9/16/2019', 1),
-(57, '2014-12222', 2147483647, 'test2', 1, '', 0, '', 0, '', 0, '', '9/16/2019', 1);
+INSERT INTO `borrowed_item` (`ID`, `id_number`, `ContactNumber`, `Borrowed_time`, `Item1`, `quantity1`, `Item2`, `quantity2`, `Item3`, `quantity3`, `Item4`, `quantity4`, `Remarks`, `states`) VALUES
+(56, '2014', 2147483647, '9/16/2019', 'test', 1, '', 0, '', 0, '', 0, '', 1),
+(57, '2014-12222', 2147483647, '9/16/2019', 'test2', 1, '', 0, '', 0, '', 0, '', 1);
 
 -- --------------------------------------------------------
 
@@ -168,7 +168,8 @@ INSERT INTO `staff_table` (`id`, `FirstName`, `LastName`, `Email`, `Password`, `
 (7, NULL, NULL, NULL, 'd41d8cd98f00b204e9800998ecf8427e', 0, '2019-07-04 08:59:45', '2019-07-04 09:00:31'),
 (8, NULL, NULL, NULL, 'd41d8cd98f00b204e9800998ecf8427e', 0, '2019-07-04 08:59:45', '2019-07-04 09:00:31'),
 (9, NULL, NULL, NULL, 'd41d8cd98f00b204e9800998ecf8427e', 0, '2019-07-04 08:59:45', '2019-07-04 09:00:31'),
-(10, 'lala', 'lolo', 'lolo@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 0, '2019-07-04 08:59:45', '2019-07-04 09:00:31');
+(10, 'lala', 'lolo', 'lolo@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 0, '2019-07-04 08:59:45', '2019-07-04 09:00:31'),
+(11, 'testhere', 'test', 'Test@gmail.com', 'fcea920f7412b5da7be0cf42b8c93759', 0, '0000-00-00 00:00:00', NULL);
 
 --
 -- Indexes for dumped tables
@@ -236,7 +237,7 @@ ALTER TABLE `returned_item`
 -- AUTO_INCREMENT for table `staff_table`
 --
 ALTER TABLE `staff_table`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
