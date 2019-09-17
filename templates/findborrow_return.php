@@ -55,10 +55,7 @@ if(isset($_POST['Find']))
                 $LastName = $row['LastName'];
                 $FirstName = $row['FirstName'];
             }
-        }
-            // if the id not exist
-            // show a message and clear inputs
-        else{
+        }else{
           echo "<script type= 'text/javascript'>alert('No Data With This ID.');</script>";                 
         }
     }else{

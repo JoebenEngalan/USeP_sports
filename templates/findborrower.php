@@ -28,9 +28,13 @@ if(isset($_POST['Find']))
     $itemname4 = (isset($_POST['itemname4']) ? $_POST['itemname4'] : '');
     
 
-if(empty($id_number))
+if(empty($id_number) 
+    || $itemname1 == $itemname2 
+    || $itemname2 == $itemname1 
+    || $itemname3 == $itemname1 
+    || $itemname4 == $itemname1)
     {
-        echo "<script type= 'text/javascript'>alert('Empty Id Number.');</script>";
+      echo "<script type= 'text/javascript'>alert('Empty Id Number or Repeted Item name.');</script>";
     }
     else
     {

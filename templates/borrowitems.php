@@ -18,6 +18,8 @@ if(isset($_POST['submit']))
     $Btime=$_POST['Btime'];
     $states=1;
 
+    $y = -1;
+
     // get values form input text and number
     $itemname1 = $_POST['1itemname'];
     $quantityE1 = $_POST['subt1'];
@@ -33,8 +35,8 @@ if(isset($_POST['submit']))
     $FirstName=$_POST['FirstName'];
 
     if(empty($id_number)||empty($LastName)||empty($FirstName)
-        ||empty($item1)||empty($quantity1)||empty($quantityE1)
-        ||$quantityE1 < 0 || $quantityE2 < 0 ||$quantityE3 < 0 ||$quantityE4 < 0 )
+        ||empty($item1)||empty($quantity1)
+        ||$quantityE1 <= $y || $quantityE2 <= $y ||$quantityE3 <= $y ||$quantityE4 <= $y )
         {   
         echo "<script type= 'text/javascript'>alert('ERROR YOU ENTERED A NEGATIVE NUMBER OR EMPTY FIELDS');</script>";
         }
