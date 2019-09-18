@@ -10,6 +10,7 @@
     <script src="vendor/datatables/jquery.dataTables.js"></script>
     <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
     
+    <!-- Another Page level plugin JavaScript-->
     <script src="js/JSZip-2.5.0/jszip.min.js"></script>
     <script src="js/pdfmake-0.1.36/pdfmake.min.js"></script>
     <script src="js/pdfmake-0.1.36/vfs_fonts.js"></script>
