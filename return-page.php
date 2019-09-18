@@ -183,6 +183,9 @@ include_once('templates/findborrow_return.php');
   </div><!-- /#wrapper -->
   <!--scrolltop-->
   <?php include('templates/scrolltop.php')?>
+  
+  <?php include('templates/scripts.php')?>
+
 </body>
 
 <script type="text/javascript">
