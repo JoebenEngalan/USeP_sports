@@ -162,6 +162,16 @@ if(!isset($_SESSION["id"]))
 <!--no form resubmision javascript dont touch-->
 <script>
 
+$('#dataTable').DataTable( {
+  dom: 'Bfrtip',
+  buttons: [
+    'copyHtml5',
+    'excelHtml5',
+    'pdfHtml5',
+      'print'
+    ]
+});
+
 $(document).ready(function(){
   $("#show").click(function(){
     $("#table").toggle();

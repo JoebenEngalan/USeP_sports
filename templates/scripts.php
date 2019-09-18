@@ -9,7 +9,17 @@
     <!-- Page level plugin JavaScript-->
     <script src="vendor/datatables/jquery.dataTables.js"></script>
     <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
-
+    
+    <script src="js/JSZip-2.5.0/jszip.min.js"></script>
+    <script src="js/pdfmake-0.1.36/pdfmake.min.js"></script>
+    <script src="js/pdfmake-0.1.36/vfs_fonts.js"></script>
+    <script src="js/Buttons-1.5.6/js/dataTables.buttons.min.js"></script>
+    <script src="js/Buttons-1.5.6/js/buttons.bootstrap4.min.js"></script>
+    <script src="js/Buttons-1.5.6/js/buttons.colVis.min.js"></script>
+    <script src="js/Buttons-1.5.6/js/buttons.flash.min.js"></script>
+    <script src="js/Buttons-1.5.6/js/buttons.html5.min.js"></script>
+    <script src="js/Buttons-1.5.6/js/buttons.print.min.js"></script>
+    
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin.min.js"></script>
     

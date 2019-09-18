@@ -98,6 +98,19 @@ if(!isset($_SESSION["id"]))
 
 <!--no form resubmision javascript dont touch-->
 <script>
+
+
+  $('#dataTable').DataTable( {
+      dom: 'Bfrtip',
+      buttons: [
+          'copyHtml5',
+          'excelHtml5',
+          'pdfHtml5',
+          'print'
+      ]
+  } );
+
+
   if ( window.history.replaceState ) {
     window.history.replaceState( null, null, window.location.href );
   }
