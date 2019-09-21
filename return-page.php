@@ -129,11 +129,11 @@ include_once('templates/findborrow_return.php');
             <!-- item one-->
             <div class="form-row" name='1' id='item1'> 
                 <div class="form-group col-md-7">
-                  <input type="text" class="form-control" readonly name="itemname" id="itemname" value="<?php echo $itemname1;?>" placeholder="Item name 1" >
+                  <input type="text" class="form-control" readonly name="itemname1" id="itemname1" value="<?php echo $itemname1;?>" placeholder="Item name 1" >
                 </div>
                           
                 <div class="form-group col-md">
-                  <input type="text" class="form-control" readonly name="quantity" id="quantity" value="<?php echo $quantity1;?>" placeholder="Quantity Left ">
+                  <input type="text" class="form-control" readonly name="quantity1" id="quantity1" value="<?php echo $quantity1;?>" placeholder="Quantity Left ">
                 </div>
 
               </div>
@@ -142,11 +142,11 @@ include_once('templates/findborrow_return.php');
             <div class="form-row" name='2' id='item2'>     
                 
                 <div class="form-group col-md-7">
-                  <input type="text" class="form-control" readonly name="itemname" id="itemname" value="<?php echo $itemname2;?>" placeholder="Item name 2" >
+                  <input type="text" class="form-control" readonly name="itemname2" id="itemname2" value="<?php echo $itemname2;?>" placeholder="Item name 2" >
                 </div>
                           
                 <div class="form-group col-md">
-                  <input type="text" class="form-control" readonly name="quantity" id="quantity" value="<?php echo $quantity2;?>" placeholder="Quantity Left">
+                  <input type="text" class="form-control" readonly name="quantity2" id="quantity2" value="<?php echo $quantity2;?>" placeholder="Quantity Left">
                 </div>
                 
             </div>
@@ -154,11 +154,11 @@ include_once('templates/findborrow_return.php');
             <div class="form-row" name='3' id='item3'>     
                 
                 <div class="form-group col-md-7">
-                  <input type="text" class="form-control" readonly name="itemname" id="itemname" value="<?php echo $itemname3;?>" placeholder="Item name 3">
+                  <input type="text" class="form-control" readonly name="itemname3" id="itemname3" value="<?php echo $itemname3;?>" placeholder="Item name 3">
                 </div>
                           
                 <div class="form-group col-md">
-                  <input type="text" class="form-control" readonly name="quantity" id="quantity" value="<?php echo $quantity3;?>" placeholder="Quantity Left">
+                  <input type="text" class="form-control" readonly name="quantity3" id="quantity3" value="<?php echo $quantity3;?>" placeholder="Quantity Left">
                 </div>
                 
             </div>
@@ -167,20 +167,20 @@ include_once('templates/findborrow_return.php');
             <div class="form-row" name='4' id='item4'>     
                 
                 <div class="form-group col-md-7">
-                  <input type="text" class="form-control" readonly name="itemname" id="itemname" value="<?php echo $itemname4;?>" placeholder="Item name 4">
+                  <input type="text" class="form-control" readonly name="itemname3" id="itemname4" value="<?php echo $itemname4;?>" placeholder="Item name 4">
                 </div>
                           
                 <div class="form-group col-md">
-                  <input type="text" class="form-control" readonly name="quantity" id="quantity" value="<?php echo $quantity4;?>" placeholder="Quantity Left">
+                  <input type="text" class="form-control" readonly name="quantity3" id="quantity4" value="<?php echo $quantity4;?>" placeholder="Quantity Left">
                 </div>
             
             </div>
-            </div>
+          </div>
 
             <div class="form-group mb-4">
             
               <div class="btn-group">
-                <button type="submit"  name="submit" onclick="return confirm('Y/N') " value="Submit"  class="btn btn-primary btn-lg">Return</button>
+                <button type="submit"  name="return" onclick="return confirm('Y/N')" value="Submit"  class="btn btn-primary btn-lg">Return</button>
                 <button type="clear" class="btn btn-primary btn-lg">Clear</button>
               </div>
             
