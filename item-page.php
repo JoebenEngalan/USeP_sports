@@ -94,7 +94,7 @@ if(!isset($_SESSION["id"]))
         </div>
       </div>
 
-        <div class="card mb-3">
+      <div class="card mb-3">
               <div class="card-header">
                       <i class="far fa-file"></i>
                       Update item Box</div>
@@ -106,8 +106,20 @@ if(!isset($_SESSION["id"]))
                 <!-- Item Name input -->
                 <div class="form-group col-md">
                   <label for="itemname">Item Name</label>
-                  <input type="text" name= "itemname" class="form-control" id="itemname" placeholder="Item Name" required>
+                  <div class="input-group mb-3"> 
+                    <input type="text" class="form-control" name="idnumber" id="search" placeholder="Enter Item Name" aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <div class="input-group-append">             
+                      <button class="btn btn-primary" 
+                      onclick="return confirm ('Did you input the Item Name?\nYes/No')" 
+                      type="submit"  id="Find" name="Find" value="Find Data">
+                        <i class="fas fa-search"></i>
+                      </button>
+                      <button class="btn btn-primary" type="clear" >
+                        <i class="fa fa-redo"></i>
+                      </button>
+                  </div>                  
                 </div>
+              </div>                   
               </div>
                 <!-- Item Name input -->
               <div class="form-row">
