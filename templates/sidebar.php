@@ -31,11 +31,21 @@
         <a class="nav-link" href="item-page.php">
           <i class="fas fa-fw fa-bicycle"></i>
           <span>Item Page</span></a>
-      </li>
+      </li> 
+
       <!--table Page-->
-      <li class="nav-item">
-        <a class="nav-link" href="tables.php">
-          <i class="fas fa-fw fa-table"></i>
-          <span>Tables</span></a>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-fw fa-folder"></i>
+          <span>Print Tables</span>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+          <h6 class="dropdown-header">Tables:</h6>
+          <a class="dropdown-item" href="tablesM.php">Borrowers</a>
+          <a class="dropdown-item" href="tablesB.php">Borrow</a>
+          <a class="dropdown-item" href="tablesR.php">Return</a>
+          <a class="dropdown-item" href="tablesE.php">Equipment</a>
+        </div>
       </li>
+
     </ul>

@@ -29,14 +29,14 @@ if(!isset($_SESSION["id"]))
           <li class="breadcrumb-item">
             <a href="index.php">Dashboard</a>
           </li>
-          <li class="breadcrumb-item active">Tables</li>
+          <li class="breadcrumb-item active">Return</li>
         </ol>
 
         <!--DataTables Borrowers-->
         <div class="card mb-4">
               <div class="card-header">
                 <i class="fas fa-table"></i>
-                Data Table Borrowers</div>             
+                Table Return</div>             
               <div class="card-body">
                 <div class="table-responsive">
                   <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -100,24 +100,27 @@ if(!isset($_SESSION["id"]))
   <!--scrolltop-->
   <?php include('templates/scrolltop.php')?>
 
-  <!-- Bootstrap core JavaScript-->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Core plugin JavaScript-->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-  <!-- Page level plugin JavaScript-->
-  <script src="vendor/datatables/jquery.dataTables.js"></script>
-  <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
-
-  <!-- Custom scripts for all pages-->
-  <script src="js/sb-admin.min.js"></script>
-
-  <!-- Demo scripts for this page-->
-  <script src="js/demo/datatables-demo.js"></script>
+  <!--scripts-->
+  <?php include('templates/scripts.php')?>
 
 </body>
+
+<script>
+$('#dataTable').DataTable( {
+    dom: 'Bfrtip',
+    buttons: [
+      'copyHtml5',
+      'excelHtml5',
+      'pdfHtml5',
+      'print'
+    ]
+} );
+
+
+  if ( window.history.replaceState ) {
+    window.history.replaceState( null, null, window.location.href );
+  }
+</script>
 
 </html>
 

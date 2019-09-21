@@ -14,7 +14,7 @@ if(!isset($_SESSION["id"]))
 
 <?php include('templates/head.php');?>
 <!--scripts-->
-<?php include('templates/scripts.php');
+<?php 
 include_once('templates/findborrower.php');
 //include_once('templates/getitem.php')
 ?>
