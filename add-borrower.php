@@ -38,10 +38,15 @@ if(!isset($_SESSION["id"]))
         <!-- Page Content -->
         <!-- Borrowing form grid -->
         <div class="mb-4">
-          <form method="post" name="submit">
+          <form method="post" name="submit">         
           <div class="form-group mb-4">
             <h3 class="display-10">Borrowers Page</h3>
           </div>
+          <div class="card mb-3">
+              <div class="card-header">
+                      <i class="far fa-file"></i>
+                      Input Box</div>
+                <div class="card-body"> 
             <!-- IDNumber input -->
             <div class="form-group col-md-14">
               <label for="inputIDnum">ID Number</label>
@@ -106,6 +111,8 @@ if(!isset($_SESSION["id"]))
               <button type="clear" class="btn btn-primary btn-lg">Clear</button>
             </div>
 
+          </div>
+          </div>
           </form>
         </div>
     

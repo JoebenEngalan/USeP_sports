@@ -47,95 +47,108 @@ include_once('templates/findborrower.php');
                     <div class="form-group mb-4">
                         <h3 class="display-10">Borrow Page</h3>
                     </div>
-
                     <!--id NUMBER-->
-                    <label for="itemname1">Search ID and Equipments</label>
-                    <div class="input-group mb-3"> 
-                      <input type="text" class="form-control" name="idnumber" id="search" maxlength= "10" placeholder="Enter ID number of Student or Faculty" aria-label="Recipient's username" aria-describedby="button-addon2">
-                      <div class="input-group-append">             
-                        <button class="btn btn-primary" 
-                        onclick="return confirm ('Did you input the Id Number and check the Equipment box?\nYes/No')" 
-                        type="submit"  id="Find" name="Find" value="Find Data">
-                          <i class="fas fa-search"></i>
-                        </button>
-                        <button class="btn btn-primary" type="clear" >
-                          <i class="fa fa-redo"></i>
-                        </button>
-                      </div>
-                    </div>
-                    <!--Grid colmun equipments-->
-                          
-                    <!--Grid colmun equipments-->
-                    <label for="itemname1">Equipments</label>
-                    <div class="form-row md-6">
-                      <div class="form-group col-md">                                
-                          <div class="input-group">                
-                            
-                            <div class="custom-control custom-checkbox custom-control-inline">
-                              <input type="checkbox" class="custom-control-input" id="chkPass1" onclick="EnableDisableTextBox(this)"/>
-                              <label class="custom-control-label" for="chkPass1">1</label>
-                            </div>                
-                            
-                            <select class="form-control" name="itemname1" id="itemname1" disabled="disabled">
-                            <option disabled selected>Equipement Name and Quantity 1</option>
-                            <option>None</option>
-                            <?php include('templates/selectitem.php');?>
-                            </select>
-                          </div>
+
+                  <div class="card mb-3">
+                    <div class="card-header">
+                      <i class="fas fa-search"></i>
+                      Search Box</div>
+                    <div class="card-body">
+                      <label for="itemname1">Search ID and Equipments</label>
+                      <div class="input-group mb-3"> 
+                        <input type="text" class="form-control" name="idnumber" id="search" maxlength= "10" placeholder="Enter ID number of Student or Faculty" aria-label="Recipient's username" aria-describedby="button-addon2">
+                        <div class="input-group-append">             
+                          <button class="btn btn-primary" 
+                          onclick="return confirm ('Did you input the Id Number and check the Equipment box?\nYes/No')" 
+                          type="submit"  id="Find" name="Find" value="Find Data">
+                            <i class="fas fa-search"></i>
+                          </button>
+                          <button class="btn btn-primary" type="clear" >
+                            <i class="fa fa-redo"></i>
+                          </button>
+                        </div>
                       </div>
                       <!--Grid colmun equipments-->
-                      <div class="form-group col-md">
-                          <div class="input-group">
                             
-                            <div class="custom-control custom-checkbox custom-control-inline">
-                              <input type="checkbox" class="custom-control-input" id="chkPass2" onclick="EnableDisableTextBox(this)">
-                              <label class="custom-control-label" for="chkPass2">2</label>
-                            </div> 
-                            
-                            <select class="form-control" name="itemname2" id="itemname2" disabled="disabled">
-                            <option disabled selected>Equipement Name and Quantity 2</option>
-                            <option>None</option>
-                            <?php include('templates/selectitem.php');?>
-                            </select>
-                          </div>
-                      </div>
-                    </div>
-                    <!--Grid colmun equipments-->
-                    <div class="form-row md-6">
-                      <div class="form-group col-md">
-                          <div class="input-group">                
-                            
-                            <div class="custom-control custom-checkbox custom-control-inline">
-                              <input type="checkbox" class="custom-control-input" id="chkPass3" onclick="EnableDisableTextBox(this)">
-                              <label class="custom-control-label" for="chkPass3">3</label>
-                            </div>  
-                            
-                            <select class="form-control" name="itemname3" id="itemname3" disabled="disabled">
-                            <option disabled selected>Equipement Name and Quantity 3</option>
-                            <option>None</option>
-                            <?php include('templates/selectitem.php');?>
-                            </select>
-                          </div>
+                      <!--Grid colmun equipments-->
+                      <label for="itemname1">Equipments</label>
+                      <div class="form-row md-6">
+                        <div class="form-group col-md">                                
+                            <div class="input-group">                
+                              
+                              <div class="custom-control custom-checkbox custom-control-inline">
+                                <input type="checkbox" class="custom-control-input" id="chkPass1" onclick="EnableDisableTextBox(this)"/>
+                                <label class="custom-control-label" for="chkPass1">1</label>
+                              </div>                
+                              
+                              <select class="form-control" name="itemname1" id="itemname1" disabled="disabled">
+                              <option disabled selected>Equipement Name and Quantity 1</option>
+                              <option>None</option>
+                              <?php include('templates/selectitem.php');?>
+                              </select>
+                            </div>
+                        </div>
+                        <!--Grid colmun equipments-->
+                        <div class="form-group col-md">
+                            <div class="input-group">
+                              
+                              <div class="custom-control custom-checkbox custom-control-inline">
+                                <input type="checkbox" class="custom-control-input" id="chkPass2" onclick="EnableDisableTextBox(this)">
+                                <label class="custom-control-label" for="chkPass2">2</label>
+                              </div> 
+                              
+                              <select class="form-control" name="itemname2" id="itemname2" disabled="disabled">
+                              <option disabled selected>Equipement Name and Quantity 2</option>
+                              <option>None</option>
+                              <?php include('templates/selectitem.php');?>
+                              </select>
+                            </div>
+                        </div>
                       </div>
                       <!--Grid colmun equipments-->
-                      <div class="form-group col-md">
-                          <div class="input-group">
-                            
-                            <div class="custom-control custom-checkbox custom-control-inline">
-                              <input type="checkbox" class="custom-control-input" id="chkPass4" onclick="EnableDisableTextBox(this)">
-                              <label class="custom-control-label" for="chkPass4">4</label>
-                            </div> 
+                      <div class="form-row md-6">
+                        <div class="form-group col-md">
+                            <div class="input-group">                
+                              
+                              <div class="custom-control custom-checkbox custom-control-inline">
+                                <input type="checkbox" class="custom-control-input" id="chkPass3" onclick="EnableDisableTextBox(this)">
+                                <label class="custom-control-label" for="chkPass3">3</label>
+                              </div>  
+                              
+                              <select class="form-control" name="itemname3" id="itemname3" disabled="disabled">
+                              <option disabled selected>Equipement Name and Quantity 3</option>
+                              <option>None</option>
+                              <?php include('templates/selectitem.php');?>
+                              </select>
+                            </div>
+                        </div>
+                        <!--Grid colmun equipments-->
+                        <div class="form-group col-md">
+                            <div class="input-group">
+                              
+                              <div class="custom-control custom-checkbox custom-control-inline">
+                                <input type="checkbox" class="custom-control-input" id="chkPass4" onclick="EnableDisableTextBox(this)">
+                                <label class="custom-control-label" for="chkPass4">4</label>
+                              </div> 
 
-                            <select class="form-control" name="itemname4" id="itemname4" disabled="disabled" >
-                            <option disabled selected>Equipement Name and Quantity 4</option>
-                            <option >None</option>
-                            <?php include('templates/selectitem.php');?>
-                            </select>
+                              <select class="form-control" name="itemname4" id="itemname4" disabled="disabled" >
+                              <option disabled selected>Equipement Name and Quantity 4</option>
+                              <option >None</option>
+                              <?php include('templates/selectitem.php');?>
+                              </select>
 
-                          </div>
+                            </div>
+                        </div>
                       </div>
                     </div>
-                
+                  </div>
+                    
+
+              <div class="card mb-3">
+              <div class="card-header">
+                      <i class="far fa-file	"></i>
+                      Result Box</div>
+                <div class="card-body">
                   <div name="result" id="result">
                     <div class="form-row">
                       <!-- LastName input -->
@@ -171,7 +184,7 @@ include_once('templates/findborrower.php');
                         <input type="text" id="Datenow" name="Btime" readonly class="form-control">
                       </div>    
                   </div>
-            
+               
                   <!-- label -->
                   <div class="form-row" name='label'>
                     <div class="form-group col-md-5">
@@ -282,6 +295,8 @@ include_once('templates/findborrower.php');
                         <button type="clear" class="btn btn-primary btn-lg">Clear</button>
                       </div>
                   </div>
+                </div>
+            </div>
               
             </form>
           

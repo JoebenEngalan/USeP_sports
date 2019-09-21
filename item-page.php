@@ -42,49 +42,107 @@ if(!isset($_SESSION["id"]))
           <h3 class="display-10">Item Page</h3>
         </div>
         
-        <form method="post" name="submit" >
-          <!--Grid row-->
-          <div class="form-row">            
-            <!-- Item Name input -->
-            <div class="form-group col-md">
-              <label for="itemname">Item Name</label>
-              <input type="text" name= "itemname" class="form-control" id="itemname" placeholder="Item Name" required>
+        <div class="card mb-3">
+              <div class="card-header">
+                      <i class="far fa-file"></i>
+                      Add item Box</div>
+                <div class="card-body"> 
+        
+            <form method="post" name="submit" >
+              <!--Grid row-->
+              <div class="form-row">            
+                <!-- Item Name input -->
+                <div class="form-group col-md">
+                  <label for="itemname">Item Name</label>
+                  <input type="text" name= "itemname" class="form-control" id="itemname" placeholder="Item Name" required>
+                </div>
+              </div>
+                <!-- Item Name input -->
+              <div class="form-row">
+                <div class="form-group col-md-6 ">
+                  <label for="itemname">Quantity</label>
+                  <input type="text" name="quantity" class="form-control" id="quantity" placeholder="0" required>
+                </div>
+                <!--  Category input -->
+                <div class="form-group col-md-6">
+                <label for="inputCategory">Category</label>
+                  <select type="text" name= "category" class="form-control" id="inputCategory" required>
+                  <option disabled selected>Category</option>
+                  <option> Sports Equipment</option>
+                  <option> Gym Equipment </option>
+                  </select>
+                </div>
+              </div>
+            <div class="form">
+              <!--Grid row-->
+              <!-- InputDescription input -->
+              <div class="form-group col-md-14">
+                <label for="InputDescription">Description</label>
+                <textarea class="form-control" name="description" rows="5" id="InputDescription" resize="none" placeholder="Description Here" c></textarea>
+              </div>
+              <!-- Grid row  Buttons -->
+              <?php include('templates/additem.php');?>          
+              <div class="btn-group">
+                <!-- database command add item-->
+                <button type="submit"  name="submit"  value="Submit"  class="btn btn-primary btn-lg">Add </button>
+                <button type="clear" class="btn btn-primary btn-lg">Clear</button>
+              </div>
+              
             </div>
+            </form>
           </div>
-             <!-- Item Name input -->
-          <div class="form-row">
-            <div class="form-group col-md-6 ">
-              <label for="itemname">Quantity</label>
-              <input type="text" name="quantity" class="form-control" id="quantity" placeholder="0" required>
-            </div>
-            <!--  Category input -->
-            <div class="form-group col-md-6">
-            <label for="inputCategory">Category</label>
-              <select type="text" name= "category" class="form-control" id="inputCategory" required>
-              <option disabled selected>Category</option>
-              <option> Sports Equipment</option>
-              <option> Gym Equipment </option>
-              </select>
-            </div>
-          </div>
-        <div class="form">
-          <!--Grid row-->
-          <!-- InputDescription input -->
-          <div class="form-group col-md-14">
-            <label for="InputDescription">Description</label>
-            <textarea class="form-control" name="description" rows="5" id="InputDescription" resize="none" placeholder="Description Here" c></textarea>
-          </div>
-          <!-- Grid row  Buttons -->
-          <?php include('templates/additem.php');?>          
-          <div class="btn-group">
-            <!-- database command add item-->
-            <button type="submit"  name="submit"  value="Submit"  class="btn btn-primary btn-lg">Add </button>
-            <button type="update"  name="update"  value="update"  class="btn btn-primary btn-lg">Update </button>
-            <button type="clear" class="btn btn-primary btn-lg">Clear</button>
-          </div>
-          
         </div>
-        </form>
+      </div>
+
+        <div class="card mb-3">
+              <div class="card-header">
+                      <i class="far fa-file"></i>
+                      Update item Box</div>
+                <div class="card-body"> 
+        
+            <form method="post" name="submit" >
+              <!--Grid row-->
+              <div class="form-row">            
+                <!-- Item Name input -->
+                <div class="form-group col-md">
+                  <label for="itemname">Item Name</label>
+                  <input type="text" name= "itemname" class="form-control" id="itemname" placeholder="Item Name" required>
+                </div>
+              </div>
+                <!-- Item Name input -->
+              <div class="form-row">
+                <div class="form-group col-md-6 ">
+                  <label for="itemname">Quantity</label>
+                  <input type="text" name="quantity" class="form-control" id="quantity" placeholder="0" required>
+                </div>
+                <!--  Category input -->
+                <div class="form-group col-md-6">
+                <label for="inputCategory">Category</label>
+                  <select type="text" name= "category" class="form-control" id="inputCategory" required>
+                  <option disabled selected>Category</option>
+                  <option> Sports Equipment</option>
+                  <option> Gym Equipment </option>
+                  </select>
+                </div>
+              </div>
+            <div class="form">
+              <!--Grid row-->
+              <!-- InputDescription input -->
+              <div class="form-group col-md-14">
+                <label for="InputDescription">Description</label>
+                <textarea class="form-control" name="description" rows="5" id="InputDescription" resize="none" placeholder="Description Here" c></textarea>
+              </div>
+              <!-- Grid row  Buttons -->
+              <div class="btn-group">
+                <!-- database command add item-->
+                <button type="update"  name="update"  value="update"  class="btn btn-primary btn-lg">Update </button>
+                <button type="clear" class="btn btn-primary btn-lg">Clear</button>
+              </div>
+              
+            </div>
+            </form>
+          </div>
+        </div>
       </div>
       
       <div class="card mb-4">

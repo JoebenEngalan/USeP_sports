@@ -47,133 +47,146 @@ include_once('templates/findborrow_return.php');
           <div class="form-group mb-4">
               <h3 class="display-10">Return Page</h3>
           </div>
-
-          <!--id NUMBER-->
-          <label for="itemname1">Search ID</label>
-          <div class="input-group mb-3"> 
-            <input type="text" class="form-control" name="idnumber" id="search" maxlength= "10" placeholder="Enter ID number of Student or Faculty" aria-label="Recipient's username" aria-describedby="button-addon2">
-            <div class="input-group-append">             
-              <button class="btn btn-primary" 
-              onclick="return confirm ('Did you input the Id Number?\nYes/No')" 
-              type="submit"  id="Find" name="Find" value="Find Data">
-                <i class="fas fa-search"></i>
-              </button>
-              <button class="btn btn-primary" type="clear" >
-                <i class="fa fa-redo"></i>
-              </button>
-            </div>
-          </div>
+          <div class="card mb-3">
+              <div class="card-header">
+                      <i class="fas fa-search"></i>
+                      Search Box</div>
+                <div class="card-body">
+                <!--id NUMBER-->
+                <label for="itemname1">Search ID</label>
+                <div class="input-group mb-3"> 
+                  <input type="text" class="form-control" name="idnumber" id="search" maxlength= "10" placeholder="Enter ID number of Student or Faculty" aria-label="Recipient's username" aria-describedby="button-addon2">
+                  <div class="input-group-append">             
+                    <button class="btn btn-primary" 
+                    onclick="return confirm ('Did you input the Id Number?\nYes/No')" 
+                    type="submit"  id="Find" name="Find" value="Find Data">
+                      <i class="fas fa-search"></i>
+                    </button>
+                    <button class="btn btn-primary" type="clear" >
+                      <i class="fa fa-redo"></i>
+                    </button>
+                  </div>
+                </div>
+        </div>
+      </div> 
           <!--Grid colmun equipments-->
-                        
-        <div name="result" id="result">
-          <div class="form-row">
-            <!-- LastName input -->
-            <div class="form-group col-md">
-              <label for="inputLname">ID Number</label>
-              <input type="text" class="form-control" readonly name="id_number" id="id_number" value="<?php echo $id_number;?>" placeholder="ID number of Student or Faculty" >
+          
+          <div class="card mb-3">
+              <div class="card-header">
+                      <i class="far fa-file"></i>
+                      Result Box</div>
+                <div class="card-body">                        
+            <div name="result" id="result">
+              <div class="form-row">
+                <!-- LastName input -->
+                <div class="form-group col-md">
+                  <label for="inputLname">ID Number</label>
+                  <input type="text" class="form-control" readonly name="id_number" id="id_number" value="<?php echo $id_number;?>" placeholder="ID number of Student or Faculty" >
+                </div>
+              </div>
+
+              <!--Grid row fullname-->
+              <div class="form-row">
+                <!-- LastName input -->
+                <div class="form-group col-md-6">
+                  <label for="inputLname">Last Name</label>
+                  <input type="text" class="form-control" readonly required="required" name="LastName" id="inputLname"  value="<?php echo $LastName;?>" placeholder="Last Name" >
+                </div>
+                <!-- FirstName input -->
+                <div class="form-group col-md-6">
+                  <label for="inputFname">First Name</label>
+                  <input type="text" class="form-control" readonly required="required" name="FirstName" id="inputFname" value="<?php echo $FirstName;?>" placeholder="First Name" >
+                </div>
+            </div>
+
+            <div class="form-row">
+                <!-- ContactNum input -->
+                <div class="form-group col-md-6">
+                  <label for="inputContactnum">Contact Number</label>
+                  <input type="text" class="form-control" readonly required="required" name="ContactNumber" id="ContactNumber" value="<?php echo $ContactNumber;?>" id="inputContactnum" placeholder="+63XXXXXXXXXX" >
+                </div>
+                <!-- Date input -->
+                <div class="form-group col-md-3">
+                  <label for="Datenow">Date Today</label>
+                  <input type="text" id="Datenow" name="Btime" readonly class="form-control">
+                </div>
+                <div class="form-group col-md-3">
+                  <label for="Datenow">Date Borrowed</label>
+                  <input type="text" id="Datenow" value="<?php echo $Borrowed_time;?>" readonly class="form-control">
+                </div>    
+            </div>
+      
+            <!-- label -->
+            <div class="form-row" name='label'>
+              <div class="form-group col-md-7">
+                <h5>Item name</h5>
+              </div>
+              <div class="form-group col-md">
+                <h5>Quantity</h5>
+              </div>         
+            </div>
+
+            <!-- item one-->
+            <div class="form-row" name='1' id='item1'> 
+                <div class="form-group col-md-7">
+                  <input type="text" class="form-control" readonly name="itemname" id="itemname" value="<?php echo $itemname1;?>" placeholder="Item name 1" >
+                </div>
+                          
+                <div class="form-group col-md">
+                  <input type="text" class="form-control" readonly name="quantity" id="quantity" value="<?php echo $quantity1;?>" placeholder="Quantity Left ">
+                </div>
+
+              </div>
+
+            <!--item two-->
+            <div class="form-row" name='2' id='item2'>     
+                
+                <div class="form-group col-md-7">
+                  <input type="text" class="form-control" readonly name="itemname" id="itemname" value="<?php echo $itemname2;?>" placeholder="Item name 2" >
+                </div>
+                          
+                <div class="form-group col-md">
+                  <input type="text" class="form-control" readonly name="quantity" id="quantity" value="<?php echo $quantity2;?>" placeholder="Quantity Left">
+                </div>
+                
+            </div>
+            <!--item three-->
+            <div class="form-row" name='3' id='item3'>     
+                
+                <div class="form-group col-md-7">
+                  <input type="text" class="form-control" readonly name="itemname" id="itemname" value="<?php echo $itemname3;?>" placeholder="Item name 3">
+                </div>
+                          
+                <div class="form-group col-md">
+                  <input type="text" class="form-control" readonly name="quantity" id="quantity" value="<?php echo $quantity3;?>" placeholder="Quantity Left">
+                </div>
+                
+            </div>
+            
+            <!--item four-->
+            <div class="form-row" name='4' id='item4'>     
+                
+                <div class="form-group col-md-7">
+                  <input type="text" class="form-control" readonly name="itemname" id="itemname" value="<?php echo $itemname4;?>" placeholder="Item name 4">
+                </div>
+                          
+                <div class="form-group col-md">
+                  <input type="text" class="form-control" readonly name="quantity" id="quantity" value="<?php echo $quantity4;?>" placeholder="Quantity Left">
+                </div>
+            
+            </div>
+            </div>
+
+            <div class="form-group mb-4">
+            
+              <div class="btn-group">
+                <button type="submit"  name="submit" onclick="return confirm('Y/N') " value="Submit"  class="btn btn-primary btn-lg">Return</button>
+                <button type="clear" class="btn btn-primary btn-lg">Clear</button>
+              </div>
+            
             </div>
           </div>
-
-          <!--Grid row fullname-->
-          <div class="form-row">
-            <!-- LastName input -->
-            <div class="form-group col-md-6">
-              <label for="inputLname">Last Name</label>
-              <input type="text" class="form-control" readonly required="required" name="LastName" id="inputLname"  value="<?php echo $LastName;?>" placeholder="Last Name" >
-            </div>
-            <!-- FirstName input -->
-            <div class="form-group col-md-6">
-              <label for="inputFname">First Name</label>
-              <input type="text" class="form-control" readonly required="required" name="FirstName" id="inputFname" value="<?php echo $FirstName;?>" placeholder="First Name" >
-            </div>
-        </div>
-
-        <div class="form-row">
-            <!-- ContactNum input -->
-            <div class="form-group col-md-6">
-              <label for="inputContactnum">Contact Number</label>
-              <input type="text" class="form-control" readonly required="required" name="ContactNumber" id="ContactNumber" value="<?php echo $ContactNumber;?>" id="inputContactnum" placeholder="+63XXXXXXXXXX" >
-            </div>
-            <!-- Date input -->
-            <div class="form-group col-md-3">
-              <label for="Datenow">Date Today</label>
-              <input type="text" id="Datenow" name="Btime" readonly class="form-control">
-            </div>
-            <div class="form-group col-md-3">
-              <label for="Datenow">Date Borrowed</label>
-              <input type="text" id="Datenow" value="<?php echo $Borrowed_time;?>" readonly class="form-control">
-            </div>    
-        </div>
-   
-        <!-- label -->
-        <div class="form-row" name='label'>
-          <div class="form-group col-md-7">
-            <h5>Item name</h5>
-          </div>
-          <div class="form-group col-md">
-            <h5>Quantity</h5>
-          </div>         
-        </div>
-
-        <!-- item one-->
-        <div class="form-row" name='1' id='item1'> 
-            <div class="form-group col-md-7">
-              <input type="text" class="form-control" readonly name="itemname" id="itemname" value="<?php echo $itemname1;?>" placeholder="Item name 1" >
-            </div>
-                      
-            <div class="form-group col-md">
-              <input type="text" class="form-control" readonly name="quantity" id="quantity" value="<?php echo $quantity1;?>" placeholder="Quantity Left ">
-            </div>
-
-          </div>
-
-        <!--item two-->
-        <div class="form-row" name='2' id='item2'>     
-            
-            <div class="form-group col-md-7">
-              <input type="text" class="form-control" readonly name="itemname" id="itemname" value="<?php echo $itemname2;?>" placeholder="Item name 2" >
-            </div>
-                      
-            <div class="form-group col-md">
-              <input type="text" class="form-control" readonly name="quantity" id="quantity" value="<?php echo $quantity2;?>" placeholder="Quantity Left">
-            </div>
-            
-        </div>
-        <!--item three-->
-        <div class="form-row" name='3' id='item3'>     
-            
-            <div class="form-group col-md-7">
-              <input type="text" class="form-control" readonly name="itemname" id="itemname" value="<?php echo $itemname3;?>" placeholder="Item name 3">
-            </div>
-                      
-            <div class="form-group col-md">
-              <input type="text" class="form-control" readonly name="quantity" id="quantity" value="<?php echo $quantity3;?>" placeholder="Quantity Left">
-            </div>
-            
-        </div>
-        
-        <!--item four-->
-        <div class="form-row" name='4' id='item4'>     
-            
-            <div class="form-group col-md-7">
-              <input type="text" class="form-control" readonly name="itemname" id="itemname" value="<?php echo $itemname4;?>" placeholder="Item name 4">
-            </div>
-                      
-            <div class="form-group col-md">
-              <input type="text" class="form-control" readonly name="quantity" id="quantity" value="<?php echo $quantity4;?>" placeholder="Quantity Left">
-            </div>
-        
-        </div>
-        </div>
-
-        <div class="form-group mb-4">
-        
-          <div class="btn-group">
-            <button type="submit"  name="submit" onclick="return confirm('Y/N') " value="Submit"  class="btn btn-primary btn-lg">Return</button>
-            <button type="clear" class="btn btn-primary btn-lg">Clear</button>
-          </div>
-        
-        </div>
+        </div>  
       </form>
 
     </div><!-- /.container-fluid -->
