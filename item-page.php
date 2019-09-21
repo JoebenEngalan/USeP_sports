@@ -41,7 +41,7 @@ if(!isset($_SESSION["id"]))
         <div class="form-group mb-4">
           <h3 class="display-10">Item Page</h3>
         </div>
-        
+              
         <div class="card mb-3">
               <div class="card-header">
                       <i class="far fa-file"></i>
@@ -157,13 +157,14 @@ if(!isset($_SESSION["id"]))
         </div>
       </div>
       
-      <div class="card mb-4">
-        <div class="btn-group">
-          <button type="show" id="show" class="btn btn-secondary btn-lg">Show table</button>
+      <div class="mb-4">
+        <div class="col-sm">
+          <button type="show" id="show"  data-toggle="collapse" data-target="#table" class="btn btn-secondary btn-lg">Show table</button>
         </div>
       </div>
       
-      <div id="table" class="card mb-4" style="display: none">
+    <div id="table"class="collapse" >
+      <div id="table" class="card mb-4">
         <div class="card-header">
               <i class="fas fa-table"></i>
               Equipments</div>
@@ -173,7 +174,7 @@ if(!isset($_SESSION["id"]))
                   
                   <thead>
                     <tr>
-                    <th>Number #</th>
+                    <th>#</th>
                     <th>Item Name</th>
                     <th>Quantity</th>
                     <th>Category</th>
@@ -183,7 +184,7 @@ if(!isset($_SESSION["id"]))
                   
                   <tfoot>
                     <tr>
-                    <th>Number #</th>
+                    <th>#</th>
                     <th>Item Name</th>
                     <th>Quantity</th>
                     <th>Category</th>
@@ -216,6 +217,9 @@ if(!isset($_SESSION["id"]))
           </div>
         </div>
       </div>
+    </div>
+    
+    
     </div><!-- /.container-fluid -->
   </div><!-- /.content-wrapper -->
   <!--Footer-->    
@@ -240,12 +244,6 @@ $('#dataTable').DataTable( {
     'pdfHtml5',
       'print'
     ]
-});
-
-$(document).ready(function(){
-  $("#show").click(function(){
-    $("#table").toggle();
-  });
 });
 
   if ( window.history.replaceState ) {

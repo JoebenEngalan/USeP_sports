@@ -48,9 +48,9 @@ include_once('templates/findborrow_return.php');
               <h3 class="display-10">Return Page</h3>
           </div>
           <div class="card mb-3">
-              <div class="card-header">
-                      <i class="fas fa-search"></i>
-                      Search Box</div>
+            <div class="card-header">
+                <i class="fas fa-search"></i>
+                Search Box</div>
                 <div class="card-body">
                 <!--id NUMBER-->
                 <label for="itemname1">Search ID</label>
@@ -61,12 +61,12 @@ include_once('templates/findborrow_return.php');
                     onclick="return confirm ('Did you input the Id Number?\nYes/No')" 
                     type="submit"  id="Find" name="Find" value="Find Data">
                       <i class="fas fa-search"></i>
-                    </button>
-                    <button class="btn btn-primary" type="clear" >
-                      <i class="fa fa-redo"></i>
-                    </button>
-                  </div>
-                </div>
+                </button>
+                <button class="btn btn-primary" type="clear" >
+                  <i class="fa fa-redo"></i>
+                </button>
+              </div>
+            </div>
         </div>
       </div> 
           <!--Grid colmun equipments-->

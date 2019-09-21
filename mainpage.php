@@ -82,6 +82,7 @@ if(!isset($_SESSION["id"]))
             </div>
           </div> 
         </div>              
+    
     </div><!-- /.container-fluid -->
   </div><!-- /.content-wrapper -->
   <!--Footer-->    
