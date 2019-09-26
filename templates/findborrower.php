@@ -34,7 +34,7 @@ if(isset($_POST['Find']))
      || $itemname3 == $itemname1 
      || $itemname4 == $itemname1 )
     {
-      echo "<script type= 'text/javascript'>alert('Empty Id Number or Repeted Item name.');</script>";
+      echo "<script type= 'text/javascript'>alert('Empty Id Number and Equipment.');</script>";
     }
     else
     {
