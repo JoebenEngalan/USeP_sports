@@ -15,23 +15,43 @@ if( empty($fname) || empty($lname) || empty($email) || empty($password))
   }
   else
   {
-  $sql= "INSERT INTO staff_table (FirstName,LastName,Email,Password)
-  VALUES(:fname,:lname,:email,:password)";
-  $query = $dbh->prepare($sql);
-  $query->bindParam(':fname',$fname,PDO::PARAM_STR);
-  $query->bindParam(':lname',$lname,PDO::PARAM_STR);
-  $query->bindParam(':email',$email,PDO::PARAM_STR);
-  $query->bindParam(':password',$password,PDO::PARAM_STR);
-  $query->execute();
-  $lastInsertId = $dbh->lastInsertId();
-  if($lastInsertId)
+  $pdoQuery = "SELECT * FROM staff_table WHERE Email = :emailid";  
+  $pdoResult = $dbh->prepare($pdoQuery);
+    
+  //set your id to the query id
+  $pdoExec = $pdoResult->execute(array(":emailid"=>$email));
+    
+    if($pdoExec)
     {
-      echo "<script>alert('Registration successfull. Now you can login');</script>";
+      // if id exist 
+      // show data in inputs
+    if($pdoResult->rowCount()>0)
+    {  
+      $fname='';
+      $lname='';
+      $email='';
+      $password=''; 
+      echo "<script>alert('Email exist. Please try again');</script>";
+    }else{
+      $sql= "INSERT INTO staff_table (FirstName,LastName,Email,Password)
+        VALUES(:fname,:lname,:email,:password)";
+      $query = $dbh->prepare($sql);
+      $query->bindParam(':fname',$fname,PDO::PARAM_STR);
+      $query->bindParam(':lname',$lname,PDO::PARAM_STR);
+      $query->bindParam(':email',$email,PDO::PARAM_STR);
+      $query->bindParam(':password',$password,PDO::PARAM_STR);
+      $query->execute();
+      $lastInsertId = $dbh->lastInsertId();
+      if($lastInsertId)
+        {
+          echo "<script>alert('Registration successfull. Now you can login');</script>";
+        }
+        else 
+        {
+          echo "<script>alert('Something went wrong. Please try again');</script>";
+        }
+      }
     }
-    else 
-    {
-      echo "<script>alert('Something went wrong. Please try again');</script>";
-    }
-  }    
+  }   
 }
 ?>

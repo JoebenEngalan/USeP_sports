@@ -5,6 +5,7 @@ if(isset($_POST['login']))
 {
   $username=$_POST['email'];
   $password=md5($_POST['password']);
+  
   $sql ="SELECT Email, Password FROM staff_table WHERE Email=:username and Password=:password";
   $query= $dbh -> prepare($sql);
   $query-> bindParam(':username', $username, PDO::PARAM_STR);
