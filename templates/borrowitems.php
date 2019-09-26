@@ -52,17 +52,12 @@ if(isset($_POST['submit']))
         $sql3 = "UPDATE `equipment` SET `quantity`= :subt3 WHERE `ItemName` = :3itemname"; 
         $sql4 = "UPDATE `equipment` SET `quantity`= :subt4 WHERE `ItemName` = :4itemname"; 
         
+        $query=$dbh->prepare($sql);
         $pdoResult1 = $dbh->prepare($sql1);
         $pdoResult2 = $dbh->prepare($sql2);
         $pdoResult3 = $dbh->prepare($sql3);
         $pdoResult4 = $dbh->prepare($sql4);
-    
-        $pdoExec1 = $pdoResult1->execute(array(":subt1"=>$quantityE1,":1itemname"=>$itemname1));
-        $pdoExec2 = $pdoResult2->execute(array(":subt2"=>$quantityE2,":2itemname"=>$itemname2));
-        $pdoExec3 = $pdoResult3->execute(array(":subt3"=>$quantityE3,":3itemname"=>$itemname3));
-        $pdoExec4 = $pdoResult4->execute(array(":subt4"=>$quantityE4,":4itemname"=>$itemname4));
-    
-        $query=$dbh->prepare($sql);
+
         $query->bindParam(':id_number',$id_number,PDO::PARAM_STR);
         $query->bindParam(':ContactNumber',$ContactNumber,PDO::PARAM_STR);
         $query->bindParam(':remarks',$remarks,PDO::PARAM_STR);
@@ -77,7 +72,12 @@ if(isset($_POST['submit']))
         $query->bindParam(':Btime',$Btime,PDO::PARAM_STR);
         $query->execute();
         $lastInsertId = $dbh->lastInsertId();
-        
+
+        $pdoExec1 = $pdoResult1->execute(array(":subt1"=>$quantityE1,":1itemname"=>$itemname1));
+        $pdoExec2 = $pdoResult2->execute(array(":subt2"=>$quantityE2,":2itemname"=>$itemname2));
+        $pdoExec3 = $pdoResult3->execute(array(":subt3"=>$quantityE3,":3itemname"=>$itemname3));
+        $pdoExec4 = $pdoResult4->execute(array(":subt4"=>$quantityE4,":4itemname"=>$itemname4));
+            
         if($lastInsertId || $pdoExec1|| $pdoExec2|| $pdoExec3|| $pdoExec4)
             {
             echo "<script>alert('Success');</script>";
