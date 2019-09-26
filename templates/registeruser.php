@@ -23,8 +23,8 @@ if( empty($fname) || empty($lname) || empty($email) || empty($password))
     
     if($pdoExec)
     {
-      // if id exist 
-      // show data in inputs
+    // if id exist 
+    // show data in inputs
     if($pdoResult->rowCount()>0)
     {  
       $fname='';
