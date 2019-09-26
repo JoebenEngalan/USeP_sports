@@ -11,14 +11,14 @@ $password=md5($_POST['password']);
 
 if( empty($fname) || empty($lname) || empty($email) || empty($password))
   {
+  $fname='';
+  $lname='';
+  $email='';
+  $password=''; 
   echo "<script type= 'text/javascript'>alert('Empty Fields.');</script>";  
-  }
-  else
-  {
+  }else{
   $pdoQuery = "SELECT * FROM staff_table WHERE Email = :emailid";  
   $pdoResult = $dbh->prepare($pdoQuery);
-    
-  //set your id to the query id
   $pdoExec = $pdoResult->execute(array(":emailid"=>$email));
     
     if($pdoExec)
@@ -45,9 +45,7 @@ if( empty($fname) || empty($lname) || empty($email) || empty($password))
       if($lastInsertId)
         {
           echo "<script>alert('Registration successfull. Now you can login');</script>";
-        }
-        else 
-        {
+        }else{
           echo "<script>alert('Something went wrong. Please try again');</script>";
         }
       }

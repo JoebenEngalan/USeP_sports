@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<?php
+//dont touch this session  
+session_start();
+if(!isset($_SESSION["id"])) 
+  {
+  header('location:index.php');
+  include('location:logout.php');
+  exit();
+  }
+?>
+
 <?php include('templates/head.php');?>
 
 <script src="js/jquery-3.4.1.min.js"></script>
@@ -18,19 +29,33 @@
       <div class="container-fluid">
 
         <!-- Breadcrumbs-->
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item">
-            <a href="mainpage.php">Dashboard</a>
-          </li>
-          <li class="breadcrumb-item active">404 Error</li>
-        </ol>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="mainpage.php">Dashboard</a>
+        </li>
+      <li class="breadcrumb-item active">404 Error</li>
+      </ol>
 
-        <!-- Page Content -->
-        <h1 class="display-1">404</h1>
-        <p class="lead">Page not found. You can
-          <a href="javascript:history.back()">go back</a>
-          to the previous page, or
-          <a href="mainpage.php">return home</a>.</p>
+      <div class="container">
+        <div class="card mb-3">
+          <div class="card-header">Reset Password</div>
+          <div class="card-body">
+            <div class="text-center mb-4">
+                <h4>Forgot your password?</h4>
+                <p>Enter your email address and we will send you instructions on how to reset your password.</p>
+            </div>
+            <form>
+              <div class="form-group">
+                <div class="form-label-group">
+                  <input type="email" id="inputEmail" class="form-control" placeholder="Enter email address" required="required" autofocus="autofocus">
+                  <label for="inputEmail">Enter email address</label>
+                </div>
+              </div>
+              <a class="btn btn-primary btn-block">Reset Password</a>
+            </form>
+          </div>
+        </div>
+      </div>  
 
     </div><!-- /.container-fluid -->
   </div><!-- /.content-wrapper -->

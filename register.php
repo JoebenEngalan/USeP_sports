@@ -36,7 +36,7 @@ error_reporting(0);
     <div class="card card-register mx-auto mt-5">
       <div class="card-header">Register an Account</div>
       <div class="card-body">
-      <form  method="post" name="signup">
+      <form  method="post" name="signup" autocomplete="off">
           <div class="form-group">
             <div class="form-row">
               <div class="col-md-6">
@@ -55,7 +55,7 @@ error_reporting(0);
           </div>
           <div class="form-group">
             <div class="form-label-group">
-              <input type="email" id="inputEmail" class="form-control" name="emailid" placeholder="Email address" required="required">
+              <input type="email" id="inputEmail" name="emailid" class="form-control" autocomplete="off"  placeholder="Email address" required="required">
               <label for="inputEmail">Email address</label>
             </div>
           </div>
@@ -63,13 +63,13 @@ error_reporting(0);
             <div class="form-row">
               <div class="col-md-6">
                 <div class="form-label-group">
-                  <input type="password" id="password" name="password" class="form-control" onchange='check_pass();' placeholder="Password"  required="required">
+                  <input type="password" id="password" name="password" autocomplete="new-password" class="form-control" onchange='check_pass();' placeholder="Password"  required="required">
                   <label for="password">Password</label>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-label-group">
-                  <input type="password" id="confirmpassword" name="confirmpassword" class="form-control" onchange='check_pass();' placeholder="Confirm password" required="required">
+                  <input type="password" id="confirmpassword" name="confirmpassword" autocomplete="new-password" class="form-control" onchange='check_pass();' placeholder="Confirm password" required="required">
                   <label for="confirmpassword" >Confirm password</label>
                   <span id='message'></span>
                 </div>
