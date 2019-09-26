@@ -1,5 +1,4 @@
 <?php
-include('includes/config.php');
 
 if(isset($_POST['submit']))
 {    
@@ -7,7 +6,6 @@ if(isset($_POST['submit']))
   $description=$_POST['description'];
   $category=$_POST['category'];
   $quantity=$_POST['quantity'];
-  $status=1;
 
   if( empty($itemname) || empty($description) || empty($category) || empty($quantity) )
   {
@@ -30,8 +28,8 @@ if(isset($_POST['submit']))
         $quantity='';
         echo "<script>alert('item exist!');</script>";   
       }else{
-        $sql= "INSERT INTO equipment (ItemName,Description,Category,quantity,status) 
-        VALUES(:itemname,:description,:category,:quantity,:status)";
+        $sql= "INSERT INTO equipment (ItemName,Description,Category,quantity) 
+        VALUES(:itemname,:description,:category,:quantity)";
           
         $query = $dbh->prepare($sql);
           
@@ -39,7 +37,6 @@ if(isset($_POST['submit']))
         $query->bindParam(':description',$description,PDO::PARAM_STR);
         $query->bindParam(':category',$category,PDO::PARAM_STR);
         $query->bindParam(':quantity',$quantity,PDO::PARAM_STR);
-        $query->bindParam(':status',$status,PDO::PARAM_STR);
         $query->execute();
         $lastInsertId = $dbh->lastInsertId();
           

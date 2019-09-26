@@ -19,9 +19,7 @@ if(isset($_POST['Find']))
     $id_number = $_POST['idnumber'];
     // mysql search query
     $sql = "SELECT * FROM borrowed_item WHERE id_number = :idnumber";
-    
     $pdoResult = $dbh->prepare($sql);  
-    
     //set your id to the query id
     $pdoExec = $pdoResult->execute(array(":idnumber"=>$id_number));
     
