@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 26, 2019 at 10:29 AM
+-- Generation Time: Sep 26, 2019 at 10:42 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.1
 
@@ -96,8 +96,6 @@ CREATE TABLE `equipment` (
   `id` int(11) NOT NULL,
   `ItemName` varchar(500) DEFAULT NULL,
   `Description` text,
-  `date_added` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `date_updated` timestamp NULL DEFAULT NULL,
   `Category` varchar(50) DEFAULT NULL,
   `quantity` int(100) DEFAULT NULL,
   `status` int(1) DEFAULT NULL
@@ -107,13 +105,13 @@ CREATE TABLE `equipment` (
 -- Dumping data for table `equipment`
 --
 
-INSERT INTO `equipment` (`id`, `ItemName`, `Description`, `date_added`, `date_updated`, `Category`, `quantity`, `status`) VALUES
-(3, 'test', 'ffffffffffffffffffff', '2019-07-09 02:59:32', '2019-07-09 02:59:32', 'Sports Equipment', 28, 1),
-(4, 'test2', 'deeeeeeeeeeeeeeeeeeeeeeee', '2019-07-09 03:22:06', '2019-07-09 03:22:06', 'Sports Equipment', 28, 1),
-(5, 'test3', 'deeeeeeeeeeeeeeeeeeeeeeee', '2019-07-09 03:23:13', '2019-07-09 03:23:13', 'Sports Equipment', 7, 1),
-(6, 'test4', 'dfedfdfggf', '2019-07-10 05:51:28', '2019-07-10 05:51:28', 'Gym Equipment', 10, 1),
-(20, 'GeeksForGeeks', 'Make', '2019-09-16 09:01:22', NULL, 'Sports Equipment', 1, 1),
-(21, 'help', 'test', '2019-09-21 15:57:24', NULL, 'Sports Equipment', 21, 1);
+INSERT INTO `equipment` (`id`, `ItemName`, `Description`, `Category`, `quantity`, `status`) VALUES
+(3, 'test', 'ffffffffffffffffffff', 'Sports Equipment', 28, 1),
+(4, 'test2', 'deeeeeeeeeeeeeeeeeeeeeeee', 'Sports Equipment', 28, 1),
+(5, 'test3', 'deeeeeeeeeeeeeeeeeeeeeeee', 'Sports Equipment', 7, 1),
+(6, 'test4', 'dfedfdfggf', 'Gym Equipment', 10, 1),
+(20, 'GeeksForGeeks', 'Make', 'Sports Equipment', 1, 1),
+(21, 'help', 'test', 'Sports Equipment', 21, 1);
 
 -- --------------------------------------------------------
 
@@ -143,7 +141,8 @@ CREATE TABLE `returned_item` (
 
 INSERT INTO `returned_item` (`ID`, `id_number`, `ContactNumber`, `Borrowed_time`, `Return_time`, `Item1`, `quantity1`, `Item2`, `quantity2`, `Item3`, `quantity3`, `Item4`, `quantity4`) VALUES
 (1, '2014', 2147483647, '9/17/2019', '9/26/2019', 'test', 7, 'test2', 7, '', 0, '', 0),
-(2, '2014', 2147483647, '9/17/2019', '9/26/2019', 'test', 7, 'test2', 7, '', 0, '', 0);
+(2, '2014', 2147483647, '9/17/2019', '9/26/2019', 'test', 7, 'test2', 7, '', 0, '', 0),
+(3, '2014', 2147483647, '9/26/2019', '9/26/2019', 'test', 8, 'test2', 8, '', 0, '', 0);
 
 -- --------------------------------------------------------
 
@@ -221,7 +220,7 @@ ALTER TABLE `staff_table`
 -- AUTO_INCREMENT for table `borrowed_item`
 --
 ALTER TABLE `borrowed_item`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 
 --
 -- AUTO_INCREMENT for table `borrower_table`
@@ -239,7 +238,7 @@ ALTER TABLE `equipment`
 -- AUTO_INCREMENT for table `returned_item`
 --
 ALTER TABLE `returned_item`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `staff_table`

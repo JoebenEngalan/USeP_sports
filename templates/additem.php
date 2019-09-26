@@ -16,15 +16,13 @@ if(isset($_POST['submit']))
   else
   {
   
-    $sql= "INSERT INTO equipment (ItemName,Description,date_added,date_updated,Category,quantity,status) 
-            VALUES(:itemname,:description,:date_added,:date_updated,:category,:quantity,:status)";
+    $sql= "INSERT INTO equipment (ItemName,Description,Category,quantity,status) 
+            VALUES(:itemname,:description,:category,:quantity,:status)";
 
     $query = $dbh->prepare($sql);
 
     $query->bindParam(':itemname',$itemname,PDO::PARAM_STR);
     $query->bindParam(':description',$description,PDO::PARAM_STR);
-    $query->bindParam(':date_added',$date_added,PDO::PARAM_STR);
-    $query->bindParam(':date_updated',$date_updated,PDO::PARAM_STR);
     $query->bindParam(':category',$category,PDO::PARAM_STR);
     $query->bindParam(':quantity',$quantity,PDO::PARAM_STR);
     $query->bindParam(':status',$status,PDO::PARAM_STR);
