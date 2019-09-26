@@ -105,17 +105,14 @@ if(!isset($_SESSION["id"]))
               <div class="form-row">            
                 <!-- Item Name input -->
                 <div class="form-group col-md">
-                  <label for="itemname">Item Name</label>
+                  <label for="itemName">Search Item Name</label>
                   <div class="input-group mb-3"> 
-                    <input type="text" class="form-control" name="idnumber" id="search" placeholder="Enter Item Name" aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <input type="text" class="form-control" name="itemName" id="search" placeholder="Enter Item Name" aria-label=" ItemName" aria-describedby="button-addon2">
                     <div class="input-group-append">             
                       <button class="btn btn-primary" 
                       onclick="return confirm ('Did you input the Item Name?\nYes/No')" 
                       type="submit"  id="Find" name="Find" value="Find Data">
                         <i class="fas fa-search"></i>
-                      </button>
-                      <button class="btn btn-primary" type="clear" >
-                        <i class="fa fa-redo"></i>
                       </button>
                   </div>                  
                 </div>
@@ -123,8 +120,14 @@ if(!isset($_SESSION["id"]))
               </div>
                 <!-- Item Name input -->
               <div class="form-row">
+                <div class="form-group col-md">
+                  <label for="itemname">Item Name</label>
+                  <input type="text" name= "itemname" readonly class="form-control" id="itemname" placeholder="Item Name">
+                </div>
+              </div>  
+              <div class="form-row">
                 <div class="form-group col-md-6 ">
-                  <label for="itemname">Quantity</label>
+                  <label for="quantity">Quantity</label>
                   <input type="text" name="quantity" class="form-control" id="quantity" placeholder="0" required>
                 </div>
                 <!--  Category input -->

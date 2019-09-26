@@ -77,28 +77,15 @@ include_once('templates/findborrow_return.php');
                       Result Box</div>
                 <div class="card-body">                        
             <div name="result" id="result">
-              <div class="form-row">
-                <!-- LastName input -->
-                <div class="form-group col-md">
-                  <label for="inputLname">ID Number</label>
-                  <input type="text" class="form-control" readonly name="id_number" id="id_number" value="<?php echo $id_number;?>" placeholder="ID number of Student or Faculty" >
-                </div>
+              
+            <div class="form-row">
+              <!-- LastName input -->
+              <div class="form-group col-md">
+                <label for="inputLname">ID Number</label>
+                <input type="text" class="form-control" readonly name="id_number" id="id_number" value="<?php echo $id_number;?>" placeholder="ID number of Student or Faculty" >
               </div>
-
-              <!--Grid row fullname-->
-              <div class="form-row">
-                <!-- LastName input -->
-                <div class="form-group col-md-6">
-                  <label for="inputLname">Last Name</label>
-                  <input type="text" class="form-control" readonly required="required" name="LastName" id="LastName"  value="<?php echo $LastName;?>" placeholder="Last Name" >
-                </div>
-                <!-- FirstName input -->
-                <div class="form-group col-md-6">
-                  <label for="inputFname">First Name</label>
-                  <input type="text" class="form-control" readonly required="required" name="FirstName" id="FirstName" value="<?php echo $FirstName;?>" placeholder="First Name" >
-                </div>
             </div>
-
+ 
             <div class="form-row">
                 <!-- ContactNum input -->
                 <div class="form-group col-md-6">
@@ -178,13 +165,11 @@ include_once('templates/findborrow_return.php');
           </div>
 
             <div class="form-group mb-4">
-            
+            <?php include('templates/returnitems.php');?>
               <div class="btn-group">
-                <?php include('templates/returnitems.php');?>
-                <button type="return"  name="return" onclick="return confirm('Y/N')" value="return"  class="btn btn-primary btn-lg">Return</button>
+                <button type="return"  name="return" onclick="return" value="return"  class="btn btn-primary btn-lg">Return</button>
                 <button type="clear" class="btn btn-primary btn-lg">Clear</button>
               </div>
-            
             </div>
           </div>
         </div>  
