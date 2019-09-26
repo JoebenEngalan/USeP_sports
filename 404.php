@@ -1,6 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
 <?php
 //dont touch this session  
 session_start();
@@ -11,6 +8,9 @@ if(!isset($_SESSION["id"]))
   exit();
   }
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
 
 <?php include('templates/head.php');?>
 
