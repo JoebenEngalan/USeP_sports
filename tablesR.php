@@ -44,29 +44,39 @@ if(!isset($_SESSION["id"]))
 										<tr>
 										<th>#</th>
 										<th>ID Number</th>
-										<th>Last Name</th>
-										<th>First Name</th>
 										<th>Contact Number</th>
-										<th>Department</th>
-										<th>Position</th>
-										<th>Email</th>										
+										<th>Borrowed</th>
+										<th>Returned</th>
+										<th>Item 1</th>
+										<th>Qty 1</th>
+                    <th>Item 2</th>
+										<th>Qty 2</th>
+                    <th>Item 3</th>
+										<th>Qty 3</th>
+                    <th>Item 4</th>
+										<th>Qty 4</th>
 										</tr>
 									</thead>
 									<tfoot>
 										<tr>
 										<th>#</th>
                     <th>ID Number</th>
-										<th>Last Name</th>
-										<th>First Name</th>
 										<th>Contact Number</th>
-										<th>Department</th>
-										<th>Position</th>
-										<th>Email</th>
+										<th>Borrowed</th>
+										<th>Returned</th>
+										<th>Item 1</th>
+										<th>Qty 1</th>
+                    <th>Item 2</th>
+										<th>Qty 2</th>
+                    <th>Item 3</th>
+										<th>Qty 3</th>
+                    <th>Item 4</th>
+										<th>Qty 4</th>
 										</tr>
 										</tr>
 									</tfoot>
 									<tbody>
-									<?php $sql = "SELECT * from  borrower_table ";
+									<?php $sql = "SELECT * from  returned_item ";
                       $query = $dbh -> prepare($sql);
                         $query->execute();
                         $results=$query->fetchAll(PDO::FETCH_OBJ);
@@ -78,12 +88,17 @@ if(!isset($_SESSION["id"]))
 										<tr>
 											<td><?php echo htmlentities($cnt);?></td>
 											<td><?php echo htmlentities($result->id_number);?></td>
-											<td><?php echo htmlentities($result->FirstName);?></td>
-											<td><?php echo htmlentities($result->LastName);?></td>
-	                    <td><?php echo htmlentities($result->ContactNumber);?></td>
-											<td><?php echo htmlentities($result->Department);?></td>
-											<td><?php echo htmlentities($result->Position);?></td>
-											<td><?php echo htmlentities($result->EmailID);?></td>
+											<td><?php echo htmlentities($result->ContactNumber);?></td>
+											<td><?php echo htmlentities($result->Borrowed_time);?></td>
+	                    <td><?php echo htmlentities($result->Return_time);?></td>
+											<td><?php echo htmlentities($result->Item1);?></td>
+											<td><?php echo htmlentities($result->quantity1);?></td>
+                      <td><?php echo htmlentities($result->Item2);?></td>
+											<td><?php echo htmlentities($result->quantity2);?></td>
+                      <td><?php echo htmlentities($result->Item3);?></td>
+											<td><?php echo htmlentities($result->quantity3);?></td>
+                      <td><?php echo htmlentities($result->Item4);?></td>
+											<td><?php echo htmlentities($result->quantity4);?></td>
 										</tr>
 										<?php $cnt=$cnt+1; }} ?>
 										

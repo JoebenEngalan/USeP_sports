@@ -29,20 +29,16 @@ if(isset($_POST['return']))
   $sql2 = "UPDATE `equipment` SET `quantity` = `quantity` + :quantity2 WHERE `ItemName` = :itemname2";
   $sql3 = "UPDATE `equipment` SET `quantity` = `quantity` + :quantity3 WHERE `ItemName` = :itemname3";
   $sql4 = "UPDATE `equipment` SET `quantity` = `quantity` + :quantity4 WHERE `ItemName` = :itemname4";
-
   $sqlD = "DELETE FROM `Borrowed_Item` WHERE `id_number` = :id_number";
 
    
   $query=$dbh->prepare($sql);
-
   $pdoResult1 = $dbh->prepare($sql1);
   $pdoResult2 = $dbh->prepare($sql2);
   $pdoResult3 = $dbh->prepare($sql3);
   $pdoResult4 = $dbh->prepare($sql4);
-
-  $pdoResultD = $dbh->prepare($sqlD);
-
-     
+  $pdoResultD = $dbh->prepare($sqlD);   
+  
   $query->bindParam(':id_number',$id_number,PDO::PARAM_STR);
   $query->bindParam(':ContactNumber',$ContactNumber,PDO::PARAM_STR);
   $query->bindParam(':Btime',$Btime,PDO::PARAM_STR);
@@ -62,7 +58,6 @@ if(isset($_POST['return']))
   $pdoExec2 = $pdoResult2->execute(array(":quantity2"=>$quantity2,":itemname2"=>$itemname2));
   $pdoExec3 = $pdoResult3->execute(array(":quantity3"=>$quantity3,":itemname3"=>$itemname3));
   $pdoExec4 = $pdoResult4->execute(array(":quantity4"=>$quantity4,":itemname4"=>$itemname4));
-
   $pdoExecD = $pdoResultD->execute(array(":id_number"=>$id_number));
 
     
