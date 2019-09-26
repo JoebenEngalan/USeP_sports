@@ -90,12 +90,12 @@ include_once('templates/findborrow_return.php');
                 <!-- LastName input -->
                 <div class="form-group col-md-6">
                   <label for="inputLname">Last Name</label>
-                  <input type="text" class="form-control" readonly required="required" name="LastName" id="inputLname"  value="<?php echo $LastName;?>" placeholder="Last Name" >
+                  <input type="text" class="form-control" readonly required="required" name="LastName" id="LastName"  value="<?php echo $LastName;?>" placeholder="Last Name" >
                 </div>
                 <!-- FirstName input -->
                 <div class="form-group col-md-6">
                   <label for="inputFname">First Name</label>
-                  <input type="text" class="form-control" readonly required="required" name="FirstName" id="inputFname" value="<?php echo $FirstName;?>" placeholder="First Name" >
+                  <input type="text" class="form-control" readonly required="required" name="FirstName" id="FirstName" value="<?php echo $FirstName;?>" placeholder="First Name" >
                 </div>
             </div>
 
@@ -107,12 +107,12 @@ include_once('templates/findborrow_return.php');
                 </div>
                 <!-- Date input -->
                 <div class="form-group col-md-3">
-                  <label for="Datenow">Date Today</label>
-                  <input type="text" id="Datenow" name="Btime" readonly class="form-control">
+                  <label for="Rtime">Date Today</label>
+                  <input type="text" id="Rtime" name="Rtime" readonly class="form-control">
                 </div>
                 <div class="form-group col-md-3">
-                  <label for="Datenow">Date Borrowed</label>
-                  <input type="text" id="Datenow" value="<?php echo $Borrowed_time;?>" readonly class="form-control">
+                  <label for="Btime">Date Borrowed</label>
+                  <input type="text" id="Btime" name="Btime" value="<?php echo $Borrowed_time;?>" readonly class="form-control">
                 </div>    
             </div>
       
@@ -167,11 +167,11 @@ include_once('templates/findborrow_return.php');
             <div class="form-row" name='4' id='item4'>     
                 
                 <div class="form-group col-md-7">
-                  <input type="text" class="form-control" readonly name="itemname3" id="itemname4" value="<?php echo $itemname4;?>" placeholder="Item name 4">
+                  <input type="text" class="form-control" readonly name="itemname4" id="itemname4" value="<?php echo $itemname4;?>" placeholder="Item name 4">
                 </div>
                           
                 <div class="form-group col-md">
-                  <input type="text" class="form-control" readonly name="quantity3" id="quantity4" value="<?php echo $quantity4;?>" placeholder="Quantity Left">
+                  <input type="text" class="form-control" readonly name="quantity4" id="quantity4" value="<?php echo $quantity4;?>" placeholder="Quantity Left">
                 </div>
             
             </div>
@@ -180,7 +180,8 @@ include_once('templates/findborrow_return.php');
             <div class="form-group mb-4">
             
               <div class="btn-group">
-                <button type="submit"  name="return" onclick="return confirm('Y/N')" value="Submit"  class="btn btn-primary btn-lg">Return</button>
+                <?php include('templates/returnitems.php');?>
+                <button type="return"  name="return" onclick="return confirm('Y/N')" value="return"  class="btn btn-primary btn-lg">Return</button>
                 <button type="clear" class="btn btn-primary btn-lg">Clear</button>
               </div>
             
@@ -210,7 +211,7 @@ function getDate(){
    var month = todaydate.getMonth() + 1;
    var year = todaydate.getFullYear();
    var datestring = month + "/" + day + "/" + year;
-   document.getElementById("Datenow").value = datestring;
+   document.getElementById("Rtime").value = datestring;
   } 
 getDate(); 
 
