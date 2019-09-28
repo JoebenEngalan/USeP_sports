@@ -41,13 +41,13 @@ error_reporting(0);
             <div class="form-row">
               <div class="col-md-6">
                 <div class="form-label-group">
-                  <input type="text" id="firstName" name="firstname" class="form-control" placeholder="First name" required="required" autofocus="autofocus">
+                  <input type="text" id="firstName" name="firstname" pattern="[A-Za-z]+" class="form-control" placeholder="First name" required="required" autofocus="autofocus">
                   <label for="firstName">First name</label>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-label-group">
-                  <input type="text" id="lastName" name="lastname" class="form-control" placeholder="Last name" required="required">
+                  <input type="text" id="lastName" name="lastname" pattern="[A-Za-z]+" class="form-control" placeholder="Last name" required="required">
                   <label for="lastName">Last name</label>
                 </div>
               </div>
@@ -63,13 +63,13 @@ error_reporting(0);
             <div class="form-row">
               <div class="col-md-6">
                 <div class="form-label-group">
-                  <input type="password" id="password" name="password" autocomplete="new-password" class="form-control" onchange='check_pass();' placeholder="Password"  required="required">
+                  <input type="password" id="password" name="password" pattern="(?=+.*\d)(?=+.*[A-Za-z]) [0-9A-Za-Z!@#$%]{8,99}" autocomplete="new-password" class="form-control" onchange='check_pass();' placeholder="Password"  required="required">
                   <label for="password">Password</label>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-label-group">
-                  <input type="password" id="confirmpassword" name="confirmpassword" autocomplete="new-password" class="form-control" onchange='check_pass();' placeholder="Confirm password" required="required">
+                  <input type="password" id="confirmpassword" name="confirmpassword" pattern="(?=+.*\d)(?=+.*[A-Za-z]) [0-9A-Za-Z!@#$%]{8,99}" autocomplete="new-password" class="form-control" onchange='check_pass();' placeholder="Confirm password" required="required">
                   <label for="confirmpassword" >Confirm password</label>
                   <span id='message'></span>
                 </div>
