@@ -3,9 +3,10 @@
 session_start();
 if(isset($_SESSION['id']))
   {
+  include_once('logout.php');
   header('location:index.php');
-  exit();
   }
+  
 ?>
 
 <!DOCTYPE html>
@@ -51,6 +52,7 @@ if(isset($_SESSION['id']))
   if ( window.history.replaceState ) {
     window.history.replaceState( null, null, window.location.href );
   }
+  
 </script>
 
 </html>
