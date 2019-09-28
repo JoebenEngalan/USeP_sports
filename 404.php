@@ -1,10 +1,10 @@
 <?php
 //dont touch this session  
 session_start();
-if(!isset($_SESSION["id"])) 
+if (!isset($_SESSION['id']) || ($_SESSION['id'] !== 'Admin@gmail.com')) 
+//if(!isset($_SESSION["id"])) 
   {
-  header('location:index.php');
-  include('location:logout.php');
+  header('location:mainpage.php');
   exit();
   }
 ?>

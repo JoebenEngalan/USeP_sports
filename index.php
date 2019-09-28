@@ -4,16 +4,15 @@ session_start();
 if(isset($_SESSION['id']))
   {
   header('location:index.php');
-  session_destroy();
+  exit();
   }
-  //database for log in user
-  include ('templates/login.php');
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 
-<?php include('templates/head.php');?>
+<?php include('templates/head.php');
+      include('templates/login.php');?>
 
 <body class="bg-dark">
 
@@ -48,11 +47,11 @@ if(isset($_SESSION['id']))
 
 </body>
 
-</html>
-
 <!--no form resubmision javascript dont touch-->
 <script>
   if ( window.history.replaceState ) {
     window.history.replaceState( null, null, window.location.href );
   }
 </script>
+
+</html>

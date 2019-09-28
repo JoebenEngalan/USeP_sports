@@ -19,8 +19,7 @@ if(isset($_POST['login']))
     }
     else
     {
-      echo "<script>alert('Invalid Details');</script>";
-      exit;
+      echo "<script>alert('Invalid Details');</script>";    
     }
 }
 ?>
