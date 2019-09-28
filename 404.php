@@ -42,15 +42,22 @@ if (!isset($_SESSION['id']) || ($_SESSION['id'] !== 'Admin@gmail.com'))
           <div class="card-body">
             <div class="text-center mb-4">
                 <h4>Forgot your password?</h4>
-                <p>Enter your email address and we will send you instructions on how to reset your password.</p>
+                <p>Enter your email address and new password.</p>
             </div>
-            <form>
+            <form method="post" name="test" autocomplete="off">
               <div class="form-group">
                 <div class="form-label-group">
-                  <input type="email" id="inputEmail" class="form-control" placeholder="Enter email address" required="required" autofocus="autofocus">
+                  <input type="email" id="inputEmail" class="form-control" autocomplete="off" placeholder="Enter email address" required="required" autofocus="autofocus">
                   <label for="inputEmail">Enter email address</label>
                 </div>
               </div>
+              
+              <div class="form-group">
+                <div class="form-label-group">
+                  <input type="password" id="inputPassword"  autocomplete="new-password" name="password" class="form-control" placeholder="Password" required="required">
+                  <label for="inputPassword">Password</label>
+                </div>
+              </div>             
               <a class="btn btn-primary btn-block">Reset Password</a>
             </form>
           </div>
