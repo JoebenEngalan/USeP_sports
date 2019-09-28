@@ -86,8 +86,6 @@ if ( window.history.replaceState ) {
     </div>
   </div>
 
-  
-  
 </body>
 
 </html>
