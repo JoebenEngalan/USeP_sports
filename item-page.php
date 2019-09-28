@@ -86,7 +86,8 @@ if(!isset($_SESSION["id"]))
               <?php include('templates/additem.php');?>          
               <div class="btn-group">
                 <!-- database command add item-->
-                <button type="submit"  name="submit"  value="Submit"  class="btn btn-primary btn-lg">Add </button>
+                <button type="submit"  name="submit"  value="Submit"  class="btn btn-primary btn-lg">Add</button>
+                <button type="submit"  name="Update"  value="Update"  class="btn btn-primary btn-lg">Update</button>
                 <button type="clear" class="btn btn-primary btn-lg">Clear</button>
               </div>
               

@@ -29,7 +29,7 @@
       <!--Add item Page-->
       <li class="nav-item">
         <a class="nav-link" href="item-page.php">
-          <i class="fas fa-fw fa-bicycle"></i>
+          <i class="fas fa-box"></i>
           <span>Item Page</span></a>
       </li> 
 
