@@ -46,7 +46,7 @@ if (!isset($_SESSION['id']) || ($_SESSION['id'] !== 'Admin@gmail.com'))
               <div class="form-group">
                 <div class="form-label-group">
                   <input type="email" id="inputEmail" class="form-control" autocomplete="off" placeholder="Enter email address" required="required" autofocus="autofocus">
-                  <label for="inputEmail">Enter email address</label>
+                  <label for="inputEmail">Enter Email Address</label>
                 </div>
               </div>
               
@@ -55,8 +55,8 @@ if (!isset($_SESSION['id']) || ($_SESSION['id'] !== 'Admin@gmail.com'))
                   <input type="password" id="inputPassword"  autocomplete="new-password" name="password" class="form-control" placeholder="Password" required="required">
                   <label for="inputPassword">Password</label>
                 </div>
-              </div>             
-              <a class="btn btn-primary btn-block">Reset Password</a>
+              </div> 
+              <input type="submit" class="btn btn-primary btn-block"style="cursor:pointer">            
             </form>
           </div>
         </div>

@@ -56,7 +56,7 @@
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
           <h6 class="dropdown-header">Setting:</h6>
           <a class="dropdown-item" href="forgot-password.php">Reset Password</a>
-          <a class="dropdown-item" href="register.php">Sign Up Users</a>
+          <a class="dropdown-item" href="register.php">Sign Up</a>
         </div>
       </li>
 

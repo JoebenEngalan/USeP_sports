@@ -13,7 +13,9 @@ if (!isset($_SESSION['id']) || ($_SESSION['id'] !== 'Admin@gmail.com'))
 
 <?php include('templates/head.php');?>
 
-<?php include('templates/scripts.php')?>
+
+<script src="js/jquery-3.4.1.min.js"></script>
+
 
 <script>
 //checks password and confirm password is right
@@ -111,7 +113,8 @@ if ( window.history.replaceState ) {
   <!--scrolltop-->
   <?php include('templates/scrolltop.php')?>
   
-  
+  <?php include('templates/scripts.php')?>
+
 </body>
 
 </html>
