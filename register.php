@@ -12,22 +12,19 @@ error_reporting(0);
 <?php include('templates/scripts.php')?>
 
 <script>
-  //checks password and confirm password is right
-
-  function check_pass() {
-    if (document.getElementById('password').value ==
-            document.getElementById('confirmpassword').value) {
-        document.getElementById('signup').disabled = false;
-    } else {
-        document.getElementById('signup').disabled = true;
-    }
+//checks password and confirm password is right
+function check_pass() {
+  if (document.getElementById('password').value ==
+    document.getElementById('confirmpassword').value) {
+      document.getElementById('signup').disabled = false;
+  } else {
+      document.getElementById('signup').disabled = true;
   }
-
-  //no form resubmision javascript dont touch
-  if ( window.history.replaceState ) {
-    window.history.replaceState( null, null, window.location.href );
-  }
-
+}
+//no form resubmision javascript dont touch
+if ( window.history.replaceState ) {
+  window.history.replaceState( null, null, window.location.href );
+}
 </script>
 
 <body class="bg-dark">
@@ -63,13 +60,13 @@ error_reporting(0);
             <div class="form-row">
               <div class="col-md-6">
                 <div class="form-label-group">
-                  <input type="password" id="password" name="password" pattern="(?=+.*\d)(?=+.*[A-Za-z]) [0-9A-Za-Z!@#$%]{8,99}" autocomplete="new-password" class="form-control" onchange='check_pass();' placeholder="Password"  required="required">
+                  <input type="password" id="password" name="password" autocomplete="new-password" class="form-control" onchange='check_pass();' placeholder="Password"  required="required">
                   <label for="password">Password</label>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-label-group">
-                  <input type="password" id="confirmpassword" name="confirmpassword" pattern="(?=+.*\d)(?=+.*[A-Za-z]) [0-9A-Za-Z!@#$%]{8,99}" autocomplete="new-password" class="form-control" onchange='check_pass();' placeholder="Confirm password" required="required">
+                  <input type="password" id="confirmpassword" name="confirmpassword" autocomplete="new-password" class="form-control" onchange='check_pass();' placeholder="Confirm password" required="required">
                   <label for="confirmpassword" >Confirm password</label>
                   <span id='message'></span>
                 </div>
