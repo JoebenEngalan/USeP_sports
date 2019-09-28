@@ -47,7 +47,7 @@ if(!isset($_SESSION["id"]))
         <div class="card mb-3">
               <div class="card-header">
                       <i class="far fa-file"></i>
-                      Add item Box</div>
+                      Item Box</div>
                 <div class="card-body"> 
         
             <form method="post" name="submit" >
