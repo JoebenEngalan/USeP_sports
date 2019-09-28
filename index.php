@@ -36,8 +36,7 @@ if(isset($_SESSION['id']))
           <input type="submit" name="login" class="btn btn-primary btn-block" value="Sign In" style="cursor:pointer">
         </form>
         <div class="text-center">
-          <a class="d-block small mt-3" href="register.php">Register an Account</a>
-          <a class="d-block small" href="forgot-password.php">Forgot Password?</a>
+          <a class="d-block small mt-3" href="reminder.php">Register an Account or Forgot Password?</a>
         </div>
       </div>
     </div>
