@@ -1,34 +1,36 @@
 <?php 
 
-$itemname="";
-$quantity="";
+if(isset($_POST['submit']))
+{    
+  $itemname=$_POST['itemname'];
+  $description=$_POST['description'];
+  $category=$_POST['category'];
+  $quantity=$_POST['quantity'];
 
-if(isset($_POST['Find']))
-{
-    
-  // id to search
-  $itemname=$_POST['itemNames'];
-  
-  $sql = "SELECT * FROM equipment WHERE ItemName = :itemNames";
-  $pdoResult = $dbh->prepare($sql);
-  $pdoExec = $pdoResult->execute(array(":itemNames"=>$itemname));
-    
-  if($pdoExec)
+  if( empty($itemname) || empty($description) || empty($category) || empty($quantity) )
   {
-    // if id exist  
-    // show data in inputs
-    if($pdoResult->rowCount()>0)
+    {echo "<script type= 'text/javascript'>alert('Empty Fields.');</script>";}  
+  }
+  else
+  {
+    $pdoQuery = "SELECT * FROM borrowed_item WHERE ItemName = :itemname";
+    $pdoResult = $dbh->prepare($pdoQuery);
+    $pdoExec = $pdoResult->execute(array(":itemname"=>$itemname));
+    
+    if($pdoExec)
     {
-      foreach($pdoResult as $row)
+      // if id exist 
+      if($pdoResult->rowCount()>0)
       {
-        $itemname=$_POST['itemNames'];
-        $quantity=$_POST['quantity'];
-      }
-    }else{
-      echo "<script type= 'text/javascript'>alert('No Data With This ID.');</script>";                 
+        $itemname='';
+        $description='';
+        $category='';
+        $quantity='';
+        echo "<script>alert('item exist!');</script>";   
+      }else{
+        //
+      }          
     }
-  }else{
-    echo "<script type= 'text/javascript'>alert('ERROR Data Not Inserted.');</script>";
   }
 }
 ?>
