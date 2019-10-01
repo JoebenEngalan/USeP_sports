@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 28, 2019 at 07:35 PM
+-- Generation Time: Oct 01, 2019 at 03:13 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.1
 
@@ -119,6 +119,16 @@ CREATE TABLE `returned_item` (
   `quantity4` int(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `returned_item`
+--
+
+INSERT INTO `returned_item` (`ID`, `id_number`, `ContactNumber`, `Borrowed_time`, `Return_time`, `Item1`, `quantity1`, `Item2`, `quantity2`, `Item3`, `quantity3`, `Item4`, `quantity4`) VALUES
+(12, '2014-00000', 2147483647, '9/29/2019', '9/29/2019', 'GeeksForGeeks', 1, '', 0, '', 0, '', 0),
+(13, '2014-00000', 2147483647, '9/29/2019', '9/29/2019', 'test', 11, '', 0, '', 0, '', 0),
+(14, '2014-00000', 2147483647, '9/29/2019', '9/29/2019', 'help2', 11, '', 0, '', 0, '', 0),
+(15, '2014-00000', 2147483647, '9/29/2019', '9/29/2019', 'test4', 1, '', 0, '', 0, '', 0);
+
 -- --------------------------------------------------------
 
 --
@@ -185,13 +195,13 @@ ALTER TABLE `staff_table`
 -- AUTO_INCREMENT for table `borrowed_item`
 --
 ALTER TABLE `borrowed_item`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `borrower_table`
 --
 ALTER TABLE `borrower_table`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `equipment`
@@ -203,13 +213,13 @@ ALTER TABLE `equipment`
 -- AUTO_INCREMENT for table `returned_item`
 --
 ALTER TABLE `returned_item`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `staff_table`
 --
 ALTER TABLE `staff_table`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
