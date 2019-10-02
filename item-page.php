@@ -56,14 +56,14 @@ if(!isset($_SESSION["id"]))
                 <!-- Item Name input -->
                 <div class="form-group col-md">
                   <label for="itemname">Item Name</label>
-                  <input type="text" name= "itemname" class="form-control" id="itemname" placeholder="Item Name" required>
+                  <input type="text" name= "itemname" class="form-control" id="itemname" maxlength= "30" placeholder="Item Name" required>
                 </div>
               </div>
                 <!-- Item Name input -->
               <div class="form-row">
                 <div class="form-group col-md-6 ">
                   <label for="itemname">Quantity</label>
-                  <input type="text" name="quantity" class="form-control" id="quantity" placeholder="0" required>
+                  <input type="text" name="quantity" class="form-control" id="quantity" pattern="[0-9]" placeholder="0" required>
                 </div>
                 <!--  Category input -->
                 <div class="form-group col-md-6">
