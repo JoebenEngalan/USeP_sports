@@ -45,15 +45,15 @@ if (!isset($_SESSION['id']) || ($_SESSION['id'] !== 'Admin@gmail.com'))
             <form method="post" name="test" autocomplete="off">
               <div class="form-group">
                 <div class="form-label-group">
-                  <input type="email" id="inputEmail" class="form-control" autocomplete="off" placeholder="Enter email address" required="required" autofocus="autofocus">
-                  <label for="inputEmail">Enter Email Address</label>
+                  <input type="email" name="email" id="email" class="form-control" autocomplete="off" placeholder="Enter email address" required="required" autofocus="autofocus">
+                  <label for="email">Enter Email Address</label>
                 </div>
               </div>
-              
+  
               <div class="form-group">
                 <div class="form-label-group">
-                  <input type="password" id="inputPassword"  autocomplete="new-password" name="password" class="form-control" placeholder="Password" required="required">
-                  <label for="inputPassword">Password</label>
+                  <input type="password" id="password" name="password" autocomplete="new-password" class="form-control" placeholder="Password" required="required">
+                  <label for="password">Password</label>
                 </div>
               </div> 
               <input type="submit" class="btn btn-primary btn-block"style="cursor:pointer">            
