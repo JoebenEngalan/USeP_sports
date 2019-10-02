@@ -17,9 +17,7 @@ if(isset($_POST['return']))
   $Rtime = $_POST['Rtime'];
   
   $clerk = $fetch['LastName'];
-
-
-    
+   
   $itemname1 = $_POST['itemname1'];
   $quantity1 = $_POST['quantity1'];
   $itemname2 = $_POST['itemname2'];
@@ -28,8 +26,7 @@ if(isset($_POST['return']))
   $quantity3 = $_POST['quantity3'];
   $itemname4 = $_POST['itemname4'];
   $quantity4 = $_POST['quantity4'];
-
-    
+ 
   // mysql query to Update data
 
   $sql="INSERT INTO returned_Item (id_number,ContactNumber,Borrowed_time,Return_time,Item1,quantity1,Item2,quantity2,Item3,quantity3,Item4,quantity4) 
@@ -42,7 +39,6 @@ if(isset($_POST['return']))
   $sql4 = "UPDATE `equipment` SET `quantity` = `quantity` + :quantity4 WHERE `ItemName` = :itemname4";
   $sqlD = "DELETE FROM `Borrowed_Item` WHERE `id_number` = :id_number";
 
-   
   $query=$dbh->prepare($sql);
   $pdoResult1 = $dbh->prepare($sql1);
   $pdoResult2 = $dbh->prepare($sql2);

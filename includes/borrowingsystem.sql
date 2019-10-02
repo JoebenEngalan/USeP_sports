@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 01, 2019 at 03:13 AM
+-- Generation Time: Oct 02, 2019 at 12:21 PM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.1
 
@@ -31,6 +31,8 @@ SET time_zone = "+00:00";
 CREATE TABLE `borrowed_item` (
   `ID` int(11) NOT NULL,
   `id_number` varchar(12) NOT NULL,
+  `FullName` varchar(200) NOT NULL,
+  `Clerk` varchar(150) NOT NULL,
   `ContactNumber` int(150) NOT NULL,
   `Borrowed_time` varchar(100) NOT NULL,
   `Item1` varchar(150) NOT NULL,
@@ -41,8 +43,16 @@ CREATE TABLE `borrowed_item` (
   `quantity3` int(100) DEFAULT NULL,
   `Item4` varchar(150) NOT NULL,
   `quantity4` int(100) DEFAULT NULL,
-  `Remarks` text NOT NULL
+  `Purpose` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `borrowed_item`
+--
+
+INSERT INTO `borrowed_item` (`ID`, `id_number`, `FullName`, `Clerk`, `ContactNumber`, `Borrowed_time`, `Item1`, `quantity1`, `Item2`, `quantity2`, `Item3`, `quantity3`, `Item4`, `quantity4`, `Purpose`) VALUES
+(17, '2014-11111', 'test , test', 'AdminLName', 2147483647, '10/2/2019', 'test2', 1, '', 0, '', 0, '', 0, 'PE exam'),
+(18, '2014-00000', 'celer , shai', 'Here', 2147483647, '10/2/2019', 'test', 10, '', 0, '', 0, '', 0, 'Pe Class');
 
 -- --------------------------------------------------------
 
@@ -81,21 +91,27 @@ CREATE TABLE `equipment` (
   `ItemName` varchar(500) DEFAULT NULL,
   `Description` text,
   `Category` varchar(50) DEFAULT NULL,
-  `quantity` int(100) DEFAULT NULL
+  `quantity` int(100) DEFAULT NULL,
+  `Clerk` varchar(150) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `equipment`
 --
 
-INSERT INTO `equipment` (`id`, `ItemName`, `Description`, `Category`, `quantity`) VALUES
-(3, 'test', 'ffffffffffffffffffff', 'Sports Equipment', 28),
-(4, 'test2', 'deeeeeeeeeeeeeeeeeeeeeeee', 'Sports Equipment', 28),
-(5, 'test3', 'deeeeeeeeeeeeeeeeeeeeeeee', 'Sports Equipment', 7),
-(6, 'test4', 'dfedfdfggf', 'Gym Equipment', 10),
-(20, 'GeeksForGeeks', 'Make', 'Sports Equipment', 1),
-(21, 'help', 'test', 'Sports Equipment', 21),
-(22, 'help2', 'test', 'Sports Equipment', 40);
+INSERT INTO `equipment` (`id`, `ItemName`, `Description`, `Category`, `quantity`, `Clerk`) VALUES
+(3, 'test', 'testy', 'Sports Equipment', 22, 'AdminLName'),
+(4, 'test2', 'deeeeeeeeeeeeeeeeeeeeeeee', 'Sports Equipment', 25, ''),
+(5, 'test3', 'deeeeeeeeeeeeeeeeeeeeeeee', 'Sports Equipment', 7, ''),
+(6, 'test4', 'dfedfdfggf', 'Gym Equipment', 10, ''),
+(20, 'GeeksForGeeks', 'Make', 'Sports Equipment', 1, ''),
+(21, 'help', 'test', 'Sports Equipment', 21, ''),
+(22, 'help2', 'test', 'Sports Equipment', 40, ''),
+(23, 'Basketball,GTR', 'Males Only', 'Sports Equipment', 10, 'AdminLName'),
+(24, 'test1212121', 'test', 'Sports Equipment', 22, 'AdminLName'),
+(25, 'test222', 'test', 'Sports Equipment', 9, 'AdminLName'),
+(26, 'Polo', 'test', 'Gym Equipment', 20, 'AdminLName'),
+(27, 'test21122', 'test', 'Sports Equipment', 50, 'AdminLName');
 
 -- --------------------------------------------------------
 
@@ -106,9 +122,12 @@ INSERT INTO `equipment` (`id`, `ItemName`, `Description`, `Category`, `quantity`
 CREATE TABLE `returned_item` (
   `ID` int(11) NOT NULL,
   `id_number` varchar(12) NOT NULL,
+  `FullName` varchar(200) NOT NULL,
   `ContactNumber` int(150) NOT NULL,
   `Borrowed_time` varchar(100) NOT NULL,
   `Return_time` varchar(100) NOT NULL,
+  `Clerk` varchar(150) NOT NULL,
+  `Remarks` text NOT NULL,
   `Item1` varchar(150) NOT NULL,
   `quantity1` int(100) DEFAULT NULL,
   `Item2` varchar(150) NOT NULL,
@@ -123,11 +142,8 @@ CREATE TABLE `returned_item` (
 -- Dumping data for table `returned_item`
 --
 
-INSERT INTO `returned_item` (`ID`, `id_number`, `ContactNumber`, `Borrowed_time`, `Return_time`, `Item1`, `quantity1`, `Item2`, `quantity2`, `Item3`, `quantity3`, `Item4`, `quantity4`) VALUES
-(12, '2014-00000', 2147483647, '9/29/2019', '9/29/2019', 'GeeksForGeeks', 1, '', 0, '', 0, '', 0),
-(13, '2014-00000', 2147483647, '9/29/2019', '9/29/2019', 'test', 11, '', 0, '', 0, '', 0),
-(14, '2014-00000', 2147483647, '9/29/2019', '9/29/2019', 'help2', 11, '', 0, '', 0, '', 0),
-(15, '2014-00000', 2147483647, '9/29/2019', '9/29/2019', 'test4', 1, '', 0, '', 0, '', 0);
+INSERT INTO `returned_item` (`ID`, `id_number`, `FullName`, `ContactNumber`, `Borrowed_time`, `Return_time`, `Clerk`, `Remarks`, `Item1`, `quantity1`, `Item2`, `quantity2`, `Item3`, `quantity3`, `Item4`, `quantity4`) VALUES
+(19, '2014-00000', '', 2147483647, '10/2/2019', '10/2/2019', '', '', 'test2', 1, '', 0, '', 0, '', 0);
 
 -- --------------------------------------------------------
 
@@ -148,7 +164,8 @@ CREATE TABLE `staff_table` (
 --
 
 INSERT INTO `staff_table` (`id`, `FirstName`, `LastName`, `Email`, `Password`) VALUES
-(1, 'Admin01F', 'Admin01L', 'Admin@gmail.com', '0e7517141fb53f21ee439b355b5a1d0a');
+(1, 'AdminFName', 'AdminLName', 'Admin@gmail.com', '0e7517141fb53f21ee439b355b5a1d0a'),
+(2, 'Me', 'Here', 'Me@gmail.com', 'b9b57aae83585e17ede4570dcede353c');
 
 --
 -- Indexes for dumped tables
@@ -195,7 +212,7 @@ ALTER TABLE `staff_table`
 -- AUTO_INCREMENT for table `borrowed_item`
 --
 ALTER TABLE `borrowed_item`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `borrower_table`
@@ -207,19 +224,19 @@ ALTER TABLE `borrower_table`
 -- AUTO_INCREMENT for table `equipment`
 --
 ALTER TABLE `equipment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `returned_item`
 --
 ALTER TABLE `returned_item`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `staff_table`
 --
 ALTER TABLE `staff_table`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
