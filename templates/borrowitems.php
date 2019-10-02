@@ -1,5 +1,4 @@
 <?php
-
 //error_reporting(0);
 if(isset($_POST['submit']))
 {
@@ -32,7 +31,15 @@ $quantityE4 = $_POST['subt4'];
 // get values form input text 
 $LastName=$_POST['LastName'];
 $FirstName=$_POST['FirstName'];
-$clerk = $_SESSION['id'];
+
+//get the lastName of Username
+$id = $_SESSION['id'];
+$sql = $dbh->prepare("SELECT * FROM `staff_table` WHERE `Email`='$id'");
+$sql->execute();
+$fetch = $sql->fetch();
+$fetch['LastName'];
+
+$clerk = $fetch['LastName'];
 
 if(empty($id_number)||empty($LastName)||empty($FirstName)||empty($item1)||empty($quantity1)
     ||$quantityE1 <= $y || $quantityE2 <= $y ||$quantityE3 <= $y ||$quantityE4 <= $y )

@@ -81,9 +81,22 @@ include_once('templates/findborrow_return.php');
             <div class="form-row">
               <!-- LastName input -->
               <div class="form-group col-md">
-                <label for="inputLname">ID Number</label>
+                <label for="id_number">ID Number</label>
                 <input type="text" class="form-control" readonly name="id_number" id="id_number" value="<?php echo $id_number;?>" placeholder="ID number of Student or Faculty" >
               </div>
+            </div>
+
+            <div class="form-row">
+                <!-- Full Name input -->
+                <div class="form-group col-md-6">
+                  <label for="FullName">Full Name</label>
+                  <input type="text" class="form-control" readonly name="FullName" id="FullName" value="<?php echo $FullName;?>" placeholder="Last Name , First Name">
+                </div>
+                <!-- Clerk Name input -->
+                <div class="form-group col-md-6">
+                  <label for="Clerk">Clerk Name</label>
+                  <input type="text" class="form-control" readonly id="Clerk" name="Clerk" value="<?php echo $Clerk;?>" placeholder="Clerk Name" >
+                </div>  
             </div>
  
             <div class="form-row">

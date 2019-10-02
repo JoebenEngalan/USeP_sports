@@ -15,7 +15,7 @@ if(isset($_POST['login']))
   if($query->rowCount() > 0)
     {
       $_SESSION['id'] = $_POST['email'];
-      echo "<script type='text/javascript'> document.location = 'mainpage.php'; </script>";
+      echo "<script type='text/javascript'> document.location = 'mainpage.php'; </script>";    
     }
     else
     {
