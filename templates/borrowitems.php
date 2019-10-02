@@ -37,13 +37,11 @@ if(isset($_POST['submit']))
 
 
     if(empty($id_number)||empty($LastName)||empty($FirstName)
-        ||empty($item1)||empty($quantity1)
-        ||$quantityE1 <= $y || $quantityE2 <= $y ||$quantityE3 <= $y ||$quantityE4 <= $y )
-        {   
-        echo "<script type= 'text/javascript'>alert('ERROR YOU ENTERED A NEGATIVE NUMBER OR EMPTY FIELDS');</script>";
-        }
-        else
-        {
+      ||empty($item1)||empty($quantity1)
+      ||$quantityE1 <= $y || $quantityE2 <= $y ||$quantityE3 <= $y ||$quantityE4 <= $y )
+      {   
+        echo "<script type= 'text/javascript'>alert('ERROR YOU ENTERED A NEGATIVE NUMBER OR EMPTY FIELDS');</script>";  
+      }else{
         // mysql query to insert data Borrowed_Item
         $sql="INSERT INTO Borrowed_Item (id_number,Fullname,Clerk,ContactNumber,Item1,quantity1,Item2,quantity2,Item3,quantity3,Item4,quantity4,Purpose,Borrowed_time) 
         VALUES
@@ -85,12 +83,11 @@ if(isset($_POST['submit']))
         $pdoExec4 = $pdoResult4->execute(array(":subt4"=>$quantityE4,":4itemname"=>$itemname4));
             
         if($lastInsertId || $pdoExec1|| $pdoExec2|| $pdoExec3|| $pdoExec4)
-            {
-            echo "<script>alert('Success');</script>";
-            }else{
-            echo "<script>alert('Something went wrong. Please try again');</script>";
-            }
-        
+          {
+          echo "<script>alert('Success');</script>";
+          }else{
+          echo "<script>alert('Something went wrong. Please try again');</script>";
+          }
         }
 
 }
