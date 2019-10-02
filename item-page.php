@@ -83,7 +83,8 @@ if(!isset($_SESSION["id"]))
                 <textarea class="form-control" name="description" rows="5" id="InputDescription" resize="none" placeholder="Description Here" c></textarea>
               </div>
               <!-- Grid row  Buttons -->
-              <?php include('templates/additem.php');?>          
+              <?php include('templates/additem.php');?>
+              <?php include('templates/Updateitem.php');?>                    
               <div class="btn-group">
                 <!-- database command add item-->
                 <button type="submit"  name="submit"  value="Submit"  class="btn btn-primary btn-lg">Add</button>
