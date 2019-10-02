@@ -82,7 +82,7 @@ include_once('templates/findborrower.php');
                               </div>                
                               
                               <select class="form-control" name="itemname1" id="itemname1" disabled="disabled">
-                              <option disabled selected>Equipement Name and Quantity 1</option>
+                              <option disabled selected>Name and Qty 1</option>
                               <?php include('templates/selectitem.php');?>
                               </select>
                             </div>
@@ -97,7 +97,7 @@ include_once('templates/findborrower.php');
                               </div> 
                               
                               <select class="form-control" name="itemname2" id="itemname2" disabled="disabled">
-                              <option disabled selected>Equipement Name and Quantity 2</option>
+                              <option disabled selected>Name and Qty 2</option>
                               <?php include('templates/selectitem.php');?>
                               </select>
                             </div>
@@ -114,7 +114,7 @@ include_once('templates/findborrower.php');
                               </div>  
                               
                               <select class="form-control" name="itemname3" id="itemname3" disabled="disabled">
-                              <option disabled selected>Equipement Name and Quantity 3</option>
+                              <option disabled selected>Name and Qty 3</option>
                               <?php include('templates/selectitem.php');?>
                               </select>
                             </div>
@@ -129,7 +129,7 @@ include_once('templates/findborrower.php');
                               </div> 
 
                               <select class="form-control" name="itemname4" id="itemname4" disabled="disabled" >
-                              <option disabled selected>Equipement Name and Quantity 4</option>
+                              <option disabled selected>Name and Qty 4</option>
                               <?php include('templates/selectitem.php');?>
                               </select>
 

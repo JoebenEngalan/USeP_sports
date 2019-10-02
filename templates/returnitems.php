@@ -1,5 +1,12 @@
 <?php 
 
+$id = $_SESSION['id'];
+$sql = $dbh->prepare("SELECT * FROM `staff_table` WHERE `Email`='$id'");
+$sql->execute();
+$fetch = $sql->fetch();
+$fetch['LastName'];
+
+
 if(isset($_POST['return']))
 {
     
@@ -8,6 +15,9 @@ if(isset($_POST['return']))
   $ContactNumber = $_POST['ContactNumber'];
   $Btime = $_POST['Btime'];
   $Rtime = $_POST['Rtime'];
+  
+  $clerk = $fetch['LastName'];
+
 
     
   $itemname1 = $_POST['itemname1'];
@@ -18,6 +28,7 @@ if(isset($_POST['return']))
   $quantity3 = $_POST['quantity3'];
   $itemname4 = $_POST['itemname4'];
   $quantity4 = $_POST['quantity4'];
+
     
   // mysql query to Update data
 

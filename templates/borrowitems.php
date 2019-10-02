@@ -1,5 +1,13 @@
 <?php
 //error_reporting(0);
+
+//Get User lastname
+$id = $_SESSION['id'];
+$sql = $dbh->prepare("SELECT * FROM `staff_table` WHERE `Email`='$id'");
+$sql->execute();
+$fetch = $sql->fetch();
+$fetch['LastName'];
+
 if(isset($_POST['submit']))
 {
 // get values form input text and number
@@ -33,12 +41,6 @@ $LastName=$_POST['LastName'];
 $FirstName=$_POST['FirstName'];
 
 //get the lastName of Username
-$id = $_SESSION['id'];
-$sql = $dbh->prepare("SELECT * FROM `staff_table` WHERE `Email`='$id'");
-$sql->execute();
-$fetch = $sql->fetch();
-$fetch['LastName'];
-
 $clerk = $fetch['LastName'];
 
 if(empty($id_number)||empty($LastName)||empty($FirstName)||empty($item1)||empty($quantity1)

@@ -120,6 +120,7 @@ if(!isset($_SESSION["id"]))
                       <th>Quantity</th>
                       <th>Category</th>
                       <th>Description</th>
+                      <th>Clerk</th>
                       </tr>
                     </thead>
                     
@@ -130,6 +131,7 @@ if(!isset($_SESSION["id"]))
                       <th>Quantity</th>
                       <th>Category</th>
                       <th>Description</th>
+                      <th>Clerk</th>
                       </tr>
                     </tfoot>
                         
@@ -150,6 +152,7 @@ if(!isset($_SESSION["id"]))
                       <td><?php echo htmlentities($result->quantity);?></td>
                       <td><?php echo htmlentities($result->Category);?></td>
                       <td><?php echo htmlentities($result->Description);?></td>
+                      <td><?php echo htmlentities($result->Clerk);?></td>
                       </tr>
                       <?php $cnt=$cnt+1; }} ?>		
                     </tbody>

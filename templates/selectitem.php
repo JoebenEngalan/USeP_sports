@@ -13,8 +13,8 @@ foreach($results as $result)
 {               
 ?>
 <option value="<?php echo htmlentities($result->ItemName);?>">
- </b>Item Name: <?php echo htmlentities($result->ItemName);?>
- </b>Item Quantity: <?php echo htmlentities($result->quantity);?>
+ </b>Name: <?php echo htmlentities($result->ItemName);?>
+ </b>Qty: <?php echo htmlentities($result->quantity);?>
 </option>
 <?php }
 } 

@@ -1,11 +1,19 @@
 <?php
 
+$id = $_SESSION['id'];
+$sql = $dbh->prepare("SELECT * FROM `staff_table` WHERE `Email`='$id'");
+$sql->execute();
+$fetch = $sql->fetch();
+$fetch['LastName'];
+
 if(isset($_POST['submit']))
 {    
   $itemname=$_POST['itemname'];
   $description=$_POST['description'];
   $category=$_POST['category'];
   $quantity=$_POST['quantity'];
+  
+  $clerk = $fetch['LastName'];
 
   if( empty($itemname) || empty($description) || empty($category) || empty($quantity) )
   {
@@ -28,8 +36,8 @@ if(isset($_POST['submit']))
         $quantity='';
         echo "<script>alert('item exist!');</script>";   
       }else{
-        $sql= "INSERT INTO equipment (ItemName,Description,Category,quantity) 
-        VALUES(:itemname,:description,:category,:quantity)";
+        $sql= "INSERT INTO equipment (ItemName,Description,Category,quantity,Clerk) 
+        VALUES(:itemname,:description,:category,:quantity,:id)";
           
         $query = $dbh->prepare($sql);
           
@@ -37,6 +45,7 @@ if(isset($_POST['submit']))
         $query->bindParam(':description',$description,PDO::PARAM_STR);
         $query->bindParam(':category',$category,PDO::PARAM_STR);
         $query->bindParam(':quantity',$quantity,PDO::PARAM_STR);
+        $query->bindParam(':id',$clerk,PDO::PARAM_STR);
         $query->execute();
         $lastInsertId = $dbh->lastInsertId();
           

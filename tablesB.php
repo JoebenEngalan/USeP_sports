@@ -44,8 +44,11 @@ if(!isset($_SESSION["id"]))
                         <tr>
                         <th>#</th>
                         <th>ID Number</th>
+                        <th>Full Name</th>
+                        <th>Clerk</th>
                         <th>Contact Number</th>
                         <th>Time Borrowed</th>
+                        <th>Purpose</th>
                         <th>Item 1 </th>
                         <th>Qty 1</th>
                         <th>Item 2 </th>
@@ -60,8 +63,11 @@ if(!isset($_SESSION["id"]))
                         <tr>
                         <th>#</th>
                         <th>ID Number</th>
+                        <th>Full Name</th>
+                        <th>Clerk</th>
                         <th>Contact Number</th>
                         <th>Time Borrowed</th>
+                        <th>Purpose</th>
                         <th>Item 1 </th>
                         <th>Qty 1</th>
                         <th>Item 2 </th>
@@ -87,9 +93,11 @@ if(!isset($_SESSION["id"]))
                         <tr>
                           <td><?php echo htmlentities($cnt);?></td>
                           <td><?php echo htmlentities($result->id_number);?></td>
+                          <td><?php echo htmlentities($result->FullName);?></td>
+                          <td><?php echo htmlentities($result->Clerk);?></td>
                           <td><?php echo htmlentities($result->ContactNumber);?></td>
                           <td><?php echo htmlentities($result->Borrowed_time);?></td>
-                          
+                          <td><?php echo htmlentities($result->Purpose);?></td>                          
                           <td><?php echo htmlentities($result->Item1);?></td>
                           <td><?php echo htmlentities($result->quantity1);?></td>
                           <td><?php echo htmlentities($result->Item2);?></td>

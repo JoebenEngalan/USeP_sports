@@ -13,6 +13,7 @@ $itemname3 = "";
 $quantity3 = "";
 $itemname4 = "";
 $quantity4 = "";
+$Purpose = "";
 
 if(isset($_POST['Find']))
 {
@@ -46,6 +47,7 @@ if(isset($_POST['Find']))
             $quantity3 = $row['quantity3'];
             $itemname4 = $row['Item4'];
             $quantity4 = $row['quantity4'];
+            $Purpose = $row['Purpose'];
           }
       }else{
         echo "<script type= 'text/javascript'>alert('No Data With This ID.');</script>";                 
