@@ -13,16 +13,16 @@ if( empty($email) || empty($password))
   $password=''; 
   echo "<script type= 'text/javascript'>alert('Empty Fields.');</script>";  
   }
-  elseif( $email !== 'Admin@gmail.com')
+  elseif( $email == 'Admin@gmail.com')
   {
   $email='';
-  $password='';
-  echo "<script type= 'text/javascript'>alert('Empty Fields.');</script>";  
+  $password=''; 
+  echo "<script type= 'text/javascript'>alert('ERROR SYSTEM ADMINISTRATOR.');</script>";  
   }else{
   
     $sql = "UPDATE `staff_table` SET `Password`=:password WHERE `Email` = :email";
     $pdoResult = $dbh->prepare($sql);
-    $pdoExec=$pdoResult->execute(array(":description"=>$description,":email"=>$email));
+    $pdoExec=$pdoResult->execute(array(":password"=>$password,":email"=>$email));
       
     if($pdoExec)
     {

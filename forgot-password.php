@@ -15,6 +15,22 @@ if (!isset($_SESSION['id']) || ($_SESSION['id'] !== 'Admin@gmail.com'))
 
 <script src="js/jquery-3.4.1.min.js"></script>
 
+<script>
+//checks password and confirm password is right
+function check_pass() {
+  if (document.getElementById('password').value ==
+    document.getElementById('confirmpassword').value) {
+      document.getElementById('reset').disabled = false;
+  } else {
+      document.getElementById('reset').disabled = true;
+  }
+}
+//no form resubmision javascript dont touch
+if ( window.history.replaceState ) {
+  window.history.replaceState( null, null, window.location.href );
+}
+</script>
+
 <body id="page-top">
 
   <!-- Navbar Search -->
@@ -51,17 +67,28 @@ if (!isset($_SESSION['id']) || ($_SESSION['id'] !== 'Admin@gmail.com'))
               </div>
   
               <div class="form-group">
-                <div class="form-label-group">
-                  <input type="password" id="password" name="password" autocomplete="new-password" class="form-control" placeholder="Password" required="required">
-                  <label for="password">Password</label>
+                <div class="form-row">
+                  <div class="col-md-6">
+                    <div class="form-label-group">
+                      <input type="password" id="password" name="password" autocomplete="new-password" class="form-control" onchange='check_pass();' placeholder="Password"  required="required">
+                      <label for="password">Password</label>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-label-group">
+                      <input type="password" id="confirmpassword" name="confirmpassword" autocomplete="new-password" class="form-control" onchange='check_pass();' placeholder="Confirm password" required="required">
+                      <label for="confirmpassword" >Confirm password</label>
+                      <span id='message'></span>
+                    </div>
+                  </div>
                 </div>
-              </div> 
-              <input type="submit" class="btn btn-primary btn-block"style="cursor:pointer">            
+              </div>
+              <?php include('templates/resetpassword.php');?> 
+              <input type="submit" id="reset" name="reset" class="btn btn-primary btn-block" disabled style="cursor:pointer">            
             </form>
           </div>
         </div>
       </div>  
-
     </div><!-- /.container-fluid -->
   </div><!-- /.content-wrapper -->
   <!--Footer-->    
