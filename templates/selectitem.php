@@ -14,6 +14,7 @@ foreach($results as $result)
 ?>
 <option value="<?php echo htmlentities($result->ItemName);?>">
  </b>Name: <?php echo htmlentities($result->ItemName);?>
+  And
  </b>Qty: <?php echo htmlentities($result->quantity);?>
 </option>
 <?php }
