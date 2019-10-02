@@ -11,7 +11,7 @@ if(isset($_POST['Update']))
 // get values form input text and number  
 $itemname=$_POST['itemname'];
 $description=$_POST['description'];
-$category=$_POST['category'];
+$category = (isset($_POST['category']) ? $_POST['category'] : '');
 $quantity=$_POST['quantity'];
   
 $clerk = $fetch['LastName'];

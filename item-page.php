@@ -55,20 +55,23 @@ if(!isset($_SESSION["id"]))
               <div class="form-row">            
                 <!-- Item Name input -->
                 <div class="form-group col-md">
-                  <label for="itemname">Item Name</label>
+                <div class="form-label-group">
                   <input type="text" name= "itemname" class="form-control" id="itemname" maxlength= "30" placeholder="Item Name" required>
+                  <label for="itemname">Item Name</label>
+                </div>
                 </div>
               </div>
                 <!-- Item Name input -->
               <div class="form-row">
                 <div class="form-group col-md-6 ">
-                  <label for="itemname">Quantity</label>
-                  <input type="text" name="quantity" class="form-control" id="quantity" pattern="[0-9]" placeholder="0" required>
+                <div class="form-label-group">
+                  <input type="number" min="0" name="quantity" class="form-control" id="quantity" pattern="[0-9]" placeholder="0" required>
+                  <label for="quantity">Quantity</label>
+                </div>
                 </div>
                 <!--  Category input -->
                 <div class="form-group col-md-6">
-                <label for="inputCategory">Category</label>
-                  <select type="text" name= "category" class="form-control" id="inputCategory" required>
+                  <select type="text"  class="form-control custom-select-lg mb-3" name="category" id="category" required>
                   <option disabled selected>Category</option>
                   <option> Sports Equipment</option>
                   <option> Gym Equipment </option>
@@ -79,15 +82,16 @@ if(!isset($_SESSION["id"]))
               <!--Grid row-->
               <!-- InputDescription input -->
               <div class="form-group col-md-14">
-                <label for="InputDescription">Description</label>
-                <textarea class="form-control" name="description" rows="5" id="InputDescription" resize="none" placeholder="Description Here" c></textarea>
+                <textarea class="form-control" name="description" rows="5" id="InputDescription" resize="none" placeholder="Description Here" ></textarea>
               </div>
               <!-- Grid row  Buttons -->
               <?php include('templates/additem.php');?>
               <?php include('templates/Updateitem.php');?>                    
               <div class="btn-group">
                 <!-- database command add item-->
-                <button type="submit"  name="submit"  value="Submit"  class="btn btn-primary btn-lg">Add</button>
+                <button type="submit"  name="submit"  value="Submit"             
+                 onclick="return confirm ('Make Sure the Item Name you Entered is Correct \n Because Item Name you Ented will be Permanent.')"
+                 class="btn btn-primary btn-lg">Add</button>
                 <button type="submit"  name="Update"  value="Update"  class="btn btn-primary btn-lg">Update</button>
                 <button type="clear" class="btn btn-primary btn-lg">Clear</button>
               </div>

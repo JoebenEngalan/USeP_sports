@@ -10,9 +10,9 @@ if(isset($_POST['submit']))
 {    
   $itemname=$_POST['itemname'];
   $description=$_POST['description'];
-  $category=$_POST['category'];
+  $category = (isset($_POST['category']) ? $_POST['category'] : '');
   $quantity=$_POST['quantity'];
-  
+
   $clerk = $fetch['LastName'];
 
   if( empty($itemname) || empty($description) || empty($category) || empty($quantity) )
