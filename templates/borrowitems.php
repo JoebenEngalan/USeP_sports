@@ -14,7 +14,7 @@ if(isset($_POST['submit']))
     $quantity3=$_POST['quantity3'];
     $item4=$_POST['4itemname'];
     $quantity4=$_POST['quantity4'];
-    $remarks=$_POST['remarks'];                     
+    $purpose=$_POST['purpose'];                     
     $Btime=$_POST['Btime'];
 
     $y = -1;
@@ -32,7 +32,10 @@ if(isset($_POST['submit']))
     // get values form input text 
     $LastName=$_POST['LastName'];
     $FirstName=$_POST['FirstName'];
- 
+
+    $clerk = $_SESSION['id'];
+
+
     if(empty($id_number)||empty($LastName)||empty($FirstName)
         ||empty($item1)||empty($quantity1)
         ||$quantityE1 <= $y || $quantityE2 <= $y ||$quantityE3 <= $y ||$quantityE4 <= $y )
@@ -42,9 +45,9 @@ if(isset($_POST['submit']))
         else
         {
         // mysql query to insert data Borrowed_Item
-        $sql="INSERT INTO Borrowed_Item (id_number,ContactNumber,Item1,quantity1,Item2,quantity2,Item3,quantity3,Item4,quantity4,Remarks,Borrowed_time) 
+        $sql="INSERT INTO Borrowed_Item (id_number,Fullname,Clerk,ContactNumber,Item1,quantity1,Item2,quantity2,Item3,quantity3,Item4,quantity4,Purpose,Borrowed_time) 
         VALUES
-        (:id_number,:ContactNumber,:1itemname,:quantity1,:2itemname,:quantity2,:3itemname,:quantity3,:4itemname,:quantity4,:remarks,:Btime)";
+        (:id_number,concat(:LastName,' , ',:FirstName),:id,:ContactNumber,:1itemname,:quantity1,:2itemname,:quantity2,:3itemname,:quantity3,:4itemname,:quantity4,:purpose,:Btime)";
 
         // mysql query to Update data equipment
         $sql1 = "UPDATE `equipment` SET `quantity`= :subt1 WHERE `ItemName` = :1itemname"; 
@@ -60,7 +63,10 @@ if(isset($_POST['submit']))
 
         $query->bindParam(':id_number',$id_number,PDO::PARAM_STR);
         $query->bindParam(':ContactNumber',$ContactNumber,PDO::PARAM_STR);
-        $query->bindParam(':remarks',$remarks,PDO::PARAM_STR);
+        $query->bindParam(':LastName',$LastName,PDO::PARAM_STR);
+        $query->bindParam(':FirstName',$FirstName,PDO::PARAM_STR);
+        $query->bindParam(':id',$clerk,PDO::PARAM_STR);
+        $query->bindParam(':purpose',$purpose,PDO::PARAM_STR);
         $query->bindParam(':1itemname',$item1,PDO::PARAM_STR);
         $query->bindParam(':quantity1',$quantity1,PDO::PARAM_STR);
         $query->bindParam(':2itemname',$item2,PDO::PARAM_STR);

@@ -281,7 +281,7 @@ include_once('templates/findborrower.php');
                       
                     <div class="form-row">
                       <div class="form-group col-md-12">
-                      <input type="text" class="form-control" id="inputRemarks" name="remarks" placeholder="Remarks">
+                      <input type="text" class="form-control" id="purpose" name="purpose" placeholder="Purpose">
                     </div>
 
                   <div class="form-group mb-4">
