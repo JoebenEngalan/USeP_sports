@@ -49,9 +49,10 @@ if(empty($id_number)||empty($LastName)||empty($FirstName)||empty($item1)||empty(
     echo "<script type= 'text/javascript'>alert('ERROR YOU ENTERED A NEGATIVE NUMBER OR EMPTY FIELDS');</script>";  
   }else{
   // mysql query to insert data Borrowed_Item
-  $sql="INSERT INTO Borrowed_Item (id_number,Fullname,Clerk,ContactNumber,Item1,quantity1,Item2,quantity2,Item3,quantity3,Item4,quantity4,Purpose,Borrowed_time) 
+  
+  $sql="INSERT INTO Borrowed_Item (id_number,Fullname,Clerk,ContactNumber,Borrowed_time,Item1,quantity1,Item2,quantity2,Item3,quantity3,Item4,quantity4,Purpose) 
   VALUES
-  (:id_number,concat(:LastName,' , ',:FirstName),:id,:ContactNumber,:1itemname,:quantity1,:2itemname,:quantity2,:3itemname,:quantity3,:4itemname,:quantity4,:purpose,:Btime)";
+  (:id_number,concat(:LastName,' , ',:FirstName),:id,:ContactNumber,:Btime,:1itemname,:quantity1,:2itemname,:quantity2,:3itemname,:quantity3,:4itemname,:quantity4,:purpose)";
 
   // mysql query to Update data equipment
   $sql1 = "UPDATE `equipment` SET `quantity`= :subt1 WHERE `ItemName` = :1itemname"; 
@@ -66,10 +67,10 @@ if(empty($id_number)||empty($LastName)||empty($FirstName)||empty($item1)||empty(
   $pdoResult4 = $dbh->prepare($sql4);
 
   $query->bindParam(':id_number',$id_number,PDO::PARAM_STR);
-  $query->bindParam(':ContactNumber',$ContactNumber,PDO::PARAM_STR);
   $query->bindParam(':LastName',$LastName,PDO::PARAM_STR);
   $query->bindParam(':FirstName',$FirstName,PDO::PARAM_STR);
   $query->bindParam(':id',$clerk,PDO::PARAM_STR);
+  $query->bindParam(':ContactNumber',$ContactNumber,PDO::PARAM_STR);
   $query->bindParam(':purpose',$purpose,PDO::PARAM_STR);
   $query->bindParam(':1itemname',$item1,PDO::PARAM_STR);
   $query->bindParam(':quantity1',$quantity1,PDO::PARAM_STR);
