@@ -376,11 +376,7 @@ include_once('templates/findborrower.php');
                 </div>
               </div>
             </div> 
-        
         </div>
-
-        
-
       </div><!-- /.container-fluid -->
   
   </div><!-- /.content-wrapper -->
