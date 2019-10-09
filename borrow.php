@@ -296,6 +296,7 @@ include_once('templates/findborrower.php');
               
             </form>
           
+
             <div class="card mb-4">
               <div class="card-header">
                 <i class="fas fa-table"></i>
@@ -377,6 +378,7 @@ include_once('templates/findborrower.php');
               </div>
             </div> 
         </div>
+
       </div><!-- /.container-fluid -->
   
   </div><!-- /.content-wrapper -->
