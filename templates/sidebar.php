@@ -1,6 +1,6 @@
 <!-- Sidebar -->
 <div id="wrapper">
-<ul class="sidebar navbar-nav">
+<ul class="sidebar navbar-nav" id="sidebars">
       <!--Main home Page-->
       <li class="nav-item active">
         <a class="nav-link" href="mainpage.php">
@@ -59,5 +59,11 @@
           <a class="dropdown-item" href="register.php">Sign Up</a>
         </div>
       </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="#" data-toggle="modal" data-target="#logoutModal" href="logout.php">
+          <i class="fas fa-user-circle fa-fw"></i>
+          <span>Logout</span></a>
+      </li> 
 
     </ul>

@@ -12,6 +12,7 @@ if(isset($_POST['return']))
     
   // get values form input text and number
   $id_number = $_POST['id_number'];
+  $FullName = $_POST['FullName'];
   $ContactNumber = $_POST['ContactNumber'];
   $Btime = $_POST['Btime'];
   $Rtime = $_POST['Rtime'];
@@ -47,6 +48,7 @@ if(isset($_POST['return']))
   $pdoResultD = $dbh->prepare($sqlD);   
   
   $query->bindParam(':id_number',$id_number,PDO::PARAM_STR);
+  $query->bindParam(':ContactNumber',$ContactNumber,PDO::PARAM_STR);
   $query->bindParam(':ContactNumber',$ContactNumber,PDO::PARAM_STR);
   $query->bindParam(':Btime',$Btime,PDO::PARAM_STR);
   $query->bindParam(':Rtime',$Rtime,PDO::PARAM_STR);
