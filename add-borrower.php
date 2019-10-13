@@ -84,7 +84,7 @@ if(!isset($_SESSION["id"]))
                 <option> Institute of Computing</option>
                 <option> School Applied Economics</option>
                 <option> College of Business Administration</option>
-                <option> University Administration</option>
+                <option> University Administrations</option>
                 </select>
               </div>
               <!-- Position input -->
@@ -93,7 +93,8 @@ if(!isset($_SESSION["id"]))
                 <select type="text" name="position" class="form-control" id="inputPosit" required>
                 <option disabled selected>Position</option>
                 <option>Student</option>
-                <option>Faculty and Staff</option>
+                <option>Faculty</option>
+                <option>Staff</option>
                 <select>
               </div>
             </div>
