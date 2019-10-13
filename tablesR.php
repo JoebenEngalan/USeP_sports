@@ -73,7 +73,6 @@ if(!isset($_SESSION["id"]))
                     <th>Item 4</th>
 										<th>Qty 4</th>
 										</tr>
-										</tr>
 									</tfoot>
 									<tbody>
 									<?php $sql = "SELECT * from  returned_item ";

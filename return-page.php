@@ -162,15 +162,15 @@ include_once('templates/findborrow_return.php');
                 </div>            
             </div>
             <div class="form-row">
-              <!-- LastName input -->
+              <!-- Purpose input -->
               <div class="form-group col-md">
                 <input type="text" class="form-control" readonly value="<?php echo $Purpose;?>" name="Purpose" id="Purpose" placeholder="Purpose" >
               </div>
             </div>
             <div class="form-row">
-              <!-- LastName input -->
+              <!-- Remarks input -->
               <div class="form-group col-md">
-                <input type="text" class="form-control" name="remarks" id="remarks" placeholder="Remarks" >
+                <input type="text" class="form-control" name="Remarks" id="Remarks" placeholder="Remarks" >
               </div>
             </div>
           </div>
@@ -197,9 +197,12 @@ include_once('templates/findborrow_return.php');
 										<tr>
 										<th>#</th>
 										<th>ID Number</th>
+                    <th>FullName</th>
 										<th>Contact Number</th>
 										<th>Borrowed</th>
 										<th>Returned</th>
+                    <th>Cr</th>
+                    <th>CR</th>
 										<th>Item 1</th>
 										<th>Qty 1</th>
                     <th>Item 2</th>
@@ -214,9 +217,12 @@ include_once('templates/findborrow_return.php');
 										<tr>
 										<th>#</th>
                     <th>ID Number</th>
+                    <th>FullName</th>
 										<th>Contact Number</th>
 										<th>Borrowed</th>
 										<th>Returned</th>
+                    <th>Cr</th>
+                    <th>CR</th>
 										<th>Item 1</th>
 										<th>Qty 1</th>
                     <th>Item 2</th>
@@ -225,7 +231,6 @@ include_once('templates/findborrow_return.php');
 										<th>Qty 3</th>
                     <th>Item 4</th>
 										<th>Qty 4</th>
-										</tr>
 										</tr>
 									</tfoot>
 									<tbody>
@@ -241,9 +246,13 @@ include_once('templates/findborrow_return.php');
 										<tr>
 											<td><?php echo htmlentities($cnt);?></td>
 											<td><?php echo htmlentities($result->id_number);?></td>
+                      <td><?php echo htmlentities($result->FullName);?></td>
 											<td><?php echo htmlentities($result->ContactNumber);?></td>
 											<td><?php echo htmlentities($result->Borrowed_time);?></td>
 	                    <td><?php echo htmlentities($result->Return_time);?></td>
+                      <td><?php echo htmlentities($result->Clerk);?></td>
+                      <td><?php echo htmlentities($result->ClerkR);?></td>
+                      <td><?php echo htmlentities($result->Remarks);?></td>
 											<td><?php echo htmlentities($result->Item1);?></td>
 											<td><?php echo htmlentities($result->quantity1);?></td>
                       <td><?php echo htmlentities($result->Item2);?></td>

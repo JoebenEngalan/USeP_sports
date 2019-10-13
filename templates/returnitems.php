@@ -16,8 +16,8 @@ if(isset($_POST['return']))
   $ContactNumber = $_POST['ContactNumber'];
   $Btime = $_POST['Btime'];
   $Rtime = $_POST['Rtime'];
-  
-  $clerk = $fetch['LastName'];
+  $Clerk = $_POST['Clerk'];
+  $ClerkR = $fetch['LastName'];
    
   $itemname1 = $_POST['itemname1'];
   $quantity1 = $_POST['quantity1'];
@@ -27,12 +27,14 @@ if(isset($_POST['return']))
   $quantity3 = $_POST['quantity3'];
   $itemname4 = $_POST['itemname4'];
   $quantity4 = $_POST['quantity4'];
+
+  $Remarks = $_POST['Remarks'];
  
   // mysql query to Update data
 
-  $sql="INSERT INTO returned_Item (id_number,ContactNumber,Borrowed_time,Return_time,Item1,quantity1,Item2,quantity2,Item3,quantity3,Item4,quantity4) 
+  $sql="INSERT INTO returned_Item (id_number,FullName,ContactNumber,Borrowed_time,Return_time,Clerk,ClerkR,Remarks,Item1,quantity1,Item2,quantity2,Item3,quantity3,Item4,quantity4) 
   VALUES
-  (:id_number,:ContactNumber,:Btime,:Rtime,:itemname1,:quantity1,:itemname2,:quantity2,:itemname3,:quantity3,:itemname4,:quantity4)";
+  (:id_number,:FullName,:ContactNumber,:Btime,:Rtime,:Clerk,:LastName,:Remarks,:itemname1,:quantity1,:itemname2,:quantity2,:itemname3,:quantity3,:itemname4,:quantity4)";
 
   $sql1 = "UPDATE `equipment` SET `quantity` = `quantity` + :quantity1 WHERE `ItemName` = :itemname1"; 
   $sql2 = "UPDATE `equipment` SET `quantity` = `quantity` + :quantity2 WHERE `ItemName` = :itemname2";
@@ -48,10 +50,15 @@ if(isset($_POST['return']))
   $pdoResultD = $dbh->prepare($sqlD);   
   
   $query->bindParam(':id_number',$id_number,PDO::PARAM_STR);
-  $query->bindParam(':ContactNumber',$ContactNumber,PDO::PARAM_STR);
+  $query->bindParam(':FullName',$FullName,PDO::PARAM_STR);
   $query->bindParam(':ContactNumber',$ContactNumber,PDO::PARAM_STR);
   $query->bindParam(':Btime',$Btime,PDO::PARAM_STR);
   $query->bindParam(':Rtime',$Rtime,PDO::PARAM_STR);
+  
+  $query->bindParam(':Clerk',$Clerk,PDO::PARAM_STR);
+  $query->bindParam(':LastName',$ClerkR,PDO::PARAM_STR);
+  $query->bindParam(':Remarks',$Remarks,PDO::PARAM_STR);
+
   $query->bindParam(':itemname1',$itemname1,PDO::PARAM_STR);
   $query->bindParam(':quantity1',$quantity1,PDO::PARAM_STR);
   $query->bindParam(':itemname2',$itemname2,PDO::PARAM_STR);
