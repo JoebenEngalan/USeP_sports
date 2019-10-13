@@ -8,7 +8,8 @@
     
     <!-- Page level plugin JavaScript-->
     <script src="vendor/datatables/jquery.dataTables.js"></script>
-    <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.min.css"></script>
     
     <!-- Another Page level plugin JavaScript-->
     <script src="js/JSZip-2.5.0/jszip.min.js"></script>

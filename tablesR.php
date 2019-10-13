@@ -34,19 +34,23 @@ if(!isset($_SESSION["id"]))
 
         <!--DataTables Borrowers-->
         <div class="card mb-4">
-              <div class="card-header">
-                <i class="fas fa-table"></i>
-                Table Return</div>             
+          <div class="card-header">
+            <i class="fas fa-table"></i>
+              Table Return</div>             
               <div class="card-body">
                 <div class="table-responsive">
-                  <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <table class="table table-bordered" id="dataTable" width="200%" cellspacing="0">
                   <thead>
 										<tr>
 										<th>#</th>
 										<th>ID Number</th>
+                    <th>FullName</th>
 										<th>Contact Number</th>
 										<th>Borrowed</th>
 										<th>Returned</th>
+                    <th>Cr</th>
+                    <th>Cr</th>
+                    <th>Remarks</th>
 										<th>Item 1</th>
 										<th>Qty 1</th>
                     <th>Item 2</th>
@@ -61,9 +65,13 @@ if(!isset($_SESSION["id"]))
 										<tr>
 										<th>#</th>
                     <th>ID Number</th>
+                    <th>FullName</th>
 										<th>Contact Number</th>
 										<th>Borrowed</th>
 										<th>Returned</th>
+                    <th>Cr</th>
+                    <th>Cr</th>
+                    <th>Remarks</th>
 										<th>Item 1</th>
 										<th>Qty 1</th>
                     <th>Item 2</th>
@@ -87,9 +95,13 @@ if(!isset($_SESSION["id"]))
 										<tr>
 											<td><?php echo htmlentities($cnt);?></td>
 											<td><?php echo htmlentities($result->id_number);?></td>
+                      <td><?php echo htmlentities($result->FullName);?></td>
 											<td><?php echo htmlentities($result->ContactNumber);?></td>
 											<td><?php echo htmlentities($result->Borrowed_time);?></td>
 	                    <td><?php echo htmlentities($result->Return_time);?></td>
+                      <td><?php echo htmlentities($result->Clerk);?></td>
+                      <td><?php echo htmlentities($result->ClerkR);?></td>
+                      <td><?php echo htmlentities($result->Remarks);?></td>
 											<td><?php echo htmlentities($result->Item1);?></td>
 											<td><?php echo htmlentities($result->quantity1);?></td>
                       <td><?php echo htmlentities($result->Item2);?></td>
@@ -99,13 +111,14 @@ if(!isset($_SESSION["id"]))
                       <td><?php echo htmlentities($result->Item4);?></td>
 											<td><?php echo htmlentities($result->quantity4);?></td>
 										</tr>
-										<?php $cnt=$cnt+1; }} ?>
-										
+										<?php $cnt=$cnt+1; }} ?>	
 									</tbody>
-                  </table>
-                </div>
+                </table>
               </div>
-            </div>      
+            </div>
+          </div>
+            
+              
     </div><!-- /.container-fluid -->
   </div><!-- /.content-wrapper -->
   <!--Footer-->    

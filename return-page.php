@@ -192,7 +192,7 @@ include_once('templates/findborrow_return.php');
               Table Return</div>             
               <div class="card-body">
                 <div class="table-responsive">
-                  <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <table class="table table-bordered" id="dataTable" width="200%" cellspacing="0">
                   <thead>
 										<tr>
 										<th>#</th>
@@ -201,8 +201,9 @@ include_once('templates/findborrow_return.php');
 										<th>Contact Number</th>
 										<th>Borrowed</th>
 										<th>Returned</th>
-                    <th>Cr</th>
-                    <th>CR</th>
+                    <th>Clerk</th>
+                    <th>Clerk</th>
+                    <th>Remarks</th>
 										<th>Item 1</th>
 										<th>Qty 1</th>
                     <th>Item 2</th>
@@ -221,8 +222,9 @@ include_once('templates/findborrow_return.php');
 										<th>Contact Number</th>
 										<th>Borrowed</th>
 										<th>Returned</th>
-                    <th>Cr</th>
-                    <th>CR</th>
+                    <th>Clerk</th>
+                    <th>Clerk</th>
+                    <th>Remarks</th>
 										<th>Item 1</th>
 										<th>Qty 1</th>
                     <th>Item 2</th>
@@ -268,6 +270,7 @@ include_once('templates/findborrow_return.php');
               </div>
             </div>
           </div>   
+      
       </form>
     </div><!-- /.container-fluid -->
   </div><!-- /.content-wrapper -->
