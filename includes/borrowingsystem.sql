@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 03, 2019 at 05:43 AM
+-- Generation Time: Oct 13, 2019 at 01:14 PM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.7
 
@@ -51,7 +51,8 @@ CREATE TABLE `borrowed_item` (
 --
 
 INSERT INTO `borrowed_item` (`ID`, `id_number`, `FullName`, `Clerk`, `ContactNumber`, `Borrowed_time`, `Item1`, `quantity1`, `Item2`, `quantity2`, `Item3`, `quantity3`, `Item4`, `quantity4`, `Purpose`) VALUES
-(3, '2018-01046', 'Adrales , Keith', 'AdminLName', '09173503790', '10/3/2019', 'help', 1, '', 0, '', 0, '', 0, 'Test');
+(3, '2018-01046', 'Adrales , Keith', 'AdminLName', '09173503790', '10/3/2019', 'help', 1, '', 0, '', 0, '', 0, 'Test'),
+(4, '2014-00000', 'celer , shai', 'AdminLName', '2147483647', '10/9/2019', 'test1212121', 2, '', 0, '', 0, '', 0, 'Test');
 
 -- --------------------------------------------------------
 
@@ -108,7 +109,7 @@ INSERT INTO `equipment` (`id`, `ItemName`, `Description`, `Category`, `quantity`
 (21, 'help', 'test', 'Sports Equipment', 20, ''),
 (22, 'help2', 'test', 'Sports Equipment', 40, ''),
 (23, 'Basketball,GTR', 'Males Only', 'Sports Equipment', 10, 'AdminLName'),
-(24, 'test1212121', 'test', 'Sports Equipment', 22, 'AdminLName'),
+(24, 'test1212121', 'test', 'Sports Equipment', 20, 'AdminLName'),
 (25, 'test222', 'test', 'Sports Equipment', 9, 'AdminLName'),
 (26, 'Polo', 'test', 'Gym Equipment', 20, 'AdminLName'),
 (27, 'test21122', 'test', 'Sports Equipment', 50, 'AdminLName'),
@@ -128,6 +129,7 @@ CREATE TABLE `returned_item` (
   `Borrowed_time` varchar(100) NOT NULL,
   `Return_time` varchar(100) NOT NULL,
   `Clerk` varchar(150) NOT NULL,
+  `ClerkR` varchar(150) NOT NULL,
   `Remarks` text NOT NULL,
   `Item1` varchar(150) NOT NULL,
   `quantity1` int(100) DEFAULT NULL,
@@ -143,9 +145,9 @@ CREATE TABLE `returned_item` (
 -- Dumping data for table `returned_item`
 --
 
-INSERT INTO `returned_item` (`ID`, `id_number`, `FullName`, `ContactNumber`, `Borrowed_time`, `Return_time`, `Clerk`, `Remarks`, `Item1`, `quantity1`, `Item2`, `quantity2`, `Item3`, `quantity3`, `Item4`, `quantity4`) VALUES
-(1, '2018-01046', '', '2147483647', '10/3/2019', '10/3/2019', '', '', 'Basketball,GTR', 1, '', 0, '', 0, '', 0),
-(2, '2018-01046', '', '2147483647', '10/3/2019', '10/3/2019', '', '', 'GeeksForGeeks', 1, '', 0, '', 0, '', 0);
+INSERT INTO `returned_item` (`ID`, `id_number`, `FullName`, `ContactNumber`, `Borrowed_time`, `Return_time`, `Clerk`, `ClerkR`, `Remarks`, `Item1`, `quantity1`, `Item2`, `quantity2`, `Item3`, `quantity3`, `Item4`, `quantity4`) VALUES
+(1, '2018-01046', '', '2147483647', '10/3/2019', '10/3/2019', '', '', '', 'Basketball,GTR', 1, '', 0, '', 0, '', 0),
+(2, '2018-01046', '', '2147483647', '10/3/2019', '10/3/2019', '', '', '', 'GeeksForGeeks', 1, '', 0, '', 0, '', 0);
 
 -- --------------------------------------------------------
 
@@ -214,7 +216,7 @@ ALTER TABLE `staff_table`
 -- AUTO_INCREMENT for table `borrowed_item`
 --
 ALTER TABLE `borrowed_item`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `borrower_table`
