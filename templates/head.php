@@ -9,7 +9,8 @@
   
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-
+  <link rel="shortcut icon" type="image/png" href="icons8-warehouse.png"/>
+  
   <!-- Page level plugin CSS-->
   <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
   <link href="js/Buttons-1.5.6/css/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css"/>
