@@ -48,8 +48,8 @@ if(!isset($_SESSION["id"]))
 										<th>Contact Number</th>
 										<th>Borrowed</th>
 										<th>Returned</th>
-                    <th>Cr</th>
-                    <th>Cr</th>
+                    <th>Clerk</th>
+                    <th>ClerkR</th>
                     <th>Remarks</th>
 										<th>Item 1</th>
 										<th>Qty 1</th>
@@ -69,8 +69,8 @@ if(!isset($_SESSION["id"]))
 										<th>Contact Number</th>
 										<th>Borrowed</th>
 										<th>Returned</th>
-                    <th>Cr</th>
-                    <th>Cr</th>
+                    <th>Clerk</th>
+                    <th>ClerkR</th>
                     <th>Remarks</th>
 										<th>Item 1</th>
 										<th>Qty 1</th>

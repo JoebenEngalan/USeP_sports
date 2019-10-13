@@ -202,7 +202,7 @@ include_once('templates/findborrow_return.php');
 										<th>Borrowed</th>
 										<th>Returned</th>
                     <th>Clerk</th>
-                    <th>Clerk</th>
+                    <th>ClerkR</th>
                     <th>Remarks</th>
 										<th>Item 1</th>
 										<th>Qty 1</th>
@@ -223,7 +223,7 @@ include_once('templates/findborrow_return.php');
 										<th>Borrowed</th>
 										<th>Returned</th>
                     <th>Clerk</th>
-                    <th>Clerk</th>
+                    <th>ClerkR</th>
                     <th>Remarks</th>
 										<th>Item 1</th>
 										<th>Qty 1</th>
