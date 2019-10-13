@@ -1,7 +1,7 @@
 <!--navbars and modals-->
 <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
-<a class="navbar-brand mr-1" href="mainpage.php">USeP Sports Borrowing System</a>
-<button class="btn btn-link btn-sm text-white order-1 order-sm-0"   data-target="#sidebars" id="sidebarToggle">
+<a class="navbar-brand mr-1" href="mainpage.php"><img src="Untitled.png" width="40" height="40"> Borrowing System</a>
+<button class="btn btn-link btn-sm text-white order-1 order-sm-0" data-target="#sidebars" id="sidebarToggle">
   <i class="fas fa-bars"></i>
 </button>
 
