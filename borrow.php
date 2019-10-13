@@ -287,7 +287,8 @@ include_once('templates/findborrower.php');
                   <div class="form-group mb-4">
                     <?php include('templates/borrowitems.php');?>
                       <div class="btn-group">
-                        <button type="submit"  name="submit" onclick="return confirm('Y/N') " value="Submit"  class="btn btn-primary btn-lg">Borrow</button>
+                        <button type="submit"  name="submit" onclick="return confirm ('Did you input the quantity you want?\nYes/No')" 
+                        value="Submit"  class="btn btn-primary btn-lg">Borrow</button>
                         <button type="clear" class="btn btn-primary btn-lg">Clear</button>
                       </div>
                   </div>
