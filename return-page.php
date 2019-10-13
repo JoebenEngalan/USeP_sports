@@ -175,17 +175,91 @@ include_once('templates/findborrow_return.php');
             </div>
           </div>
 
-            <div class="form-group mb-4">
+          <div class="form-group mb-4">
             <?php include('templates/returnitems.php');?>
               <div class="btn-group">
                 <button type="return"  name="return" onclick="return" value="return"  class="btn btn-primary btn-lg">Return</button>
                 <button type="clear" class="btn btn-primary btn-lg">Clear</button>
               </div>
             </div>
-          </div>
-        </div>  
+        </div>
+      </div>
+        
+        <!--DataTables Borrowers-->
+        <div class="card mb-4">
+          <div class="card-header">
+            <i class="fas fa-table"></i>
+              Table Return</div>             
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+										<tr>
+										<th>#</th>
+										<th>ID Number</th>
+										<th>Contact Number</th>
+										<th>Borrowed</th>
+										<th>Returned</th>
+										<th>Item 1</th>
+										<th>Qty 1</th>
+                    <th>Item 2</th>
+										<th>Qty 2</th>
+                    <th>Item 3</th>
+										<th>Qty 3</th>
+                    <th>Item 4</th>
+										<th>Qty 4</th>
+										</tr>
+									</thead>
+									<tfoot>
+										<tr>
+										<th>#</th>
+                    <th>ID Number</th>
+										<th>Contact Number</th>
+										<th>Borrowed</th>
+										<th>Returned</th>
+										<th>Item 1</th>
+										<th>Qty 1</th>
+                    <th>Item 2</th>
+										<th>Qty 2</th>
+                    <th>Item 3</th>
+										<th>Qty 3</th>
+                    <th>Item 4</th>
+										<th>Qty 4</th>
+										</tr>
+										</tr>
+									</tfoot>
+									<tbody>
+									<?php $sql = "SELECT * from  returned_item ";
+                      $query = $dbh -> prepare($sql);
+                        $query->execute();
+                        $results=$query->fetchAll(PDO::FETCH_OBJ);
+                        $cnt=1;
+                    if($query->rowCount() > 0)
+                      {foreach($results as $result)
+                        {				
+                    ?>	
+										<tr>
+											<td><?php echo htmlentities($cnt);?></td>
+											<td><?php echo htmlentities($result->id_number);?></td>
+											<td><?php echo htmlentities($result->ContactNumber);?></td>
+											<td><?php echo htmlentities($result->Borrowed_time);?></td>
+	                    <td><?php echo htmlentities($result->Return_time);?></td>
+											<td><?php echo htmlentities($result->Item1);?></td>
+											<td><?php echo htmlentities($result->quantity1);?></td>
+                      <td><?php echo htmlentities($result->Item2);?></td>
+											<td><?php echo htmlentities($result->quantity2);?></td>
+                      <td><?php echo htmlentities($result->Item3);?></td>
+											<td><?php echo htmlentities($result->quantity3);?></td>
+                      <td><?php echo htmlentities($result->Item4);?></td>
+											<td><?php echo htmlentities($result->quantity4);?></td>
+										</tr>
+										<?php $cnt=$cnt+1; }} ?>	
+									</tbody>
+                </table>
+              </div>
+            </div>
+          </div>   
       </form>
-
     </div><!-- /.container-fluid -->
   </div><!-- /.content-wrapper -->
   <!--Footer-->    
