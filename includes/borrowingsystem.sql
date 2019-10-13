@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 13, 2019 at 01:14 PM
+-- Generation Time: Oct 13, 2019 at 11:04 PM
 -- Server version: 10.1.37-MariaDB
--- PHP Version: 7.3.7
+-- PHP Version: 7.3.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -51,8 +51,7 @@ CREATE TABLE `borrowed_item` (
 --
 
 INSERT INTO `borrowed_item` (`ID`, `id_number`, `FullName`, `Clerk`, `ContactNumber`, `Borrowed_time`, `Item1`, `quantity1`, `Item2`, `quantity2`, `Item3`, `quantity3`, `Item4`, `quantity4`, `Purpose`) VALUES
-(3, '2018-01046', 'Adrales , Keith', 'AdminLName', '09173503790', '10/3/2019', 'help', 1, '', 0, '', 0, '', 0, 'Test'),
-(4, '2014-00000', 'celer , shai', 'AdminLName', '2147483647', '10/9/2019', 'test1212121', 2, '', 0, '', 0, '', 0, 'Test');
+(3, '2018-01046', 'Adrales , Keith', 'AdminLName', '09173503790', '10/3/2019', 'help', 1, '', 0, '', 0, '', 0, 'Test');
 
 -- --------------------------------------------------------
 
@@ -67,19 +66,18 @@ CREATE TABLE `borrower_table` (
   `LastName` varchar(100) DEFAULT NULL,
   `ContactNumber` varchar(50) DEFAULT NULL,
   `Department` varchar(50) DEFAULT NULL,
-  `Position` varchar(50) DEFAULT NULL,
-  `EmailID` varchar(50) NOT NULL
+  `Position` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `borrower_table`
 --
 
-INSERT INTO `borrower_table` (`id`, `id_number`, `FirstName`, `LastName`, `ContactNumber`, `Department`, `Position`, `EmailID`) VALUES
-(1, '2014-00000', 'shai', 'celer', '2147483647', 'College of Engineering', 'Student', 'shai@gmail.com'),
-(2, '2014-15358', 'shaira', 'celerian', '2147483647', 'College of Engineering', 'Student', 'shaiar@gmail.com'),
-(3, '2014-11111', 'test', 'test', '09864914109', 'College of Engineering', 'Student', 'email@email.com'),
-(4, '2018-01046', 'Keith', 'Adrales', '09173503790', 'College of Engineering', 'Student', 'kitkatadrales21@gmail.com');
+INSERT INTO `borrower_table` (`id`, `id_number`, `FirstName`, `LastName`, `ContactNumber`, `Department`, `Position`) VALUES
+(1, '2014-00000', 'shai', 'celer', '09864999990', 'College of Engineering', 'Student'),
+(2, '2014-15358', 'shaira', 'celerian', '09864914899', 'College of Engineering', 'Student'),
+(3, '2014-11111', 'test', 'test', '09864914109', 'College of Engineering', 'Student'),
+(4, '2018-01046', 'Keith', 'Adrales', '09173503790', 'College of Engineering', 'Student');
 
 -- --------------------------------------------------------
 
@@ -109,7 +107,7 @@ INSERT INTO `equipment` (`id`, `ItemName`, `Description`, `Category`, `quantity`
 (21, 'help', 'test', 'Sports Equipment', 20, ''),
 (22, 'help2', 'test', 'Sports Equipment', 40, ''),
 (23, 'Basketball,GTR', 'Males Only', 'Sports Equipment', 10, 'AdminLName'),
-(24, 'test1212121', 'test', 'Sports Equipment', 20, 'AdminLName'),
+(24, 'test1212121', 'test', 'Sports Equipment', 22, 'AdminLName'),
 (25, 'test222', 'test', 'Sports Equipment', 9, 'AdminLName'),
 (26, 'Polo', 'test', 'Gym Equipment', 20, 'AdminLName'),
 (27, 'test21122', 'test', 'Sports Equipment', 50, 'AdminLName'),
@@ -146,8 +144,7 @@ CREATE TABLE `returned_item` (
 --
 
 INSERT INTO `returned_item` (`ID`, `id_number`, `FullName`, `ContactNumber`, `Borrowed_time`, `Return_time`, `Clerk`, `ClerkR`, `Remarks`, `Item1`, `quantity1`, `Item2`, `quantity2`, `Item3`, `quantity3`, `Item4`, `quantity4`) VALUES
-(1, '2018-01046', '', '2147483647', '10/3/2019', '10/3/2019', '', '', '', 'Basketball,GTR', 1, '', 0, '', 0, '', 0),
-(2, '2018-01046', '', '2147483647', '10/3/2019', '10/3/2019', '', '', '', 'GeeksForGeeks', 1, '', 0, '', 0, '', 0);
+(3, '2014-00000', 'celer , shai', '2147483647', '10/9/2019', '10/14/2019', 'AdminLName', 'AdminLName', 'Test', 'test1212121', 2, '', 0, '', 0, '', 0);
 
 -- --------------------------------------------------------
 
@@ -234,7 +231,7 @@ ALTER TABLE `equipment`
 -- AUTO_INCREMENT for table `returned_item`
 --
 ALTER TABLE `returned_item`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `staff_table`
