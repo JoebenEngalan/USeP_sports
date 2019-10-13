@@ -6,8 +6,6 @@ if (!isset($_SESSION['id']) || ($_SESSION['id'] !== 'Admin@gmail.com'))
   header('location:mainpage.php');
   exit();
   }
-
-  
 ?>
 
 <!DOCTYPE html>
