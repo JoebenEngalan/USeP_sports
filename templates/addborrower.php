@@ -9,9 +9,8 @@ if(isset($_POST['submit']))
   $contact=$_POST['contactnum'];
   $depart=$_POST['department'];
   $pos=$_POST['position'];
-  $email=$_POST['emailid'];
 
-  if( empty($idnum) || empty($fname) || empty($lname) || empty($contact) || empty($depart) || empty($pos) || empty($email) )
+  if( empty($idnum) || empty($fname) || empty($lname) || empty($contact) || empty($depart) || empty($pos) )
   {
   echo "<script type= 'text/javascript'>alert('Empty Fields.');</script>";  
   }else{
@@ -28,8 +27,8 @@ if(isset($_POST['submit']))
         }
         else
         {
-        $sql= "INSERT INTO borrower_table (id_number,FirstName,LastName,ContactNumber,Department,Position,EmailID) 
-        VALUES(:idnum,:fname,:lname,:contact,:depart,:pos,:email)";
+        $sql= "INSERT INTO borrower_table (id_number,FirstName,LastName,ContactNumber,Department,Position) 
+        VALUES(:idnum,:fname,:lname,:contact,:depart,:pos)";
 
         $query = $dbh->prepare($sql);
         $query->bindParam(':idnum',$idnum,PDO::PARAM_STR);
@@ -38,7 +37,6 @@ if(isset($_POST['submit']))
         $query->bindParam(':contact',$contact,PDO::PARAM_STR);
         $query->bindParam(':depart',$depart,PDO::PARAM_STR);
         $query->bindParam(':pos',$pos,PDO::PARAM_STR);
-        $query->bindParam(':email',$email,PDO::PARAM_STR);
         $query->execute();
         $lastInsertId = $dbh->lastInsertId();
         if($lastInsertId)

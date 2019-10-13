@@ -49,7 +49,6 @@ if(!isset($_SESSION["id"]))
 										<th>Contact Number</th>
 										<th>Department</th>
 										<th>Position</th>
-										<th>Email</th>										
 										</tr>
 									</thead>
 									<tfoot>
@@ -61,7 +60,6 @@ if(!isset($_SESSION["id"]))
 										<th>Contact Number</th>
 										<th>Department</th>
 										<th>Position</th>
-										<th>Email</th>
 										</tr>
 										</tr>
 									</tfoot>
@@ -83,10 +81,8 @@ if(!isset($_SESSION["id"]))
 	                    <td><?php echo htmlentities($result->ContactNumber);?></td>
 											<td><?php echo htmlentities($result->Department);?></td>
 											<td><?php echo htmlentities($result->Position);?></td>
-											<td><?php echo htmlentities($result->EmailID);?></td>
 										</tr>
 										<?php $cnt=$cnt+1; }} ?>
-										
 									</tbody>
                   </table>
                 </div>

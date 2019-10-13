@@ -84,6 +84,7 @@ if(!isset($_SESSION["id"]))
                 <option> Institute of Computing</option>
                 <option> School Applied Economics</option>
                 <option> College of Business Administration</option>
+                <option> University Administration</option>
                 </select>
               </div>
               <!-- Position input -->
@@ -96,12 +97,7 @@ if(!isset($_SESSION["id"]))
                 <select>
               </div>
             </div>
-            <!--email input-->
-            <div class="form-group col-md-14">
-              <label for="inputContactnum">Email</label>
-              <input type="text" class="form-control" name= "emailid" id="inputContactnum" placeholder="Email@gmail.com" required>
-            </div> 
-
+             
             <div class="btn-group">
             <!--database command add borrower-->
             <input type="submit" name="submit" class="btn btn-primary btn-block"
